@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://dbu2tphaxtr72"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
+size = Vector3(100, 1, 100)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bgt8y"]
+albedo_color = Color(0.360784, 0.407843, 0.309804, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1gwc"]
+
+[node name="Root" type="Node"]
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("BoxMesh_6o4ny")
+surface_material_override/0 = SubResource("StandardMaterial3D_bgt8y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+transform = Transform3D(100.248, 0, 0, 0, 1.00248, 0, 0, 0, 100.248, 0, 0, 0)
+shape = SubResource("BoxShape3D_u1gwc")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.999982, 0.00585824, 0.00134294, -0.00529174, 0.752245, 0.658862, 0.00284956, -0.658857, 0.752263, 0, 42.1462, 0)
+light_color = Color(1, 1, 0.839216, 1)
+shadow_enabled = true
