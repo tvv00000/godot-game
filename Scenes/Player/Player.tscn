@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdhj0kbdvxwrf"]
+
+[ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="1_s0eop"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
+height = 1.28075
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ft8w5")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sprite" type="Sprite3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.96673, 0.2558, 0, -0.2558, 0.96673, 0, 0.653221, 0)
+texture = ExtResource("1_s0eop")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653221, 0)
+shape = SubResource("CapsuleShape3D_ft8w5")
+
+[node name="Pivot_Camera" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.931951, 0.362584, 0, -0.362584, 0.931951, -0.0400639, 1.98339, 2.70974)
