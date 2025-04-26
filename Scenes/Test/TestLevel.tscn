@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=7 format=3 uid="uid://dbu2tphaxtr72"]
+
+[ext_resource type="Script" uid="uid://b5gsxc7pvfr0s" path="res://character_body_2d.gd" id="2_jxrda"]
+[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_wlpxy"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
@@ -7,6 +10,8 @@ size = Vector3(100, 1, 100)
 albedo_color = Color(0.360784, 0.407843, 0.309804, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u1gwc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u1gwc"]
 
 [node name="Root" type="Node"]
 
@@ -25,3 +30,14 @@ shape = SubResource("BoxShape3D_u1gwc")
 transform = Transform3D(0.999982, 0.00585824, 0.00134294, -0.00529174, 0.752245, 0.658862, 0.00284956, -0.658857, 0.752263, 0, 42.1462, 0)
 light_color = Color(1, 1, 0.839216, 1)
 shadow_enabled = true
+
+[node name="CharacterBody2D2" type="CharacterBody2D" parent="."]
+position = Vector2(-224, -29)
+script = ExtResource("2_jxrda")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D2"]
+shape = SubResource("CircleShape2D_u1gwc")
+
+[node name="Icon" type="Sprite2D" parent="CharacterBody2D2"]
+position = Vector2(910, 214)
+texture = ExtResource("3_wlpxy")
