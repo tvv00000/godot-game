@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6cenm18m32pi"]
+
+[ext_resource type="PackedScene" uid="uid://gb6ucyjh0qy5" path="res://Art/Props/Garden/Planter_Large.fbx" id="1_3d1rs"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_epqkk"]
+size = Vector3(0.559723, 0.431503, 1.468)
+
+[node name="Planter_Large" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="m_Planter_Large" parent="StaticBody3D" instance=ExtResource("1_3d1rs")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0736847, 0.391823, 0.0547104)
+shape = SubResource("BoxShape3D_epqkk")

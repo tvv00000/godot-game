@@ -22,4 +22,4 @@ shape = SubResource("CapsuleShape3D_ft8w5")
 [node name="Pivot_Camera" type="Marker3D" parent="."]
 
 [node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
-transform = Transform3D(1, 0, 0, 0, 0.931951, 0.362584, 0, -0.362584, 0.931951, -0.0400639, 1.98339, 2.70974)
+transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, -0.0400639, 2.77216, 2.466)
