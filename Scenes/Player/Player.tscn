@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=5 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
 height = 1.28075
@@ -23,3 +24,67 @@ shape = SubResource("CapsuleShape3D_ft8w5")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
 transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, -0.0400639, 2.77216, 2.466)
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745022, 0)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Coins" type="ColorRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -274.0
+offset_bottom = 160.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Icon" type="TextureRect" parent="HUD/Coins"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 128.0
+grow_vertical = 2
+texture = ExtResource("3_h54ih")
+expand_mode = 2
+
+[node name="Amount" type="Label" parent="HUD/Coins"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="QuestTracker" type="ColorRect" parent="HUD"]
+offset_right = 300.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 1)
+
+[node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "title"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Objectives" type="VBoxContainer" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+size_flags_vertical = 3

@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjk8vdn7f7mxj"]
+
+[ext_resource type="Script" uid="uid://cq8aabufu7kvv" path="res://Dialog/dialog_ui.gd" id="1_i5ysq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2pxcp"]
+
+[node name="DialogUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_i5ysq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -248.0
+offset_right = -1.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2pxcp")
+
+[node name="DialogBox" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+
+[node name="DialogSpeaker" type="Label" parent="CanvasLayer/Panel/DialogBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "NPC NAME
+"
+
+[node name="DialogText" type="Label" parent="CanvasLayer/Panel/DialogBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 23
+text = "TEXT"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogOptions" type="HBoxContainer" parent="CanvasLayer/Panel/DialogBox"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="CloseButton" type="Button" parent="CanvasLayer/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_bottom = 36.0
+grow_horizontal = 0
+text = "X"
+
+[connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]

@@ -3,26 +3,58 @@ extends CharacterBody3D
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
+var can_move = true
 
+@onready var ray_cast_3d = $RayCast3D
+@onready var amount = $HUD/Coins/Amount
+@onready var quest_tracker = $HUD/QuestTracker
+@onready var title = $HUD/QuestTracker/Details/Title
+@onready var objectives = $HUD/QuestTracker/Details/Objectives
+
+func _ready() -> void:
+	Global.player = self
+	quest_tracker.visible = false
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
-	if not is_on_floor():
-		velocity += get_gravity() * delta
+	if can_move:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity += get_gravity() * delta
 
-	# Handle jump.
-	if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		# Handle jump.
+		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	if direction:
-		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		velocity.z = move_toward(velocity.z, 0, SPEED)
+		# Get the input direction and handle the movement/deceleration.
+		# As good practice, you should replace UI actions with custom gameplay actions.
+		var input_dir := Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
+		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
+		# raycast direction
+		if velocity != Vector3.ZERO:
+			ray_cast_3d.target_position = velocity.normalized() * 3
+		
+		if direction:
+			velocity.x = direction.x * SPEED
+			velocity.z = direction.z * SPEED
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
+			velocity.z = move_toward(velocity.z, 0, SPEED)
 
-	move_and_slide()
+		move_and_slide()
+
+func _input(event):
+	#Interact with NPC/ Quest Item
+	if can_move:
+		if event.is_action_pressed("UI_Interact"):
+			var target = ray_cast_3d.get_collider()
+			if target != null:
+				if target.is_in_group("NPC"):
+					print("I'm talking to an NPC!")
+					can_move = false
+					target.start_dialog()
+				elif target.is_in_group("Item"):
+					print("I'm interacting with an item!")
+					# todo: check if item is needed for quest
+					# todo: remove item
+					target.start_interact()	

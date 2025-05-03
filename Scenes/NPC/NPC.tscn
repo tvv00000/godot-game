@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://lll3kao4nos7"]
+
+[ext_resource type="Script" uid="uid://bpxhod41dg2nn" path="res://Scenes/NPC/npc.gd" id="1_u75bn"]
+[ext_resource type="Script" uid="uid://8qurl7ipw1im" path="res://Resources/Dialog/Dialog.gd" id="2_37ake"]
+[ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_y2jbc"]
+[ext_resource type="PackedScene" uid="uid://dtfb1bw3mj2hs" path="res://Dialog/dialog_manager.tscn" id="4_tlawm"]
+
+[sub_resource type="Resource" id="Resource_37ake"]
+script = ExtResource("2_37ake")
+dialogs = {}
+metadata/_custom_type_script = "uid://8qurl7ipw1im"
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
+height = 1.28075
+
+[node name="NPC" type="CharacterBody3D" groups=["NPC"]]
+script = ExtResource("1_u75bn")
+npc_id = "npc_1"
+npc_name = "Hunt Miko"
+dialog_resource = SubResource("Resource_37ake")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sprite" type="Sprite3D" parent="Pivot"]
+transform = Transform3D(0.25, 0, 0, 0, 0.241682, 0.06395, 0, -0.06395, 0.241682, 0, 0.653221, 0)
+modulate = Color(0.511848, 0, 0.211223, 1)
+texture = ExtResource("2_y2jbc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653221, 0)
+shape = SubResource("CapsuleShape3D_ft8w5")
+
+[node name="DialogManager" parent="." instance=ExtResource("4_tlawm")]
