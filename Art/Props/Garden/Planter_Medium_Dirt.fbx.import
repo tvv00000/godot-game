@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d04ylu8tsqycl"
-path="res://.godot/imported/Planter_Medium.fbx-563296f718c36ed2276e2682458339dd.scn"
+uid="uid://dpqx2mjlefexv"
+path="res://.godot/imported/Planter_Medium_Dirt.fbx-cb6c75512aafd5fe25840f6893ca7754.scn"
 
 [deps]
 
-source_file="res://Art/Props/Garden/Planter_Medium.fbx"
-dest_files=["res://.godot/imported/Planter_Medium.fbx-563296f718c36ed2276e2682458339dd.scn"]
+source_file="res://Art/Props/Garden/Planter_Medium_Dirt.fbx"
+dest_files=["res://.godot/imported/Planter_Medium_Dirt.fbx-cb6c75512aafd5fe25840f6893ca7754.scn"]
 
 [params]
 

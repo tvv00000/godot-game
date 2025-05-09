@@ -1,15 +1,18 @@
 extends CharacterBody3D
 
-
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
-var can_move = true
+#Muutujate init. 
+#Protip: Nõnda initsialiseerides tuleb performans märgatavalt parem. (juttude järgi)
+const SPEED: float = 5.0
+const JUMP_VELOCITY:float = 4.5
+var can_move:bool = true
 
 @onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
 @onready var title = $HUD/QuestTracker/Details/Title
 @onready var objectives = $HUD/QuestTracker/Details/Objectives
+#Interaktsioon siit allpool.
+@onready var prompt = $Prompt
 
 func _ready() -> void:
 	Global.player = self
