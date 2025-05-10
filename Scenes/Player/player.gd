@@ -52,12 +52,16 @@ func _input(event):
 		if event.is_action_pressed("UI_Interact"):
 			var target = ray_cast_3d.get_collider()
 			if target != null:
+				
 				if target.is_in_group("NPC"):
 					print("I'm talking to an NPC!")
 					can_move = false
 					target.start_dialog()
+					
 				elif target.is_in_group("Item"):
 					print("I'm interacting with an item!")
 					# todo: check if item is needed for quest
 					# todo: remove item
-					target.start_interact()	
+					target.start_interact()
+				elif target.is_in_group("Planter"):
+					print("cesci n'est pas une planteur")
