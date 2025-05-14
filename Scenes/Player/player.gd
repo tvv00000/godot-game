@@ -6,6 +6,7 @@ const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 
+
 @onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
@@ -13,6 +14,9 @@ var can_move:bool = true
 @onready var objectives = $HUD/QuestTracker/Details/Objectives
 #Interaktsioon siit allpool.
 @onready var prompt = $Prompt
+@onready var InteractionArea = $InteractionArea
+
+
 
 func _ready() -> void:
 	Global.player = self
@@ -63,5 +67,6 @@ func _input(event):
 					# todo: check if item is needed for quest
 					# todo: remove item
 					target.start_interact()
+					
 				elif target.is_in_group("Planter"):
 					print("cesci n'est pas une planteur")

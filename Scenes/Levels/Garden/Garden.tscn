@@ -1,9 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=16 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
-[ext_resource type="PackedScene" uid="uid://c6cenm18m32pi" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="3_vg67c"]
-[ext_resource type="PackedScene" uid="uid://co6i46wsxe7l4" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
+[ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Levels/Garden/Planter_Med.tscn" id="4_ylav4"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="7_h3sb3"]
@@ -70,21 +69,6 @@ light_energy = 1.585
 light_indirect_energy = 5.724
 
 [node name="Planters" type="Node" parent="."]
-
-[node name="Planter_Large" parent="Planters" instance=ExtResource("3_vg67c")]
-transform = Transform3D(-0.122077, 0, -0.992521, 0, 1, 0, 0.992521, 0, -0.122077, -2.94785, 0, -3.2098)
-
-[node name="Planter_Large2" parent="Planters" instance=ExtResource("3_vg67c")]
-transform = Transform3D(0.190055, 0, -0.981773, 0, 1, 0, 0.981773, 0, 0.190055, 1.39257, 0, -3.21568)
-
-[node name="Planter_Large3" parent="Planters" instance=ExtResource("3_vg67c")]
-transform = Transform3D(0.968396, 0, 0.249417, 0, 1, 0, -0.249417, 0, 0.968396, 2.17387, 0, -0.305384)
-
-[node name="Planter_Large5" parent="Planters" instance=ExtResource("3_vg67c")]
-transform = Transform3D(0.735175, 0, 0.677877, 0, 1, 0, -0.677877, 0, 0.735175, -2.19142, 0, 2.37811)
-
-[node name="Planter_Large4" parent="Planters" instance=ExtResource("3_vg67c")]
-transform = Transform3D(0.968396, 0, 0.249417, 0, 1, 0, -0.249417, 0, 0.968396, 6.64083, 0, -1.69617)
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973518, 0.00960135, -3.22922)

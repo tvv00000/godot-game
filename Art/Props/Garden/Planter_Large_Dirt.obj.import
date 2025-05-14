@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bmiohn4dhr7iw"
+path="res://.godot/imported/Planter_Large_Dirt.obj-0ef5cd921838e1572e086abef9ec384b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Planter_Large_Dirt.obj-0ef5cd921838e1572e086abef9ec384b.mesh"]
+
+source_file="res://Art/Props/Garden/Planter_Large_Dirt.obj"
+dest_files=["res://.godot/imported/Planter_Large_Dirt.obj-0ef5cd921838e1572e086abef9ec384b.mesh", "res://.godot/imported/Planter_Large_Dirt.obj-0ef5cd921838e1572e086abef9ec384b.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
