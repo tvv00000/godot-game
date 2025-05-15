@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqwd1uvdyvkj7"]
+
+[ext_resource type="Script" uid="uid://qelexhmq7cxf" path="res://Scripts/Levels/dynamic_sky.gd" id="1_po2hj"]
+
+[sub_resource type="Animation" id="Animation_6furj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.869668, 0.771772, 0.797505, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_cygbw"]
+resource_name = "dayNightCycle"
+length = 24.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(6.01061, 12.0681, 19.9534),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.519395, -0.923066, -0.868348), Vector3(0, 0, 0), Vector3(-0.607448, 1.23897, 0.828178)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:light_energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.98718, 7.02996, 11.9978, 18.7583, 19.9534, 23.9956),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 0.5, 1.0, 0.75, 0.0, 0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:light_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(5.9989, 8.03758, 12.0564, 17.8327, 19.0512),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.902544, 0.620545, 0.736412, 1), Color(0.926395, 0.85812, 0.874112, 1), Color(1, 1, 1, 1), Color(0.971434, 0.874267, 0.757542, 1), Color(0.930271, 0.724989, 0.470665, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5463a"]
+_data = {
+&"RESET": SubResource("Animation_6furj"),
+&"dayNightCycle": SubResource("Animation_cygbw")
+}
+
+[node name="dynamicSky" type="Node3D"]
+script = ExtResource("1_po2hj")
+
+[node name="SunPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.614643, 0.788805, 0, -0.788805, -0.614643, 0, 9.08582, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="SunPivot"]
+light_color = Color(0.869668, 0.771772, 0.797505, 1)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SunPivot/DirectionalLight3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_5463a")
+}
+autoplay = "dayNightCycle"

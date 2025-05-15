@@ -8,6 +8,8 @@ var label: Label3D = null
 #		2.5. Lisa ka tekst "interactName" 
 #		3. näpitava objekti sisse funktsioon func onInteract():  kuhu alla saab lisada koodi mida ta tegema peab.
 
+#TODO: kontrolli üle mitme intractable sortimine
+
 var interactablesInRange := []
 var selectedInteractable: StaticBody3D = null
 

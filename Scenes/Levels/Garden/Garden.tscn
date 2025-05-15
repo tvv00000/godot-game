@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
+[ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
-[ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Levels/Garden/Planter_Med.tscn" id="4_ylav4"]
+[ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="7_h3sb3"]
@@ -21,6 +22,8 @@ size = Vector3(1, 19.3612, 13.0953)
 [sub_resource type="BoxShape3D" id="BoxShape3D_h3sb3"]
 size = Vector3(0.234497, 11.4411, 13.23)
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_owpas"]
+
 [sub_resource type="Resource" id="Resource_7psoa"]
 script = ExtResource("8_qiffv")
 dialogs = {}
@@ -34,6 +37,9 @@ metadata/_custom_type_script = "uid://8qurl7ipw1im"
 [sub_resource type="BoxMesh" id="BoxMesh_glj77"]
 
 [node name="root" type="Node"]
+
+[node name="dynamicSky" parent="." instance=ExtResource("1_owpas")]
+transform = Transform3D(-0.183279, 0.170708, 0.968126, 0.0317534, 0.985322, -0.167729, -0.982548, 0, -0.18601, 0, 0, 0)
 
 [node name="Garden" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 0, 0)
@@ -60,13 +66,19 @@ shape = SubResource("BoxShape3D_hxll0")
 transform = Transform3D(0.960415, 0, 0.278572, 0, 1, 0, -0.278572, 0, 0.960415, -3.59467, 5.79044, 0.992833)
 shape = SubResource("BoxShape3D_h3sb3")
 
-[node name="Player" parent="." instance=ExtResource("2_o1jqx")]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(2.579, 2.02596, -1.9265e-07, 0, -9.16158e-08, -4.55952, -9.72948, 0.537021, -5.10657e-08, 3.56498, 0.0658412, 2.40173)
+mesh = SubResource("PlaneMesh_owpas")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.970885, -0.207229, 0.12016, -0.017453, 0.43909, 0.898274, -0.238909, -0.874218, 0.422689, 6.31207, 5.22021, 12.6316)
-light_color = Color(0.957989, 0.878448, 0.875281, 1)
-light_energy = 1.585
-light_indirect_energy = 5.724
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(-10.0615, 0.0588879, -5.59968e-09, 5.58674e-16, -9.16158e-08, -4.55952, -0.282804, -2.0951, 1.99224e-07, -0.255016, 2.88778, -6.96463)
+mesh = SubResource("PlaneMesh_owpas")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(2.67075, -2.0208, 1.92159e-07, 1.5634e-15, -9.16158e-08, -4.55952, 9.70469, 0.556126, -5.28824e-08, -5.95751, 2.54998, 2.27923)
+mesh = SubResource("PlaneMesh_owpas")
+
+[node name="Player" parent="." instance=ExtResource("2_o1jqx")]
 
 [node name="Planters" type="Node" parent="."]
 
