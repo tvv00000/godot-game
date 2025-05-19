@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3utvcgp2iffb"]
+
+[ext_resource type="Script" uid="uid://wmq1w5524m4o" path="res://Scripts/Growing/Planter.gd" id="1_skqxc"]
+[ext_resource type="ArrayMesh" uid="uid://bvjgtgih3x6vl" path="res://Art/Props/Garden/Planter_Large.obj" id="2_4hykt"]
+[ext_resource type="Material" uid="uid://nakpqjfuep2q" path="res://Art/Props/Garden/Materials/M_Planter_Metal.tres" id="3_8r8hu"]
+[ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="4_jhg0s"]
+[ext_resource type="Material" uid="uid://yxavt6nyhfsb" path="res://Art/Props/Garden/Materials/M_Planter_Plastic.tres" id="5_2phgg"]
+[ext_resource type="PackedScene" uid="uid://dv3yhn04yvlyw" path="res://Scripts/Interaction/interactable.tscn" id="6_fxes8"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_82f4x"]
+size = Vector3(0.557556, 0.491455, 1.50537)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sh7ce"]
+size = Vector3(1.59131, 0.749512, 1.83575)
+
+[node name="Planter_Large" type="StaticBody3D" groups=["Planter"]]
+collision_layer = 3
+script = ExtResource("1_skqxc")
+interactName = "Hoolda suuri taimi"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_4hykt")
+surface_material_override/0 = ExtResource("3_8r8hu")
+surface_material_override/1 = ExtResource("4_jhg0s")
+surface_material_override/2 = ExtResource("5_2phgg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0093689, 0.358276, 0.0319824)
+shape = SubResource("BoxShape3D_82f4x")
+
+[node name="Interactable" parent="." instance=ExtResource("6_fxes8")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0318649, 0.40598, 0.000453055)
+shape = SubResource("BoxShape3D_sh7ce")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=19 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="7_h3sb3"]
 [ext_resource type="Script" uid="uid://8qurl7ipw1im" path="res://Resources/Dialog/Dialog.gd" id="8_qiffv"]
 [ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="9_qiffv"]
+[ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)
@@ -117,3 +118,6 @@ dialog_resource = SubResource("Resource_qiffv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287559, 0.529475, -1.829)
 item_id = "CUBE"
 item_mesh = SubResource("BoxMesh_glj77")
+
+[node name="Node3D" parent="." instance=ExtResource("10_typy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnp4as22mp3hk"]
+
+[ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_m6euj"]
+
+[node name="GameMode_Garden" type="Node"]
+script = ExtResource("1_m6euj")
