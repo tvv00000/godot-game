@@ -16,8 +16,6 @@ var can_move:bool = true
 @onready var prompt = $Prompt
 @onready var InteractionArea = $InteractionArea
 
-
-
 func _ready() -> void:
 	Global.player = self
 	quest_tracker.visible = false

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Plants" load_steps=2 format=3 uid="uid://bjtu7ibgtetl4"]
+
+[ext_resource type="Script" uid="uid://wxnhp87gpi1o" path="res://Resources/Plants/basePlant.gd" id="1_hckti"]
+
+[resource]
+script = ExtResource("1_hckti")
+name = "Tüümian"
+toughness = 1
+waterNeed = 100.0
+growSpeed = 1
+dirtNeed = 80
+sunNeed = 5
+fertNeed = 3
+metadata/_custom_type_script = "uid://wxnhp87gpi1o"

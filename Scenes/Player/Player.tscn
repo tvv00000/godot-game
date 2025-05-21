@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=8 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
+[ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
@@ -95,6 +96,8 @@ uppercase = true
 layout_mode = 2
 size_flags_vertical = 3
 
+[node name="GardenUi" parent="HUD" instance=ExtResource("4_jmcll")]
+
 [node name="InteractionArea" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -104,5 +107,8 @@ script = ExtResource("4_ude3g")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592224, 0)
 shape = SubResource("CylinderShape3D_h54ih")
 
+[connection signal="dirtFilled_Signal" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_dirt_filled_signal"]
+[connection signal="plantPlanted" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_plant_planted"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
+[connection signal="show_GardenUI" from="InteractionArea" to="HUD/GardenUi" method="_on_interaction_area_show_garden_ui"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=20 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
+[ext_resource type="Resource" uid="uid://bjtu7ibgtetl4" path="res://Resources/Plants/R_Plant_Thyme.tres" id="5_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="7_h3sb3"]
@@ -42,6 +43,8 @@ metadata/_custom_type_script = "uid://8qurl7ipw1im"
 [node name="dynamicSky" parent="." instance=ExtResource("1_owpas")]
 transform = Transform3D(-0.183279, 0.170708, 0.968126, 0.0317534, 0.985322, -0.167729, -0.982548, 0, -0.18601, 0, 0, 0)
 
+[node name="Player" parent="." instance=ExtResource("2_o1jqx")]
+
 [node name="Garden" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 0, 0)
 
@@ -79,15 +82,15 @@ mesh = SubResource("PlaneMesh_owpas")
 transform = Transform3D(2.67075, -2.0208, 1.92159e-07, 1.5634e-15, -9.16158e-08, -4.55952, 9.70469, 0.556126, -5.28824e-08, -5.95751, 2.54998, 2.27923)
 mesh = SubResource("PlaneMesh_owpas")
 
-[node name="Player" parent="." instance=ExtResource("2_o1jqx")]
-
 [node name="Planters" type="Node" parent="."]
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973518, 0.00960135, -3.22922)
+planterState = 1
 
 [node name="Planter_Med2" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45458, -2.38419e-07, -3.27021)
+Plant = ExtResource("5_r3nv0")
 
 [node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 4.37832, -2.38419e-07, -3.13547)
