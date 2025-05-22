@@ -1,0 +1,29 @@
+[gd_scene load_steps=2 format=3 uid="uid://dek1gbdwr8oxl"]
+
+[ext_resource type="Script" uid="uid://wrtrfo7fgge8" path="res://Scripts/Plants/CollectionLogUI.gd" id="1_souvw"]
+
+[node name="CollectionLogUI" type="HBoxContainer"]
+offset_right = 212.0
+offset_bottom = 50.0
+script = ExtResource("1_souvw")
+
+[node name="PlantList" type="ItemList" parent="."]
+layout_mode = 2
+auto_width = true
+auto_height = true
+
+[node name="DetailPanel" type="VBoxContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="DetailPanel"]
+layout_mode = 2
+
+[node name="NameLabel" type="Label" parent="DetailPanel"]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="RichTextLabel" parent="DetailPanel"]
+layout_mode = 2
+fit_content = true

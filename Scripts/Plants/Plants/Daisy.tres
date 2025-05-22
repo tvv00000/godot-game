@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=3 format=3 uid="uid://dyucvtdh5ens3"]
+
+[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="1_2f7sk"]
+[ext_resource type="Script" uid="uid://bnhlakg80as7c" path="res://Scripts/Plants/PlantData.gd" id="1_v2lgq"]
+
+[resource]
+script = ExtResource("1_v2lgq")
+name = "Daisy"
+description = "A small, cheerful white flower"
+icon = ExtResource("1_2f7sk")
+is_discovered = false
+is_collected = false
+metadata/_custom_type_script = "uid://bnhlakg80as7c"
