@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bk23llf8x327l"]
+
+[ext_resource type="ArrayMesh" uid="uid://du8rvrv8ykn13" path="res://Art/Props/Europe/Pier.obj" id="1_n136s"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n136s"]
+size = Vector3(3.6804, 0.593933, 2.23804)
+
+[node name="Pier" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_n136s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.11624, 0, 0, 0, 1.11624, 0, 0, 0, 1.11624, 0.0431537, 0.192363, -0.0100954)
+shape = SubResource("BoxShape3D_n136s")

@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cddq83k0hhbgb"]
+
+[ext_resource type="Texture2D" uid="uid://c6veqobg8315m" path="res://Art/Props/Europe/T_Med_House.jpg" id="1_gg75w"]
+
+[resource]
+albedo_texture = ExtResource("1_gg75w")

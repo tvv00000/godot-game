@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjaf83x5h671o"
+path="res://.godot/imported/Med_House_Window.obj-6a5f27d8a47ce7c8f091887a8a6720ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Med_House_Window.obj-6a5f27d8a47ce7c8f091887a8a6720ca.mesh"]
+
+source_file="res://Art/Props/Europe/Med_House_Window.obj"
+dest_files=["res://.godot/imported/Med_House_Window.obj-6a5f27d8a47ce7c8f091887a8a6720ca.mesh", "res://.godot/imported/Med_House_Window.obj-6a5f27d8a47ce7c8f091887a8a6720ca.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

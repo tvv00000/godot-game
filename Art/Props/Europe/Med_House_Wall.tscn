@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0b2ngxrxxwwx"]
+
+[ext_resource type="ArrayMesh" uid="uid://b3o8v7thfoxgm" path="res://Art/Props/Europe/Med_House_Wall.obj" id="1_nj0so"]
+[ext_resource type="Material" uid="uid://cddq83k0hhbgb" path="res://Art/Props/Europe/M_Med_House.tres" id="2_ytyly"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ytyly"]
+points = PackedVector3Array(-1.08089, -0.316889, -0.153989, 0.0310459, 0.884606, 0.0759095, 0.031546, 0.893895, -0.0494474, 1.08089, -0.316889, -0.153989, 1.08089, -0.316889, 0.150011, 1.08089, 0.865237, -0.153989, -1.08089, -0.316889, 0.150011, -1.08089, 0.865237, -0.153989, -1.01317, 0.865237, 0.150011, 1.08089, 0.831473, 0.150011, -1.08089, 0.831473, 0.150011, -0.828629, 0.897637, -0.0497505, -0.343313, 0.885678, 0.107277, 0.986925, 0.847625, 0.105932, -0.81627, 0.888843, 0.0764819)
+
+[node name="Prop Template" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_nj0so")
+surface_material_override/0 = ExtResource("2_ytyly")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_ytyly")

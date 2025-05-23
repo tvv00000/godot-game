@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://gpxtkp16n0ll"]
+
+[ext_resource type="ArrayMesh" uid="uid://btfftjo4u55i1" path="res://Art/Props/Europe/Med_House_Roof.obj" id="1_kgm81"]
+[ext_resource type="Material" uid="uid://cddq83k0hhbgb" path="res://Art/Props/Europe/M_Med_House.tres" id="2_lhood"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_kgm81"]
+points = PackedVector3Array(-0.378049, 0.514949, -2.0864, 1.96841, -0.2022, 1.95569, -2.0087, -0.3326, 1.95569, -0.117287, 0.645349, 2.0864, 2.0337, -0.3326, -1.89075, -2.0087, -0.3326, -1.95569, 0.142683, 0.645349, -2.0864, 1.96841, -0.3326, 1.95569, -1.94301, -0.2022, 1.95569, 0.142683, 0.645349, 2.0864, 1.96841, -0.2022, -1.95569, -1.42149, 0.0586, -1.95569, 1.18573, 0.189, -1.3038, -1.03015, 0.254047, 1.5648, -0.117287, 0.645349, -2.0864, -1.94301, -0.2022, -1.95569, 0.403444, 0.319298, 2.0864, 0.403444, 0.319298, -2.0864, 1.96841, -0.3326, -1.95569, 1.70765, -0.0718, 1.95569, -0.573521, 0.449698, -2.02105, -0.443338, 0.514949, 1.89075, -0.378049, 0.319298, 2.0864, 2.0337, -0.3326, 1.89075, 1.57707, -0.00654891, -1.95569, -1.29091, 0.123851, 1.95569, 0.860074, 0.319298, 2.02105, 0.403444, 0.514949, 2.0864, 0.403444, 0.514949, -2.0864, 0.729495, 0.384447, -1.89075, -0.573521, 0.449698, 2.02105)
+
+[node name="Prop Template" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_kgm81")
+surface_material_override/0 = ExtResource("2_lhood")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("ConvexPolygonShape3D_kgm81")

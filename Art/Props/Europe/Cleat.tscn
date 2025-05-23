@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://dysnfgw40g1dh"]
+
+[ext_resource type="ArrayMesh" uid="uid://d1o67t4gotjqp" path="res://Art/Props/Europe/Cleat.obj" id="1_n136s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n136s"]
+albedo_color = Color(0.770854, 0.550321, 0.182737, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_138lp"]
+height = 0.236267
+radius = 0.134277
+
+[node name="Prop Template" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_n136s")
+surface_material_override/0 = SubResource("StandardMaterial3D_n136s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143646, 0)
+shape = SubResource("CylinderShape3D_138lp")

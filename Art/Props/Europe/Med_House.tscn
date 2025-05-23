@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo2fpqyxb5qrx"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbajfn4odd8mj" path="res://Art/Props/Europe/Med_House.obj" id="1_3tdx4"]
+[ext_resource type="Material" uid="uid://cddq83k0hhbgb" path="res://Art/Props/Europe/M_Med_House.tres" id="2_eates"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ntyas"]
+size = Vector3(3.4881, 3.24707, 3.61843)
+
+[node name="MedHouse" type="StaticBody3D"]
+
+[node name="StaticBody3D" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_3tdx4")
+surface_material_override/0 = ExtResource("2_eates")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.995681, 0, 0, 0, 0.995681, 0, 0, 0, 0.995681, -0.00271487, 0.587678, 0.00336075)
+shape = SubResource("BoxShape3D_ntyas")
