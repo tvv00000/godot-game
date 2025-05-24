@@ -40,3 +40,4 @@ func onInteract():
 	print("Siin kasvab: ", Plant, "Planterstate on: ", planterState)
 	
 	
+	

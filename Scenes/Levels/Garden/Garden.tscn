@@ -1,14 +1,12 @@
-[gd_scene load_steps=21 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
 [ext_resource type="PackedScene" uid="uid://dek1gbdwr8oxl" path="res://Scripts/Plants/CollectionLogUI.tscn" id="3_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
-[ext_resource type="Resource" uid="uid://bjtu7ibgtetl4" path="res://Resources/Plants/R_Plant_Thyme.tres" id="5_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
-[ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="7_h3sb3"]
 [ext_resource type="Script" uid="uid://8qurl7ipw1im" path="res://Resources/Dialog/Dialog.gd" id="8_qiffv"]
 [ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="9_qiffv"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
@@ -36,8 +34,6 @@ metadata/_custom_type_script = "uid://8qurl7ipw1im"
 script = ExtResource("8_qiffv")
 dialogs = {}
 metadata/_custom_type_script = "uid://8qurl7ipw1im"
-
-[sub_resource type="BoxMesh" id="BoxMesh_glj77"]
 
 [node name="root" type="Node"]
 
@@ -89,10 +85,6 @@ mesh = SubResource("PlaneMesh_owpas")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973518, 0.00960135, -3.22922)
 planterState = 1
 
-[node name="Planter_Med2" parent="Planters" instance=ExtResource("4_ylav4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.45458, -2.38419e-07, -3.27021)
-Plant = ExtResource("5_r3nv0")
-
 [node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 4.37832, -2.38419e-07, -3.13547)
 
@@ -115,15 +107,10 @@ npc_name = "Hunt Mik"
 dialog_resource = SubResource("Resource_7psoa")
 
 [node name="NPC2" parent="." instance=ExtResource("9_qiffv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.77693, -0.214118, -2.17125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.30764, -0.214118, -1.42969)
 npc_id = "npc_2"
 npc_name = "bombardino crocodilo"
 dialog_resource = SubResource("Resource_qiffv")
-
-[node name="QuestItem" parent="." instance=ExtResource("7_h3sb3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287559, 0.529475, -1.829)
-item_id = "CUBE"
-item_mesh = SubResource("BoxMesh_glj77")
 
 [node name="Node3D" parent="." instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)

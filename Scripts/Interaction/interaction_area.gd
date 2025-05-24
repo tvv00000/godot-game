@@ -90,9 +90,10 @@ func _input(event: InputEvent) -> void:
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:
 	selectedInteractable.dirtRatio = dirtLevel
 	selectedInteractable.planterState = 1
-
+	selectedInteractable.planterStater(1)
 
 func _on_garden_ui_plant_planted(plant: String) -> void:
 	print("Saadud signaal istuta taim: ", plant)
 	selectedInteractable.Plant = load(plant)
 	selectedInteractable.planterState = 2
+	selectedInteractable.planterStater(2)
