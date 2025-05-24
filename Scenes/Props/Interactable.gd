@@ -14,4 +14,4 @@ extends Area3D
 	#
 #func onInteract():
 	#print("interact toimib")
-	#
+	#Collision: pea objektil layer 1/2, mask 1. Interactables mask 2, layer tühi.

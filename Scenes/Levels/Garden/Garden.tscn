@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=19 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" uid="uid://8qurl7ipw1im" path="res://Resources/Dialog/Dialog.gd" id="8_qiffv"]
 [ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="9_qiffv"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
+[ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)
@@ -82,7 +83,7 @@ mesh = SubResource("PlaneMesh_owpas")
 [node name="Planters" type="Node" parent="."]
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.973518, 0.00960135, -3.22922)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
 planterState = 1
 
 [node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
@@ -114,3 +115,6 @@ dialog_resource = SubResource("Resource_qiffv")
 
 [node name="Node3D" parent="." instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
+
+[node name="WorldMap" parent="." instance=ExtResource("11_r3nv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
