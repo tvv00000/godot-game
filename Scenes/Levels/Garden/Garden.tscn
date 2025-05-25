@@ -1,9 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=14 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
-[ext_resource type="PackedScene" uid="uid://dek1gbdwr8oxl" path="res://Scripts/Plants/CollectionLogUI.tscn" id="3_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
@@ -87,8 +86,6 @@ plant_index_menu = NodePath("../PlantIndexMenu")
 
 [node name="PlantIndexMenu" parent="CanvasLayer" node_paths=PackedStringArray("inventory_menu") instance=ExtResource("6_hxll0")]
 inventory_menu = NodePath("../PauseMenu")
-
-[node name="CollectionLogUI" parent="CanvasLayer" instance=ExtResource("3_3s34t")]
 
 [node name="Node3D" parent="." instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)

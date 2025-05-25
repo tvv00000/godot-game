@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ds5m8hyxes0mu"]
+[gd_scene load_steps=3 format=3 uid="uid://ds5m8hyxes0mu"]
 
 [ext_resource type="Script" uid="uid://cfabrje4i2w5j" path="res://Scenes/PauseMenus/PlantIndexMenu.gd" id="1_dx2xw"]
+[ext_resource type="PackedScene" uid="uid://dek1gbdwr8oxl" path="res://Scripts/Plants/CollectionLogUI.tscn" id="2_i4arw"]
 
 [node name="PlantIndexMenu" type="Control"]
 process_mode = 3
@@ -36,6 +37,11 @@ text = "Inventuur"
 [node name="OptionsMenu" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "PausiMenüü"
+
+[node name="CollectionLogUI" parent="PanelContainer" instance=ExtResource("2_i4arw")]
+layout_mode = 2
+size_flags_vertical = 4
+alignment = 1
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Inventory" to="." method="_on_inventory_pressed"]

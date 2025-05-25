@@ -7,4 +7,4 @@ func _ready() -> void:
 	pass
 	
 func onInteract():
-	print("interact toimib")
+	get_tree().change_scene_to_file("res://Scenes/Levels/Europe/Europe.tscn")
