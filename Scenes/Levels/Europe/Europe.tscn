@@ -349,3 +349,6 @@ plant_index_menu = NodePath("../PlantIndexMenu")
 
 [node name="PlantIndexMenu" parent="CanvasLayer" node_paths=PackedStringArray("inventory_menu") instance=ExtResource("15_va0j1")]
 inventory_menu = NodePath("../PauseMenu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.791043, 0.452441, -0.654555, 0.605686, 0.775713, 1.84235, 54.292)
