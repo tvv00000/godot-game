@@ -15,6 +15,8 @@ func _ready():
 # Update and set info
 func refresh_list():
 	plant_list.clear()
+	#testing
+	print("Refreshing list. Number of plants: ", CollectionManager.plants.size())
 	for plant in CollectionManager.plants:
 		var entry = plant.name
 		if plant.is_collected:
