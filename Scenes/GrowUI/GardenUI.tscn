@@ -42,7 +42,6 @@ text = "Season
 Date"
 
 [node name="DirtUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,16 +84,26 @@ mesh = ExtResource("2_8dd0n")
 [node name="ScreenContainer" type="VBoxContainer" parent="DirtUI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.225
-anchor_top = 4.025
+anchor_left = -0.07
+anchor_top = 4.77
 anchor_right = 1.8
-anchor_bottom = 4.025
-offset_left = -217.0
-offset_top = -120.0
-offset_right = 217.0
+anchor_bottom = 4.935
+offset_left = -219.0
+offset_top = -413.0
+offset_right = 220.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 182
+theme_override_constants/separation = 32
+
+[node name="Label" type="Label" parent="DirtUI/ScreenContainer"]
+layout_mode = 2
+text = "Täida pott mullaga"
+
+[node name="ClosePlantButton" type="Button" parent="DirtUI/ScreenContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Sulge Aken"
 
 [node name="ButtonContainer" type="HBoxContainer" parent="DirtUI/ScreenContainer"]
 layout_mode = 2
@@ -115,7 +124,7 @@ theme_override_constants/separation = 9
 [node name="PotLabel" type="Label" parent="DirtUI/ScreenContainer/ButtonContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-text = "Potis On"
+text = "Pott on täidetud 0%"
 
 [node name="DirtLabel" type="Label" parent="DirtUI/ScreenContainer/ButtonContainer/VBoxContainer"]
 layout_mode = 2
@@ -212,6 +221,7 @@ layout_mode = 2
 text = "Sulge Aken"
 
 [node name="CareUI" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -270,6 +280,7 @@ text = "Hetkel Kasvab: "
 [node name="Plantname" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 
+[connection signal="pressed" from="DirtUI/ScreenContainer/ClosePlantButton" to="." method="_on_close_plant_button_pressed"]
 [connection signal="pressed" from="DirtUI/ScreenContainer/ButtonContainer/DirtButton" to="." method="_on_dirt_button_pressed"]
 [connection signal="pressed" from="DirtUI/ScreenContainer/ButtonContainer/GravelButton" to="." method="_on_gravel_button_pressed"]
 [connection signal="pressed" from="PlantUI/DirtUI BG/HBoxContainer/PlantNamesContainer/ThymeButton" to="." method="_on_thyme_button_pressed"]

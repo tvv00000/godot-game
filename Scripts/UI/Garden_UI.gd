@@ -21,11 +21,15 @@ func setDirtratio(pressed):
 	#print("täidetud on: ", fillLevel, "% ja ratio on: ", dirtRatio, "%")
 	$"DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/GravelLabel".set_text("Kruusa On: {gravel}".format({"gravel": (fillLevel - dirtRatio)}))
 	$"DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/DirtLabel".set_text("Mulda On: {dirt}".format({"dirt": dirtRatio}))
+	$DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/PotLabel.set_text("Pott on täidetud {fillLevel}%".format({"fillLevel": fillLevel}))
 	if fillLevel == 100:
 		
 		print("muld täis, saadetud signaal to interaction_area: dirtFilled_Signal", dirtRatio)
 		Global.planterDirtRatio = dirtRatio
 		dirtFilled_Signal.emit(dirtRatio)
+		#resetib ui
+		dirtRatio = 0
+		fillLevel = 0
 		setUiState(1)
 
 #0 = muld, 1 = istuta, 2 = hoolda. Sama mis garden gamemode. 3  = ainult hud
@@ -37,6 +41,12 @@ func setUiState(inputState):
 		$CareUI.hide()
 		$PlantUI.hide()
 		$DirtUI.show()
+		
+		#update dirt labels
+		$"DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/GravelLabel".set_text("Kruusa On: {gravel}".format({"gravel": (fillLevel - dirtRatio)}))
+		$"DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/DirtLabel".set_text("Mulda On: {dirt}".format({"dirt": dirtRatio}))
+		$DirtUI/ScreenContainer/ButtonContainer/VBoxContainer/PotLabel.set_text("Pott on täidetud {fillLevel}%".format({"fillLevel": fillLevel}))
+		
 	elif inputState == 1:
 	#plantstate
 		uiState = 1
