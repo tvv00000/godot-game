@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=23 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://c0b2ngxrxxwwx" path="res://Art/Props/Europe/Med_House_Wall.tscn" id="11_6uhru"]
 [ext_resource type="PackedScene" uid="uid://dfnhy4mfqxms2" path="res://Art/Props/Europe/Med_House_Wall_Post.tscn" id="12_g17w6"]
 [ext_resource type="ArrayMesh" uid="uid://byx5pqu0bbuby" path="res://Art/Props/Europe/Med_House_Wall_Post.obj" id="13_jpb58"]
+[ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="14_d152i"]
+[ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="15_va0j1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
 
@@ -339,3 +341,11 @@ mesh = ExtResource("13_jpb58")
 
 [node name="Prop Template29" parent="." instance=ExtResource("8_d152i")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87839, 0.1819, 45.9703)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("plant_index_menu") instance=ExtResource("14_d152i")]
+plant_index_menu = NodePath("../PlantIndexMenu")
+
+[node name="PlantIndexMenu" parent="CanvasLayer" node_paths=PackedStringArray("inventory_menu") instance=ExtResource("15_va0j1")]
+inventory_menu = NodePath("../PauseMenu")
