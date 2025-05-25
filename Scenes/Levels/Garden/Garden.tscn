@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=15 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
+[ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="7_owpas"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
 
@@ -81,11 +82,11 @@ transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("plant_index_menu") instance=ExtResource("5_ylav4")]
-plant_index_menu = NodePath("../PlantIndexMenu")
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_ylav4")]
 
-[node name="PlantIndexMenu" parent="CanvasLayer" node_paths=PackedStringArray("inventory_menu") instance=ExtResource("6_hxll0")]
-inventory_menu = NodePath("../PauseMenu")
+[node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("6_hxll0")]
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("7_owpas")]
 
 [node name="Node3D" parent="." instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)

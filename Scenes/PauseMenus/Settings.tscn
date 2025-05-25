@@ -1,0 +1,50 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgl5onmll7k6n"]
+
+[ext_resource type="Script" uid="uid://cfabrje4i2w5j" path="res://Scenes/PauseMenus/PlantIndexMenu.gd" id="1_ncbsw"]
+
+[node name="PlantIndexMenu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ncbsw")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Tagasi"
+
+[node name="Resume2" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Graafika"
+
+[node name="Resume3" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Heli"
+
+[node name="Resume4" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Lõpeta mäng"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume2" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume2" to="." method="_on_resume_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume3" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume3" to="." method="_on_resume_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume4" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume4" to="." method="_on_resume_4_pressed"]

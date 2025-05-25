@@ -1,6 +1,7 @@
 extends Control
 
-@export var plant_index_menu : Node
+@onready var plant_index_menu = $"../PlantIndexMenu"
+@onready var Settings = $"../SettingsMenu"
 
 func resume():
 	get_tree().paused = false
@@ -24,7 +25,8 @@ func _on_plant_index_pressed() -> void:
 	plant_index_menu.show()
 
 func _on_options_menu_pressed() -> void:
-	pass	
+	hide()
+	Settings.show()
 
 func _process(delta: float) -> void:
 	testTab()

@@ -39,7 +39,7 @@ text = "Seaded"
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-text = "Sule Mäng"
+text = "Lõpeta mäng"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
