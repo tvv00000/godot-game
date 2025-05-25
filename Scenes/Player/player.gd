@@ -6,6 +6,8 @@ const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 
+@export var inventory: Inventory
+@onready var sfx_jump = $sfx_jump
 
 @onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
@@ -29,6 +31,7 @@ func _physics_process(delta: float) -> void:
 		# Handle jump.
 		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			sfx_jump.play()
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
