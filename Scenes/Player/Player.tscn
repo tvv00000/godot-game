@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=9 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
-[ext_resource type="Resource" uid="uid://d2aledfkjxuj4" path="res://Inventory/playerInventory.tres" id="2_4wape"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
@@ -18,7 +17,6 @@ radius = 0.522461
 
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_ft8w5")
-inventory = ExtResource("2_4wape")
 
 [node name="Pivot" type="Node3D" parent="."]
 
