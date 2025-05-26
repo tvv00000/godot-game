@@ -45,9 +45,9 @@ offset_right = 835.0
 offset_bottom = 334.0
 text = "POLE VEEL"
 
-[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]

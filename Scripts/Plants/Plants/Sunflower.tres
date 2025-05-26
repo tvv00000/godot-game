@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_pg3tj")
-name = "Sunflower"
-description = "A tall, bright flower that follows the sun"
+name = "Päevalill"
+description = "Kõrge, särav lill, mis järgneb päikesele"
 icon = ExtResource("1_q258n")
 is_discovered = true
 is_collected = true

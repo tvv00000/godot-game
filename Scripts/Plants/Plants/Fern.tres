@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("2_a22t1")
-name = "Fern"
-description = "lush green plant that loves shade"
+name = "Sõnajalg"
+description = "Lopsakas roheline taim, mis armastab varju"
 icon = ExtResource("1_q5tjo")
 is_discovered = true
 is_collected = false

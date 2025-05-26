@@ -10,21 +10,14 @@ func _ready() -> void:
 
 func _on_resume_pressed() -> void:
 	hide()
+	inventory_menu.resume()
+
+
+func _on_inventory_pressed() -> void:
+	hide()
 	inventory_menu.show()
 
 
 func _on_options_menu_pressed() -> void:
 	hide()
 	Settings.show()
-
-
-func _on_resume_2_pressed() -> void:
-	OS.alert('Pole veel', 'alert')
-
-
-func _on_resume_3_pressed() -> void:
-	OS.alert('Pole veel', 'alert')
-
-
-func _on_resume_4_pressed() -> void:
-	get_tree().quit()

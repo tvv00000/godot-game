@@ -29,22 +29,19 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Tagasi"
 
-[node name="Resume2" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Graafika" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Graafika"
 
-[node name="Resume3" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Heli" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Heli"
 
-[node name="Resume4" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Quit" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Lõpeta mäng"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume2" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume2" to="." method="_on_resume_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume3" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume3" to="." method="_on_resume_3_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume4" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume4" to="." method="_on_resume_4_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Graafika" to="." method="_on_resume_2_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Heli" to="." method="_on_resume_3_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_resume_4_pressed"]

@@ -20,9 +20,9 @@ func refresh_list():
 	for plant in CollectionManager.plants:
 		var entry = plant.name
 		if plant.is_collected:
-			entry += " ✅"
+			entry += " (OLEMAS)"
 		elif plant.is_discovered:
-			entry += " 👀"
+			entry += " (AVASTATUD)"
 		else:
 			entry = "???"
 		plant_list.add_item(entry)
@@ -42,4 +42,4 @@ func _on_plant_selected(index):
 		icon.texture = null
 		name_label.text = "???"
 		desc_label.clear()
-		desc_label.append_text("You haven't discovered this plant yet.")
+		desc_label.append_text("Sa pole seda taime veel avastanud.")

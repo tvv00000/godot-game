@@ -5,8 +5,8 @@
 
 [resource]
 script = ExtResource("1_v2lgq")
-name = "Daisy"
-description = "A small, cheerful white flower"
+name = "Karikakar"
+description = "Väike, rõõmsameelne valge lill"
 icon = ExtResource("1_2f7sk")
 is_discovered = false
 is_collected = false
