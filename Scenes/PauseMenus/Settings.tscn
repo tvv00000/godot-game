@@ -42,6 +42,6 @@ layout_mode = 2
 text = "Lõpeta mäng"
 
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Graafika" to="." method="_on_resume_2_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Heli" to="." method="_on_resume_3_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_resume_4_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Graafika" to="." method="_on_graafika_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Heli" to="." method="_on_heli_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
