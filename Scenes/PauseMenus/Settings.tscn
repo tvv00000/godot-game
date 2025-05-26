@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgl5onmll7k6n"]
 
-[ext_resource type="Script" uid="uid://cfabrje4i2w5j" path="res://Scenes/PauseMenus/PlantIndexMenu.gd" id="1_ncbsw"]
+[ext_resource type="Script" uid="uid://bi0qn1bsegxw8" path="res://Scenes/PauseMenus/Settings.gd" id="1_nmx2r"]
 
 [node name="PlantIndexMenu" type="Control"]
 process_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_ncbsw")
+script = ExtResource("1_nmx2r")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 1

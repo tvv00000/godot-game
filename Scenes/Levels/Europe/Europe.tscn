@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=24 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -15,6 +15,7 @@
 [ext_resource type="ArrayMesh" uid="uid://byx5pqu0bbuby" path="res://Art/Props/Europe/Med_House_Wall_Post.obj" id="13_jpb58"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="14_d152i"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="15_va0j1"]
+[ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="16_va0j1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
 
@@ -342,13 +343,13 @@ mesh = ExtResource("13_jpb58")
 [node name="Prop Template29" parent="." instance=ExtResource("8_d152i")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.87839, 0.1819, 45.9703)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="PauseMenu" parent="CanvasLayer" node_paths=PackedStringArray("plant_index_menu") instance=ExtResource("14_d152i")]
-plant_index_menu = NodePath("../PlantIndexMenu")
-
-[node name="PlantIndexMenu" parent="CanvasLayer" node_paths=PackedStringArray("inventory_menu") instance=ExtResource("15_va0j1")]
-inventory_menu = NodePath("../PauseMenu")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.791043, 0.452441, -0.654555, 0.605686, 0.775713, 1.84235, 54.292)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("14_d152i")]
+
+[node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("15_va0j1")]
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("16_va0j1")]
