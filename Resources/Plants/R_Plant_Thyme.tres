@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_hckti")
-name = "Tüümian"
-toughness = 1
-waterNeed = 100.0
+name = "taimenimi"
+toughness = 10
+waterNeed = 100
 growSpeed = 1
-dirtNeed = 80
-sunNeed = 5
-fertNeed = 3
+dirtNeed = 0
+sunNeed = 0
+fertNeed = 0
 metadata/_custom_type_script = "uid://wxnhp87gpi1o"

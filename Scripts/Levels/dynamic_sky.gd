@@ -26,13 +26,11 @@ func setTime():
 		animationPlayer.seek(currentTime, true)
 		animationPlayer.pause()
 		
+	print("#########################################################################")
 	print("Welcome, developer! Current time is: ", currentTime, " Day/night cycle activation is: ", enableCycle, " and timescale is: ", timeScale)
-	print("Current animation time is: ", animationPlayer.current_animation_position)
-	print(" animatsioon liigub ajaskaalal ", timeScale)
-	
+	#print("Current animation time is: ", animationPlayer.current_animation_position)
+	print("#########################################################################")
 
 
 func _ready() -> void:
-
-
 	setTime()

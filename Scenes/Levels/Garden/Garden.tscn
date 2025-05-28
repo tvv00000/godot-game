@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=16 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
+[ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_typy8"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
@@ -25,6 +26,8 @@ size = Vector3(0.234497, 11.4411, 13.23)
 [sub_resource type="PlaneMesh" id="PlaneMesh_owpas"]
 
 [node name="root" type="Node"]
+
+[node name="GrowthTimer" type="Node" parent="."]
 
 [node name="dynamicSky" parent="." instance=ExtResource("1_owpas")]
 transform = Transform3D(-0.183279, 0.170708, 0.968126, 0.0317534, 0.985322, -0.167729, -0.982548, 0, -0.18601, 0, 0, 0)
@@ -69,6 +72,7 @@ transform = Transform3D(2.67075, -2.0208, 1.92159e-07, 1.5634e-15, -9.16158e-08,
 mesh = SubResource("PlaneMesh_owpas")
 
 [node name="Planters" type="Node" parent="."]
+script = ExtResource("1_typy8")
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
@@ -90,6 +94,10 @@ transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.
 
 [node name="Node3D" parent="." instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
+planterState = 2
+dirtRatio = 80
+moisture = 100
+fertilizer = 50
 
 [node name="WorldMap" parent="." instance=ExtResource("11_r3nv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
