@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+#TODO: tee taime elu ja suremine korda vms
+
 #võtab asju interactable area3d nodelt.
 @onready var Interactable: Area3D = $Interactable
 @export var interactName: String
@@ -7,6 +9,7 @@ extends StaticBody3D
 @export var Plant: Resource = null
 var plantGrowth: int = 0
 var growAmount: int = 0
+var plantHealth: int = 0
 #0 - tühi, 1 - mullaga, 2 - taimega
 @export var planterState: int
 @export var dirtRatio: int
@@ -39,13 +42,11 @@ func planterStater(setState):
 #see funk haldab taimede kasvu, pane readysse ja oninteracti et ta uuendaks mõistlikult
 func growPlant():
 	
-	print("growplant func käivitatus, kasvatab {taim}".format({"taim": Plant.name}))
-	if planterState == 2:
-		print("growing plant")
+	if planterState == 2 and Plant and plantGrowth < 100 and plantHealth > 0:
 		growAmount = 0
-		if moisture > Plant.waterNeed + Plant.toughness:
+		if moisture > Plant.waterNeed - Plant.toughness:
 			growAmount += 5
-		if fertilizer > Plant.fertNeed + Plant.toughness:
+		if fertilizer > Plant.fertNeed - Plant.toughness:
 			growAmount += 5
 		if dirtRatio > Plant.dirtNeed - 10 and dirtRatio < Plant.dirtNeed + 10:
 			growAmount += 5
@@ -53,11 +54,40 @@ func growPlant():
 				growAmount += 5
 				
 		plantGrowth += growAmount
-		print("plant grew {amount}".format({"amount": growAmount}))
+		if growAmount > 10 - Plant.toughness and plantHealth < 100:
+			plantHealth += 10
+			if plantHealth > Plant.health:
+				plantHealth = Plant.health
+			
+			
+		print("plant grew {amount}. total Grow: {growTotal}".format({"amount": growAmount, "growTotal": plantGrowth}))
 		
-		if plantGrowth > 100:
-			print("Plant fully grown!")
+	if plantGrowth > 100:
+		plantGrowth = 100
+		print("Plant fully grown!")
+	
+	damagePlant()
+	consumeResources()
+
+func consumeResources():
+	moisture -= 10
+	if moisture < 0:
+		moisture = 0
+	
+	fertilizer -= 5
+	if fertilizer < 0:
+		fertilizer = 0
 		 
+func damagePlant():
+	var plantDamage: int = 0
+	if moisture < Plant.waterNeed:
+		plantDamage += 10
+	if fertilizer < Plant.fertNeed:
+		plantDamage += 10
+	
+	plantHealth -= plantDamage
+		
+	
 func _ready():
 	planterStater(planterState)
 	

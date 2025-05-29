@@ -4,7 +4,7 @@
 
 [resource]
 script = ExtResource("1_hckti")
-name = "taimenimi"
+name = "Tüümian"
 toughness = 10
 waterNeed = 100
 growSpeed = 1

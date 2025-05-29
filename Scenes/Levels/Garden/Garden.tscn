@@ -84,6 +84,13 @@ transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.004
 [node name="Planter_Med4" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.00476467, 0.174257, -0.00700109, 0.984675, -3.32035, -2.38419e-07, 0.603617)
 
+[node name="Planter_Large" parent="Planters" instance=ExtResource("10_typy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
+planterState = 2
+dirtRatio = 80
+moisture = 100
+fertilizer = 50
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_ylav4")]
@@ -91,13 +98,6 @@ transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.
 [node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("6_hxll0")]
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("7_owpas")]
-
-[node name="Node3D" parent="." instance=ExtResource("10_typy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
-planterState = 2
-dirtRatio = 80
-moisture = 100
-fertilizer = 50
 
 [node name="WorldMap" parent="." instance=ExtResource("11_r3nv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
