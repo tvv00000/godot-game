@@ -20,6 +20,8 @@ collision_layer = 3
 script = ExtResource("1_skqxc")
 interactName = "Hoolda suuri taimi"
 
+[node name="PlantSprite" type="Sprite3D" parent="."]
+
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = ExtResource("2_4hykt")
 surface_material_override/0 = ExtResource("3_8r8hu")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c5atrhgnpgr2o"]
+[gd_scene load_steps=11 format=3 uid="uid://c5atrhgnpgr2o"]
 
 [ext_resource type="Script" uid="uid://wmq1w5524m4o" path="res://Scripts/Growing/Planter.gd" id="1_d3eja"]
 [ext_resource type="ArrayMesh" uid="uid://f5dcn2nq6al4" path="res://Art/Props/Garden/Planter_Med.obj" id="1_lywwl"]
 [ext_resource type="Material" uid="uid://yxavt6nyhfsb" path="res://Art/Props/Garden/Materials/M_Planter_Plastic.tres" id="2_brgg6"]
+[ext_resource type="Texture2D" uid="uid://c3hvtt2bv0c4v" path="res://Art/Plants/Thyme.png" id="2_qdmk5"]
 [ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="3_d3eja"]
 [ext_resource type="ArrayMesh" uid="uid://ctqxrojqbfl86" path="res://Art/Props/Garden/Planter_Med_Dirt.obj" id="5_ctedo"]
 [ext_resource type="PackedScene" uid="uid://dv3yhn04yvlyw" path="res://Scripts/Interaction/interactable.tscn" id="5_d3eja"]
@@ -18,6 +19,12 @@ size = Vector3(1, 0.529907, 1)
 collision_layer = 3
 script = ExtResource("1_d3eja")
 interactName = "Hoolda Taimi"
+
+[node name="PlantSprite" type="Sprite3D" parent="."]
+transform = Transform3D(0.35118, 0, 0, 0, 0.35118, 0, 0, 0, 1, 0, 0.798662, 0)
+texture = ExtResource("2_qdmk5")
+hframes = 5
+frame = 1
 
 [node name="PlanterMesh" type="MeshInstance3D" parent="."]
 mesh = ExtResource("1_lywwl")

@@ -42,7 +42,7 @@ func planterStater(setState):
 #see funk haldab taimede kasvu, pane readysse ja oninteracti et ta uuendaks mõistlikult
 func growPlant():
 	
-	if planterState == 2 and Plant and plantGrowth < 100 and plantHealth > 0:
+	if planterState == 2 and plantGrowth < 100 and plantHealth > 0:
 		growAmount = 0
 		if moisture > Plant.waterNeed - Plant.toughness:
 			growAmount += 5
@@ -65,9 +65,10 @@ func growPlant():
 	if plantGrowth > 100:
 		plantGrowth = 100
 		print("Plant fully grown!")
-	
-	damagePlant()
-	consumeResources()
+	if planterState == 2:
+		damagePlant()
+		consumeResources()
+		updatePlantSprite()
 
 func consumeResources():
 	moisture -= 10
@@ -87,9 +88,38 @@ func damagePlant():
 	
 	plantHealth -= plantDamage
 		
+#TODO: pane see funkama.
+func updateDirt(moistness):
+	var material = $DirtMesh.get_active_material(0)
+	var dirtDry: Color = Color(0.25, 0.21, 0.12) 
+	var dirtWet: Color = Color(0.11, 0.06, 0.02)
+	material.albedo_color = dirtDry + (dirtWet - dirtDry) * (moistness / 100) 
+	
+	
+func updatePlantSprite():
+	var Sprite = $PlantSprite
+	if !planterState == 2:
+		Sprite.texture = null
+		Sprite.hide()
+	else:
+		Sprite.show()
+		if plantHealth < 30:
+			Sprite.frame = 4
+		elif plantGrowth < 30:
+			Sprite.frame + 0
+		elif plantGrowth > 30 and plantGrowth < 60:
+			Sprite.frame = 1
+		elif plantGrowth > 60:
+			Sprite.frame = 2
+		elif plantGrowth == 100:
+			Sprite.frame = 3
+		
+		
 	
 func _ready():
 	planterStater(planterState)
+	updateDirt(moisture)
+	updatePlantSprite()
 	
 func onInteract():
 	if Plant:
