@@ -50,7 +50,7 @@ func setUiState(inputState):
 	elif inputState == 1:
 	#plantstate
 		uiState = 1
-	
+
 		$CareUI.hide()
 		$DirtUI.hide()
 		$PlantUI.show()
@@ -95,8 +95,14 @@ func _on_thyme_button_pressed() -> void:
 	print("Saadetud signaal: Istuta taim ", plantResourcePath)
 
 
-func _on_interaction_area_show_garden_ui(state: int, plantName: String) -> void:
-	print("GardenUI sai Signaali showGardenUI state:", state, plantName)
+func _on_interaction_area_show_garden_ui(state: int, plantName: String, dirtLevel: int, moistureLevel: int, fertilizerLevel: int, plantGrowth: int, plantHealth: int) -> void:
+	prints("GardenUI sai Signaali showGardenUI state:", state, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 	if plantName != "null":
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/Plantname".set_text(plantName)
 	setUiState(state)
+	if state >= 1:
+		$"PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer/DirtLabel".set_text("Mulda On: {dirt}".format({"dirt": dirtLevel}))
+		$"PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer/GravelLabel".set_text("Kruusa On: {gravel}".format({"gravel": (100 - dirtLevel)}))
+		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/MoistureLabel".set_text(str(moistureLevel))
+		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(fertilizerLevel))
+		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/GrowthLabel".set_text(str(plantGrowth))

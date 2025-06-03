@@ -55,8 +55,7 @@ func _on_body_exited(body: Node3D) -> void:
 	interactablesInRange.erase(body)
 	updateInteractables()
 	print("left interactable range of: ", body, " Active object: ", selectedInteractable)
-	
-	
+
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI_Interact"):
 		print("interacting with: ", selectedInteractable)
@@ -70,17 +69,20 @@ func _input(event: InputEvent) -> void:
 			#see saadab teate et võta ui ette.
 			var planterState: int = selectedInteractable.planterState
 			var plantName: String = "null"
+			var dirtLevel: int = selectedInteractable.dirtRatio
+			var moistureLevel: int = selectedInteractable.moisture
+			var fertilizerLevel: int = selectedInteractable.fertilizer
+			var plantGrowth: int = selectedInteractable.plantGrowth
+			var plantHealth: int = selectedInteractable.plantHealth
 			
 			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
-			emit_signal("show_GardenUI", planterState, plantName) 
+			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
-				emit_signal("show_GardenUI", planterState, plantName)
+				emit_signal("show_GardenUI", planterState, plantName, dirtLevel)
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
-			
-			
-		
+
 		if selectedInteractable:
 			selectedInteractable.onInteract()
 		else:

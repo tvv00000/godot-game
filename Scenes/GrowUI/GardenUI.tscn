@@ -42,6 +42,7 @@ text = "Season
 Date"
 
 [node name="DirtUI" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -221,7 +222,6 @@ layout_mode = 2
 text = "Sulge Aken"
 
 [node name="CareUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -279,6 +279,30 @@ text = "Hetkel Kasvab: "
 
 [node name="Plantname" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+
+[node name="Niiskust" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Niiskust on:"
+
+[node name="MoistureLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0%"
+
+[node name="Väetist" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Väetist on:"
+
+[node name="FertLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0%"
+
+[node name="Taimekasv" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Taime kasv on:"
+
+[node name="GrowthLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "0%"
 
 [connection signal="pressed" from="DirtUI/ScreenContainer/ClosePlantButton" to="." method="_on_close_plant_button_pressed"]
 [connection signal="pressed" from="DirtUI/ScreenContainer/ButtonContainer/DirtButton" to="." method="_on_dirt_button_pressed"]
