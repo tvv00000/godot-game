@@ -2,6 +2,7 @@ extends Control
 
 @onready var plant_index_menu = $"../PlantIndexMenu"
 @onready var Settings = $"../SettingsMenu"
+@onready var SettingsSettings = $"../SettingsSettings"
 
 func resume():
 	get_tree().paused = false
@@ -16,6 +17,9 @@ func testTab():
 		pause()
 	elif Input.is_action_just_pressed('OpenInv') and get_tree().paused == true:
 		resume()
+		plant_index_menu.hide()
+		Settings.hide()
+		SettingsSettings.hide()
 
 func _on_resume_pressed() -> void:
 	resume()

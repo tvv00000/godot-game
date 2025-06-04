@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=17 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="7_owpas"]
+[ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="10_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
 
@@ -98,6 +99,8 @@ fertilizer = 50
 [node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("6_hxll0")]
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("7_owpas")]
+
+[node name="SettingsSettings" parent="CanvasLayer" instance=ExtResource("10_r3nv0")]
 
 [node name="WorldMap" parent="." instance=ExtResource("11_r3nv0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
