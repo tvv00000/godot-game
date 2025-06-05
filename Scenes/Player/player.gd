@@ -6,6 +6,8 @@ const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 
+@export var inventory: Inventory
+
 @onready var sfx_jump = $sfx_jump
 
 @onready var ray_cast_3d = $RayCast3D
@@ -70,3 +72,7 @@ func _input(event):
 					
 				elif target.is_in_group("Planter"):
 					print("cesci n'est pas une planteur")
+
+
+func collect(item):
+	inventory.insert(item)

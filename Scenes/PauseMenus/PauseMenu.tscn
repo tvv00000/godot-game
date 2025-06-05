@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cwrf1vwdkr505"]
+[gd_scene load_steps=3 format=3 uid="uid://cwrf1vwdkr505"]
 
 [ext_resource type="Script" uid="uid://2p4y2rjmtmsb" path="res://Scenes/PauseMenus/PauseMenu.gd" id="1_flhmi"]
+[ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="2_d2kfc"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -45,9 +46,15 @@ offset_right = 835.0
 offset_bottom = 334.0
 text = "POLE VEEL"
 
-[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[node name="Inv_UI" parent="." instance=ExtResource("2_d2kfc")]
+offset_left = 70.0
+offset_top = 113.0
+offset_right = 110.0
+offset_bottom = 153.0
+
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]

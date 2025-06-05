@@ -6,6 +6,9 @@ extends Area3D
 @export var item_id: String = ""
 @export var item_quantity: int = 1
 @export var item_mesh: Mesh
+@export var inv_item: InvItem
+var player = null
+
 
 func _ready():
 	# Show mesh in the game
@@ -23,5 +26,7 @@ func start_interact():
 	print("I am an item!")
 
 
-func _on_body_entered(body: Node3D) -> void:
+func _on_body_entered(body: CharacterBody3D) -> void:
 	print("I am an item!")
+	player = body
+	player.collect(inv_item)

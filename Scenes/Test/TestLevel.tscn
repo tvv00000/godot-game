@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=13 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="4_wlpxy"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="6_f1cbr"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="6_nqdq4"]
+[ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="8_62gx1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
@@ -85,6 +86,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500888, 0.041161, -2.1009)
 
 [node name="QuestItem" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98986, 0.541161, -0.623392)
+inv_item = ExtResource("7_7hlls")
 
 [node name="Planter_Med" parent="." instance=ExtResource("6_f1cbr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75033, 0.0642692, 3.16017)
