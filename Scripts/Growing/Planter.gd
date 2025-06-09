@@ -107,6 +107,9 @@ func uprootPlant():
 	planterStater(0)
 	print("taim uprootitud (juurest üles)")
 
+func waterPlant():
+	moisture = 100
+
 #TODO: pane see funkama.
 func updateDirt(moistness):
 	var material = $DirtMesh.get_active_material(0)

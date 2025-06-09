@@ -10,6 +10,9 @@ var fillLevel: int = 0
 signal dirtFilled_Signal(dirtLevel: int)
 signal plantPlanted(plant: Resource)
 signal uprootPlant()
+#see signaal annab teada kas 0) taaime kasteti, 1) taime väetati
+signal plantCare(careType: int)
+signal movementEnabled()
 
 #see funk laseb sul klikkida ühel või teisel nupul ja sellega määrata ära palju mulda või kruusa soovid
 #potti. Kui pott saab täis läheb automaatselt state 2 peale. 
@@ -69,6 +72,7 @@ func setUiState(inputState):
 		$PlantUI.hide()
 		$CareUI.hide()
 		$DateTime.show()
+		emit_signal("movementEnabled")
 
 
 #Mulla paneku nupud. Kutsuvad esile lihtsalt setDirtRatio funki. 
@@ -111,3 +115,13 @@ func _on_interaction_area_show_garden_ui(state: int, plantName: String, dirtLeve
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/MoistureLabel".set_text(str(moistureLevel))
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(fertilizerLevel))
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/GrowthLabel".set_text(str(plantGrowth))
+
+
+func _on_wateringButton_pressed() -> void:
+	emit_signal("plantCare" ,0)
+	$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/MoistureLabel".set_text(str(100))
+
+
+func _on_fertilize_button_pressed() -> void:
+	emit_signal("plantCare", 1)
+	$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(100))
