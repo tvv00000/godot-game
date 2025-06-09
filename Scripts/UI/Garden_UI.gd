@@ -89,7 +89,7 @@ func _on_close_plant_button_pressed() -> void:
 
 #Saadab välja tüümiani taime istutamise signaali.
 func _on_thyme_button_pressed() -> void:
-	var plantResourcePath: String = "res://Resources/Plants/R_Plant_Thyme.tres"
+	var plantResourcePath: String = "res://Scripts/Plants/Plants/Thyme.tres"
 	emit_signal("plantPlanted", plantResourcePath)
 	setUiState(3)
 	
