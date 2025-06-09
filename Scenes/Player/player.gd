@@ -77,3 +77,10 @@ func _input(event):
 
 func collect(item):
 	inventory.insert(item)
+
+func _on_signal_movement_enabled() -> void:
+	can_move = true
+
+
+func _on_movement_disabled() -> void:
+	can_move = false

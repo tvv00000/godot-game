@@ -14,6 +14,7 @@ var label: Label3D = null
 var interactablesInRange := []
 var selectedInteractable: StaticBody3D = null
 signal show_GardenUI(state: int, plantName: String)
+signal movementDisabled()
 
 
 #See sorteerib lähedal olevad interactabled ja valib listist lähima objekti, kui array on suurem kui 1.
@@ -59,6 +60,8 @@ func _on_body_exited(body: Node3D) -> void:
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI_Interact"):
 		print("interacting with: ", selectedInteractable)
+		emit_signal("movementDisabled")
+		
 
 		#planteri interaktsioon, tõsta eraldi funki hiljem vist. 
 		#Planteri endaga on ühenduses see node siin. UI saadab siia signaale. 
@@ -102,3 +105,11 @@ func _on_garden_ui_plant_planted(plant: String) -> void:
 
 func _on_garden_ui_uproot_plant() -> void:
 	selectedInteractable.uprootPlant()
+
+
+func _on_garden_ui_plant_care(careType: int) -> void:
+	match careType:
+		0:
+			selectedInteractable.moisture = 100
+		1:
+			selectedInteractable.fertilizer = 100
