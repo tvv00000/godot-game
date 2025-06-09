@@ -8,8 +8,8 @@ var dirtRatio: int = 0
 var fillLevel: int = 0
 
 signal dirtFilled_Signal(dirtLevel: int)
-
 signal plantPlanted(plant: Resource)
+signal uprootPlant()
 
 #see funk laseb sul klikkida ühel või teisel nupul ja sellega määrata ära palju mulda või kruusa soovid
 #potti. Kui pott saab täis läheb automaatselt state 2 peale. 
@@ -92,8 +92,13 @@ func _on_thyme_button_pressed() -> void:
 	var plantResourcePath: String = "res://Resources/Plants/R_Plant_Thyme.tres"
 	emit_signal("plantPlanted", plantResourcePath)
 	setUiState(3)
+	
 	print("Saadetud signaal: Istuta taim ", plantResourcePath)
-
+	
+func _on_uproot_button_pressed() -> void:
+	setUiState(3)
+	#print("Saadetud signaal: delet plant")
+	emit_signal("uprootPlant")
 
 func _on_interaction_area_show_garden_ui(state: int, plantName: String, dirtLevel: int, moistureLevel: int, fertilizerLevel: int, plantGrowth: int, plantHealth: int) -> void:
 	prints("GardenUI sai Signaali showGardenUI state:", state, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)

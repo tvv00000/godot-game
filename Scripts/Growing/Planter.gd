@@ -19,6 +19,7 @@ var plantHealth: int = 0
 
 func planterStater(setState):
 	#Kui planter on tühi
+	planterState = setState
 	if planterState == 0:
 		$DirtMesh.hide()
 		Plant = null
@@ -98,6 +99,13 @@ func damagePlant():
 		plantDamage += 10
 	
 	plantHealth -= plantDamage
+
+func uprootPlant():
+	Plant = null
+	moisture = 0
+	fertilizer = 0
+	planterStater(0)
+	print("taim uprootitud (juurest üles)")
 
 #TODO: pane see funkama.
 func updateDirt(moistness):

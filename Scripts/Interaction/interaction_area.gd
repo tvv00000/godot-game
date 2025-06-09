@@ -99,3 +99,6 @@ func _on_garden_ui_plant_planted(plant: String) -> void:
 	selectedInteractable.Plant = load(plant)
 	selectedInteractable.planterState = 2
 	selectedInteractable.planterStater(2)
+
+func _on_garden_ui_uproot_plant() -> void:
+	selectedInteractable.uprootPlant()
