@@ -10,4 +10,5 @@ description = "Kõrge, särav lill, mis järgneb päikesele"
 icon = ExtResource("1_q258n")
 is_discovered = true
 is_collected = true
+growingTime = 11
 metadata/_custom_type_script = "uid://bnhlakg80as7c"

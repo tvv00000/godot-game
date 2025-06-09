@@ -10,4 +10,5 @@ description = "Lopsakas roheline taim, mis armastab varju"
 icon = ExtResource("1_q5tjo")
 is_discovered = true
 is_collected = false
+growingTime = 5
 metadata/_custom_type_script = "uid://bnhlakg80as7c"
