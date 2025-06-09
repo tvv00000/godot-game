@@ -7,6 +7,7 @@ const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 
 @export var inventory: Inventory
+var ui_ref: Control
 
 @onready var sfx_jump = $sfx_jump
 
@@ -76,3 +77,5 @@ func _input(event):
 
 func collect(item):
 	inventory.insert(item)
+	if ui_ref:
+		ui_ref.pickup_message(global_transform.origin, "Picked up: " + item.name)
