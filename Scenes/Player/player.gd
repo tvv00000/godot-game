@@ -71,7 +71,7 @@ func _input(event):
 					target.start_interact()
 					
 				elif target.is_in_group("Planter"):
-					print("cesci n'est pas une planteur")
+					print("ceci n'est pas une planteur")
 
 
 func collect(item):

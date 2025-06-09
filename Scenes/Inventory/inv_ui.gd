@@ -13,7 +13,7 @@ func _ready():
 
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
-		slots[i].update(inv.slots[i])
+		slots[i].update(inv.slots[i], i, inv)
 		
 
 func _process(delta):
