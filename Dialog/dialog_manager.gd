@@ -42,14 +42,8 @@ func handle_dialog_choice(option):
 		npc.set_dialog_state("start")
 		hide_dialog()
 	elif next_state == "give_quests":
-		pass
+		show_dialog(npc)
+		#add quest
 	else:
 		show_dialog(npc)
-	
-	
-	
-	
-	
-	
-	
 	

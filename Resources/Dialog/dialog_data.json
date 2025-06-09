@@ -6,38 +6,27 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Hello, adventurer! What do you need?",
+						"text": "Tere",
 						"options": {
-							"Ask About Town": "in_progress",
-							"Receive Quests": "give_quests",
-							"Say Goodbye": "exit"
+							"1": "in_progress",
+							"anna quest": "give_quests",
+							"BYE": "exit"
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "This town is known for its beautiful gardens and not so friendly NPC's.",
+						"text": "1",
 						"options": {
-							"Say Goodbye": "end",
-							"Go Back": "start"
+							"BYE": "exit",
+							"tagasi": "start"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "Sure! If I have anything, you can find it in your Quest Log.",
+						"text": "super, vota see quest",
 						"options": {
-							"Say Goodbye": "exit",
-							"Go Back": "start"
+							"END": "end"
 						}
-					},
-					{
-						"state": "end",
-						"text": "Goodbye, adventurer!",
-						"options": {}
-					},
-					{
-						"state": "exit",
-						"text": "Come back soon adventurer!",
-						"options": {}
 					}
 				]
 			},
@@ -46,57 +35,39 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Hey adventurer! Back so soon?",
+						"text": "tagasi?",
 						"options": {
-							"Continue Asking About Town": "in_progress",
-							"Receive Quests": "give_quests",
-							"Say Goodbye": "exit"
+							"1": "in_progress",
+							"END": "end",
+							"BYE": "exit"
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "I heard that Carl over there makes a mean cat-eye soup.",
+						"text": "1",
 						"options": {
-							"Say Goodbye": "end",
-							"Go Back": "start"
+							"END": "end",
+							"tagasi": "start"
 						}
-					},
-					{
-						"state": "give_quests",
-						"text": "Sure! If I have anything, you can find it in your Quest Log.",
-						"options": {
-							"Say Goodbye": "exit",
-							"Go Back": "start"
-						}
-					},
-					{
-						"state": "end",
-						"text": "Goodbye, adventurer!",
-						"options": {}
-					},
-					{
-						"state": "exit",
-						"text": "Come back soon!",
-						"options": {}
 					}
 				]
 			},
 			{
-				"branch_id": "npc_default",
+				"branch_id": "npc_1_3",
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Hey adventurer! Thanks again for helping me.",
+						"text": "ty et aitasid",
 						"options": {
-							"Receive Quests": "give_quests",
+							"1": "give_quests",
 							"Say Goodbye": "exit"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "Sure! If I have anything, you can find it in your Quest Log.",
+						"text": "1",
 						"options": {
-							"Go Back": "start"
+							"tagasi": "start"
 						}
 					}
 				]
