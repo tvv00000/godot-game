@@ -5,6 +5,7 @@ extends Panel
 
 var slotNr = null
 var inventory_ref = null
+var ui_ref: Control = null
 
 func update(slot: InvSlot, index: int, inventory: Inventory):
 	slotNr = index
@@ -21,8 +22,14 @@ func update(slot: InvSlot, index: int, inventory: Inventory):
 
 signal slot_input(slot_index: int, action: int)
 
-func _process(delta):
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+#Kasutab vasaklõpsul itemit
+func _input(event):
+	if event is InputEventMouseButton:
 		if inventory_ref and slotNr >= 0:
 			if get_global_rect().has_point(get_global_mouse_position()):
-				inventory_ref.use_item(slotNr)
+				if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+					inventory_ref.use_item(slotNr)
+				elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+					ui_ref.item_info_popup(inventory_ref.slots[slotNr], get_global_mouse_position())
+					print("Popup window opened")
+					
