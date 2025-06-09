@@ -2,6 +2,9 @@ extends Control
 
 @onready var inv: Inventory = preload("res://Scenes/Inventory/playerInv.tres")
 @onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var item_info = $ItemInfo
+@onready var info_label = $ItemInfo/VBoxContainer/Label
+@onready var info_label2 = $ItemInfo/VBoxContainer/Label2
 
 var is_open = false
 
@@ -13,8 +16,8 @@ func _ready():
 
 func update_slots():
 	for i in range(min(inv.slots.size(), slots.size())):
+		slots[i].ui_ref = self
 		slots[i].update(inv.slots[i], i, inv)
-		
 
 func _process(delta):
 	if Input.is_action_just_pressed("OpenInv"):
@@ -30,3 +33,10 @@ func open():
 func close():
 	visible = false
 	is_open = false
+
+#avab inventaris itemi peale vajutades väikse popup akna selle itemi infoga
+func item_info_popup(slot: InvSlot, position: Vector2):
+	if slot.item:
+		info_label.text = slot.item.name
+		info_label2.text = slot.item.description
+		item_info.popup(Rect2(position, Vector2(150, 50)))

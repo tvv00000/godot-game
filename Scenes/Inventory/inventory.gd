@@ -18,7 +18,7 @@ func insert(item: InvItem):
 			emptyslots[0].amount = 1
 	update.emit()
 
-
+#Kasutab itemi ning eemaldab selle inventarist
 func use_item(slotNr: int):
 	if slotNr < 0 or slotNr >= slots.size():
 		return
