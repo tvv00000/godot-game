@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://4b2tpghe2ji7"]
+
+[ext_resource type="Script" uid="uid://ddecgowpiffet" path="res://Scenes/Inventory/inv_item.gd" id="1_5ah72"]
+[ext_resource type="Texture2D" uid="uid://bybtqye5svj4x" path="res://Art/seemned.png" id="2_hrptw"]
+
+[resource]
+script = ExtResource("1_5ah72")
+name = "Seemned"
+texture = ExtResource("2_hrptw")
+description = "Keegi ei tea, mis siit kasvad võiks. Istuta ja saa teada."
+metadata/_custom_type_script = "uid://ddecgowpiffet"
