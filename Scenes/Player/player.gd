@@ -77,5 +77,3 @@ func _input(event):
 
 func collect(item):
 	inventory.insert(item)
-	if ui_ref:
-		ui_ref.pickup_message(global_transform.origin, "Picked up: " + item.name)
