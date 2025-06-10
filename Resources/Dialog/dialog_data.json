@@ -74,6 +74,7 @@
 			}
 		]
 	},
+	
 	"npc_2": {
 		"trees": [
 			{
@@ -81,11 +82,11 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Greetings, traveler! How can I assist you?",
+						"text": "Tere, Mina olen tüümian!",
 						"options": {
 							"Ask About Forest": "in_progress",
 							"Receive Quests": "give_quests",
-							"Say Goodbye": "exit"
+							"No hiljem siis": "exit"
 						}
 					},
 					{
