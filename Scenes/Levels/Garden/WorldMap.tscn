@@ -1,9 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://c7k883d00h3lv"]
+[gd_scene load_steps=8 format=3 uid="uid://c7k883d00h3lv"]
 
-[ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/WorldMap.png" id="1_5wnfc"]
+[ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/Sprites/UI/WorldMap.png" id="1_5wnfc"]
 [ext_resource type="Script" uid="uid://c2snv4gbkws0h" path="res://Scenes/world_map.gd" id="1_nnt0k"]
 [ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="2_nnt0k"]
-[ext_resource type="PackedScene" uid="uid://dv3yhn04yvlyw" path="res://Scripts/Interaction/interactable.tscn" id="3_ovel5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6g17r"]
 size = Vector3(2.07642, 1, 0.211548)
@@ -14,9 +13,6 @@ size = Vector3(2.07642, 1, 0.211548)
 albedo_texture = ExtResource("1_5wnfc")
 
 [sub_resource type="BoxMesh" id="BoxMesh_tp53l"]
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_0qwcn"]
-radius = 1.13428
 
 [node name="WorldMap" type="StaticBody3D" groups=["Map"]]
 collision_layer = 3
@@ -50,11 +46,3 @@ surface_material_override/0 = ExtResource("2_nnt0k")
 transform = Transform3D(-8.40947e-08, 0, -0.0986277, 0, 0.0506673, 0, 1.92386, 0, -4.31115e-09, 1.02721, 0, -0.018473)
 mesh = SubResource("BoxMesh_tp53l")
 surface_material_override/0 = ExtResource("2_nnt0k")
-
-[node name="Interactable" parent="." instance=ExtResource("3_ovel5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.820962, 0)
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.812422, 0)
-shape = SubResource("CylinderShape3D_0qwcn")

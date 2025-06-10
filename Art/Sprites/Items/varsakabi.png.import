@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc757da67fukc"
-path="res://.godot/imported/aug.png-4d7a869014ce3b310b02490e7b6d46cf.ctex"
+uid="uid://cqhghuf7pywyf"
+path="res://.godot/imported/varsakabi.png-8a71cb712dc02106f2b9936fba6ba2a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/aug.png"
-dest_files=["res://.godot/imported/aug.png-4d7a869014ce3b310b02490e7b6d46cf.ctex"]
+source_file="res://Art/Sprites/Items/varsakabi.png"
+dest_files=["res://.godot/imported/varsakabi.png-8a71cb712dc02106f2b9936fba6ba2a6.ctex"]
 
 [params]
 

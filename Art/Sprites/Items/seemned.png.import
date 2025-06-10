@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xr72pw18jaen"
-path.s3tc="res://.godot/imported/WorldMap.png-60b2857e62a37d65b6f8e861377ca94d.s3tc.ctex"
+uid="uid://bybtqye5svj4x"
+path.s3tc="res://.godot/imported/seemned.png-64132b8d03e1156d6e20d6598b00dfd0.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Art/WorldMap.png"
-dest_files=["res://.godot/imported/WorldMap.png-60b2857e62a37d65b6f8e861377ca94d.s3tc.ctex"]
+source_file="res://Art/Sprites/Items/seemned.png"
+dest_files=["res://.godot/imported/seemned.png-64132b8d03e1156d6e20d6598b00dfd0.s3tc.ctex"]
 
 [params]
 
