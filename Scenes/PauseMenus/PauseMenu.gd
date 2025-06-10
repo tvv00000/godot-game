@@ -23,7 +23,6 @@ func testTab():
 		resume()
 		plant_index_menu.hide()
 		Settings.hide()
-		SettingsSettings.hide()
 
 func _on_resume_pressed() -> void:
 	resume()
