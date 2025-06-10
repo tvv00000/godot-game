@@ -48,7 +48,7 @@ func item_info_popup(slot: InvSlot, position: Vector2):
 		use_button.show()
 		item_info.popup(Rect2(position, Vector2(150, 80)))
 
-
+#Itemi kasutamise nupp
 func _on_use_button_pressed() -> void:
 	if current_slot >= 0:
 		inv.use_item(current_slot)

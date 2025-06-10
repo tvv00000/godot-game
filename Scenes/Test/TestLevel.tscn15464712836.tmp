@@ -77,23 +77,8 @@ transform = Transform3D(0.0981387, 0, -0.995173, 0, 1, 0, 0.995173, 0, 0.0981387
 [node name="TreeProp12" parent="Props" instance=ExtResource("2_bdva1")]
 transform = Transform3D(-0.518937, 0, -0.854812, 0, 1, 0, 0.854812, 0, -0.518937, 10.4308, -9.53674e-07, -3.18992)
 
-[node name="TreeProp13" parent="Props" instance=ExtResource("2_bdva1")]
-transform = Transform3D(-0.518937, 0, -0.854812, 0, 1, 0, 0.854812, 0, -0.518937, -2.94646, 2.76299, -7.90066)
-
-[node name="TreeProp14" parent="Props" instance=ExtResource("2_bdva1")]
-transform = Transform3D(-0.518937, 0, -0.854812, 0, 1, 0, 0.854812, 0, -0.518937, 0.986345, 3.45291, -8.49239)
-
 [node name="BoxProp" parent="Props" instance=ExtResource("3_jxrda")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.51819, 0.502689, 0.593892)
-
-[node name="BoxProp3" parent="Props" instance=ExtResource("3_jxrda")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24881, 1.57899, -0.377433)
-
-[node name="BoxProp4" parent="Props" instance=ExtResource("3_jxrda")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22435, 1.77798, -3.5111)
-
-[node name="BoxProp5" parent="Props" instance=ExtResource("3_jxrda")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92794, 2.13756, -6.33096)
 
 [node name="BoxProp2" parent="Props" groups=["Planter"] instance=ExtResource("3_jxrda")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29944, 0.0961845, 0.593892)
@@ -103,7 +88,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500888, 0.041161, -2.1009)
 collision_layer = 3
 
 [node name="QuestItem" parent="." instance=ExtResource("6_nqdq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981732, 5.6156, -8.51315)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.98986, 0.541161, -0.623392)
 inv_item = ExtResource("7_7hlls")
 
 [node name="QuestItem2" parent="." instance=ExtResource("6_nqdq4")]
