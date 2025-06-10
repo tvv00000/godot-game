@@ -1,12 +1,13 @@
 ### NPC.gd
 
-extends CharacterBody3D
+extends StaticBody3D
 
 @onready var dialog_manager = $DialogManager
 
 @export var npc_id: String
 @export var npc_name: String
 @export var dialog_resource: Dialog
+@export var interactLabel: String = "Alusta Vestlust"
 var current_state = "start"
 var current_branch_index = 0
 

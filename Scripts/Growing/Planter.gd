@@ -4,7 +4,7 @@ extends StaticBody3D
 
 #võtab asju interactable area3d nodelt.
 @onready var Interactable: Area3D = $Interactable
-@export var interactName: String
+@export var interactLabel: String = ""
 #kasvatus
 @export var Plant: Resource = null
 var plantGrowth: int = 0
@@ -23,13 +23,13 @@ func planterStater(setState):
 	if planterState == 0:
 		$DirtMesh.hide()
 		Plant = null
-		interactName = "Täida mullaga"
+		interactLabel = "Täida mullaga"
 		
 	#Kui muld on lisatud
 	elif planterState == 1:
 		$DirtMesh.show()
 		Plant = null
-		interactName = "Istuta Taim"
+		interactLabel = "Istuta Taim"
 		
 	#Kui taim kasvab.
 	elif Plant == null and planterState == 2:
@@ -37,7 +37,7 @@ func planterStater(setState):
 		planterState = 1
 		
 	elif Plant and  planterState == 2:
-		interactName = "Siin Kasvab " + Plant.name
+		interactLabel = str("Siin Kasvab " + Plant.name)
 
 #see funk haldab taimede kasvu, pane readysse ja oninteracti et ta uuendaks mõistlikult
 func growPlant():

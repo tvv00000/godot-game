@@ -37,9 +37,6 @@ shape = SubResource("CapsuleShape3D_ft8w5")
 [node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
 transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, -0.0400639, 2.77216, 2.466)
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745022, 0)
-
 [node name="HUD" type="CanvasLayer" parent="."]
 
 [node name="Coins" type="ColorRect" parent="HUD"]
@@ -121,6 +118,10 @@ script = ExtResource("4_ude3g")
 [node name="Collision_Interact" type="CollisionShape3D" parent="InteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592224, 0)
 shape = SubResource("CylinderShape3D_h54ih")
+
+[node name="InteractLabel" type="Label3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70177, 0)
+text = "testetestetst"
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t26db")
