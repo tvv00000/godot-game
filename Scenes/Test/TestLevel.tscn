@@ -1,5 +1,9 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [gd_scene load_steps=14 format=3 uid="uid://dbu2tphaxtr72"]
+=======
+[gd_scene load_steps=16 format=3 uid="uid://dbu2tphaxtr72"]
+>>>>>>> Stashed changes
 =======
 [gd_scene load_steps=16 format=3 uid="uid://dbu2tphaxtr72"]
 >>>>>>> Stashed changes
@@ -14,7 +18,11 @@
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="10_3vub1"]
+=======
+[ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
+>>>>>>> Stashed changes
 =======
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
 >>>>>>> Stashed changes
@@ -149,4 +157,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 [connection signal="body_entered" from="MoneyItem" to="MoneyItem" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem3" to="MoneyItem3" method="_on_body_entered"]
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
