@@ -8,3 +8,5 @@ class_name InvItem
 
 func use():
 	print("Item used: ", name)
+	if Engine.has_singleton("UIAlert"):
+		UiAlert.show_alert("Used item: " + name)

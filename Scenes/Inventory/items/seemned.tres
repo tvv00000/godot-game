@@ -7,5 +7,5 @@
 script = ExtResource("1_5ah72")
 name = "Seemned"
 texture = ExtResource("2_hrptw")
-description = "Keegi ei tea, mis siit kasvad võiks. Istuta ja saa teada."
+description = "Keegi ei tea, mis siit kasvada võiks. Istuta ja saa teada."
 metadata/_custom_type_script = "uid://ddecgowpiffet"
