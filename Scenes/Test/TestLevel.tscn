@@ -1,16 +1,15 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=14 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
 [ext_resource type="PackedScene" uid="uid://c72v46eaotkxh" path="res://Scenes/Tree_prop.tscn" id="2_bdva1"]
 [ext_resource type="PackedScene" uid="uid://c762mqp14y2rp" path="res://Scenes/Test/Box_prop.tscn" id="3_jxrda"]
 [ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="4_wlpxy"]
-[ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="6_f1cbr"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="6_nqdq4"]
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
-[ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="8_62gx1"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
+[ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="10_3vub1"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
@@ -114,11 +113,8 @@ inv_item = ExtResource("8_jwrl0")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.94198, 1.48805, 0.39837)
 inv_item = ExtResource("9_jwrl0")
 
-[node name="Planter_Med" parent="." instance=ExtResource("6_f1cbr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.75033, 0.0642692, 3.16017)
-
-[node name="Planter_Med2" parent="." instance=ExtResource("6_f1cbr")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.62522, 0.064269, 3.86874)
-
-[node name="Node3D" parent="." instance=ExtResource("8_62gx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07848, 0.041263, 5.30771)
+[node name="NPC2" parent="." instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.49966, 2.38419e-07, 2.70285)
+spriteTexture = ExtResource("10_3vub1")
+npc_id = "npc_2"
+npc_name = "Tümiantsik"
