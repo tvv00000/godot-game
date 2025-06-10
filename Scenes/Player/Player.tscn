@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=12 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
 [ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
 
@@ -35,9 +36,6 @@ shape = SubResource("CapsuleShape3D_ft8w5")
 
 [node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
 transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, -0.0400639, 2.77216, 2.466)
-
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.745022, 0)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
@@ -102,6 +100,16 @@ size_flags_vertical = 3
 
 [node name="GardenUi" parent="HUD" instance=ExtResource("4_jmcll")]
 
+[node name="Popup" type="CanvasLayer" parent="HUD"]
+script = ExtResource("6_825xp")
+
+[node name="PickupLabel" type="Label" parent="HUD/Popup"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="InteractionArea" type="Area3D" parent="."]
 collision_layer = 2
 collision_mask = 2
@@ -110,6 +118,10 @@ script = ExtResource("4_ude3g")
 [node name="Collision_Interact" type="CollisionShape3D" parent="InteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592224, 0)
 shape = SubResource("CylinderShape3D_h54ih")
+
+[node name="InteractLabel" type="Label3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70177, 0)
+text = "testetestetst"
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t26db")

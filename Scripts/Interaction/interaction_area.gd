@@ -1,12 +1,10 @@
 extends Area3D
 
-var label: Label3D = null
+@onready var InteractionLabel: Label3D = $InteractLabel
 #See on mängija küljes olev jubin, mis uurib kas ümber on näpitavaid asju, sorteerib neid järjekorda ja lubab interactida.
 
-#SETUP: 1.instanci Interactable.tscn näpitava objekti külge ja lisa ka CollisionShape3d. Interactitav object võiks olla staticbody muidu pead uue versiooni tegema interactable tseenist
-#		2. lisa algusesse @onready var Interactable: Area3D = $Interactable et saadaks interactable tseen kätte
-#		2.5. Lisa ka tekst "interactName" 
-#		3. näpitava objekti sisse funktsioon func onInteract():  kuhu alla saab lisada koodi mida ta tegema peab.
+#SETUP: 1. veendu et interactable object oleks staticbody3d
+		#2. lisa talle "var interactLabel: String = "tekst mida kuvatakse kui tahad interaktida"
 
 #TODO: kontrolli üle mitme intractable sortimine
 #TODO: pane ka midagi mis awaitib kuni interaktsioon on lõppenud.
@@ -15,6 +13,9 @@ var interactablesInRange := []
 var selectedInteractable: StaticBody3D = null
 signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
+
+func _ready():
+	InteractionLabel.hide()
 
 
 #See sorteerib lähedal olevad interactabled ja valib listist lähima objekti, kui array on suurem kui 1.
@@ -28,17 +29,17 @@ func updateInteractables():
 		interactableSelector()
 		
 	else:
-		label.hide()
-		label = null
+		InteractionLabel.hide()
+		InteractionLabel.hide()
 		selectedInteractable = null
 
 #siin tehakse näpitava valimise toimingud.
 func interactableSelector():
 	selectedInteractable = interactablesInRange[0] 
-	label =  selectedInteractable.Interactable.InteractLabel
-	
-	label.text = selectedInteractable.interactName
-	label.show()
+	InteractionLabel.set_text(selectedInteractable.interactLabel) 
+	InteractionLabel.text = selectedInteractable.interactLabel
+	print(selectedInteractable.interactLabel)
+	InteractionLabel.show()
 
 #Sortmeetod mis annab true/false sõltuvalt sellest kas interactable1 on lähemal kui interactable2
 func sortNearest(body1, body2):
@@ -57,16 +58,17 @@ func _on_body_exited(body: Node3D) -> void:
 	updateInteractables()
 	print("left interactable range of: ", body, " Active object: ", selectedInteractable)
 
+#siia alla saab panna asjad millega interakteerud.
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI_Interact"):
 		print("interacting with: ", selectedInteractable)
-		emit_signal("movementDisabled")
-		
+
 
 		#planteri interaktsioon, tõsta eraldi funki hiljem vist. 
 		#Planteri endaga on ühenduses see node siin. UI saadab siia signaale. 
 		if !selectedInteractable:
-			pass
+			print("nothing to interact with")
+
 		elif selectedInteractable.is_in_group("Planter"):
 			print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
 			#see saadab teate et võta ui ette.
@@ -78,6 +80,8 @@ func _input(event: InputEvent) -> void:
 			var plantGrowth: int = selectedInteractable.plantGrowth
 			var plantHealth: int = selectedInteractable.plantHealth
 			
+			emit_signal("movementDisabled")
+			
 			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
 			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
@@ -85,11 +89,16 @@ func _input(event: InputEvent) -> void:
 				plantName = selectedInteractable.Plant.name
 				emit_signal("show_GardenUI", planterState, plantName, dirtLevel)
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
-
-		if selectedInteractable:
-			selectedInteractable.onInteract()
-		else:
-			print("error interacting, no interactable found!")
+		
+		elif selectedInteractable.is_in_group("Item"):
+			print("I. AM. ITEM!")
+		
+		elif selectedInteractable.is_in_group("Map"):
+			print("Koli dilani arvutisse")
+		
+		elif selectedInteractable.is_in_group("NPC"):
+			selectedInteractable.start_dialog()
+			print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:
@@ -105,7 +114,6 @@ func _on_garden_ui_plant_planted(plant: String) -> void:
 
 func _on_garden_ui_uproot_plant() -> void:
 	selectedInteractable.uprootPlant()
-
 
 func _on_garden_ui_plant_care(careType: int) -> void:
 	match careType:

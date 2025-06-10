@@ -9,8 +9,11 @@ var can_move:bool = true
 @export var inventory: Inventory
 var ui_ref: Control
 
-@onready var sfx_jump = $sfx_jump
+@onready var sfx_jump = $sfx_jump 
 
+#popup item pickupil
+var popup: CanvasLayer
+@onready var camera = $Pivot_Camera/Camera3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
@@ -20,9 +23,14 @@ var ui_ref: Control
 @onready var prompt = $Prompt
 @onready var InteractionArea = $InteractionArea
 
+
 func _ready() -> void:
 	Global.player = self
 	quest_tracker.visible = false
+	ui_ref = Global.inv_ui
+	Global.camera = camera
+	popup = $HUD/Popup
+	popup.camera = camera
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -39,11 +47,7 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		
-		# raycast direction
-		if velocity != Vector3.ZERO:
-			ray_cast_3d.target_position = velocity.normalized() * 3
-		
+
 		if direction:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
@@ -53,26 +57,23 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 
-func _input(event):
+#func _input(event):
 	#Interact with NPC/ Quest Item
-	if can_move:
-		if event.is_action_pressed("UI_Interact"):
-			var target = ray_cast_3d.get_collider()
-			if target != null:
+	#if can_move:
+		#if event.is_action_pressed("UI_Interact"):
+			#if target != null:
 				
-				if target.is_in_group("NPC"):
-					print("I'm talking to an NPC!")
-					can_move = false
-					target.start_dialog()
+				#if target.is_in_group("NPC"):
+					#print("I'm talking to an NPC!")
+					#can_move = false
+					#target.start_dialog()
 					
-				elif target.is_in_group("Item"):
-					print("I'm interacting with an item!")
+				#elif target.is_in_group("Item"):
+					#pass
+					#print("I'm interacting with an item!")
 					# todo: check if item is needed for quest
 					# todo: remove item
-					target.start_interact()
-					
-				elif target.is_in_group("Planter"):
-					print("ceci n'est pas une planteur")
+					#target.start_interact()
 
 
 func collect(item):

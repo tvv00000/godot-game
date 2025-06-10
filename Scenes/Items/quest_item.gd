@@ -32,8 +32,8 @@ func _on_body_entered(body: CharacterBody3D) -> void:
 	player.collect(inv_item)
 	
 	#Pickup popup tekst
-	var ui_ref = body.ui_ref
-	if ui_ref:
-		ui_ref.show_pickup_message_above(global_transform.origin, "Picked up: " + inv_item.name)
+	if player.popup:
+		player.popup.item_pickup(global_transform.origin, inv_item.name)
+		print("Item picked up")
 
 	queue_free()

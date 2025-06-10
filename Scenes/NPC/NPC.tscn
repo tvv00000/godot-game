@@ -13,7 +13,7 @@ metadata/_custom_type_script = "uid://8qurl7ipw1im"
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
 height = 1.28075
 
-[node name="NPC" type="CharacterBody3D" groups=["NPC"]]
+[node name="NPC" type="StaticBody3D" groups=["NPC"]]
 script = ExtResource("1_u75bn")
 npc_id = "npc_1"
 npc_name = "Hunt Miko"
