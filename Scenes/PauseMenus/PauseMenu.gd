@@ -3,6 +3,7 @@ extends Control
 @onready var plant_index_menu = $"../PlantIndexMenu"
 @onready var Settings = $"../SettingsMenu"
 @onready var SettingsSettings = $"../SettingsSettings"
+@onready var MapMenu = $"../WorldMapUi"
 
 func resume():
 	get_tree().paused = false
@@ -32,6 +33,11 @@ func _on_options_menu_pressed() -> void:
 	hide()
 	Settings.show()
 
+func _on_mapmenu_btn_pressed() -> void:
+	hide()
+	MapMenu.show()
+	resume()
+	
 func _process(delta: float) -> void:
 	testTab()
 
