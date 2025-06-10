@@ -27,9 +27,9 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if inventory_ref and slotNr >= 0:
 			if get_global_rect().has_point(get_global_mouse_position()):
-				if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
-					inventory_ref.use_item(slotNr)
-				elif event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
+				#if event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+					#inventory_ref.use_item(slotNr)
+				if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 					ui_ref.item_info_popup(inventory_ref.slots[slotNr], get_global_mouse_position())
 					print("Popup window opened")
 					

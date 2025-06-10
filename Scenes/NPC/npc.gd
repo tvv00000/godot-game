@@ -3,7 +3,7 @@
 extends StaticBody3D
 
 @onready var dialog_manager = $DialogManager
-
+@export var spriteTexture: Resource
 @export var npc_id: String
 @export var npc_name: String
 @export var dialog_resource: Dialog
@@ -16,6 +16,7 @@ func _ready():
 	dialog_resource.load_from_json("res://Resources/Dialog/dialog_data.json")
 		# Initialize npc ref
 	dialog_manager.npc = self
+	$Pivot/Sprite.set_texture(spriteTexture)
 
 func start_dialog():
 	var npc_dialogs = dialog_resource.get_npc_dialog(npc_id)

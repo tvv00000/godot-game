@@ -7,8 +7,10 @@ extends Control
 @onready var info_label2 = $ItemInfo/VBoxContainer/DescriptionLabel
 @onready var pickup_label = $PickupLabel
 @onready var camera = $"../Player/Pivot_Camera/Camera3D"
+@onready var use_button = $ItemInfo/VBoxContainer/UseButton
 
 var is_open = false
+var current_slot: int = -1
 
 func _ready():
 	inv.update.connect(update_slots)
@@ -42,4 +44,14 @@ func item_info_popup(slot: InvSlot, position: Vector2):
 	if slot.item:
 		info_label.text = slot.item.name
 		info_label2.text = slot.item.description
-		item_info.popup(Rect2(position, Vector2(150, 50)))
+		current_slot = inv.slots.find(slot)
+		use_button.show()
+		item_info.popup(Rect2(position, Vector2(150, 80)))
+
+#Itemi kasutamise nupp
+func _on_use_button_pressed() -> void:
+	if current_slot >= 0:
+		inv.use_item(current_slot)
+		item_info.hide()
+		current_slot= -1
+		use_button.hide()

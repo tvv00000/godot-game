@@ -32,11 +32,11 @@ text = "Tagasi"
 
 [node name="Inventory" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-text = "Inventuur"
+text = "Inventar"
 
 [node name="OptionsMenu" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-text = "PausiMenüü"
+text = "Pausimenüü"
 
 [node name="CollectionLogUI" parent="PanelContainer" instance=ExtResource("2_i4arw")]
 layout_mode = 2

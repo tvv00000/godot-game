@@ -1,11 +1,11 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://eqtrnqgratvl"]
 
 [ext_resource type="Script" uid="uid://ddecgowpiffet" path="res://Scenes/Inventory/inv_item.gd" id="1_csvg1"]
-[ext_resource type="Texture2D" uid="uid://dc757da67fukc" path="res://Art/aug.png" id="2_qyhly"]
+[ext_resource type="Texture2D" uid="uid://dc757da67fukc" path="res://Art/Sprites/Items/aug.png" id="2_qyhly"]
 
 [resource]
 script = ExtResource("1_csvg1")
 name = "aug"
 texture = ExtResource("2_qyhly")
-description = "Harilik aug. Läänemerest püütud oma kätega."
+description = "Harilik aug. Oma käppadega Läänemerest püütud."
 metadata/_custom_type_script = "uid://ddecgowpiffet"

@@ -6,8 +6,10 @@ const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 
+
 @export var inventory: Inventory
 var ui_ref: Control
+
 
 @onready var sfx_jump = $sfx_jump 
 
@@ -31,6 +33,7 @@ func _ready() -> void:
 	Global.camera = camera
 	popup = $HUD/Popup
 	popup.camera = camera
+
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -56,24 +59,6 @@ func _physics_process(delta: float) -> void:
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 
 		move_and_slide()
-
-#func _input(event):
-	#Interact with NPC/ Quest Item
-	#if can_move:
-		#if event.is_action_pressed("UI_Interact"):
-			#if target != null:
-				
-				#if target.is_in_group("NPC"):
-					#print("I'm talking to an NPC!")
-					#can_move = false
-					#target.start_dialog()
-					
-				#elif target.is_in_group("Item"):
-					#pass
-					#print("I'm interacting with an item!")
-					# todo: check if item is needed for quest
-					# todo: remove item
-					#target.start_interact()
 
 
 func collect(item):

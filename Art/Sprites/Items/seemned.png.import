@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://do1ibi3y7vyf7"
-path="res://.godot/imported/inv_screen.png-dd3d97c5e25deaaac98f7f3789ad8f3b.ctex"
+uid="uid://bybtqye5svj4x"
+path.s3tc="res://.godot/imported/seemned.png-64132b8d03e1156d6e20d6598b00dfd0.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Art/inv_screen.png"
-dest_files=["res://.godot/imported/inv_screen.png-dd3d97c5e25deaaac98f7f3789ad8f3b.ctex"]
+source_file="res://Art/Sprites/Items/seemned.png"
+dest_files=["res://.godot/imported/seemned.png-64132b8d03e1156d6e20d6598b00dfd0.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
