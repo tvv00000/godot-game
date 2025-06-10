@@ -26,13 +26,13 @@ grow_vertical = 2
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 1095.0
-offset_top = 146.0
-offset_right = 1269.0
-offset_bottom = 204.0
+offset_left = 1101.0
+offset_top = 210.0
+offset_right = 1275.0
+offset_bottom = 268.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_t04vj")
 
-[node name="Label" type="Label" parent="Panel"]
+[node name="MoneyLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 16.87
 offset_top = 11.825

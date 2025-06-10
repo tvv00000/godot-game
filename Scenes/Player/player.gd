@@ -67,6 +67,15 @@ func collect(item):
 func _on_signal_movement_enabled() -> void:
 	can_move = true
 
-
 func _on_movement_disabled() -> void:
 	can_move = false
+
+#allpool raha süsteem
+var current_money: int = 0
+
+signal money_collected(amount:int)
+
+func add_money(amount:int) -> void:
+	current_money += amount
+	print("Player now has %d money" % current_money)
+	money_collected.emit(amount)

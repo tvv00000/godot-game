@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkjfdlcla0i07"]
+
+[ext_resource type="Script" uid="uid://dy5csqucygkl8" path="res://Scenes/Items/money_item.gd" id="1_626e4"]
+
+[sub_resource type="PlaceholderMaterial" id="PlaceholderMaterial_626e4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_626e4"]
+next_pass = SubResource("PlaceholderMaterial_626e4")
+albedo_color = Color(1, 1, 0, 1)
+metallic = 0.75
+metallic_specular = 0.56
+roughness = 0.3
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_w4fg5"]
+material = SubResource("StandardMaterial3D_626e4")
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.05
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnes7"]
+radius = 0.226732
+height = 0.453463
+
+[node name="MoneyItem" type="Area3D" groups=["Item"]]
+script = ExtResource("1_626e4")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+mesh = SubResource("CylinderMesh_w4fg5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0489398, 0)
+shape = SubResource("CapsuleShape3D_vnes7")
