@@ -93,6 +93,9 @@ func _input(event: InputEvent) -> void:
 		elif selectedInteractable.is_in_group("Item"):
 			print("I. AM. ITEM!")
 		
+		elif selectedInteractable.is_in_group("Map"):
+			print("Koli dilani arvutisse")
+		
 		elif selectedInteractable.is_in_group("NPC"):
 			selectedInteractable.start_dialog()
 			print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
