@@ -4,13 +4,16 @@ extends Control
 @onready var Settings = $"../SettingsMenu"
 @onready var SettingsSettings = $"../SettingsSettings"
 
+
 func resume():
 	get_tree().paused = false
 	hide()
+	Global.inv_ui.close()
 
 func pause():
 	get_tree().paused = true
 	show()
+	Global.inv_ui.open()
 
 func testTab():
 	if Input.is_action_just_pressed('OpenInv') and get_tree().paused == false:

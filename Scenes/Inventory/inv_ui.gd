@@ -24,12 +24,13 @@ func update_slots():
 		slots[i].ui_ref = self
 		slots[i].update(inv.slots[i], i, inv)
 
-func _process(delta):
-	if Input.is_action_just_pressed("OpenInv"):
-		if is_open:
-			close()
-		else:
-			open()
+#Commenti tagasi sisse, et testlevelis inventory kasutada
+#func _process(delta):
+	#if Input.is_action_just_pressed("OpenInv"):
+		#if is_open:
+			#close()
+		#else:
+			#open()
 
 func open():
 	visible = true
@@ -41,12 +42,14 @@ func close():
 
 #avab inventaris itemi peale vajutades väikse popup akna selle itemi infoga
 func item_info_popup(slot: InvSlot, position: Vector2):
-	if slot.item:
-		info_label.text = slot.item.name
-		info_label2.text = slot.item.description
-		current_slot = inv.slots.find(slot)
-		use_button.show()
-		item_info.popup(Rect2(position, Vector2(150, 80)))
+	if is_open:
+		if slot.item:
+			info_label.text = slot.item.name
+			info_label2.text = slot.item.description
+			current_slot = inv.slots.find(slot)
+			use_button.show()
+			item_info.popup(Rect2(position, Vector2(150, 80)))
+
 
 #Itemi kasutamise nupp
 func _on_use_button_pressed() -> void:
@@ -55,3 +58,17 @@ func _on_use_button_pressed() -> void:
 		item_info.hide()
 		current_slot= -1
 		use_button.hide()
+		show_popup_message("Ese kasutatud!")
+
+
+
+#popup, mis ilmub eseme kasutamisel
+func show_popup_message(message: String) -> void:
+	pickup_label.text = message
+	pickup_label.global_position = Vector2(630, 220)
+	pickup_label.visible = true
+	pickup_label.modulate.a = 1.0
+	
+	var tween := create_tween()
+	tween.tween_property(pickup_label, "modulate:a", 0.0, 1.0)
+	tween.tween_callback(Callable(pickup_label, "hide"))

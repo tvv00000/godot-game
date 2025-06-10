@@ -31,5 +31,4 @@ func _input(event):
 					#inventory_ref.use_item(slotNr)
 				if event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 					ui_ref.item_info_popup(inventory_ref.slots[slotNr], get_global_mouse_position())
-					print("Popup window opened")
 					
