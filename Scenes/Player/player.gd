@@ -9,8 +9,11 @@ var can_move:bool = true
 @export var inventory: Inventory
 var ui_ref: Control
 
-@onready var sfx_jump = $sfx_jump
+@onready var sfx_jump = $sfx_jump 
 
+#popup item pickupil
+var popup: CanvasLayer
+@onready var camera = $Pivot_Camera/Camera3D
 @onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
@@ -20,9 +23,14 @@ var ui_ref: Control
 @onready var prompt = $Prompt
 @onready var InteractionArea = $InteractionArea
 
+
 func _ready() -> void:
 	Global.player = self
 	quest_tracker.visible = false
+	ui_ref = Global.inv_ui
+	Global.camera = camera
+	popup = $HUD/Popup
+	popup.camera = camera
 
 func _physics_process(delta: float) -> void:
 	if can_move:
