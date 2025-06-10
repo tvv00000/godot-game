@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="6_nqdq4"]
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="8_62gx1"]
-[ext_resource type="Resource" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
-[ext_resource type="Resource" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
+[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
+[ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
