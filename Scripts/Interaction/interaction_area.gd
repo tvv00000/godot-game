@@ -94,6 +94,7 @@ func _input(event: InputEvent) -> void:
 			print("I. AM. ITEM!")
 		
 		elif selectedInteractable.is_in_group("NPC"):
+			selectedInteractable.start_dialog()
 			print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
