@@ -32,11 +32,16 @@ text = "Tagasi"
 
 [node name="PlantIndexBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-text = "Taimeteatmik"
+text = "Taimeteadmik"
 
 [node name="OptionsMenuBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
 text = "Pausimenüü"
+
+[node name="MapmenuBtn" type="Button" parent="PanelContainer/HBoxContainer"]
+layout_mode = 2
+text = "Kaart
+"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
@@ -54,7 +59,8 @@ offset_bottom = 153.0
 
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/MapmenuBtn" to="." method="_on_mapmenu_btn_pressed"]

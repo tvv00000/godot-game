@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=25 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="14_d152i"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="15_va0j1"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="16_va0j1"]
+[ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="17_6uhru"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
 
@@ -353,3 +354,5 @@ transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.79
 [node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("15_va0j1")]
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("16_va0j1")]
+
+[node name="WorldMapUi" parent="CanvasLayer" instance=ExtResource("17_6uhru")]

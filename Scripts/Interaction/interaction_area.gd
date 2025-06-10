@@ -94,6 +94,7 @@ func _input(event: InputEvent) -> void:
 			print("I. AM. ITEM!")
 		
 		elif selectedInteractable.is_in_group("Map"):
+			$"../HUD/WorldMapUi".showMap()
 			print("Koli dilani arvutisse")
 		
 		elif selectedInteractable.is_in_group("NPC"):
