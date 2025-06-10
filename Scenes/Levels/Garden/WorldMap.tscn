@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://c7k883d00h3lv"]
 
-[ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/WorldMap.png" id="1_5wnfc"]
+[ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/Sprites/UI/WorldMap.png" id="1_5wnfc"]
 [ext_resource type="Script" uid="uid://c2snv4gbkws0h" path="res://Scenes/world_map.gd" id="1_nnt0k"]
 [ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="2_nnt0k"]
 [ext_resource type="PackedScene" uid="uid://dv3yhn04yvlyw" path="res://Scripts/Interaction/interactable.tscn" id="3_ovel5"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dc757da67fukc"
-path="res://.godot/imported/aug.png-4d7a869014ce3b310b02490e7b6d46cf.ctex"
+uid="uid://bi65tkeng1g84"
+path="res://.godot/imported/inv_grid.png-101c682cc33fc71fc6b68f722eaed45d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/aug.png"
-dest_files=["res://.godot/imported/aug.png-4d7a869014ce3b310b02490e7b6d46cf.ctex"]
+source_file="res://Art/Sprites/UI/inv_grid.png"
+dest_files=["res://.godot/imported/inv_grid.png-101c682cc33fc71fc6b68f722eaed45d.ctex"]
 
 [params]
 
