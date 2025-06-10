@@ -5,13 +5,16 @@ extends Control
 @onready var SettingsSettings = $"../SettingsSettings"
 @onready var MapMenu = $"../WorldMapUi"
 
+
 func resume():
 	get_tree().paused = false
 	hide()
+	Global.inv_ui.close()
 
 func pause():
 	get_tree().paused = true
 	show()
+	Global.inv_ui.open()
 
 func testTab():
 	if Input.is_action_just_pressed('OpenInv') and get_tree().paused == false:
@@ -20,7 +23,6 @@ func testTab():
 		resume()
 		plant_index_menu.hide()
 		Settings.hide()
-		SettingsSettings.hide()
 
 func _on_resume_pressed() -> void:
 	resume()
