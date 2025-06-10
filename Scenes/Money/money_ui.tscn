@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b7vfgock1122h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t04vj"]
+bg_color = Color(1, 0.726558, 0.401091, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.405051, 0.193913, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_w55eq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_alw3q"]
+
+[node name="MoneyUi" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 1095.0
+offset_top = 146.0
+offset_right = 1269.0
+offset_bottom = 204.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_t04vj")
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 16.87
+offset_top = 11.825
+offset_right = 161.425
+offset_bottom = 46.825
+theme = SubResource("Theme_w55eq")
+text = "0"
+label_settings = SubResource("LabelSettings_alw3q")
+horizontal_alignment = 1
+vertical_alignment = 1
