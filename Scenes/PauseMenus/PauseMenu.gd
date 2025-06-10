@@ -37,7 +37,7 @@ func _on_mapmenu_btn_pressed() -> void:
 	hide()
 	MapMenu.show()
 	resume()
-	
+
 func _process(delta: float) -> void:
 	testTab()
 
