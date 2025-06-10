@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
-[ext_resource type="Script" path="res://Scenes/Player/popup.gd" id="6_825xp"]
+[ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
 [ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
 
