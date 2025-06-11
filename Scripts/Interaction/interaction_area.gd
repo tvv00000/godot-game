@@ -79,11 +79,16 @@ func _input(event: InputEvent) -> void:
 			var fertilizerLevel: int = selectedInteractable.fertilizer
 			var plantGrowth: int = selectedInteractable.plantGrowth
 			var plantHealth: int = selectedInteractable.plantHealth
+			var mullahunnik: Global.inv_item
 			
 			emit_signal("movementDisabled")
 			
 			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
 			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+			
+			if planterState == 0:
+				pass
+				print("Palun täida mind!")
 			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
