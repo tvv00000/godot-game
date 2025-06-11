@@ -14,15 +14,16 @@ var current_branch_index = 0
 func _ready():
 	# Load dialog data 
 	#Ta teeb seda nüüd oma npc failist
-	dialog_resource.load_from_json("res://Resources/Dialog/dialog_{}.json".format(npc_id))
-	print("Laetud dialoog dialog_{}.json".format(npc_id))
+	dialog_resource.load_from_json("res://Resources/Dialog/dialog_{0}.json".format([npc_id]))
 		# Initialize npc ref
 	dialog_manager.npc = self
 	$Pivot/Sprite.set_texture(spriteTexture)
 
 func start_dialog():
+	print("Laetud dialoog dialog_{0}.json".format([npc_id]))
 	var npc_dialogs = dialog_resource.get_npc_dialog(npc_id)
 	if npc_dialogs.is_empty():
+		print("No npc dialogs finded.")
 		return
 	dialog_manager.show_dialog(self)
 
