@@ -1,16 +1,16 @@
 {
-	"npc_2": {
+	"npc_1": {
 		"trees": [
 			{
-				"branch_id": "npc_2_1",
+				"branch_id": "npc_1_1",
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "hellõu",
+						"text": "Tere, helistasite 112",
 						"options": {
 							"1": "in_progress",
-							"mis teed": "give_quests",
-							"säux": "exit"
+							"Tere kas saab kuest": "give_quests",
+							"BYE": "exit"
 						}
 					},
 					{
@@ -74,3 +74,4 @@
 			}
 		]
 	}
+}

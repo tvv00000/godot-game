@@ -127,14 +127,15 @@ transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, 
 
 [node name="NPCs" type="Node" parent="."]
 
-[node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66608, 0, 1.85215)
-spriteTexture = ExtResource("12_rcol5")
-npc_name = "Doktor Haus"
-
 [node name="NPC_Gardner" parent="NPCs" instance=ExtResource("4_wlpxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65489, 0, 2.32642)
 spriteTexture = ExtResource("13_8n04a")
+npc_id = "npc_2"
+npc_name = "Aednik Scooby"
+
+[node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73698, 0, 2.29975)
+spriteTexture = ExtResource("12_rcol5")
 
 [connection signal="body_entered" from="MoneyItem" to="MoneyItem" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
