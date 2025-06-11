@@ -5,7 +5,8 @@ class_name Inventory
 signal update
 
 @export var slots: Array[InvSlot]
-
+func _ready():
+	Global.inventory = self
 
 func insert(item: InvItem):
 	var itemslots = slots.filter(func(slot): return slot.item == item)

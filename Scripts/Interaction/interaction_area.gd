@@ -79,7 +79,11 @@ func _input(event: InputEvent) -> void:
 			var fertilizerLevel: int = selectedInteractable.fertilizer
 			var plantGrowth: int = selectedInteractable.plantGrowth
 			var plantHealth: int = selectedInteractable.plantHealth
+<<<<<<< Updated upstream
 			var mullahunnik: Global.inv_item
+=======
+			var mullahunnik: InvItem
+>>>>>>> Stashed changes
 			
 			emit_signal("movementDisabled")
 			

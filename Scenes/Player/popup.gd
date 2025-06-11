@@ -3,7 +3,7 @@ extends CanvasLayer
 @onready var pickup_label = $PickupLabel
 var camera: Camera3D
 
-
+#popup, mis ilmub itemi ylesvotmisel
 func item_pickup(position_3d: Vector3, message: String):
 	var screen_pos = Global.player.get_node("Pivot_Camera/Camera3D").unproject_position(position_3d)
 	pickup_label.text = message

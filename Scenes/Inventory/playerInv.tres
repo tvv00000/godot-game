@@ -1,8 +1,9 @@
-[gd_resource type="Resource" script_class="Inventory" load_steps=16 format=3 uid="uid://bg73wcd32svju"]
+[gd_resource type="Resource" script_class="Inventory" load_steps=17 format=3 uid="uid://bg73wcd32svju"]
 
 [ext_resource type="Script" uid="uid://chcaubk2tsmey" path="res://Scenes/Inventory/inv_slotNr.gd" id="2_lesxk"]
 [ext_resource type="Script" uid="uid://ck6c2slmq6x7f" path="res://Scenes/Inventory/inventory.gd" id="3_0g6ia"]
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="3_lesxk"]
+[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="4_5mw3g"]
 
 [sub_resource type="Resource" id="Resource_5mw3g"]
 script = ExtResource("2_lesxk")
@@ -12,7 +13,8 @@ metadata/_custom_type_script = "uid://chcaubk2tsmey"
 
 [sub_resource type="Resource" id="Resource_0g6ia"]
 script = ExtResource("2_lesxk")
-amount = 0
+item = ExtResource("4_5mw3g")
+amount = 99
 metadata/_custom_type_script = "uid://chcaubk2tsmey"
 
 [sub_resource type="Resource" id="Resource_851ms"]

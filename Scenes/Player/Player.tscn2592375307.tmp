@@ -1,0 +1,142 @@
+[gd_scene load_steps=13 format=3 uid="uid://cdhj0kbdvxwrf"]
+
+[ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
+[ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
+[ext_resource type="Resource" uid="uid://bg73wcd32svju" path="res://Scenes/Inventory/playerInv.tres" id="2_t26db"]
+[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
+[ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
+[ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
+[ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
+[ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="7_ji083"]
+[ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
+[ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
+radius = 0.310319
+height = 1.28075
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h54ih"]
+height = 0.815552
+radius = 0.522461
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_ft8w5")
+inventory = ExtResource("2_t26db")
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Sprite" type="Sprite3D" parent="Pivot"]
+transform = Transform3D(0.25, 0, 0, 0, 0.241682, 0.06395, 0, -0.06395, 0.241682, 0, 0.653221, 0)
+texture = ExtResource("2_ft8w5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.653221, 0)
+shape = SubResource("CapsuleShape3D_ft8w5")
+
+[node name="Pivot_Camera" type="Marker3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="Pivot_Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, -0.0400639, 2.77216, 2.466)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Coins" type="ColorRect" parent="HUD"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -274.0
+offset_bottom = 160.0
+grow_horizontal = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Icon" type="TextureRect" parent="HUD/Coins"]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 128.0
+grow_vertical = 2
+texture = ExtResource("3_h54ih")
+expand_mode = 2
+
+[node name="Amount" type="Label" parent="HUD/Coins"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -11.5
+offset_bottom = 11.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "0"
+
+[node name="QuestTracker" type="ColorRect" parent="HUD"]
+offset_right = 300.0
+offset_bottom = 200.0
+color = Color(0, 0, 0, 1)
+
+[node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "title"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Objectives" type="VBoxContainer" parent="HUD/QuestTracker/Details"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GardenUi" parent="HUD" instance=ExtResource("4_jmcll")]
+
+[node name="Popup" type="CanvasLayer" parent="HUD"]
+script = ExtResource("6_825xp")
+
+[node name="PickupLabel" type="Label" parent="HUD/Popup"]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WorldMapUi" parent="HUD" instance=ExtResource("7_ji083")]
+
+[node name="InteractionArea" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("4_ude3g")
+
+[node name="Collision_Interact" type="CollisionShape3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.592224, 0)
+shape = SubResource("CylinderShape3D_h54ih")
+
+[node name="InteractLabel" type="Label3D" parent="InteractionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70177, 0)
+text = "testetestetst"
+
+[node name="sfx_jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t26db")
+
+[node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
+
+[connection signal="dirtFilled_Signal" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_dirt_filled_signal"]
+[connection signal="movementEnabled" from="HUD/GardenUi" to="." method="_on_signal_movement_enabled"]
+[connection signal="plantCare" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_plant_care"]
+[connection signal="plantPlanted" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_plant_planted"]
+[connection signal="uprootPlant" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_uproot_plant"]
+[connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
+[connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
+[connection signal="movementDisabled" from="InteractionArea" to="." method="_on_movement_disabled"]
+[connection signal="show_GardenUI" from="InteractionArea" to="HUD/GardenUi" method="_on_interaction_area_show_garden_ui"]
