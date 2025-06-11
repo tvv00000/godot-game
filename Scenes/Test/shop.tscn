@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dqrjvuqbu125q"]
+[gd_scene load_steps=4 format=3 uid="uid://dqrjvuqbu125q"]
 
+[ext_resource type="Script" uid="uid://ctgdbuscjqjg5" path="res://Scenes/Test/shop.gd" id="1_82718"]
 [ext_resource type="PackedScene" uid="uid://dyu6iekd2niq6" path="res://Scenes/Test/shop.glb" id="1_l2nq5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_82718"]
@@ -7,8 +8,9 @@ size = Vector3(1.53217, 1.67404, 1.98108)
 
 [node name="Shop" type="Node3D"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["Shop"]]
 collision_layer = 3
+script = ExtResource("1_82718")
 
 [node name="shop" parent="StaticBody3D" instance=ExtResource("1_l2nq5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.994344, -1.05782, 0.630799)

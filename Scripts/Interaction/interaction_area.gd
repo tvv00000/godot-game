@@ -96,6 +96,9 @@ func _input(event: InputEvent) -> void:
 		
 		elif selectedInteractable.is_in_group("Item"):
 			print("I. AM. ITEM!")
+			
+		elif selectedInteractable.is_in_group("Shop"):
+			print("Shopping!")
 		
 		elif selectedInteractable.is_in_group("Map"):
 			$"../HUD/WorldMapUi".showMap()

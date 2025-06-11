@@ -123,7 +123,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -3.38505)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 
 [node name="Shop" parent="." instance=ExtResource("11_jwrl0")]
-transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0499889, -7.44502)
+transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0719835, -7.44502)
 
 [node name="NPCs" type="Node" parent="."]
 
