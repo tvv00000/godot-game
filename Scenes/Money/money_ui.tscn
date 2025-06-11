@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7vfgock1122h"]
+[gd_scene load_steps=5 format=3 uid="uid://b7vfgock1122h"]
+
+[ext_resource type="Script" uid="uid://c5ewx2tbr6uli" path="res://Scenes/Money/money_ui.gd" id="1_w55eq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t04vj"]
 bg_color = Color(1, 0.726558, 0.401091, 1)
@@ -23,6 +25,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_w55eq")
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 0

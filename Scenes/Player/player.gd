@@ -73,9 +73,9 @@ func _on_movement_disabled() -> void:
 #allpool raha süsteem
 var current_money: int = 0
 
-signal money_collected(amount:int)
+signal money_collected(amount_added:int, new_total:int)
 
 func add_money(amount:int) -> void:
 	current_money += amount
 	print("Player now has %d money" % current_money)
-	money_collected.emit(amount)
+	money_collected.emit(amount, current_money)
