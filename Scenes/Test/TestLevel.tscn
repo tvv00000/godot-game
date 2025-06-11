@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=20 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -9,10 +9,17 @@
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
+<<<<<<< Updated upstream
 [ext_resource type="PackedScene" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
+=======
+[ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
+[ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="12_kjo0q"]
+>>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
+[ext_resource type="Texture2D" uid="uid://do1ibi3y7vyf7" path="res://Art/Sprites/UI/inv_screen.png" id="13_o75f4"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
+[ext_resource type="PackedScene" uid="uid://c75v5jpr7lasl" path="res://Scenes/Inventory/inv_slot.tscn" id="14_44lv7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
@@ -124,6 +131,100 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 
 [node name="Shop" parent="." instance=ExtResource("11_jwrl0")]
 transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0719835, -7.44502)
+
+[node name="Shop_UI" parent="Shop" instance=ExtResource("12_kjo0q")]
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="Shop/Shop_UI"]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 64.0
+scale = Vector2(7, 7)
+texture = ExtResource("13_o75f4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="Shop/Shop_UI/NinePatchRect2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -28.0
+offset_right = 38.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="InvSlot1" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot2" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot3" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot4" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot5" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot6" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot7" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot8" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot9" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot10" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot11" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="InvSlot12" parent="Shop/Shop_UI/NinePatchRect2/GridContainer" instance=ExtResource("14_44lv7")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Shop/Shop_UI"]
+layout_mode = 0
+offset_left = 620.0
+offset_top = 1.0
+offset_right = 1270.0
+offset_bottom = 434.0
+theme_override_font_sizes/font_size = 45
+text = "Nimi
+Hind: 1
+Mingi pikk description ja värki
+Midagi siia lisada jne"
+
+[node name="Button" type="Button" parent="Shop/Shop_UI"]
+layout_mode = 0
+offset_left = 756.0
+offset_top = 453.0
+offset_right = 925.0
+offset_bottom = 555.0
+
+[node name="Label" type="Label" parent="Shop/Shop_UI/Button"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 152.0
+offset_bottom = 83.0
+theme_override_font_sizes/font_size = 40
+text = "Osta"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NPCs" type="Node" parent="."]
 

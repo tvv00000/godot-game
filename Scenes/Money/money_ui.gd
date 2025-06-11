@@ -1,7 +1,6 @@
 extends Control
 
 func _ready():
-	print_tree()
 	var player = get_node("/root/Root/Player")
 	if player:
 		player.connect("money_collected", Callable(self, "_on_money_collected"))
