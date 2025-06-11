@@ -81,19 +81,24 @@ func _input(event: InputEvent) -> void:
 			var plantHealth: int = selectedInteractable.plantHealth
 			var mullahunnik: InvItem
 			
-			emit_signal("movementDisabled")
-			
-			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
-			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
-			
 			if planterState == 0:
 				for slot in Global.inventory.slots:
 					if slot.item and slot.item.name == "Mullahunnik" and slot.amount > 0:
 						slot.item.use(selectedInteractable)
 						Global.inventory.update.emit()
+						InteractionLabel.set_text("Muld lisatud!")
+						selectedInteractable.dirtRatio = 100
+						selectedInteractable.planterState = 1
+						selectedInteractable.planterStater(1)
 						print("Palun täida mind!")
-				pass
-				print("Palun täida mind!")
+				return
+			
+			emit_signal("movementDisabled")
+			
+			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
+			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+			
+
 			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
