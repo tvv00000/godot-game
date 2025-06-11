@@ -9,12 +9,8 @@
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
-=======
 [ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="12_kjo0q"]
->>>>>>> Stashed changes
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="Texture2D" uid="uid://do1ibi3y7vyf7" path="res://Art/Sprites/UI/inv_screen.png" id="13_o75f4"]
