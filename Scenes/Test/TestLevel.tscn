@@ -9,13 +9,9 @@
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
-<<<<<<< Updated upstream
-[ext_resource type="PackedScene" uid="uid://vw0og32j5p6q" path="res://Scenes/Test/shop.fbx" id="11_jwrl0"]
+[ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
-=======
-[ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
