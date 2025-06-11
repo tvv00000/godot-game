@@ -35,7 +35,7 @@ func handle_dialog_choice(option):
 	
 	# Handle state transitions
 	if next_state == "end":
-		if npc.current_branch_index < npc.dialog_resource.get_npc_dialog(npc.npc_id).size() - 1:
+		if npc.current_branch_index < npc.get_npc_dialog(npc.npc_id).size() - 1:
 			npc.set_dialog_tree(npc.current_branch_index + 1)
 		hide_dialog()
 	elif next_state == "exit":
