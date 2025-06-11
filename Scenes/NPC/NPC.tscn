@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bpxhod41dg2nn" path="res://Scenes/NPC/npc.gd" id="1_u75bn"]
 [ext_resource type="Script" uid="uid://8qurl7ipw1im" path="res://Resources/Dialog/Dialog.gd" id="2_37ake"]
-[ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="3_37ake"]
+[ext_resource type="Texture2D" uid="uid://crwwiv1vmcrqe" path="res://Art/NPC/Placeholder.png" id="3_37ake"]
 [ext_resource type="PackedScene" uid="uid://dtfb1bw3mj2hs" path="res://Dialog/dialog_manager.tscn" id="4_tlawm"]
 
 [sub_resource type="Resource" id="Resource_37ake"]
