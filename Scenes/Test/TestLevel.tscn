@@ -106,6 +106,7 @@ inv_item = ExtResource("7_7hlls")
 
 [node name="QuestItem2" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05802, 0.488052, -1.60163)
+item_quantity = 99
 inv_item = ExtResource("8_jwrl0")
 
 [node name="QuestItem3" parent="." instance=ExtResource("6_nqdq4")]

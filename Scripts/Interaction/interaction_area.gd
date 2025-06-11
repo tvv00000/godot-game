@@ -85,6 +85,10 @@ func _input(event: InputEvent) -> void:
 			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
 			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
+			if planterState == 0:
+				pass
+				print("Palun täida mind!")
+			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
 				emit_signal("show_GardenUI", planterState, plantName, dirtLevel)

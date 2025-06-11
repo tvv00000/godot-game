@@ -9,3 +9,4 @@ var planterDirtRatio: int = 0
 
 var inv_ui
 var camera
+var inventory

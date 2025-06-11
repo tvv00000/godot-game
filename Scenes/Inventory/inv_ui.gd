@@ -50,7 +50,6 @@ func item_info_popup(slot: InvSlot, position: Vector2):
 			use_button.show()
 			item_info.popup(Rect2(position, Vector2(150, 80)))
 
-
 #Itemi kasutamise nupp
 func _on_use_button_pressed() -> void:
 	if current_slot >= 0:
@@ -59,8 +58,6 @@ func _on_use_button_pressed() -> void:
 		current_slot= -1
 		use_button.hide()
 		show_popup_message("Ese kasutatud!")
-
-
 
 #popup, mis ilmub eseme kasutamisel
 func show_popup_message(message: String) -> void:
@@ -72,3 +69,19 @@ func show_popup_message(message: String) -> void:
 	var tween := create_tween()
 	tween.tween_property(pickup_label, "modulate:a", 0.0, 1.0)
 	tween.tween_callback(Callable(pickup_label, "hide"))
+
+func get_selected_item() -> InvItem:
+	if current_slot >= 0 and current_slot < inv.slots.size():
+		return inv.slots[current_slot].item
+	return null
+
+func remove_item(target_item: InvItem) -> void:
+	for i in range(inv.slots.size()):
+		var slot = inv.slots[i]
+		if slot.item == target_item:
+			slot.amount -= 1
+			if slot.amount <= 0:
+				slot.item = null
+			inv.emit_signal("update")
+			update_slots()
+			return

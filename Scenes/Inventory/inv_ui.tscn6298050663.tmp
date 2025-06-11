@@ -1,0 +1,106 @@
+[gd_scene load_steps=4 format=3 uid="uid://cy7ya584upkmg"]
+
+[ext_resource type="Script" uid="uid://clvcxug16qtjl" path="res://Scenes/Inventory/inv_ui.gd" id="1_j4njs"]
+[ext_resource type="Texture2D" uid="uid://do1ibi3y7vyf7" path="res://Art/Sprites/UI/inv_screen.png" id="2_skam5"]
+[ext_resource type="PackedScene" uid="uid://c75v5jpr7lasl" path="res://Scenes/Inventory/inv_slot.tscn" id="3_m5xpj"]
+
+[node name="Inv_UI" type="Control"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_j4njs")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 64.0
+scale = Vector2(7, 7)
+texture = ExtResource("2_skam5")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -38.0
+offset_top = -28.0
+offset_right = 38.0
+offset_bottom = 28.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 4
+
+[node name="InvSlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="InvSlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_m5xpj")]
+layout_mode = 2
+
+[node name="ItemInfo" type="PopupPanel" parent="."]
+size = Vector2i(106, 119)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ItemInfo"]
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 102.0
+offset_bottom = 115.0
+
+[node name="NameLabel" type="Label" parent="ItemInfo/VBoxContainer"]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="ItemInfo/VBoxContainer"]
+layout_mode = 2
+text = "/n
+"
+
+[node name="UseButton" type="Button" parent="ItemInfo/VBoxContainer"]
+layout_mode = 2
+text = "Kasuta eset"
+
+[node name="PickupLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[connection signal="pressed" from="ItemInfo/VBoxContainer/UseButton" to="." method="_on_use_button_pressed"]

@@ -8,3 +8,4 @@ class_name InvItem
 
 func use():
 	print("Item used: ", name)
+		
