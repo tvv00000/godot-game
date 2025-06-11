@@ -86,10 +86,10 @@ func _input(event: InputEvent) -> void:
 					if slot.item and slot.item.name == "Mullahunnik" and slot.amount > 0:
 						slot.item.use(selectedInteractable)
 						Global.inventory.update.emit()
-						InteractionLabel.set_text("Muld lisatud!")
 						selectedInteractable.dirtRatio = 100
 						selectedInteractable.planterState = 1
 						selectedInteractable.planterStater(1)
+						InteractionLabel.set_text("Muld lisatud!")
 						print("Palun täida mind!")
 				return
 			
