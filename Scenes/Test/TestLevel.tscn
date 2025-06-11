@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=17 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -10,6 +10,8 @@
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
 [ext_resource type="PackedScene" uid="uid://vw0og32j5p6q" path="res://Scenes/Test/shop.fbx" id="11_jwrl0"]
+[ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
+[ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
@@ -98,10 +100,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92794, 2.13756, -6.33096)
 [node name="BoxProp2" parent="Props" groups=["Planter"] instance=ExtResource("3_jxrda")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29944, 0.0961845, 0.593892)
 
-[node name="NPC" parent="." instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.500888, 0.041161, -2.1009)
-collision_layer = 3
-
 [node name="QuestItem" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981732, 5.6156, -8.51315)
 inv_item = ExtResource("7_7hlls")
@@ -125,6 +123,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 
 [node name="shop" parent="." instance=ExtResource("11_jwrl0")]
 transform = Transform3D(0.244241, 0, -0.969715, 0, 1, 0, 0.969715, 0, 0.244241, -1.66541, -0.99621, -8.60239)
+
+[node name="NPCs" type="Node" parent="."]
+
+[node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66608, 0, 1.85215)
+spriteTexture = ExtResource("12_rcol5")
+npc_name = "Doktor Haus"
+
+[node name="NPC_Gardner" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65489, 0, 2.32642)
+spriteTexture = ExtResource("13_8n04a")
 
 [connection signal="body_entered" from="MoneyItem" to="MoneyItem" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]

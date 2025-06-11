@@ -1,0 +1,76 @@
+{
+	"npc_1": {
+		"trees": [
+			{
+				"branch_id": "npc_1_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Tere",
+						"options": {
+							"1": "in_progress",
+							"anna quest": "give_quests",
+							"BYE": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "1",
+						"options": {
+							"BYE": "exit",
+							"tagasi": "start"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "super, vota see quest",
+						"options": {
+							"END": "end"
+						}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_1_2",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "tagasi?",
+						"options": {
+							"1": "in_progress",
+							"END": "end",
+							"BYE": "exit"
+						}
+					},
+					{
+						"state": "in_progress",
+						"text": "1",
+						"options": {
+							"END": "end",
+							"tagasi": "start"
+						}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_1_3",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "ty et aitasid",
+						"options": {
+							"1": "give_quests",
+							"Say Goodbye": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "1",
+						"options": {
+							"tagasi": "start"
+						}
+					}
+				]
+			}
+		]
+	}

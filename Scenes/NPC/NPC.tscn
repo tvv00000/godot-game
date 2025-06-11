@@ -14,6 +14,7 @@ metadata/_custom_type_script = "uid://8qurl7ipw1im"
 height = 1.28075
 
 [node name="NPC" type="StaticBody3D" groups=["NPC"]]
+collision_layer = 3
 script = ExtResource("1_u75bn")
 npc_id = "npc_1"
 npc_name = "Hunt Miko"

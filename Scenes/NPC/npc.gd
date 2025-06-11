@@ -12,8 +12,10 @@ var current_state = "start"
 var current_branch_index = 0
 
 func _ready():
-	# Load dialog data
-	dialog_resource.load_from_json("res://Resources/Dialog/dialog_data.json")
+	# Load dialog data 
+	#Ta teeb seda nüüd oma npc failist
+	dialog_resource.load_from_json("res://Resources/Dialog/dialog_{}.json".format(npc_id))
+	print("Laetud dialoog dialog_{}.json".format(npc_id))
 		# Initialize npc ref
 	dialog_manager.npc = self
 	$Pivot/Sprite.set_texture(spriteTexture)
