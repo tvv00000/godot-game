@@ -80,7 +80,11 @@ func _input(event: InputEvent) -> void:
 			var plantGrowth: int = selectedInteractable.plantGrowth
 			var plantHealth: int = selectedInteractable.plantHealth
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 			var mullahunnik: Global.inv_item
+=======
+			var mullahunnik: InvItem
+>>>>>>> Stashed changes
 =======
 			var mullahunnik: InvItem
 >>>>>>> Stashed changes
