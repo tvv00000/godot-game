@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=17 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
@@ -6,14 +6,31 @@
 [ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
-[ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
+[ext_resource type="Script" path="res://Scenes/Player/popup.gd" id="6_825xp"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="7_ji083"]
 [ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
+[ext_resource type="PackedScene" uid="uid://b7vfgock1122h" path="res://Scenes/Money/money_ui.tscn" id="11_0kmp4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
 radius = 0.310319
 height = 1.28075
+
+[sub_resource type="Theme" id="Theme_0kmp4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0kmp4"]
+bg_color = Color(1, 0.726558, 0.401091, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.405051, 0.193913, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_epg6k"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_h54ih"]
 height = 0.815552
@@ -112,6 +129,28 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="WorldMapUi" parent="HUD" instance=ExtResource("7_ji083")]
+
+[node name="MoneyUi" parent="HUD" instance=ExtResource("11_0kmp4")]
+
+[node name="Panel2" type="Panel" parent="HUD/MoneyUi"]
+layout_mode = 0
+offset_left = 1101.0
+offset_top = 210.0
+offset_right = 1275.0
+offset_bottom = 268.0
+theme = SubResource("Theme_0kmp4")
+theme_override_styles/panel = SubResource("StyleBoxFlat_0kmp4")
+
+[node name="MoneyLabel2" type="Label" parent="HUD/MoneyUi/Panel2"]
+layout_mode = 0
+offset_left = 16.87
+offset_top = 11.825
+offset_right = 161.425
+offset_bottom = 46.825
+text = "0"
+label_settings = SubResource("LabelSettings_epg6k")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="InteractionArea" type="Area3D" parent="."]
 collision_layer = 2
