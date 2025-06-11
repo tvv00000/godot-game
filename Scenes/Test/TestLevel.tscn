@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://vw0og32j5p6q" path="res://Scenes/Test/shop.fbx" id="11_jwrl0"]
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
-[ext_resource type="PackedScene" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
+[ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
