@@ -7,6 +7,8 @@ var slotNr = null
 var inventory_ref = null
 var ui_ref: Control = null
 
+
+	
 func update(slot: InvSlot, index: int, inventory: Inventory):
 	slotNr = index
 	inventory_ref = inventory

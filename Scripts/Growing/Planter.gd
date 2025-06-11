@@ -146,6 +146,3 @@ func onInteract():
 		print("Siin kasvab: ", Plant.name, " Planterstate on: ", planterState)
 	else: 
 		print("Planterstate on: ", planterState)
-
-func add_dirt():
-	planterState = 1

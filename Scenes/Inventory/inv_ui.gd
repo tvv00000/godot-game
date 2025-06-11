@@ -17,6 +17,7 @@ func _ready():
 	update_slots()
 	close()
 	Global.inv_ui = self
+	Global.inventory = inv
 
 
 func update_slots():
