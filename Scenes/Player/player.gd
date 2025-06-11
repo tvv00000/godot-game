@@ -5,7 +5,7 @@ extends CharacterBody3D
 const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
-
+const SPRINT_MULTIPLIER: float = 5.0
 
 @export var inventory: Inventory
 var ui_ref: Control
@@ -24,6 +24,7 @@ var popup: CanvasLayer
 #Interaktsioon siit allpool.
 @onready var prompt = $Prompt
 @onready var InteractionArea = $InteractionArea
+@onready var MapMenu = $HUD/WorldMapUi
 
 
 func _ready() -> void:
@@ -33,7 +34,13 @@ func _ready() -> void:
 	Global.camera = camera
 	popup = $HUD/Popup
 	popup.camera = camera
-
+	var map_menu = $HUD/WorldMapUi
+	MapMenu.map_open.connect(_on_world_map_ui_map_open)
+	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
+	if MapMenu == null:
+		print("MAPmenu poLE LEITUD APPPII!!!")
+	else:
+		print("Alls good in the world :3")
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -50,10 +57,14 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
+		var is_sprinting := Input.is_action_pressed("Move_Sprint")
+		var final_speed := SPEED * SPRINT_MULTIPLIER if is_sprinting else SPEED
+
 
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * final_speed
+			velocity.z = direction.z * final_speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
@@ -65,9 +76,11 @@ func collect(item):
 	inventory.insert(item)
 
 func _on_signal_movement_enabled() -> void:
+	print("movementenabled")
 	can_move = true
 
 func _on_movement_disabled() -> void:
+	print("movementdisabled")
 	can_move = false
 
 #allpool raha süsteem
@@ -79,3 +92,13 @@ func add_money(amount:int) -> void:
 	current_money += amount
 	print("Player now has %d money" % current_money)
 	money_collected.emit(amount, current_money)
+
+
+func _on_world_map_ui_map_closed() -> void:
+	print("Map movement enabled")
+	can_move = true
+
+
+func _on_world_map_ui_map_open() -> void:
+	can_move = false
+	print("Map movement disabled")
