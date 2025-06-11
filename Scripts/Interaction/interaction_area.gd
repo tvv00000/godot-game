@@ -87,16 +87,13 @@ func _input(event: InputEvent) -> void:
 			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
 			if planterState == 0:
-<<<<<<< Updated upstream
 				for slot in Global.inventory.slots:
 					if slot.item and slot.item.name == "Mullahunnik" and slot.amount > 0:
 						slot.item.use(selectedInteractable)
 						Global.inventory.update.emit()
 						print("Palun täida mind!")
-=======
 				pass
 				print("Palun täida mind!")
->>>>>>> Stashed changes
 			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name

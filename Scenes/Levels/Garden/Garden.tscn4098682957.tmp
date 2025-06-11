@@ -1,0 +1,119 @@
+[gd_scene load_steps=20 format=3 uid="uid://b7h1287x5o0v6"]
+
+[ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
+[ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
+[ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_typy8"]
+[ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
+[ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
+[ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
+[ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
+[ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="7_owpas"]
+[ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="10_r3nv0"]
+[ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
+[ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="11_3s34t"]
+[ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
+[ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="13_jcvc3"]
+[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="14_8nmii"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
+size = Vector3(38.7771, 1, 48.1638)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ylav4"]
+size = Vector3(10.8087, 9.28286, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hxll0"]
+size = Vector3(1, 19.3612, 13.0953)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h3sb3"]
+size = Vector3(0.234497, 11.4411, 13.23)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_owpas"]
+
+[node name="root" type="Node"]
+
+[node name="GrowthTimer" type="Node" parent="."]
+
+[node name="dynamicSky" parent="." instance=ExtResource("1_owpas")]
+transform = Transform3D(-0.183279, 0.170708, 0.968126, 0.0317534, 0.985322, -0.167729, -0.982548, 0, -0.18601, 0, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_o1jqx")]
+
+[node name="Garden" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 0, 0)
+
+[node name="Garden" parent="Garden" instance=ExtResource("1_a0w83")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Garden"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.802124, -0.502368, 4.3385)
+shape = SubResource("BoxShape3D_vg67c")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Garden"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0269818, 4.73715, 7.975)
+shape = SubResource("BoxShape3D_ylav4")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Garden"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.105722, 4.49596, -5.83339)
+shape = SubResource("BoxShape3D_ylav4")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Garden"]
+transform = Transform3D(0.963261, 0, -0.268567, 0, 1, 0, 0.268567, 0, 0.963261, 3.92112, 9.69202, 1.10518)
+shape = SubResource("BoxShape3D_hxll0")
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Garden"]
+transform = Transform3D(0.960415, 0, 0.278572, 0, 1, 0, -0.278572, 0, 0.960415, -3.59467, 5.79044, 0.992833)
+shape = SubResource("BoxShape3D_h3sb3")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(2.579, 2.02596, -1.9265e-07, 0, -9.16158e-08, -4.55952, -9.72948, 0.537021, -5.10657e-08, 3.56498, 0.0658412, 2.40173)
+mesh = SubResource("PlaneMesh_owpas")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(-10.0615, 0.0588879, -5.59968e-09, 5.58674e-16, -9.16158e-08, -4.55952, -0.282804, -2.0951, 1.99224e-07, -0.255016, 2.88778, -6.96463)
+mesh = SubResource("PlaneMesh_owpas")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(2.67075, -2.0208, 1.92159e-07, 1.5634e-15, -9.16158e-08, -4.55952, 9.70469, 0.556126, -5.28824e-08, -5.95751, 2.54998, 2.27923)
+mesh = SubResource("PlaneMesh_owpas")
+
+[node name="Planters" type="Node" parent="."]
+script = ExtResource("1_typy8")
+
+[node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
+planterState = 1
+
+[node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 4.37832, -2.38419e-07, -3.13547)
+
+[node name="Planter_Med4" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.00476467, 0.174257, -0.00700109, 0.984675, -3.32035, -2.38419e-07, 0.603617)
+
+[node name="Planter_Large" parent="Planters" instance=ExtResource("10_typy8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
+planterState = 2
+dirtRatio = 80
+moisture = 100
+fertilizer = 50
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("5_ylav4")]
+
+[node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("6_hxll0")]
+
+[node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("7_owpas")]
+
+[node name="SettingsSettings" parent="CanvasLayer" instance=ExtResource("10_r3nv0")]
+
+[node name="WorldMapUi" parent="CanvasLayer" instance=ExtResource("11_3s34t")]
+
+[node name="WorldMap" parent="." instance=ExtResource("11_r3nv0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.126753, 0.991934, 0, -0.991934, 0.126753, 0, 0, 0)
+
+[node name="QuestItem2" parent="." instance=ExtResource("13_jcvc3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05802, 0.488052, -1.60163)
+item_quantity = 99
+inv_item = ExtResource("14_8nmii")
