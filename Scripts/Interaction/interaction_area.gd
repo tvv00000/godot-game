@@ -105,14 +105,17 @@ func _input(event: InputEvent) -> void:
 		
 		elif selectedInteractable.is_in_group("Item"):
 			print("I. AM. ITEM!")
+			
+		elif selectedInteractable.is_in_group("Shop"):
+			print("Shopping!")
 		
 		elif selectedInteractable.is_in_group("Map"):
 			$"../HUD/WorldMapUi".showMap()
-			print("Koli dilani arvutisse")
+			#print("Koli dilani arvutisse")
 		
 		elif selectedInteractable.is_in_group("NPC"):
 			selectedInteractable.start_dialog()
-			print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
+			#print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:

@@ -9,7 +9,7 @@
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
-[ext_resource type="PackedScene" uid="uid://vw0og32j5p6q" path="res://Scenes/Test/shop.fbx" id="11_jwrl0"]
+[ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
@@ -122,19 +122,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -3.38505)
 [node name="MoneyItem3" parent="." instance=ExtResource("13_rcol5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 
-[node name="shop" parent="." instance=ExtResource("11_jwrl0")]
-transform = Transform3D(0.244241, 0, -0.969715, 0, 1, 0, 0.969715, 0, 0.244241, -1.66541, -0.99621, -8.60239)
+[node name="Shop" parent="." instance=ExtResource("11_jwrl0")]
+transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0719835, -7.44502)
 
 [node name="NPCs" type="Node" parent="."]
-
-[node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66608, 0, 1.85215)
-spriteTexture = ExtResource("12_rcol5")
-npc_name = "Doktor Haus"
 
 [node name="NPC_Gardner" parent="NPCs" instance=ExtResource("4_wlpxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65489, 0, 2.32642)
 spriteTexture = ExtResource("13_8n04a")
+npc_id = "npc_2"
+npc_name = "Aednik Scooby"
+
+[node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73698, 0, 2.29975)
+spriteTexture = ExtResource("12_rcol5")
 
 [connection signal="body_entered" from="MoneyItem" to="MoneyItem" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
