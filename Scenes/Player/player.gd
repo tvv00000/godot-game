@@ -5,6 +5,7 @@ extends CharacterBody3D
 const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
+const SPRINT_MULTIPLIER: float = 2.0
 
 
 @export var inventory: Inventory
@@ -50,10 +51,14 @@ func _physics_process(delta: float) -> void:
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("Move_Left", "Move_Right", "Move_Up", "Move_Down")
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+		
+		var is_sprinting := Input.is_action_pressed("Move_Sprint")
+		var final_speed := SPEED * SPRINT_MULTIPLIER if is_sprinting else SPEED
+
 
 		if direction:
-			velocity.x = direction.x * SPEED
-			velocity.z = direction.z * SPEED
+			velocity.x = direction.x * final_speed
+			velocity.z = direction.z * final_speed
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
