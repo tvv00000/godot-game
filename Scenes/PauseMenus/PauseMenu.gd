@@ -37,8 +37,10 @@ func _on_options_menu_pressed() -> void:
 
 func _on_mapmenu_btn_pressed() -> void:
 	hide()
-	MapMenu.show()
+	pause()
+	MapMenu.showMap()
 	resume()
+	MapMenu.emit_signal("map_open")
 
 func _process(delta: float) -> void:
 	testTab()

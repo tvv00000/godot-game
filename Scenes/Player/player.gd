@@ -7,7 +7,6 @@ const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
 const SPRINT_MULTIPLIER: float = 2.0
 
-
 @export var inventory: Inventory
 var ui_ref: Control
 
@@ -25,6 +24,7 @@ var popup: CanvasLayer
 #Interaktsioon siit allpool.
 @onready var prompt = $Prompt
 @onready var InteractionArea = $InteractionArea
+@onready var MapMenu = $HUD/WorldMapUi
 
 
 func _ready() -> void:
@@ -34,7 +34,13 @@ func _ready() -> void:
 	Global.camera = camera
 	popup = $HUD/Popup
 	popup.camera = camera
-
+	var map_menu = $HUD/WorldMapUi
+	MapMenu.map_open.connect(_on_world_map_ui_map_open)
+	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
+	if MapMenu == null:
+		print("MAPmenu poLE LEITUD APPPII!!!")
+	else:
+		print("Alls good in the world :3")
 
 func _physics_process(delta: float) -> void:
 	if can_move:
@@ -70,9 +76,11 @@ func collect(item):
 	inventory.insert(item)
 
 func _on_signal_movement_enabled() -> void:
+	print("movementenabled")
 	can_move = true
 
 func _on_movement_disabled() -> void:
+	print("movementdisabled")
 	can_move = false
 
 #allpool raha süsteem
@@ -84,3 +92,13 @@ func add_money(amount:int) -> void:
 	current_money += amount
 	print("Player now has %d money" % current_money)
 	money_collected.emit(amount, current_money)
+
+
+func _on_world_map_ui_map_closed() -> void:
+	print("Map movement enabled")
+	can_move = true
+
+
+func _on_world_map_ui_map_open() -> void:
+	can_move = false
+	print("Map movement disabled")
