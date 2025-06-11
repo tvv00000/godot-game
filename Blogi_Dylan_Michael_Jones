@@ -1,2 +1,14 @@
 Esimene päev:
-Esimene päev möödus üpris kiirelt ja mõnusalt. Ma tegelesin terve päev põhimõtteliselt mängu inventariga. Juba esimese 5 minuti jooksul sain parandatud ühe bugi, mis oli seotud inventarist eseme kasutamisega. Seejärel lisasin väikese menüü, mis näitas eseme nime ning kirjeldust, kui eseme peal paremklõpsu teha inventarist. Lisasin kiirelt paar eset juurde(mullahunnik ja seemned), et oleks rohkem, millega testida. Viimaseks hakkasin töötama süsteemi kallal, mille puhul ese kaob maast mängija inventari, kui mängija selle peale kõnnib(hetkel see ese jääb maha ja mängija saab sellest mitu korda läbi kõndida ning eset üles võtta.) ning ekraanile ilmub peale ülesvõtmist väike popup, mis näitab üles võetud eseme nime ning mitu neid üles võeti. Täna jõudsin tehtud eseme kadumise osa ning homme lõpetan popup ekraani. Pean ka välja mõtlema, kuidas ma söögiga teen, sest iga päev ei tahaks kuue euro eest kebabi osta.
+Esimene päev möödus üpris kiirelt ja mõnusalt. Ma tegelesin terve päev põhimõtteliselt mängu inventariga. Juba esimese 5 minuti jooksul sain parandatud ühe
+bugi, mis oli seotud inventarist eseme kasutamisega. Seejärel lisasin väikese menüü, mis näitas eseme nime ning kirjeldust, kui eseme peal paremklõpsu teha
+inventarist. Lisasin kiirelt paar eset juurde(mullahunnik ja seemned), et oleks rohkem, millega testida. Viimaseks hakkasin töötama süsteemi kallal, mille
+puhul ese kaob maast mängija inventari, kui mängija selle peale kõnnib(hetkel see ese jääb maha ja mängija saab sellest mitu korda läbi kõndida ning eset
+üles võtta.) ning ekraanile ilmub peale ülesvõtmist väike popup, mis näitab üles võetud eseme nime ning mitu neid üles võeti. Täna jõudsin tehtud eseme
+kadumise osa ning homme lõpetan popup ekraani. Pean ka välja mõtlema, kuidas ma söögiga teen, sest iga päev ei tahaks kuue euro eest kebabi osta.
+
+Teine päev:
+Teise päeva lõpuks olin ma juba rohkem väsinud. Tõenäoliselt, sest täna hommikul polnud loenguid hommikul, vaid päev otsa projekti kallal töötamist.
+Progress on üpris tugev kogu tiimil. Ma sain lõpetatud popup süsteemi, kus eseme nimi tuleb hetkeks ekraanile, kui ese üles võtta. Lisaks parandasin eseme
+dropdown menüüd. Lisasin nime ja kirjelduse alla 'kasuta' nupu, mille vajutamisel ese kaob inventarist ning ekraanile ilmub teade, et ese kasutatud.
+Parandasin mõned bugid veel, et inventar töötaks korralikult ka väljaspool test levelit. Täna sõin ka siiski kebabi. Ma kardan, et seda teen ma ka homme,
+kuid mingi lahenduse ma välja mõtlen.
