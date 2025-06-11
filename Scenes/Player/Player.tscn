@@ -175,6 +175,8 @@ stream = ExtResource("7_t26db")
 [connection signal="plantCare" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_plant_care"]
 [connection signal="plantPlanted" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_plant_planted"]
 [connection signal="uprootPlant" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_uproot_plant"]
+[connection signal="map_closed" from="HUD/WorldMapUi" to="." method="_on_world_map_ui_map_closed"]
+[connection signal="map_open" from="HUD/WorldMapUi" to="." method="_on_world_map_ui_map_open"]
 [connection signal="body_entered" from="InteractionArea" to="InteractionArea" method="_on_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="InteractionArea" method="_on_body_exited"]
 [connection signal="movementDisabled" from="InteractionArea" to="." method="_on_movement_disabled"]
