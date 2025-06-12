@@ -11,4 +11,4 @@ func _on_retry_btn_pressed() -> void:
 
 func _on_give_up_btn_pressed() -> void:
 	print("Returning!")
-	get_tree().change_scene_to_file("res://Scenes/UI/MainMenu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/MainMenu/MainMenu.tscn")
