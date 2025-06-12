@@ -16,7 +16,6 @@ var ui_ref: Control
 #popup item pickupil
 var popup: CanvasLayer
 @onready var camera = $Pivot_Camera/Camera3D
-@onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
 @onready var title = $HUD/QuestTracker/Details/Title
