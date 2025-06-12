@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://c6icfe8b0s04n" path="res://Scenes/GameOver/game_over.gd" id="1_ybu6n"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_jfln8"]
 [ext_resource type="FontFile" uid="uid://dwy5mrxva7i5o" path="res://Art/ViaodaLibre-Regular.ttf" id="3_jfln8"]
-[ext_resource type="AudioStream" uid="uid://b31kiyr1q5if0" path="res://Audio/death.wav" id="4_h2hei"]
+[ext_resource type="AudioStream" uid="uid://wv3d3ywbtd73" path="res://Audio/death2.wav" id="4_h2hei"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h2hei"]
 
