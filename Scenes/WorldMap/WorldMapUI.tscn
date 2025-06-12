@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c0wla77krivlg"]
+[gd_scene load_steps=8 format=3 uid="uid://c0wla77krivlg"]
 
 [ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/Sprites/UI/WorldMap.png" id="1_ebj4p"]
 [ext_resource type="Script" uid="uid://mgxd6okhjmv4" path="res://Scenes/WorldMap/WorldMapUI.gd" id="1_fgwen"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_tspx0"]
 [ext_resource type="StyleBox" uid="uid://cvgcm48lx3jy5" path="res://kreisiStyle.tres" id="3_kolbh"]
+[ext_resource type="AudioStream" uid="uid://cfpy4025s5mg2" path="res://Audio/oink.wav" id="5_hfq1r"]
 
 [sub_resource type="Theme" id="Theme_kolbh"]
 
@@ -62,6 +63,9 @@ theme_override_colors/font_pressed_color = Color(0.875763, 0.743301, 3.85046e-07
 theme_override_font_sizes/font_size = 58
 theme_override_styles/normal = ExtResource("3_kolbh")
 text = "EVROP"
+
+[node name="oink_sfx" type="AudioStreamPlayer" parent="TextureRect/EuropeBTN"]
+stream = ExtResource("5_hfq1r")
 
 [node name="AedBTN" type="Button" parent="TextureRect"]
 layout_mode = 0
