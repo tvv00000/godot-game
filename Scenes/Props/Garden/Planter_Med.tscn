@@ -34,3 +34,9 @@ surface_material_override/0 = ExtResource("6_2psxk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00500488, 0.411362, -0.00631922)
 visible = false
 shape = SubResource("BoxShape3D_lywwl")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

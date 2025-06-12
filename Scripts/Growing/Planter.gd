@@ -3,6 +3,7 @@ extends StaticBody3D
 #TODO: tee taime elu ja suremine korda vms
 
 #võtab asju interactable area3d nodelt.
+@onready var timer: Timer = $Timer
 
 @export var interactLabel: String = ""
 #kasvatus
@@ -38,6 +39,7 @@ func planterStater(setState):
 		
 	elif Plant and  planterState == 2:
 		interactLabel = str("Siin Kasvab " + Plant.name)
+		
 
 #see funk haldab taimede kasvu, pane readysse ja oninteracti et ta uuendaks mõistlikult
 func growPlant():
@@ -107,6 +109,7 @@ func uprootPlant():
 	planterStater(0)
 	interactLabel = "Taim välja juuritud!"
 	print("taim uprootitud (juurest üles)")
+	timer.start()
 
 func waterPlant():
 	moisture = 100
@@ -147,3 +150,8 @@ func onInteract():
 		print("Siin kasvab: ", Plant.name, " Planterstate on: ", planterState)
 	else: 
 		print("Planterstate on: ", planterState)
+
+func _on_timer_timeout() -> void:
+	interactLabel = "Täida mullaga!"
+
+	

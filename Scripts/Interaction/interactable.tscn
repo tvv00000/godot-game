@@ -1,11 +1,29 @@
 [gd_scene load_steps=2 format=3 uid="uid://dv3yhn04yvlyw"]
 
-[ext_resource type="Script" uid="uid://tywxnbavgnxx" path="res://Scripts/Interaction/Interactable.gd" id="1_1xsgc"]
+[sub_resource type="GDScript" id="GDScript_dfy57"]
+script/source = "extends Area3D
+
+#see lihtsalt saadab labeli upstreami
+@onready var InteractLabel: Label3D = $InteractLabel
+
+
+#script mida panna main objekti külge:
+#@onready var Interactable: Area3D = $Interactable
+#@export var interactName: String = \"\"
+#
+#func _ready() -> void:
+	##interactable scriptis interacatable skripti algus
+	#pass
+	#
+#func onInteract():
+	#print(\"interact toimib\")
+	#Collision: pea objektil layer 1/2, mask 1. Interactables mask 2, layer tühi.
+"
 
 [node name="Interactable" type="Area3D"]
 collision_layer = 0
 collision_mask = 2
-script = ExtResource("1_1xsgc")
+script = SubResource("GDScript_dfy57")
 
 [node name="InteractLabel" type="Label3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54005, 0)
