@@ -54,7 +54,7 @@ quest_id = "npc_quest_01"
 quest_name = "RAAAGIII"
 quest_description = "MINE NUUD"
 state = "not_started"
-unlock_id = "1"
+unlock_id = "npc_1_1"
 objectives = Array[ExtResource("16_uimbc")]([SubResource("Resource_k4vt1")])
 rewards = Array[ExtResource("17_2y5rb")]([])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
@@ -202,7 +202,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29539, 0, 3.49518)
 spriteTexture = ExtResource("13_8n04a")
 npc_name = "npc_1"
 dialog_resource = SubResource("Resource_44lv7")
-quests = Array[Resource]([SubResource("Resource_wg2lu"), SubResource("Resource_2y5rb")])
+quests = Array[ExtResource("18_62qf0")]([SubResource("Resource_wg2lu"), SubResource("Resource_2y5rb")])
 
 [node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533576, 0, 2.29975)
