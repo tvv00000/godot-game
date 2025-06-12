@@ -50,9 +50,8 @@ func load_from_json(file_path):
 	var parsed_data = JSON.parse_string(data)
 	if parsed_data:
 		dialogs = parsed_data
-		print("parsed ", FileAccess.get_file_as_string(file_path))
 	else:
-		print("Failed to parse: ", FileAccess.get_file_as_string(file_path))
+		print("Failed to parse: ", npc_id)
 
 # Return individual NPC dialogs
 func get_npc_dialog(npc_id):

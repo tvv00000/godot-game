@@ -6,24 +6,24 @@
 				"dialogs": [
 {
 	"state": "start",
-	"text": "Tere, Mina olen Botaanik Fern",
+	"text": "Tere tere noor hunt, kuidas saan sind ka aidata?",
 	"options": {
-		"Tere, botaanik! Kas sa tead, kus tüümian (Thymus vulgaris) end kõige mõnusamalt tunneb?": "thyme00",
+		"Hea folklorist, räägi mulle, miks tüümiani vanasti nii kõrgelt hinnati?": "thyme00",
 		"BYE": "exit"
 	}
 },
 {
 	"state": "thyme00",
-	"text": "Oh, Eksmati, tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast.",
+	"text": "Oh Eksmati, oled oma teadmistega õigel teel. Keskajal usuti, et see väike, aga sitke taimeke annab vaprust – rüütlid kandsid ristisõtta minnes salle, kuhu nende kallid daamid olid tikkinud tüümianioksakesi.",
 	"options": {
-		"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "thyme01"
+		"Kas see taimeke võis tuua ka armastust?": "thyme01"
 	}
 },
 {
 	"state": "thyme01",
-	"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+	"text": "Oo jaa, seda ta tegi! Kui naine pani liivatee oksa juustesse, siis ükski rüütel ei suutnud talle vastu panna. Sensuaalsust oli kaugele tunda!",
 	"options": {
-		"Ürditaimeke? Mulle meeldib see! Tänan sind, valguse ja kivide valitseja!": "start"
+		"Uskumatu! Vaprus, ilu ja armastus – kõik ühes pisikeses rohelises oksas!": "start"
 	}
 },
 {

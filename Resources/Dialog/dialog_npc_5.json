@@ -6,31 +6,31 @@
 				"dialogs": [
 {
 	"state": "start",
-	"text": "Tere, Mina olen Botaanik Fern",
+	"text": "Ohohoo kes meil siin on?",
 	"options": {
-		"Tere, botaanik! Kas sa tead, kus tüümian (Thymus vulgaris) end kõige mõnusamalt tunneb?": "thyme00",
+		"Hea taimetark, sina tead saladusi – milliseid väge ja sümbolit liivatee endas kannab?": "thyme00",
 		"BYE": "exit"
 	}
 },
 {
 	"state": "thyme00",
-	"text": "Oh, Eksmati, tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast.",
+	"text": "Oo, Eksmati, liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
 	"options": {
-		"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "thyme01"
+		"Oohoo! Päris kirju menüü!": "thyme01"
 	}
 },
 {
 	"state": "thyme01",
-	"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+	"text": "Ja see pole veel kõik – liivatee toob rahulikku und, aitab säästa, puhastab hinge ja meelt.",
 	"options": {
-		"Ürditaimeke? Mulle meeldib see! Tänan sind, valguse ja kivide valitseja!": "start"
+		"See kõlab hästi!  Kas teda võiks nartsissiga kõrvutada?": "thyme02"
 	}
 },
 {
-	"state": "give_quests",
-	"text": "super, vota see quest",
+	"state": "thyme02",
+	"text": "Nartsiss vaatab rohkem peeglisse – ta sümboliseerib ilu ja eneseleidmist. Aga liivatee… tema tuleb alati südame kaudu.",
 	"options": {
-		"END": "end"
+		"END": "start"
 	}
 }
 ]

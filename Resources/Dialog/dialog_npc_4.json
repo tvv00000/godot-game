@@ -6,24 +6,24 @@
 				"dialogs": [
 {
 	"state": "start",
-	"text": "Tere, Mina olen Botaanik Fern",
+	"text": "Hei koolihunt!",
 	"options": {
-		"Tere, botaanik! Kas sa tead, kus tüümian (Thymus vulgaris) end kõige mõnusamalt tunneb?": "thyme00",
+		"Hei, kohalik! Kas oskad öelda, kas tüümian võiks kasvada Eestimaal?": "thyme00",
 		"BYE": "exit"
 	}
 },
 {
 	"state": "thyme00",
-	"text": "Oh, Eksmati, tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast.",
+	"text": "No aed-liivatee mitte, see on päikese ja Vahemere lapsuke. Aga olen kuulnud, et teil Eestis kasvab meie liivatee sugulane – nõmm-liivatee! Teda leiad liivastel nõmmedel, vahel ka heinamaade ääres.",
 	"options": {
-		"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "thyme01"
+		"Nõmm-liivatee? Kas ta võiks ka olla sellise tugeva lõhnaga nagu aed- liivatee?": "thyme01"
 	}
 },
 {
 	"state": "thyme01",
-	"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+	"text": "Jaa, just, ta lõhnab samuti vägevalt! Kui satud oma kodumaal loodusesse, siis pane nõmm-liivatee lehed näppude vahel kokku ja nuusuta – nagu ürdiaed taskus!",
 	"options": {
-		"Ürditaimeke? Mulle meeldib see! Tänan sind, valguse ja kivide valitseja!": "start"
+		"Kindlasti teen seda!": "start"
 	}
 },
 {
