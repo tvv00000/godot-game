@@ -28,6 +28,7 @@ offset_left = -640.0
 offset_top = -360.0
 offset_right = 640.0
 offset_bottom = 360.0
+mouse_filter = 2
 texture = ExtResource("2_tspx0")
 expand_mode = 1
 
@@ -46,6 +47,7 @@ offset_bottom = 685.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.6, 0.6)
+mouse_filter = 2
 theme = SubResource("Theme_kolbh")
 texture = ExtResource("1_ebj4p")
 
