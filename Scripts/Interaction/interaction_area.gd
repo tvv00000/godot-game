@@ -111,9 +111,9 @@ func _input(event: InputEvent) -> void:
 			
 		elif selectedInteractable.is_in_group("Shop"):
 			print("Shopping!")
-			#var shop_ui = get_node(./Shop_UI) node pathi peab õige panema
-			#if shop_ui and shop_ui.has_method("open"):
-				#shop_ui.open()
+			var shop_ui = get_node("root/Root/Player/HUD/Shop_UI")
+			if shop_ui and shop_ui.has_method("open"):
+				shop_ui.open()
 		
 		elif selectedInteractable.is_in_group("Map"):
 			$"../HUD/WorldMapUi".showMap()
