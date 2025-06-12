@@ -79,12 +79,14 @@ func _input(event: InputEvent) -> void:
 			var fertilizerLevel: int = selectedInteractable.fertilizer
 			var plantGrowth: int = selectedInteractable.plantGrowth
 			var plantHealth: int = selectedInteractable.plantHealth
-			var mullahunnik: InvItem
 			
 			if planterState == 0:
 				for slot in Global.inventory.slots:
 					if slot.item and slot.item.name == "Mullahunnik" and slot.amount > 0:
-						slot.item.use(selectedInteractable)
+						var index = Global.inventory.slots.find(slot)
+						if index != -1:
+							slot.item.use(selectedInteractable)
+							Global.inventory.use_item(index)
 						Global.inventory.update.emit()
 						selectedInteractable.dirtRatio = 100
 						selectedInteractable.planterState = 1
@@ -124,15 +126,18 @@ func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:
 	selectedInteractable.dirtRatio = dirtLevel
 	selectedInteractable.planterState = 1
 	selectedInteractable.planterStater(1)
+	refreshInteractables()
 
 func _on_garden_ui_plant_planted(plant: String) -> void:
 	print("Saadud signaal istuta taim: ", plant)
 	selectedInteractable.Plant = load(plant)
 	selectedInteractable.planterState = 2
 	selectedInteractable.planterStater(2)
+	refreshInteractables()
 
 func _on_garden_ui_uproot_plant() -> void:
 	selectedInteractable.uprootPlant()
+	refreshInteractables()
 
 func _on_garden_ui_plant_care(careType: int) -> void:
 	match careType:
@@ -140,3 +145,6 @@ func _on_garden_ui_plant_care(careType: int) -> void:
 			selectedInteractable.moisture = 100
 		1:
 			selectedInteractable.fertilizer = 100
+
+func refreshInteractables():
+	updateInteractables()

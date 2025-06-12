@@ -1,0 +1,81 @@
+{
+
+		"trees": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": [
+{
+	"state": "start",
+	"text": "Tere tere noor hunt, kuidas saan sind ka aidata?",
+	"options": {
+		"Hea folklorist, räägi mulle, miks tüümiani vanasti nii kõrgelt hinnati?": "thyme00",
+		"BYE": "exit"
+	}
+},
+{
+	"state": "thyme00",
+	"text": "Oh Eksmati, oled oma teadmistega õigel teel. Keskajal usuti, et see väike, aga sitke taimeke annab vaprust – rüütlid kandsid ristisõtta minnes salle, kuhu nende kallid daamid olid tikkinud tüümianioksakesi.",
+	"options": {
+		"Kas see taimeke võis tuua ka armastust?": "thyme01"
+	}
+},
+{
+	"state": "thyme01",
+	"text": "Oo jaa, seda ta tegi! Kui naine pani liivatee oksa juustesse, siis ükski rüütel ei suutnud talle vastu panna. Sensuaalsust oli kaugele tunda!",
+	"options": {
+		"Uskumatu! Vaprus, ilu ja armastus – kõik ühes pisikeses rohelises oksas!": "start"
+	}
+},
+{
+	"state": "give_quests",
+	"text": "super, vota see quest",
+	"options": {
+		"END": "end"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_2",
+"dialogs": [
+{
+	"state": "start",
+	"text": "tagasi?",
+	"options": {
+		"1": "in_progress",
+		"END": "end",
+		"BYE": "exit"
+	}
+},
+{
+	"state": "in_progress",
+	"text": "1",
+	"options": {
+		"END": "end",
+		"tagasi": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_3",
+"dialogs": [
+{
+	"state": "start",
+	"text": "ty et aitasid",
+	"options": {
+		"1": "give_quests",
+		"Say Goodbye": "exit"
+	}
+},
+{
+	"state": "give_quests",
+	"text": "1",
+	"options": {
+		"tagasi": "start"
+	}
+}
+				]
+			}
+		]
+}

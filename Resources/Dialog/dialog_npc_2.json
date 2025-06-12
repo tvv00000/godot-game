@@ -1,77 +1,90 @@
 {
-	"npc_2": {
-		"trees": [
+	"trees": [
 			{
-				"branch_id": "npc_2_1",
+				"branch_id": "npc_1_1",
 				"dialogs": [
-					{
-						"state": "start",
-						"text": "JAUX Mina OLEN AEDNIKK!K!K!K!",
-						"options": {
-							"1": "in_progress",
-							"kvesti saab www": "give_quests",
-							"BYE": "exit"
-						}
-					},
-					{
-						"state": "in_progress",
-						"text": "1",
-						"options": {
-							"BYE": "exit",
-							"tagasi": "start"
-						}
-					},
-					{
-						"state": "give_quests",
-						"text": "super, vota see quest",
-						"options": {
-							"END": "end"
-						}
-					}
-				]
-			},
-			{
-				"branch_id": "npc_2_2",
-				"dialogs": [
-					{
-						"state": "start",
-						"text": "tagasi?",
-						"options": {
-							"1": "in_progress",
-							"END": "end",
-							"BYE": "exit"
-						}
-					},
-					{
-						"state": "in_progress",
-						"text": "1",
-						"options": {
-							"END": "end",
-							"tagasi": "start"
-						}
-					}
-				]
-			},
-			{
-				"branch_id": "npc_2_3",
-				"dialogs": [
-					{
-						"state": "start",
-						"text": "ty et aitasid",
-						"options": {
-							"1": "give_quests",
-							"Say Goodbye": "exit"
-						}
-					},
-					{
-						"state": "give_quests",
-						"text": "1",
-						"options": {
-							"tagasi": "start"
-						}
-					}
-				]
+{
+"state": "start",
+"text": "Tere, Mina olen Doktor Viktor",
+"options": {
+	"Tere, hea doktor! Kuulsin, et tüümian on nagu apteek ise. Mis rohtusid ta endas peidab?": "thyme00",
+	"BYE": "exit"
+	}
+},
+{
+	"state": "thyme00",
+	"text": "Tere, Eksmati! Tüümian on tõesti looduse väike apteek – ta aitab köha vastu, teeb röga lahti ja lõõgastab hingamisteid. Pärast on tunne, nagu oleksid mõne hea joogaõpetaja juures käinud. ",
+	"options": 
+	{
+		"Edasi": "thyme01"
+}
+},
+{
+	"state": "thyme01",
+	"text": "Eeterlikud õlid, mida tüümian endas kannab, leiavad kasutust nii meditsiinis kui ka kosmeetikatööstuses.",
+	"options": 
+	{
+		"Oo, mul hakkas kohe kergem hingata! Ja tal on antiseptiline mõju ka?": "thyme03"
+	}
+},
+{
+	"state": "thyme03",
+	"text": "Jah! Kui nartsiss teeb kevade ilusaks, siis tüümian hoiab selle tervena! Ta puhastab, rahustab ja vahel aitab isegi und tuua.",
+	"options": 
+	{
+		"Ma hakkan teda varsti padja alla panema! Tänud, doktor – sa oled tõeline tüümianitark!": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_1_2",
+"dialogs": [
+						{
+	"state": "thyme00",
+	"text": "Tere, Eksmati! Tüümian on tõesti looduse väike apteek – ta aitab köha vastu, teeb röga lahti ja lõõgastab hingamisteid. Pärast on tunne, nagu oleksid mõne hea joogaõpetaja juures käinud. ",
+	"options": 
+	{
+		"Edasi": "thyme01"
+	}
+},
+	{
+	"state": "thyme01",
+	"text": "Eeterlikud õlid, mida tüümian endas kannab, leiavad kasutust nii meditsiinis kui ka kosmeetikatööstuses.",
+	"options": 
+	{
+		"Oo, mul hakkas kohe kergem hingata! Ja tal on antiseptiline mõju ka?": "thyme03"
+	}
+},
+	{
+	"state": "thyme03",
+	"text": "Jah! Kui nartsiss teeb kevade ilusaks, siis tüümian hoiab selle tervena! Ta puhastab, rahustab ja vahel aitab isegi und tuua.",
+	"options": 
+	{
+		"Ma hakkan teda varsti padja alla panema! Tänud, doktor – sa oled tõeline tüümianitark!": "start"
+	}
+},
+]
+},
+{
+"branch_id": "npc_1_3",
+"dialogs": [
+{
+	"state": "start",
+	"text": "ty et aitasid",
+	"options": {
+		"1": "give_quests",
+		"Say Goodbye": "exit"
+	}
+},
+{
+	"state": "give_quests",
+	"text": "1",
+	"options": {
+		"tagasi": "start"
+	}
+}
+]
 			}
 		]
-	}
 }

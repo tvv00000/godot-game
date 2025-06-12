@@ -1,0 +1,80 @@
+{
+		"trees": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": [
+{
+	"state": "start",
+	"text": "Ohohoo kes meil siin on?",
+	"options": {
+		"Hea taimetark, sina tead saladusi – milliseid väge ja sümbolit liivatee endas kannab?": "thyme00",
+		"BYE": "exit"
+	}
+},
+{
+	"state": "thyme00",
+	"text": "Oo, Eksmati, liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
+	"options": {
+		"Oohoo! Päris kirju menüü!": "thyme01"
+	}
+},
+{
+	"state": "thyme01",
+	"text": "Ja see pole veel kõik – liivatee toob rahulikku und, aitab säästa, puhastab hinge ja meelt.",
+	"options": {
+		"See kõlab hästi!  Kas teda võiks nartsissiga kõrvutada?": "thyme02"
+	}
+},
+{
+	"state": "thyme02",
+	"text": "Nartsiss vaatab rohkem peeglisse – ta sümboliseerib ilu ja eneseleidmist. Aga liivatee… tema tuleb alati südame kaudu.",
+	"options": {
+		"END": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_2",
+"dialogs": [
+{
+	"state": "start",
+	"text": "tagasi?",
+	"options": {
+		"1": "in_progress",
+		"END": "end",
+		"BYE": "exit"
+	}
+},
+{
+	"state": "in_progress",
+	"text": "1",
+	"options": {
+		"END": "end",
+		"tagasi": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_3",
+"dialogs": [
+{
+	"state": "start",
+	"text": "ty et aitasid",
+	"options": {
+		"1": "give_quests",
+		"Say Goodbye": "exit"
+	}
+},
+{
+	"state": "give_quests",
+	"text": "1",
+	"options": {
+		"tagasi": "start"
+	}
+}
+				]
+			}
+	]
+}

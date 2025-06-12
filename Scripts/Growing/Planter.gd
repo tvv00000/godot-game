@@ -105,6 +105,7 @@ func uprootPlant():
 	moisture = 0
 	fertilizer = 0
 	planterStater(0)
+	interactLabel = "Taim välja juuritud!"
 	print("taim uprootitud (juurest üles)")
 
 func waterPlant():
@@ -146,6 +147,3 @@ func onInteract():
 		print("Siin kasvab: ", Plant.name, " Planterstate on: ", planterState)
 	else: 
 		print("Planterstate on: ", planterState)
-
-func add_dirt():
-	planterState = 1
