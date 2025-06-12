@@ -80,7 +80,6 @@ script = ExtResource("1_typy8")
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
-planterState = 1
 
 [node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 4.37832, -2.38419e-07, -3.13547)
@@ -90,10 +89,7 @@ transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.
 
 [node name="Planter_Large" parent="Planters" instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
-planterState = 2
-dirtRatio = 80
-moisture = 100
-fertilizer = 50
+interactLabel = ""
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
