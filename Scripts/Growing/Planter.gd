@@ -3,7 +3,7 @@ extends StaticBody3D
 #TODO: tee taime elu ja suremine korda vms
 
 #võtab asju interactable area3d nodelt.
-@onready var Interactable: Area3D = $Interactable
+
 @export var interactLabel: String = ""
 #kasvatus
 @export var Plant: Resource = null

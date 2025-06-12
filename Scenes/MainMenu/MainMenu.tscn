@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://clyuex0gy8xmc"]
+[gd_scene load_steps=4 format=3 uid="uid://clyuex0gy8xmc"]
 
 [ext_resource type="Script" uid="uid://dy7fq50ako5dd" path="res://Scenes/MainMenu/Main_Menu.gd" id="1_cdkru"]
+[ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_c7oo3"]
+[ext_resource type="FontFile" uid="uid://dwy5mrxva7i5o" path="res://Art/ViaodaLibre-Regular.ttf" id="3_sg7ab"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +12,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_cdkru")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_top = -3.0
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_c7oo3")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -28,31 +38,38 @@ theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
 text = "Alusta Mängu"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
 text = "Seaded"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
 text = "Lõpeta mäng"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -197.5
-offset_top = 68.0
-offset_right = 197.5
-offset_bottom = 159.0
+offset_left = -433.5
+offset_top = 29.0
+offset_right = 433.5
+offset_bottom = 191.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 66
-text = "Game Name"
+text = "Jätkusuutlik ülikooliaed: mängides loodusele lähemale"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
 
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_StartGame_pressed"]
 [connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_Settings_pressed"]

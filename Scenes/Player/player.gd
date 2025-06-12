@@ -5,7 +5,7 @@ extends CharacterBody3D
 const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
-const SPRINT_MULTIPLIER: float = 50.0
+const SPRINT_MULTIPLIER: float = 10.0
 
 @export var inventory: Inventory
 var ui_ref: Control
@@ -16,7 +16,6 @@ var ui_ref: Control
 #popup item pickupil
 var popup: CanvasLayer
 @onready var camera = $Pivot_Camera/Camera3D
-@onready var ray_cast_3d = $RayCast3D
 @onready var amount = $HUD/Coins/Amount
 @onready var quest_tracker = $HUD/QuestTracker
 @onready var title = $HUD/QuestTracker/Details/Title

@@ -9,7 +9,6 @@
 [sub_resource type="Theme" id="Theme_5thwm"]
 
 [node name="GardenUi" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +42,6 @@ text = "Season
 Date"
 
 [node name="DirtUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -143,7 +141,6 @@ layout_mode = 2
 text = "Lisa Kruusa!"
 
 [node name="PlantUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

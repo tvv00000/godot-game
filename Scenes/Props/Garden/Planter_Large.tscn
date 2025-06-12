@@ -14,7 +14,6 @@ size = Vector3(0.557556, 0.491455, 1.50537)
 [node name="Planter_Large" type="StaticBody3D" groups=["Planter"]]
 collision_layer = 3
 script = ExtResource("1_skqxc")
-interactLabel = "Suur Planter"
 
 [node name="PlantSprite" type="Sprite3D" parent="."]
 
