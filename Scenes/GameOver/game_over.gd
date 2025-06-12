@@ -1,5 +1,9 @@
 extends Control
 
+@onready var sfx_death = $sfx_death
+
+func _ready():
+	sfx_death.play()
 func _on_retry_btn_pressed() -> void:
 	if Global.last_teleport_scene != "":
 		print("Kreiiisii retry")

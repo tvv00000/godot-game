@@ -12,6 +12,7 @@ var ui_ref: Control
 
 
 @onready var sfx_jump = $sfx_jump 
+@onready var sfx_death = $sfx_death
 
 #popup item pickupil
 var popup: CanvasLayer
@@ -105,5 +106,6 @@ func _on_world_map_ui_map_open() -> void:
 
 func _on_water_kill_body_entered(body: CharacterBody3D) -> void:
 		if body.name == "Player":
+			
 			print("Eksmati uppus ära! Anlaki!")
 			get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
