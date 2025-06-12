@@ -25,7 +25,7 @@ func _on_europe_btn_pressed():
 	emit_signal("map_closed")
 	get_tree().paused = false
 	print("Europe button pressed")
-	Global.last_teleported_scene = "res://Scenes/Levels/Europe/Europe.tscn"
+	Global.last_teleport_scene = "res://Scenes/Levels/Europe/Europe.tscn"
 	get_tree().change_scene_to_file("res://Scenes/Levels/Europe/Europe.tscn")
 	hide()
 
@@ -33,6 +33,6 @@ func _on_aed_btn_pressed() -> void:
 	emit_signal("map_closed")
 	get_tree().paused = false
 	print("Garden button pressed")
-	Global.last_teleported_scene = "res://Scenes/Levels/Europe/Garden.tscn"
+	Global.last_teleport_scene = "res://Scenes/Levels/Europe/Garden.tscn"
 	get_tree().change_scene_to_file("res://Scenes/Levels/Garden/Garden.tscn")
 	hide()
