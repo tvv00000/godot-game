@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvcec85e7c8t8"]
+[gd_scene load_steps=3 format=3 uid="uid://bvcec85e7c8t8"]
 
 [ext_resource type="Script" uid="uid://b7xyyptbo4f3w" path="res://Scenes/PauseMenus/settings_Settings.gd" id="1_u570a"]
+[ext_resource type="Script" uid="uid://deyl0anwoyyxx" path="res://Scenes/PauseMenus/volume_slider.gd" id="2_q54er"]
 
 [node name="SettingsSettings" type="Control"]
 process_mode = 3
@@ -29,10 +30,16 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Tagasi"
 
+[node name="Master Volume" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master Volume"
+
 [node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+script = ExtResource("2_q54er")
+bus_name = "Master"
 
 [node name="Resolutions" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
