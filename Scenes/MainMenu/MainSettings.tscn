@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvnp84gccdeuw"]
+[gd_scene load_steps=3 format=3 uid="uid://bvnp84gccdeuw"]
 
 [ext_resource type="Script" uid="uid://dq1pxwgn4gj0a" path="res://Scenes/MainMenu/Main_Settings.gd" id="1_aula3"]
+[ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_arypb"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -10,6 +11,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_aula3")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("2_arypb")
+expand_mode = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -40,16 +48,19 @@ text = "Tagasi"
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.1
 anchor_right = 0.5
+anchor_bottom = 0.1
 offset_left = -197.5
-offset_top = 68.0
 offset_right = 197.5
-offset_bottom = 159.0
+offset_bottom = 91.0
 grow_horizontal = 2
 theme_override_font_sizes/font_size = 66
 text = "Seaded"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_2_pressed"]
