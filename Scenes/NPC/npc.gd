@@ -21,7 +21,7 @@ func _ready():
 
 func start_dialog():
 	print("Laetud dialoog dialog_{0}.json".format([npc_id]))
-	var npc_dialogs = get_npc_dialog(npc_id)
+	var npc_dialogs = get_npc_dialog()
 	if npc_dialogs.is_empty():
 		print("No npc dialogs finded.")
 		return
@@ -29,7 +29,7 @@ func start_dialog():
 
 # Get current branch dialog
 func  get_current_dialog():
-	var npc_dialogs = get_npc_dialog(npc_id) 
+	var npc_dialogs = get_npc_dialog() 
 	if current_branch_index < npc_dialogs.size():
 		for dialog in npc_dialogs[current_branch_index]["dialogs"]:
 			if dialog["state"] == current_state:
@@ -54,8 +54,5 @@ func load_from_json(file_path):
 		print("Failed to parse: ", npc_id)
 
 # Return individual NPC dialogs
-func get_npc_dialog(npc_id):
-	if npc_id in dialogs:
-		return dialogs[npc_id]["trees"]
-	else:
-		return []
+func get_npc_dialog():
+	return dialogs["trees"]
