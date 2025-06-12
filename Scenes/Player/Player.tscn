@@ -171,7 +171,7 @@ text = "testetestetst"
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t26db")
-bus = &"sfx"
+bus = &"Sfx"
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
 

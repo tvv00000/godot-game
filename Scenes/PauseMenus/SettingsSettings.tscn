@@ -30,7 +30,7 @@ size_flags_vertical = 4
 layout_mode = 2
 text = "Tagasi"
 
-[node name="Master Volume" type="Label" parent="PanelContainer/VBoxContainer"]
+[node name="MasterVolume" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 text = "Master Volume"
 
@@ -40,6 +40,28 @@ max_value = 1.0
 step = 0.001
 script = ExtResource("2_q54er")
 bus_name = "Master"
+
+[node name="MusicVolume" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_q54er")
+bus_name = "Music"
+
+[node name="Sfx" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+text = "Sound effects"
+
+[node name="SfxSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_q54er")
+bus_name = "Sfx"
 
 [node name="Resolutions" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -66,5 +88,9 @@ popup/item_2/id = 3
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
 [connection signal="changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_changed"]
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="changed" from="PanelContainer/VBoxContainer/MusicSlider" to="." method="_on_volume_slider_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/MusicSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="changed" from="PanelContainer/VBoxContainer/SfxSlider" to="." method="_on_volume_slider_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/SfxSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/Resolutions" to="." method="_on_resolutions_item_selected"]
 [connection signal="item_selected" from="PanelContainer/VBoxContainer/ResolutionMode" to="." method="_on_resolution_mode_item_selected"]

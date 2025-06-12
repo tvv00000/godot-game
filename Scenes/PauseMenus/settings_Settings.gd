@@ -1,8 +1,16 @@
 extends Control
 #TODO CHECK DISPLAY SIZE WHEN GOING FROM FULL TO WINDOWED MODE
 # FULLSCREEN SIZE BUGGED?
+
+@onready var settings_menu = $"../SettingsMenu"
+
 func _ready() -> void:
 	hide()
+
+
+func _on_resume_pressed() -> void:
+	hide()
+	settings_menu.show()
 
 func _on_volume_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(0, linear_to_db(value))

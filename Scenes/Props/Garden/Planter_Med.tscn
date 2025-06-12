@@ -32,7 +32,6 @@ surface_material_override/0 = ExtResource("6_2psxk")
 
 [node name="PlanterColl" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00500488, 0.411362, -0.00631922)
-visible = false
 shape = SubResource("BoxShape3D_lywwl")
 
 [node name="Timer" type="Timer" parent="."]

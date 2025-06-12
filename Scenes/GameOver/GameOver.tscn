@@ -104,7 +104,7 @@ text = "Give Up"
 
 [node name="sfx_death" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_h2hei")
-bus = &"sfx"
+bus = &"Sfx"
 
 [connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/RetryContainer/RetryBtn" to="." method="_on_retry_btn_pressed"]
 [connection signal="pressed" from="TextureRect/VBoxContainer/HBoxContainer/giveUpContainer/GiveUpBtn" to="." method="_on_give_up_btn_pressed"]
