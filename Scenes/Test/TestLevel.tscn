@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=23 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -16,6 +16,9 @@
 [ext_resource type="Texture2D" uid="uid://do1ibi3y7vyf7" path="res://Art/Sprites/UI/inv_screen.png" id="13_o75f4"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
 [ext_resource type="PackedScene" uid="uid://c75v5jpr7lasl" path="res://Scenes/Inventory/inv_slot.tscn" id="14_44lv7"]
+[ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="17_o75f4"]
+[ext_resource type="Texture2D" uid="uid://cq1kmtul5hf6v" path="res://Art/NPC/Local.png" id="18_44lv7"]
+[ext_resource type="Texture2D" uid="uid://cevel10x1an01" path="res://Art/NPC/Sage.png" id="19_mwp10"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
 size = Vector3(100, 1, 100)
@@ -227,12 +230,31 @@ vertical_alignment = 1
 [node name="NPC_Gardner" parent="NPCs" instance=ExtResource("4_wlpxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65489, 0, 2.32642)
 spriteTexture = ExtResource("13_8n04a")
-npc_id = "npc_2"
-npc_name = "Aednik Scooby"
+npc_name = "Bottanik Britta"
 
 [node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73698, 0, 2.29975)
 spriteTexture = ExtResource("12_rcol5")
+npc_id = "npc_2"
+npc_name = "Doktor Viktor(doktorikraad ajaloos)"
+
+[node name="NPC_FOLK" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87405, 0, 2.27558)
+spriteTexture = ExtResource("17_o75f4")
+npc_id = "npc_3"
+npc_name = "Nonna Bella Donna"
+
+[node name="NPC_LOCAL" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87405, 0, 2.27558)
+spriteTexture = ExtResource("18_44lv7")
+npc_id = "npc_4"
+npc_name = "Naabrimutt Mari"
+
+[node name="NPC_SAGE" parent="NPCs" instance=ExtResource("4_wlpxy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0094, 0, 2.87885)
+spriteTexture = ExtResource("19_mwp10")
+npc_id = "npc_5"
+npc_name = "Taimetark Lembit"
 
 [connection signal="body_entered" from="MoneyItem" to="MoneyItem" method="_on_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
