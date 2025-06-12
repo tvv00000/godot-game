@@ -12,3 +12,5 @@ var camera
 var inventory
 
 var last_teleport_scene: String = ""
+
+var last_loss_reason: String = ""

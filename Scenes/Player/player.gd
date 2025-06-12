@@ -109,3 +109,4 @@ func _on_water_kill_body_entered(body: CharacterBody3D) -> void:
 			
 			print("Eksmati uppus ära! Anlaki!")
 			get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
+			Global.last_loss_reason = "drowned"
