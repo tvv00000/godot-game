@@ -1,9 +1,13 @@
 extends Control
 
 @onready var sfx_death = $sfx_death
+@onready var label = $TextureRect/VBoxContainer/VBoxContainer/LossReason
 
 func _ready():
-	sfx_death.play()
+	match Global.last_loss_reason:
+		"drowned":
+			sfx_death.play()
+			label.text = "Eksmati uppus!!!! Appiiii!!!"
 func _on_retry_btn_pressed() -> void:
 	if Global.last_teleport_scene != "":
 		print("Kreiiisii retry")
