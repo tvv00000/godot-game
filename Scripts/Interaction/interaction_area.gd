@@ -14,6 +14,7 @@ var selectedInteractable: StaticBody3D = null
 signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
 
+
 func _ready():
 	InteractionLabel.hide()
 
@@ -107,8 +108,11 @@ func _input(event: InputEvent) -> void:
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
 		
 		elif selectedInteractable.is_in_group("Item"):
-			print("I. AM. ITEM!")
-			
+			if $"..".is_item_needed(selectedInteractable.item_id):
+				$"..".check_quest_objectives(selectedInteractable.item_id, "collection", selectedInteractable.item_quantity)
+				selectedInteractable.queue_free()
+			else: 
+				print("Item not needed for any active quest.")
 		elif selectedInteractable.is_in_group("Shop"):
 			print("Shopping!")
 			$"../HUD/Shop_UI/Shop_UI".open()
@@ -119,7 +123,7 @@ func _input(event: InputEvent) -> void:
 		
 		elif selectedInteractable.is_in_group("NPC"):
 			selectedInteractable.start_dialog()
-			#print("Hello. I am under the sea. Please send help. Bulbulbulbul.")
+			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to")
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:

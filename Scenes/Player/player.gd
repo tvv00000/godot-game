@@ -27,6 +27,9 @@ var popup: CanvasLayer
 @onready var MapMenu = $HUD/WorldMapUi
 
 
+@onready var quest_manager = $QuestManager
+var selected_quest: Quest = null
+
 func _ready() -> void:
 	Global.player = self
 	quest_tracker.visible = false
@@ -39,7 +42,13 @@ func _ready() -> void:
 	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
 	$HUD/Shop_UI/Shop_UI.shop_ui_open.connect(_on_movement_disabled)
 	$HUD/Shop_UI/Shop_UI.shop_ui_closed.connect(_on_signal_movement_enabled)
-
+	
+	
+	
+	#signals
+	quest_manager.quest_updated.connect(_on_quest_updated)
+	quest_manager.objective_updated.connect(_on_objective_updated)
+	
 	if MapMenu == null:
 		print("MAPmenu poLE LEITUD APPPII!!!")
 	else:
@@ -85,6 +94,99 @@ func _on_signal_movement_enabled() -> void:
 func _on_movement_disabled() -> void:
 	print("movementdisabled")
 	can_move = false
+
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+
+
+
+func _input(event):
+	# Open/close quest log
+		if event.is_action_pressed("TEMPQUEST"):
+			quest_manager.show_hide_log()
+
+# Check if quest item is needed
+func is_item_needed(item_id: String) -> bool:
+	if selected_quest != null:
+		for objective in selected_quest.objectives:
+			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
+				return true				
+	return false
+
+func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
+	if selected_quest == null:
+		return
+	
+	# Update objectives
+	var objective_updated = false
+	for objective in selected_quest.objectives:
+		if objective.target_id == target_id and objective.target_type == target_type and not objective.is_completed:
+			print("Completing objective for quest: ", selected_quest.quest_name)
+			selected_quest.complete_objective(objective.id, quantity)
+			objective_updated = true
+			break
+	
+	# Provide rewards
+	if objective_updated:
+		if selected_quest.is_completed():
+			handle_quest_completion(selected_quest)
+	
+		# Update UI
+		update_quest_tracker(selected_quest)
+
+# Player rewards
+func handle_quest_completion(quest: Quest):
+	for reward in quest.rewards:
+		if reward.reward_type == "coins":
+			current_money += reward.reward_amount
+			###add money###
+	update_quest_tracker(quest)
+	quest_manager.update_quest(quest.quest_id, "completed")
+
+# Update tracker UI
+func update_quest_tracker(quest: Quest):
+	# if we have an active quest, populate tracker
+	if quest:
+		quest_tracker.visible = true
+		title.text = quest.quest_name	
+		
+		for child in objectives.get_children():
+			objectives.remove_child(child)
+			
+		for objective in quest.objectives:
+			var label = Label.new()
+			label.text = objective.description
+			
+			if objective.is_completed:
+				label.add_theme_color_override("font_color", Color(0, 1, 0))
+			else:
+				label.add_theme_color_override("font_color", Color(1,0, 0))
+				
+			objectives.add_child(label)
+	# no active quest, hide tracker		
+	else:
+		quest_tracker.visible = false
+
+# Update tracker if quest is complete
+func _on_quest_updated(quest_id: String):
+	var quest = quest_manager.get_quest(quest_id)
+	if quest == selected_quest:
+		update_quest_tracker(quest)
+	selected_quest = null
+
+# Update tracker if objective is complete
+func _on_objective_updated(quest_id: String, objective_id: String):
+	if selected_quest and selected_quest.quest_id == quest_id:
+		update_quest_tracker(selected_quest)
+	selected_quest = null
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+
+
 
 #allpool raha süsteem
 var current_money: int = 0

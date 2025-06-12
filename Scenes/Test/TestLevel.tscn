@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=31 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -15,8 +15,12 @@
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
+[ext_resource type="Script" uid="uid://lird66nix5lm" path="res://Resources/Dialog/Dialog.gd" id="15_o75f4"]
+[ext_resource type="Script" uid="uid://c7a1j36unkq1q" path="res://Resources/Quest/Objectives.gd" id="16_uimbc"]
+[ext_resource type="Script" uid="uid://bien6lff38nx1" path="res://Resources/Quest/Rewards.gd" id="17_2y5rb"]
 [ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="17_o75f4"]
 [ext_resource type="Texture2D" uid="uid://cq1kmtul5hf6v" path="res://Art/NPC/Local.png" id="18_44lv7"]
+[ext_resource type="Script" uid="uid://dwnriolo4jg3x" path="res://Resources/Quest/Quests.gd" id="18_62qf0"]
 [ext_resource type="Texture2D" uid="uid://cevel10x1an01" path="res://Art/NPC/Sage.png" id="19_mwp10"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6o4ny"]
@@ -26,6 +30,57 @@ size = Vector3(100, 1, 100)
 albedo_color = Color(0.360784, 0.407843, 0.309804, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u1gwc"]
+
+[sub_resource type="Resource" id="Resource_44lv7"]
+script = ExtResource("15_o75f4")
+dialogs = {}
+metadata/_custom_type_script = "uid://lird66nix5lm"
+
+[sub_resource type="Resource" id="Resource_k4vt1"]
+script = ExtResource("16_uimbc")
+id = "npc_talk_01"
+description = "RAASDAFASFGG"
+target_id = "npc_2"
+target_type = "talk_to"
+objective_dialog = "yay"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+metadata/_custom_type_script = "uid://c7a1j36unkq1q"
+
+[sub_resource type="Resource" id="Resource_wg2lu"]
+script = ExtResource("18_62qf0")
+quest_id = "npc_quest_01"
+quest_name = "RAAAGIII"
+quest_description = "MINE NUUD"
+state = "not_started"
+unlock_id = "1"
+objectives = Array[ExtResource("16_uimbc")]([SubResource("Resource_k4vt1")])
+rewards = Array[ExtResource("17_2y5rb")]([])
+metadata/_custom_type_script = "uid://dwnriolo4jg3x"
+
+[sub_resource type="Resource" id="Resource_uimbc"]
+script = ExtResource("16_uimbc")
+id = "obj_collect_01"
+description = "korja 10"
+target_id = "item_muld"
+target_type = "collection"
+objective_dialog = "gj"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+metadata/_custom_type_script = "uid://c7a1j36unkq1q"
+
+[sub_resource type="Resource" id="Resource_2y5rb"]
+script = ExtResource("18_62qf0")
+quest_id = "npc_quest_02"
+quest_name = "muld"
+quest_description = "korja nuud"
+state = "not_started"
+unlock_id = "npc_default"
+objectives = Array[ExtResource("16_uimbc")]([SubResource("Resource_uimbc")])
+rewards = Array[ExtResource("17_2y5rb")]([])
+metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
 [node name="Root" type="Node" groups=["Planter"]]
 
@@ -105,13 +160,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.92794, 2.13756, -6.33096)
 [node name="BoxProp2" parent="Props" groups=["Planter"] instance=ExtResource("3_jxrda")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.29944, 0.0961845, 0.593892)
 
+[node name="QuestItem4" parent="." instance=ExtResource("6_nqdq4")]
+transform = Transform3D(0.999893, 0, 0.0146602, 0, 1, 0, -0.0146602, 0, 0.999893, 5.34425, 0.976104, -3.43295)
+item_id = "item_muld"
+item_quantity = 5
+inv_item = ExtResource("8_jwrl0")
+
 [node name="QuestItem" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981732, 5.6156, -8.51315)
 inv_item = ExtResource("7_7hlls")
 
 [node name="QuestItem2" parent="." instance=ExtResource("6_nqdq4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05802, 0.488052, -1.60163)
-item_quantity = 99
+transform = Transform3D(0.999893, 0, 0.0146602, 0, 1, 0, -0.0146602, 0, 0.999893, 4.80038, 0.488052, -1.60163)
+item_id = "item_muld"
+item_quantity = 5
 inv_item = ExtResource("8_jwrl0")
 
 [node name="QuestItem3" parent="." instance=ExtResource("6_nqdq4")]
@@ -136,24 +198,26 @@ transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, 
 [node name="NPCs" type="Node" parent="."]
 
 [node name="NPC_Gardner" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.65489, 0, 2.32642)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.29539, 0, 3.49518)
 spriteTexture = ExtResource("13_8n04a")
-npc_name = "Bottanik Britta"
+npc_name = "npc_1"
+dialog_resource = SubResource("Resource_44lv7")
+quests = Array[Resource]([SubResource("Resource_wg2lu"), SubResource("Resource_2y5rb")])
 
 [node name="NPC_DOC" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.73698, 0, 2.29975)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.533576, 0, 2.29975)
 spriteTexture = ExtResource("12_rcol5")
 npc_id = "npc_2"
 npc_name = "Doktor Viktor(doktorikraad ajaloos)"
 
 [node name="NPC_FOLK" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87405, 0, 2.27558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.11655, 0, 2.27558)
 spriteTexture = ExtResource("17_o75f4")
 npc_id = "npc_3"
 npc_name = "Nonna Bella Donna"
 
 [node name="NPC_LOCAL" parent="NPCs" instance=ExtResource("4_wlpxy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.87405, 0, 2.27558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52877, 0, 2.27558)
 spriteTexture = ExtResource("18_44lv7")
 npc_id = "npc_4"
 npc_name = "Naabrimutt Mari"

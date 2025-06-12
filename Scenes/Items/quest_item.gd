@@ -22,8 +22,6 @@ func _process(delta):
 		if mesh_instance_3d and item_mesh:
 			mesh_instance_3d.mesh = item_mesh
 
-func start_interact():
-	print("I am an item!")
 
 
 func _on_body_entered(body: CharacterBody3D) -> void:
