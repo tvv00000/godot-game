@@ -1,0 +1,118 @@
+{
+		"trees": [
+			{
+				"branch_id": "npc_2_1",
+				"dialogs": [
+{
+	"state": "start",
+	"text": "Hahahha hull Hunt, Ma ei anna sulle seemneid ja sa ei saa mind peatada HAHAHAHAHA",
+	"options": {
+		"Tere Kivide Ja Päikese valitseja!, mina soovin sinu seemneid": "thyme00",
+		"hei jobukott, köhi seemneid": "thyme99",
+		"Lugupeetud Tüümian, kas ma palun saaksin su seemneid!": "thyme99",
+		"BYE": "exit"
+	}
+},
+{
+	"state": "thyme00",
+	"text": "Hahahaha ei saa! Aga ma annan kui sa vastad õigesti minu küsimusele! Aga ma teen seda diili ainult nendega kes teavad mu ladinakeelset nime!",
+	"options": {
+		"Ooo lugupeetud Thymus Vulgaris, kas austate mind oma küsimuste kadalipuga": "thyme02",
+		"Oo kõgresooline Thymian Valtari, Ma olen teie vääriline!": "thyme99",
+		"Sa oled Tümpsikus Ümpsikus": "thyme99"
+	}
+},
+{
+	"state": "thyme02",
+	"text": "Okei okei, siin esimene küsimus: Mille ravim ma olen",
+	"options": {
+		"Teie kõikevägev jõud ravib nohu ja köha": "thyme03",
+		"Te ravite madalat enesekindlust": "thyme99",
+		"teie vägi ravib halva toidu maitse": "thyme99"
+	}
+},
+{
+	"state": "thyme03",
+	"text": "Pole paha, aga kelle rinda mina ehtisin keskajal?",
+	"options": {
+		"Teie kõrgesooline varreke ehtis rüütlite rinda!": "thyme04",
+		"Teie ehtisite pagarite rinda": "thyme99",
+		"aadlidaami": "thyme99"
+	}
+},
+{
+	"state": "thyme04",
+	"text": "Kuulsin et sa oled hülgeline, ütle siis kes on minu sugulane Lääne-Virumaalt!",
+	"options": {
+		"Meie maa suur ja tähtis taim on Nõmm-Liivatee!": "thyme05",
+		"Eks ikka kõrge verega taim on Sambla-Liivatee!": "thyme99",
+		"Ainus kuninglik kohalik on Põdrakanep!": "thyme99"
+	}
+},
+{
+	"state": "thyme05",
+	"text": "Hmm, pole paha kriimsilm.  Nonii, kui selle ära vastad siis võid võtta seemneid. Mida sümboliseerib tüümian? Peaks sinusuguse nohiku jaoks lihtne küss olema",
+	"options": {
+		"Eks ikka kiindumust, vaprust, elegantsi ja sensuaalsust!": "thyme06",
+		"No muidugi vaprust, ilu, ja pikka armastust!": "thyme99",
+		"Mis ta muu saab olla kui jätkusuutlikus, kangekaelsus ja sitkus!": "thyme99"
+	}
+},
+{
+	"state": "thyme06",
+	"text": "Vau... tegidki ära... Nojah, siin on siis seemned, mine pista mulda need vms te hundid nendega teete.",
+	"options": {
+		"Tänks lohh": "end"
+		}
+},
+{
+	"state": "thyme99",
+	"text": "Hahahhaa vale vastus hahha",
+	"options": {
+		"END": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_2",
+"dialogs": [
+{
+	"state": "start",
+	"text": "Mis sa veel must tahad",
+	"options": {
+		"BYE": "exit"
+	}
+},
+{
+	"state": "in_progress",
+	"text": "1",
+	"options": {
+		"END": "end",
+		"tagasi": "start"
+	}
+}
+]
+},
+{
+"branch_id": "npc_2_3",
+"dialogs": [
+{
+	"state": "start",
+	"text": "ty et aitasid",
+	"options": {
+		"1": "give_quests",
+		"Say Goodbye": "exit"
+	}
+},
+{
+	"state": "give_quests",
+	"text": "1",
+	"options": {
+		"tagasi": "start"
+	}
+}
+				]
+			}
+	]
+}
