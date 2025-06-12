@@ -17,7 +17,6 @@ signal movementDisabled()
 func _ready():
 	InteractionLabel.hide()
 
-
 #See sorteerib lähedal olevad interactabled ja valib listist lähima objekti, kui array on suurem kui 1.
 func updateInteractables():
 	#if elif else oli vajalik sest ta mudu tahtis kräshu bäšhu teha rangest väljudes
