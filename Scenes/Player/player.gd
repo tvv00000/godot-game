@@ -101,3 +101,9 @@ func _on_world_map_ui_map_closed() -> void:
 func _on_world_map_ui_map_open() -> void:
 	can_move = false
 	print("Map movement disabled")
+
+
+func _on_water_kill_body_entered(body: CharacterBody3D) -> void:
+		if body.name == "Player":
+			print("Eksmati uppus ära! Anlaki!")
+			get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
