@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=22 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -9,7 +9,9 @@
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
 [ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/mullahunnik.tres" id="8_jwrl0"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
+[ext_resource type="PackedScene" uid="uid://cmt6ht35g86cq" path="res://Scenes/Test/shop_ui.tscn" id="10_b1g8u"]
 [ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="11_jwrl0"]
+[ext_resource type="Script" uid="uid://c2an8iovqoy1a" path="res://Scenes/Test/shop_ui.gd" id="11_kjo0q"]
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
@@ -124,6 +126,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -3.38505)
 
 [node name="MoneyItem3" parent="." instance=ExtResource("13_rcol5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
+
+[node name="Shop_UI" parent="." instance=ExtResource("10_b1g8u")]
+script = ExtResource("11_kjo0q")
 
 [node name="Shop" parent="." instance=ExtResource("11_jwrl0")]
 transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0719835, -7.44502)

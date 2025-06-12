@@ -1,12 +1,20 @@
 extends Control
 
-var is_open = false
+var can_move:bool = true
+
+signal shop_ui_open
+signal shop_ui_closed
 
 func open():
-	visible = true
-	is_open = true
-	print("Window should be visible")
+	show()
+	can_move = false
+	emit_signal("shop_ui_open")
 
 func close():
-	visible = false
-	is_open = false
+	hide()
+	can_move = true
+	emit_signal("shop_ui_closed")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		close()

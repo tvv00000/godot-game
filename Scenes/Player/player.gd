@@ -37,6 +37,9 @@ func _ready() -> void:
 	var map_menu = $HUD/WorldMapUi
 	MapMenu.map_open.connect(_on_world_map_ui_map_open)
 	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
+	$HUD/Shop_UI/Shop_UI.shop_ui_open.connect(_on_movement_disabled)
+	$HUD/Shop_UI/Shop_UI.shop_ui_closed.connect(_on_signal_movement_enabled)
+
 	if MapMenu == null:
 		print("MAPmenu poLE LEITUD APPPII!!!")
 	else:
