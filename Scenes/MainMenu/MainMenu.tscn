@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://clyuex0gy8xmc"]
+[gd_scene load_steps=6 format=3 uid="uid://clyuex0gy8xmc"]
 
 [ext_resource type="Script" uid="uid://dy7fq50ako5dd" path="res://Scenes/MainMenu/Main_Menu.gd" id="1_cdkru"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_c7oo3"]
 [ext_resource type="FontFile" uid="uid://dwy5mrxva7i5o" path="res://Art/ViaodaLibre-Regular.ttf" id="3_sg7ab"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="4_kpx3y"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="5_ua038"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -38,20 +40,38 @@ theme_override_constants/separation = 10
 
 [node name="Play" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
 theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = ExtResource("4_kpx3y")
+theme_override_styles/pressed = ExtResource("5_ua038")
+theme_override_styles/normal = ExtResource("4_kpx3y")
 text = "Alusta Mängu"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
 theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = ExtResource("4_kpx3y")
+theme_override_styles/pressed = ExtResource("5_ua038")
+theme_override_styles/normal = ExtResource("4_kpx3y")
 text = "Seaded"
 
 [node name="Exit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
 theme_override_fonts/font = ExtResource("3_sg7ab")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = ExtResource("4_kpx3y")
+theme_override_styles/pressed = ExtResource("5_ua038")
+theme_override_styles/normal = ExtResource("4_kpx3y")
 text = "Lõpeta mäng"
 
 [node name="Label" type="Label" parent="."]
