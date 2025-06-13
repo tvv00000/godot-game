@@ -65,6 +65,7 @@ text = "Music volume"
 layout_mode = 2
 max_value = 1.0
 step = 0.001
+value = 1.0
 script = ExtResource("2_q54er")
 bus_name = "Music"
 
