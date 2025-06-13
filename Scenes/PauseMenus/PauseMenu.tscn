@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwrf1vwdkr505"]
+[gd_scene load_steps=5 format=3 uid="uid://cwrf1vwdkr505"]
 
 [ext_resource type="Script" uid="uid://2p4y2rjmtmsb" path="res://Scenes/PauseMenus/PauseMenu.gd" id="1_flhmi"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_0vk47"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="2_d2kfc"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_5mynt"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -28,19 +30,43 @@ size_flags_vertical = 0
 
 [node name="ResumeBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_0vk47")
+theme_override_styles/pressed = ExtResource("3_5mynt")
+theme_override_styles/normal = ExtResource("2_0vk47")
 text = "Tagasi"
 
 [node name="PlantIndexBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_0vk47")
+theme_override_styles/pressed = ExtResource("3_5mynt")
+theme_override_styles/normal = ExtResource("2_0vk47")
 text = "Taimeteatmik"
 
 [node name="OptionsMenuBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_0vk47")
+theme_override_styles/pressed = ExtResource("3_5mynt")
+theme_override_styles/normal = ExtResource("2_0vk47")
 text = "Pausimenüü"
 
 [node name="MapmenuBtn" type="Button" parent="PanelContainer/HBoxContainer"]
 layout_mode = 2
-text = "Kaart
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_0vk47")
+theme_override_styles/pressed = ExtResource("3_5mynt")
+theme_override_styles/normal = ExtResource("2_0vk47")
+text = "kaart
 "
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
