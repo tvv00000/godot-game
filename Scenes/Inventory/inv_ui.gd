@@ -26,12 +26,12 @@ func update_slots():
 		slots[i].update(inv.slots[i], i, inv)
 
 ##Commenti tagasi sisse, et testlevelis inventory kasutada
-#func _process(delta):
-	#if Input.is_action_just_pressed("OpenInv"):
-		#if is_open:
-			#close()
-		#else:
-			#open()
+func _process(delta):
+	if Input.is_action_just_pressed("OpenInv"):
+		if is_open:
+			close()
+		else:
+			open()
 
 func open():
 	visible = true
@@ -54,7 +54,7 @@ func item_info_popup(slot: InvSlot, position: Vector2):
 #Itemi kasutamise nupp
 func _on_use_button_pressed() -> void:
 	if current_slot >= 0:
-		inv.use_item(current_slot)
+		inv.use_item(current_slot, 1)
 		item_info.hide()
 		current_slot= -1
 		use_button.hide()

@@ -92,9 +92,6 @@ func collect(item, item_quantity, inv_item):
 	else: 
 		print("Item not needed for any active quest.")
 		inventory.insert(inv_item, item_quantity)
-		
-		
-	
 
 func _on_signal_movement_enabled() -> void:
 	print("movementenabled")
@@ -129,11 +126,10 @@ func is_item_needed(item_id: String):
 					return true
 	return false
 
-
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
 	if selected_quest == null:
 		return
-	
+		
 	# Update objectives
 	var objective_updated = false
 	for objective in selected_quest.objectives:

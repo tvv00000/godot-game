@@ -10,7 +10,7 @@ var planterDirtRatio: int = 0
 var inv_ui
 var camera
 var inventory
-
+var inv_item
 var last_teleport_scene: String = ""
 
 var last_loss_reason: String = ""

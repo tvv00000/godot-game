@@ -9,7 +9,6 @@ extends Area3D
 @export var inv_item: InvItem
 var player = null
 
-
 func _ready():
 	# Show mesh in the game
 	if not Engine.is_editor_hint():
@@ -26,7 +25,9 @@ func _process(delta):
 
 func _on_body_entered(body: CharacterBody3D) -> void:
 	player = body
-	player.collect(item_id, item_quantity, inv_item)
+	for x in item_quantity:
+		player.collect(item_id, 1, inv_item)
+		
 	
 	#Pickup popup tekst
 	if player.popup:

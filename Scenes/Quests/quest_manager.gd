@@ -7,7 +7,7 @@ signal quest_updated(quest_id: String)
 signal objective_updated(quest_id: String, objective_id: String)
 signal quest_list_updated()
 
-var quests = {}
+@export var quests = {}
 
 # Add quests
 func add_quest(quest: Quest):

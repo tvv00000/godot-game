@@ -14,8 +14,10 @@ script = ExtResource("1_j4njs")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 0
-offset_right = 85.0
-offset_bottom = 64.0
+offset_left = 83.0
+offset_top = 127.0
+offset_right = 168.0
+offset_bottom = 191.0
 scale = Vector2(7, 7)
 texture = ExtResource("2_skam5")
 patch_margin_left = 6
