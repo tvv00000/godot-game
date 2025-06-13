@@ -84,15 +84,15 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func collect(item, item_quantity):
+func collect(item, item_quantity, inv_item):
 	print('korjas ')
 	print(item)
 	print(item_quantity)
 	if is_item_needed(item):
 		check_quest_objectives(item, "collection", item_quantity)
-		#inventory.insert(item)
 	else: 
 		print("Item not needed for any active quest.")
+		inventory.insert(inv_item)
 		
 		
 	
