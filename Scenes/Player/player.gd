@@ -90,6 +90,7 @@ func collect(item, item_quantity):
 	print(item_quantity)
 	if is_item_needed(item):
 		check_quest_objectives(item, "collection", item_quantity)
+		#inventory.insert(item)
 		
 		#mdea miks see oli D: [kas on vaja?]
 		#item.queue_free()
@@ -97,7 +98,7 @@ func collect(item, item_quantity):
 		print("Item not needed for any active quest.")
 		
 		
-	#inventory.insert(item)
+	
 
 func _on_signal_movement_enabled() -> void:
 	print("movementenabled")

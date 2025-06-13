@@ -26,12 +26,12 @@ func update_slots():
 		slots[i].update(inv.slots[i], i, inv)
 
 #Commenti tagasi sisse, et testlevelis inventory kasutada
-#func _process(delta):
-	#if Input.is_action_just_pressed("OpenInv"):
-		#if is_open:
-			#close()
-		#else:
-			#open()
+func _process(delta):
+	if Input.is_action_just_pressed("OpenInv"):
+		if is_open:
+			close()
+		else:
+			open()
 
 func open():
 	visible = true
@@ -75,14 +75,3 @@ func get_selected_item() -> InvItem:
 	if current_slot >= 0 and current_slot < inv.slots.size():
 		return inv.slots[current_slot].item
 	return null
-
-func remove_item(target_item: InvItem) -> void:
-	for i in range(inv.slots.size()):
-		var slot = inv.slots[i]
-		if slot.item == target_item:
-			slot.amount -= 1
-			if slot.amount <= 0:
-				slot.item = null
-			inv.emit_signal("update")
-			update_slots()
-			return
