@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="15_va0j1"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="16_va0j1"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="17_6uhru"]
-[ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
+[ext_resource type="PackedScene" uid="uid://dgu4nfixubcsa" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="21_v6112"]
 [ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="22_b5g1t"]
 [ext_resource type="Texture2D" uid="uid://cevel10x1an01" path="res://Art/NPC/Sage.png" id="23_6hq1d"]
