@@ -150,8 +150,7 @@ func check_quest_objectives(target_id: String, target_type: String, quantity: in
 func handle_quest_completion(quest: Quest):
 	for reward in quest.rewards:
 		if reward.reward_type == "coins":
-			current_money += reward.reward_amount
-			###add money###
+			add_money(reward.reward_amount)
 	update_quest_tracker(quest)
 	quest_manager.update_quest(quest.quest_id, "completed")
 
@@ -191,22 +190,22 @@ func _on_objective_updated(quest_id: String, objective_id: String):
 	if selected_quest and selected_quest.quest_id == quest_id:
 		update_quest_tracker(selected_quest)
 	selected_quest = null
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+	
 
-
-
-#allpool raha süsteem
-var current_money: int = 0
-
+var coin_amount  = 0
+#temp
+#@onready var amount = $HUD/Coins/Amount
 signal money_collected(amount_added:int, new_total:int)
 
 func add_money(amount:int) -> void:
-	current_money += amount
-	print("Player now has %d money" % current_money)
-	money_collected.emit(amount, current_money)
+	coin_amount += amount
+	print("Player now has %d money" % coin_amount)
+	money_collected.emit(amount, coin_amount)
+
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
 
 
 func _on_world_map_ui_map_closed() -> void:
