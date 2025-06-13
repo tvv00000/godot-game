@@ -90,9 +90,10 @@ func collect(item, item_quantity, inv_item):
 	print(item_quantity)
 	if is_item_needed(item):
 		check_quest_objectives(item, "collection", item_quantity)
+		
 	else: 
 		print("Item not needed for any active quest.")
-		inventory.insert(inv_item)
+		inventory.insert(inv_item, item_quantity)
 		
 		
 	
@@ -118,12 +119,18 @@ func _input(event):
 			quest_manager.show_hide_log()
 
 # Check if quest item is needed
-func is_item_needed(item_id: String) -> bool:
+func is_item_needed(item_id: String):
 	if selected_quest != null:
 		for objective in selected_quest.objectives:
 			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
-				return true				
+				var total_amount = 0
+				for slot in inventory.slots:
+					if slot.item != null and slot.item.id == item_id:
+						total_amount += slot.amount
+				if total_amount < objective.required_quantity:
+					return true
 	return false
+
 
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
 	if selected_quest == null:
