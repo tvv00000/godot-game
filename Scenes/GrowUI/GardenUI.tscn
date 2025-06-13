@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8tp72b0opp4u"]
+[gd_scene load_steps=8 format=3 uid="uid://b8tp72b0opp4u"]
 
 [ext_resource type="Script" uid="uid://clkmaoboqfu50" path="res://Scripts/UI/Garden_UI.gd" id="1_8dd0n"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="1_wwyio"]
 [ext_resource type="ArrayMesh" uid="uid://f5dcn2nq6al4" path="res://Art/Props/Garden/Planter_Med.obj" id="2_8dd0n"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="4_sprp4"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="5_dv7ao"]
 
 [sub_resource type="FontVariation" id="FontVariation_n4go3"]
 
@@ -269,52 +271,100 @@ layout_mode = 2
 
 [node name="Waterbutton" type="Button" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Kasta Taime!"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("4_sprp4")
+theme_override_styles/pressed = ExtResource("5_dv7ao")
+theme_override_styles/normal = ExtResource("4_sprp4")
+text = "Kasta taime!"
 
 [node name="FertilizeButton" type="Button" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Väeta Taime"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("4_sprp4")
+theme_override_styles/pressed = ExtResource("5_dv7ao")
+theme_override_styles/normal = ExtResource("4_sprp4")
+text = "Väeta taime!"
 
 [node name="UprootButton" type="Button" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("4_sprp4")
+theme_override_styles/pressed = ExtResource("5_dv7ao")
+theme_override_styles/normal = ExtResource("4_sprp4")
 text = "Juuri taim välja"
 
 [node name="ClosePlantButton" type="Button" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
-text = "Sulge Aken"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("4_sprp4")
+theme_override_styles/pressed = ExtResource("5_dv7ao")
+theme_override_styles/normal = ExtResource("4_sprp4")
+text = "Sulge aken"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CareUI/DirtUI BG/HBoxContainer"]
 layout_mode = 2
 
 [node name="CurrentlyGrowing" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Hetkel Kasvab: "
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
+text = "Hetkel Kasvab:"
 
 [node name="Plantname" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 
 [node name="Niiskust" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "Niiskust on:"
 
 [node name="MoistureLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "0%"
 
 [node name="Väetist" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "Väetist on:"
 
 [node name="FertLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "0%"
 
 [node name="Taimekasv" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "Taime kasv on:"
 
 [node name="GrowthLabel" type="Label" parent="CareUI/DirtUI BG/HBoxContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "0%"
 
 [connection signal="pressed" from="DirtUI/ScreenContainer/ClosePlantButton" to="." method="_on_close_plant_button_pressed"]

@@ -40,8 +40,6 @@ func _ready() -> void:
 	var map_menu = $HUD/WorldMapUi
 	MapMenu.map_open.connect(_on_world_map_ui_map_open)
 	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
-	$HUD/Shop_UI/Shop_UI.shop_ui_open.connect(_on_movement_disabled)
-	$HUD/Shop_UI/Shop_UI.shop_ui_closed.connect(_on_signal_movement_enabled)
 	
 	
 	
@@ -84,18 +82,16 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func collect(item, item_quantity):
+func collect(item, item_quantity, inv_item):
 	print('korjas ')
 	print(item)
 	print(item_quantity)
 	if is_item_needed(item):
 		check_quest_objectives(item, "collection", item_quantity)
-		#inventory.insert(item)
 		
-		#mdea miks see oli D: [kas on vaja?]
-		#item.queue_free()
 	else: 
 		print("Item not needed for any active quest.")
+		inventory.insert(inv_item, item_quantity)
 		
 		
 	
@@ -121,12 +117,18 @@ func _input(event):
 			quest_manager.show_hide_log()
 
 # Check if quest item is needed
-func is_item_needed(item_id: String) -> bool:
+func is_item_needed(item_id: String):
 	if selected_quest != null:
 		for objective in selected_quest.objectives:
 			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
-				return true				
+				var total_amount = 0
+				for slot in inventory.slots:
+					if slot.item != null and slot.item.id == item_id:
+						total_amount += slot.amount
+				if total_amount < objective.required_quantity:
+					return true
 	return false
+
 
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
 	if selected_quest == null:
@@ -153,8 +155,7 @@ func check_quest_objectives(target_id: String, target_type: String, quantity: in
 func handle_quest_completion(quest: Quest):
 	for reward in quest.rewards:
 		if reward.reward_type == "coins":
-			current_money += reward.reward_amount
-			###add money###
+			add_money(reward.reward_amount)
 	update_quest_tracker(quest)
 	quest_manager.update_quest(quest.quest_id, "completed")
 
@@ -194,22 +195,20 @@ func _on_objective_updated(quest_id: String, objective_id: String):
 	if selected_quest and selected_quest.quest_id == quest_id:
 		update_quest_tracker(selected_quest)
 	selected_quest = null
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+	
 
-
-
-#allpool raha süsteem
-var current_money: int = 0
-
+var coin_amount  = 0
 signal money_collected(amount_added:int, new_total:int)
 
 func add_money(amount:int) -> void:
-	current_money += amount
-	print("Player now has %d money" % current_money)
-	money_collected.emit(amount, current_money)
+	coin_amount += amount
+	print("Player now has %d money" % coin_amount)
+	money_collected.emit(amount, coin_amount)
+
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
+### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
 
 
 func _on_world_map_ui_map_closed() -> void:

@@ -1,18 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b7vfgock1122h"]
 
 [ext_resource type="Script" uid="uid://c5ewx2tbr6uli" path="res://Scenes/Money/money_ui.gd" id="1_w55eq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t04vj"]
-bg_color = Color(1, 0.726558, 0.401091, 1)
-border_width_left = 4
-border_width_top = 4
-border_width_right = 4
-border_width_bottom = 4
-border_color = Color(0.405051, 0.193913, 0, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_alw3q"]
 
 [sub_resource type="Theme" id="Theme_w55eq"]
 
@@ -34,7 +23,7 @@ offset_left = 1101.0
 offset_top = 210.0
 offset_right = 1275.0
 offset_bottom = 268.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_t04vj")
+theme_override_styles/panel = ExtResource("2_alw3q")
 
 [node name="MoneyLabel" type="Label" parent="Panel"]
 layout_mode = 0
@@ -43,6 +32,7 @@ offset_top = 11.825
 offset_right = 161.425
 offset_bottom = 46.825
 theme = SubResource("Theme_w55eq")
+theme_override_colors/font_color = Color(0.842588, 9.33737e-06, 0.552756, 1)
 text = "0"
 label_settings = SubResource("LabelSettings_alw3q")
 horizontal_alignment = 1

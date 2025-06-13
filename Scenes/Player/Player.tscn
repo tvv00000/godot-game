@@ -1,9 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=18 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
 [ext_resource type="Resource" uid="uid://bg73wcd32svju" path="res://Scenes/Inventory/playerInv.tres" id="2_t26db"]
-[ext_resource type="Texture2D" uid="uid://c1susdepcj74f" path="res://icon.svg" id="3_h54ih"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
 [ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
@@ -59,39 +58,6 @@ transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, 
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Coins" type="ColorRect" parent="HUD"]
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -274.0
-offset_bottom = 160.0
-grow_horizontal = 0
-color = Color(0, 0, 0, 1)
-
-[node name="Icon" type="TextureRect" parent="HUD/Coins"]
-layout_mode = 1
-anchors_preset = 9
-anchor_bottom = 1.0
-offset_right = 128.0
-grow_vertical = 2
-texture = ExtResource("3_h54ih")
-expand_mode = 2
-
-[node name="Amount" type="Label" parent="HUD/Coins"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -40.0
-offset_top = -11.5
-offset_bottom = 11.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 50
-text = "0"
-
 [node name="QuestTracker" type="ColorRect" parent="HUD"]
 offset_right = 300.0
 offset_bottom = 200.0
@@ -134,7 +100,7 @@ vertical_alignment = 1
 
 [node name="MoneyUi" parent="HUD" instance=ExtResource("11_0kmp4")]
 
-[node name="MoneyPanel" type="Panel" parent="HUD/MoneyUi"]
+[node name="Panel2" type="Panel" parent="HUD/MoneyUi"]
 layout_mode = 0
 offset_left = 1101.0
 offset_top = 210.0
@@ -143,12 +109,13 @@ offset_bottom = 268.0
 theme = SubResource("Theme_0kmp4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_0kmp4")
 
-[node name="MoneyLabel" type="Label" parent="HUD/MoneyUi/MoneyPanel"]
+[node name="MoneyLabel2" type="Label" parent="HUD/MoneyUi/Panel2"]
 layout_mode = 0
 offset_left = 16.87
 offset_top = 11.825
 offset_right = 161.425
 offset_bottom = 46.825
+theme_override_colors/font_color = Color(1, 0.346844, 0.549536, 1)
 text = "0"
 label_settings = SubResource("LabelSettings_epg6k")
 horizontal_alignment = 1
@@ -172,7 +139,6 @@ text = "testetestetst"
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t26db")
-bus = &"Sfx"
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
 

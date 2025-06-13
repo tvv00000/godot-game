@@ -92,7 +92,7 @@ func _input(event: InputEvent) -> void:
 						selectedInteractable.planterState = 1
 						selectedInteractable.planterStater(1)
 						InteractionLabel.set_text("Muld lisatud!")
-						print("Palun täida mind!")
+						print("Palun täida mind!") #mida?
 				return
 			
 			emit_signal("movementDisabled")
@@ -115,7 +115,7 @@ func _input(event: InputEvent) -> void:
 				print("Item not needed for any active quest.")
 		elif selectedInteractable.is_in_group("Shop"):
 			print("Shopping!")
-			$"../HUD/Shop_UI/Shop_UI".open()
+			$"../HUD/Shop_UI".open()
 		
 		elif selectedInteractable.is_in_group("Map"):
 			$"../HUD/WorldMapUi".showMap()

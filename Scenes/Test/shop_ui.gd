@@ -18,3 +18,7 @@ func close():
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		close()
+
+
+func _ready() -> void:
+	hide()

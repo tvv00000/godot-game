@@ -26,11 +26,10 @@ func _process(delta):
 
 func _on_body_entered(body: CharacterBody3D) -> void:
 	player = body
-	player.collect(item_id, item_quantity)
+	player.collect(item_id, item_quantity, inv_item)
 	
 	#Pickup popup tekst
 	if player.popup:
 		player.popup.item_pickup(global_transform.origin, inv_item.name)
 		print("Item picked up "+item_id)
-
 	queue_free()

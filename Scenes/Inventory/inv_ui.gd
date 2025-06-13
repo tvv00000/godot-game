@@ -25,13 +25,13 @@ func update_slots():
 		slots[i].ui_ref = self
 		slots[i].update(inv.slots[i], i, inv)
 
-#Commenti tagasi sisse, et testlevelis inventory kasutada
-func _process(delta):
-	if Input.is_action_just_pressed("OpenInv"):
-		if is_open:
-			close()
-		else:
-			open()
+##Commenti tagasi sisse, et testlevelis inventory kasutada
+#func _process(delta):
+	#if Input.is_action_just_pressed("OpenInv"):
+		#if is_open:
+			#close()
+		#else:
+			#open()
 
 func open():
 	visible = true

@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvcec85e7c8t8"]
+[gd_scene load_steps=5 format=3 uid="uid://bvcec85e7c8t8"]
 
 [ext_resource type="Script" uid="uid://b7xyyptbo4f3w" path="res://Scenes/PauseMenus/settings_Settings.gd" id="1_u570a"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_24k1n"]
 [ext_resource type="Script" uid="uid://deyl0anwoyyxx" path="res://Scenes/PauseMenus/volume_slider.gd" id="2_q54er"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_4o7so"]
 
 [node name="SettingsSettings" type="Control"]
 process_mode = 3
@@ -28,14 +30,25 @@ size_flags_vertical = 4
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_24k1n")
+theme_override_styles/pressed = ExtResource("3_4o7so")
+theme_override_styles/normal = ExtResource("2_24k1n")
 text = "Tagasi"
 
 [node name="MasterVolume" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Master Volume"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
+text = "Master volume"
 
 [node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+size_flags_vertical = 1
 max_value = 1.0
 step = 0.001
 script = ExtResource("2_q54er")
@@ -43,7 +56,10 @@ bus_name = "Master"
 
 [node name="MusicVolume" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Music Volume"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
+text = "Music volume"
 
 [node name="MusicSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -54,6 +70,9 @@ bus_name = "Music"
 
 [node name="Sfx" type="Label" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
+theme_override_constants/outline_size = 10
 text = "Sound effects"
 
 [node name="SfxSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
@@ -65,6 +84,12 @@ bus_name = "Sfx"
 
 [node name="Resolutions" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_24k1n")
+theme_override_styles/pressed = ExtResource("3_4o7so")
+theme_override_styles/normal = ExtResource("2_24k1n")
 selected = 2
 item_count = 3
 popup/item_0/text = "1920x1080"
@@ -76,6 +101,12 @@ popup/item_2/id = 2
 
 [node name="ResolutionMode" type="OptionButton" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("2_24k1n")
+theme_override_styles/pressed = ExtResource("3_4o7so")
+theme_override_styles/normal = ExtResource("2_24k1n")
 selected = 1
 item_count = 3
 popup/item_0/text = "Fullscreen"
