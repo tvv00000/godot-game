@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c0wla77krivlg"]
+[gd_scene load_steps=10 format=3 uid="uid://c0wla77krivlg"]
 
 [ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/Sprites/UI/WorldMap.png" id="1_ebj4p"]
 [ext_resource type="Script" uid="uid://mgxd6okhjmv4" path="res://Scenes/WorldMap/WorldMapUI.gd" id="1_fgwen"]
@@ -6,6 +6,8 @@
 [ext_resource type="StyleBox" uid="uid://dn6asodpeh5x0" path="res://Art/money_ui_transparent.tres" id="5_540ah"]
 [ext_resource type="AudioStream" uid="uid://cfpy4025s5mg2" path="res://Audio/oink.wav" id="5_hfq1r"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="5_llb5y"]
+[ext_resource type="StyleBox" uid="uid://cvbd0cogefapn" path="res://europePNG.tres" id="7_llb5y"]
+[ext_resource type="Texture2D" uid="uid://dwirsg3oo182k" path="res://Art/eu-c-03.png" id="8_8jkml"]
 
 [sub_resource type="Theme" id="Theme_tspx0"]
 
@@ -52,28 +54,45 @@ texture = ExtResource("1_ebj4p")
 
 [node name="EuropeBTN" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 706.667
-offset_top = 345.0
-offset_right = 901.667
-offset_bottom = 525.0
-theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
-theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
-theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
-theme_override_font_sizes/font_size = 58
-theme_override_styles/hover = ExtResource("5_llb5y")
-theme_override_styles/pressed = ExtResource("5_540ah")
-theme_override_styles/normal = ExtResource("5_llb5y")
-text = "EVROP"
+offset_left = 611.333
+offset_top = 276.333
+offset_right = 998.333
+offset_bottom = 552.333
+theme_override_colors/icon_hover_color = Color(0.203922, 0.509804, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.203922, 0.509804, 1, 1)
+theme_override_colors/icon_focus_color = Color(19.89, 48.067, 0, 1)
+theme_override_colors/icon_normal_color = Color(100, 100, 100, 1)
+theme_override_styles/hover = ExtResource("7_llb5y")
+theme_override_styles/pressed = ExtResource("7_llb5y")
+theme_override_styles/normal = ExtResource("7_llb5y")
+icon = ExtResource("8_8jkml")
+expand_icon = true
 
 [node name="oink_sfx" type="AudioStreamPlayer" parent="TextureRect/EuropeBTN"]
 stream = ExtResource("5_hfq1r")
 
+[node name="EuropeBTNTEST" type="Button" parent="TextureRect"]
+layout_mode = 0
+offset_left = 1869.67
+offset_top = 269.667
+offset_right = 2256.67
+offset_bottom = 545.667
+theme_override_colors/icon_hover_color = Color(0.203922, 0.509804, 1, 1)
+theme_override_colors/icon_pressed_color = Color(0.203922, 0.509804, 1, 1)
+theme_override_colors/icon_focus_color = Color(19.89, 48.067, 0, 1)
+theme_override_colors/icon_normal_color = Color(100, 100, 100, 1)
+theme_override_styles/hover = ExtResource("7_llb5y")
+theme_override_styles/pressed = ExtResource("7_llb5y")
+theme_override_styles/normal = ExtResource("7_llb5y")
+icon = ExtResource("8_8jkml")
+expand_icon = true
+
 [node name="AedBTN" type="Button" parent="TextureRect"]
 layout_mode = 0
-offset_left = 946.667
-offset_top = 225.0
-offset_right = 1079.67
-offset_bottom = 340.0
+offset_left = 1280.0
+offset_top = 91.6667
+offset_right = 1413.0
+offset_bottom = 206.667
 theme = SubResource("Theme_tspx0")
 theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)

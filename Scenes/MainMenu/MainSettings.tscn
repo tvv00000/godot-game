@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvnp84gccdeuw"]
+[gd_scene load_steps=5 format=3 uid="uid://bvnp84gccdeuw"]
 
 [ext_resource type="Script" uid="uid://dq1pxwgn4gj0a" path="res://Scenes/MainMenu/Main_Settings.gd" id="1_aula3"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_arypb"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="3_mided"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="4_vyjpu"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -36,14 +38,33 @@ theme_override_constants/separation = 10
 
 [node name="Button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("3_mided")
+theme_override_styles/pressed = ExtResource("4_vyjpu")
+theme_override_styles/normal = ExtResource("3_mided")
 text = "Graafika"
 
 [node name="Button2" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Heli"
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("3_mided")
+theme_override_styles/pressed = ExtResource("4_vyjpu")
+theme_override_styles/normal = ExtResource("3_mided")
+text = "Heli
+"
 
 [node name="Back" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_focus_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.403922, 0.192157, 0, 1)
+theme_override_styles/hover = ExtResource("3_mided")
+theme_override_styles/pressed = ExtResource("4_vyjpu")
+theme_override_styles/normal = ExtResource("3_mided")
 text = "Tagasi"
 
 [node name="Label" type="Label" parent="."]
