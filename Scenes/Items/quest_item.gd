@@ -27,8 +27,6 @@ func _on_body_entered(body: CharacterBody3D) -> void:
 	player = body
 	for x in item_quantity:
 		player.collect(item_id, 1, inv_item)
-		
-	
 	#Pickup popup tekst
 	if player.popup:
 		player.popup.item_pickup(global_transform.origin, inv_item.name)

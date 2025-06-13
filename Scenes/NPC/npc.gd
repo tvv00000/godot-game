@@ -64,7 +64,7 @@ func offer_quest(quest_id: String):
 							amount_found += slot.amount
 					if amount_found > 0:
 						quest.complete_objective(objective.id, amount_found)
-						Global.inventory.use_item(int(objective.target_id), amount_found)
+						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
 						print("Progress added for objective:", objective.target_id)
 
 						
