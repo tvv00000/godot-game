@@ -134,7 +134,7 @@ vertical_alignment = 1
 
 [node name="MoneyUi" parent="HUD" instance=ExtResource("11_0kmp4")]
 
-[node name="MoneyPanel" type="Panel" parent="HUD/MoneyUi"]
+[node name="Panel2" type="Panel" parent="HUD/MoneyUi"]
 layout_mode = 0
 offset_left = 1101.0
 offset_top = 210.0
@@ -143,12 +143,13 @@ offset_bottom = 268.0
 theme = SubResource("Theme_0kmp4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_0kmp4")
 
-[node name="MoneyLabel" type="Label" parent="HUD/MoneyUi/MoneyPanel"]
+[node name="MoneyLabel2" type="Label" parent="HUD/MoneyUi/Panel2"]
 layout_mode = 0
 offset_left = 16.87
 offset_top = 11.825
 offset_right = 161.425
 offset_bottom = 46.825
+theme_override_colors/font_color = Color(1, 0.346844, 0.549536, 1)
 text = "0"
 label_settings = SubResource("LabelSettings_epg6k")
 horizontal_alignment = 1
@@ -172,7 +173,6 @@ text = "testetestetst"
 
 [node name="sfx_jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_t26db")
-bus = &"Sfx"
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
 
