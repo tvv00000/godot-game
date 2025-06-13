@@ -6,27 +6,38 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Tere",
+						"text": "teerrreee",
 						"options": {
-							"1": "in_progress",
-							"anna quest": "give_quests",
-							"BYE": "exit"
+							"in_progress": "in_progress",
+							"give_quests": "give_quests",
+							"exit": "exit"
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "1",
+						"text": "in_progress",
 						"options": {
-							"BYE": "exit",
-							"tagasi": "start"
+							"end": "end",
+							"Go start": "start"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "super, vota see quest",
+						"text": "give_quests",
 						"options": {
-							"END": "end"
+							"exit": "exit",
+							"Go start": "start"
 						}
+					},
+					{
+						"state": "end",
+						"text": "end",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "exit",
+						"options": {}
 					}
 				]
 			},
@@ -35,46 +46,63 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "tagasi?",
+						"text": "npc_1_2",
 						"options": {
-							"1": "in_progress",
-							"END": "end",
-							"BYE": "exit"
+							"in_progress": "in_progress",
+							"give_quests": "give_quests",
+							"exit": "exit"
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "1",
+						"text": "in_progress",
 						"options": {
-							"END": "end",
-							"tagasi": "start"
-						}
-					}
-				]
-			},
-			{
-				"branch_id": "npc_1_3",
-				"dialogs": [
-					{
-						"state": "start",
-						"text": "ty et aitasid",
-						"options": {
-							"1": "give_quests",
-							"Say Goodbye": "exit"
+							"end": "end",
+							"Go start": "start"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "1",
+						"text": "give_quests",
 						"options": {
-							"tagasi": "start"
+							"exit": "exit",
+							"Go start": "start"
+						}
+					},
+					{
+						"state": "end",
+						"text": "end",
+						"options": {}
+					},
+					{
+						"state": "exit",
+						"text": "exit",
+						"options": {}
+					}
+				]
+			},
+			{
+				"branch_id": "npc_default",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "!!!!!!!!!!!!!npc_default!!!!!!!!!",
+						"options": {
+							"give_quests": "give_quests",
+							"exit": "exit"
+						}
+					},
+					{
+						"state": "give_quests",
+						"text": "give_quests",
+						"options": {
+							"Go start": "start"
 						}
 					}
 				]
 			}
 		]
 	},
-	
 	"npc_2": {
 		"trees": [
 			{
@@ -82,11 +110,11 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Tere, Mina olen tüümian!",
+						"text": "Greetings, traveler! How can I assist you?",
 						"options": {
 							"Ask About Forest": "in_progress",
 							"Receive Quests": "give_quests",
-							"No hiljem siis": "exit"
+							"Say Goodbye": "exit"
 						}
 					},
 					{
@@ -134,7 +162,7 @@
 						"options": {
 							"Go Back": "start"
 						}
-					}
+					},
 				]
 			}
 		]

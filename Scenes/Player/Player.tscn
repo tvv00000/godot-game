@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=19 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
 [ext_resource type="PackedScene" uid="uid://cmt6ht35g86cq" path="res://Scenes/Test/shop_ui.tscn" id="9_i5acl"]
 [ext_resource type="PackedScene" uid="uid://b7vfgock1122h" path="res://Scenes/Money/money_ui.tscn" id="11_0kmp4"]
+[ext_resource type="PackedScene" uid="uid://dxq516eitq3bb" path="res://Scenes/Quests/quest_manager.tscn" id="13_epg6k"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
 radius = 0.310319
@@ -133,7 +134,7 @@ vertical_alignment = 1
 
 [node name="MoneyUi" parent="HUD" instance=ExtResource("11_0kmp4")]
 
-[node name="Panel2" type="Panel" parent="HUD/MoneyUi"]
+[node name="MoneyPanel" type="Panel" parent="HUD/MoneyUi"]
 layout_mode = 0
 offset_left = 1101.0
 offset_top = 210.0
@@ -142,7 +143,7 @@ offset_bottom = 268.0
 theme = SubResource("Theme_0kmp4")
 theme_override_styles/panel = SubResource("StyleBoxFlat_0kmp4")
 
-[node name="MoneyLabel2" type="Label" parent="HUD/MoneyUi/Panel2"]
+[node name="MoneyLabel" type="Label" parent="HUD/MoneyUi/MoneyPanel"]
 layout_mode = 0
 offset_left = 16.87
 offset_top = 11.825
@@ -174,6 +175,8 @@ stream = ExtResource("7_t26db")
 bus = &"Sfx"
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
+
+[node name="QuestManager" parent="." instance=ExtResource("13_epg6k")]
 
 [connection signal="dirtFilled_Signal" from="HUD/GardenUi" to="InteractionArea" method="_on_garden_ui_dirt_filled_signal"]
 [connection signal="movementEnabled" from="HUD/GardenUi" to="." method="_on_signal_movement_enabled"]

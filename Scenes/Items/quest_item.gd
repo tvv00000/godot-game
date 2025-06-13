@@ -22,18 +22,15 @@ func _process(delta):
 		if mesh_instance_3d and item_mesh:
 			mesh_instance_3d.mesh = item_mesh
 
-func start_interact():
-	print("I am an item!")
 
 
 func _on_body_entered(body: CharacterBody3D) -> void:
-	print("I am an item!")
 	player = body
-	player.collect(inv_item)
+	player.collect(item_id, item_quantity)
 	
 	#Pickup popup tekst
 	if player.popup:
 		player.popup.item_pickup(global_transform.origin, inv_item.name)
-		print("Item picked up")
+		print("Item picked up "+item_id)
 
 	queue_free()
