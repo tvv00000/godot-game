@@ -84,8 +84,17 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func collect(item):
-	inventory.insert(item)
+func collect(item, item_quantity):
+	print('korjas ')
+	print(item)
+	print(item_quantity)
+	if is_item_needed(item):
+		check_quest_objectives(item, "collection", item_quantity)
+	else: 
+		print("Item not needed for any active quest.")
+		
+		
+	#inventory.insert(item)
 
 func _on_signal_movement_enabled() -> void:
 	print("movementenabled")
