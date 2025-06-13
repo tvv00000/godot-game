@@ -1,7 +1,7 @@
 extends Control
 
 var can_move:bool = true
-
+##delete later?
 signal shop_ui_open
 signal shop_ui_closed
 
