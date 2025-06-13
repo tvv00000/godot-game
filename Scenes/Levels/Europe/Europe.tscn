@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=33 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -17,7 +17,8 @@
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="15_va0j1"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="16_va0j1"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="17_6uhru"]
-[ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
+[ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="17_v6112"]
+[ext_resource type="PackedScene" uid="uid://dgu4nfixubcsa" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="21_v6112"]
 [ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="22_b5g1t"]
 [ext_resource type="Texture2D" uid="uid://cevel10x1an01" path="res://Art/NPC/Sage.png" id="23_6hq1d"]
@@ -379,6 +380,8 @@ transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.79
 [node name="PlantIndexMenu" parent="CanvasLayer" instance=ExtResource("15_va0j1")]
 
 [node name="SettingsMenu" parent="CanvasLayer" instance=ExtResource("16_va0j1")]
+
+[node name="SettingsSettings" parent="CanvasLayer" instance=ExtResource("17_v6112")]
 
 [node name="WorldMapUi" parent="CanvasLayer" instance=ExtResource("17_6uhru")]
 
