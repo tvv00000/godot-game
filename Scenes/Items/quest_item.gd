@@ -32,5 +32,4 @@ func _on_body_entered(body: CharacterBody3D) -> void:
 	if player.popup:
 		player.popup.item_pickup(global_transform.origin, inv_item.name)
 		print("Item picked up "+item_id)
-
 	queue_free()

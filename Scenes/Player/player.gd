@@ -91,9 +91,6 @@ func collect(item, item_quantity):
 	if is_item_needed(item):
 		check_quest_objectives(item, "collection", item_quantity)
 		#inventory.insert(item)
-		
-		#mdea miks see oli D: [kas on vaja?]
-		#item.queue_free()
 	else: 
 		print("Item not needed for any active quest.")
 		
