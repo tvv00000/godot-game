@@ -88,13 +88,7 @@ func _input(event: InputEvent) -> void:
 						if index != -1:
 							slot.item.use(selectedInteractable)
 							Global.inventory.use_item(index, 10)
-<<<<<<< HEAD
-<<<<<<< HEAD
 							Global.inventory.use_item(index, 1)
-=======
->>>>>>> parent of 6039d2f (Savegame algus)
-=======
->>>>>>> parent of 6039d2f (Savegame algus)
 						Global.inventory.update.emit()
 						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 						print("Palun täida mind!") #mida?
