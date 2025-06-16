@@ -27,7 +27,7 @@ func use_item(slotNr: int, amount: int):
 	var slot = slots[slotNr]
 	if slot.item:
 		slot.item.use()
-		slot.amount -= 1 * amount
+		slot.amount -= 1 * amount #miks *1
 		if slot.amount <= 0:
 			slot.item = null
 			slot.amount = 0

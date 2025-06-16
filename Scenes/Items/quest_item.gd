@@ -26,6 +26,10 @@ func _process(delta):
 func _on_body_entered(body: CharacterBody3D) -> void:
 	player = body
 	for x in item_quantity:
+		#if check each quest, if 'collection' if== item  == objective.target_id siis vota inv ara nii palju kui vaja
+		#for quest in quests.objectives:
+			#if objective.target_type == "collection":
+		
 		player.collect(item_id, 1, inv_item)
 	#Pickup popup tekst
 	if player.popup:
