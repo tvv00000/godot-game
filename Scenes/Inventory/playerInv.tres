@@ -2,11 +2,13 @@
 
 [ext_resource type="Script" uid="uid://chcaubk2tsmey" path="res://Scenes/Inventory/inv_slotNr.gd" id="2_lesxk"]
 [ext_resource type="Script" uid="uid://ck6c2slmq6x7f" path="res://Scenes/Inventory/inventory.gd" id="3_0g6ia"]
-[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/item_muld.tres" id="3_lesxk"]
+
+[sub_resource type="Resource" id="Resource_4m7gq"]
+metadata/__load_path__ = "res://Scenes/Inventory/items/mullahunnik.tres"
 
 [sub_resource type="Resource" id="Resource_5mw3g"]
 script = ExtResource("2_lesxk")
-item = ExtResource("3_lesxk")
+item = SubResource("Resource_4m7gq")
 amount = 9
 metadata/_custom_type_script = "uid://chcaubk2tsmey"
 

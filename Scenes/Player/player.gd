@@ -10,7 +10,7 @@ const SPRINT_MULTIPLIER: float = 10.0
 @export var inventory: Inventory
 var ui_ref: Control
 
-
+@onready var animation: AnimatedSprite3D = $Pivot/AnimatedSprite3D
 @onready var sfx_jump = $sfx_jump 
 @onready var sfx_death = $sfx_death
 
@@ -41,6 +41,7 @@ func _ready() -> void:
 	MapMenu.map_open.connect(_on_world_map_ui_map_open)
 	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
 	
+	animation.play("Idle")
 	
 	
 	#signals
@@ -57,11 +58,14 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
+			animation.play("Jump")
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			animation.play("Jump")
 			sfx_jump.play()
+			
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -75,10 +79,27 @@ func _physics_process(delta: float) -> void:
 		if direction:
 			velocity.x = direction.x * final_speed
 			velocity.z = direction.z * final_speed
+			if is_sprinting:
+				animation.play("Run")
+				
+				if direction.x > 0:
+					animation.flip_h = true
+				else:
+					animation.flip_h = false
+
+				
+			else: 
+				animation.play("Walk")
+				if direction.x > 0:
+					animation.flip_h = true
+				else:
+					animation.flip_h = false
+
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
-
+			
+			animation.play("Idle")
 		move_and_slide()
 
 

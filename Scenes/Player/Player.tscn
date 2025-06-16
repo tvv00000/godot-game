@@ -1,17 +1,131 @@
-[gd_scene load_steps=18 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=41 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
 [ext_resource type="Resource" uid="uid://bg73wcd32svju" path="res://Scenes/Inventory/playerInv.tres" id="2_t26db"]
+[ext_resource type="Texture2D" uid="uid://bijdejuixm3ds" path="res://Art/Player/Animations/frame0017.png" id="3_lw74r"]
 [ext_resource type="PackedScene" uid="uid://b8tp72b0opp4u" path="res://Scenes/GrowUI/GardenUI.tscn" id="4_jmcll"]
+[ext_resource type="Texture2D" uid="uid://du7lvfhy6sv23" path="res://Art/Player/Animations/frame0018.png" id="4_tf3ct"]
 [ext_resource type="Script" uid="uid://ci4sqj2ple62w" path="res://Scripts/Interaction/interaction_area.gd" id="4_ude3g"]
+[ext_resource type="Texture2D" uid="uid://dhlxgcj2vng1x" path="res://Art/Player/Animations/frame0019.png" id="5_to4uw"]
 [ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
+[ext_resource type="Texture2D" uid="uid://bpw3v40ydempn" path="res://Art/Player/Animations/frame0020.png" id="6_p7cr0"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="7_ji083"]
 [ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
+[ext_resource type="Texture2D" uid="uid://bfdkf0hgyhsof" path="res://Art/Player/Animations/frame0021.png" id="7_vrod0"]
+[ext_resource type="Texture2D" uid="uid://bhvxu2dmx4kgs" path="res://Art/Player/Animations/frame0022.png" id="8_fcbn2"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
+[ext_resource type="Texture2D" uid="uid://dva6cqhjwnskg" path="res://Art/Player/Animations/frame0023.png" id="9_hjq2i"]
 [ext_resource type="PackedScene" uid="uid://cmt6ht35g86cq" path="res://Scripts/Shop/shop_ui.tscn" id="9_i5acl"]
+[ext_resource type="Texture2D" uid="uid://dj0baqdplqwao" path="res://Art/Player/Animations/frame0024.png" id="10_ui31c"]
 [ext_resource type="PackedScene" uid="uid://b7vfgock1122h" path="res://Scenes/Money/money_ui.tscn" id="11_0kmp4"]
+[ext_resource type="Texture2D" uid="uid://dm5hwa0vt3pwr" path="res://Art/Player/Animations/frame0025.png" id="11_karlm"]
+[ext_resource type="Texture2D" uid="uid://befi8piox6ot4" path="res://Art/Player/Animations/frame0026.png" id="12_2avfq"]
+[ext_resource type="Texture2D" uid="uid://b8y46y70pogdr" path="res://Art/Player/Animations/frame0027.png" id="13_d2y64"]
 [ext_resource type="PackedScene" uid="uid://dxq516eitq3bb" path="res://Scenes/Quests/quest_manager.tscn" id="13_epg6k"]
+[ext_resource type="Texture2D" uid="uid://ej4o0wy2s46i" path="res://Art/Player/Animations/frame0028.png" id="14_w4oha"]
+[ext_resource type="Texture2D" uid="uid://rq4h2pa3itf2" path="res://Art/Player/Animations/frame0029.png" id="15_4ribq"]
+[ext_resource type="Texture2D" uid="uid://146rafnmk3j" path="res://Art/Player/Animations/frame0030.png" id="16_jh1yi"]
+[ext_resource type="Texture2D" uid="uid://bwgdp63kwv43l" path="res://Art/Player/Animations/frame0032.png" id="18_tgfvv"]
+[ext_resource type="Texture2D" uid="uid://cag34pahah4kk" path="res://Art/Player/Animations/frame0033.png" id="19_yi34y"]
+[ext_resource type="Texture2D" uid="uid://7ccj3uumujkp" path="res://Art/Player/Animations/frame0034.png" id="20_daopn"]
+[ext_resource type="Texture2D" uid="uid://l0kmrw4la06w" path="res://Art/Player/Animations/frame0035.png" id="21_tkwhe"]
+[ext_resource type="Texture2D" uid="uid://brj8avjb7vn8q" path="res://Art/Player/Animations/frame0036.png" id="22_b7nrf"]
+[ext_resource type="Texture2D" uid="uid://uylxon7iwe58" path="res://Art/Player/Animations/frame0037.png" id="23_ykffh"]
+[ext_resource type="Texture2D" uid="uid://bygpnjnqftosg" path="res://Art/Player/Animations/frame0038.png" id="24_5xs4v"]
+[ext_resource type="Texture2D" uid="uid://cxfskbgkhfono" path="res://Art/Player/Animations/frame0039.png" id="25_4emfg"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ntbx5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ft8w5")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_tgfvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_yi34y")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_daopn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_tkwhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_b7nrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ykffh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5xs4v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_4emfg")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lw74r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tf3ct")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_to4uw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p7cr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_vrod0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fcbn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hjq2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ui31c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_karlm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_2avfq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_d2y64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_w4oha")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_4ribq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jh1yi")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 12.0
+}]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ft8w5"]
 radius = 0.310319
@@ -43,8 +157,14 @@ inventory = ExtResource("2_t26db")
 
 [node name="Pivot" type="Node3D" parent="."]
 
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Pivot"]
+transform = Transform3D(0.315179, 0, 0, 0, 0.298646, 0, 0, 0, 0.810937, 0.00534877, 0.730652, -0.326459)
+sprite_frames = SubResource("SpriteFrames_ntbx5")
+animation = &"Jump"
+
 [node name="Sprite" type="Sprite3D" parent="Pivot"]
 transform = Transform3D(0.25, 0, 0, 0, 0.241682, 0.06395, 0, -0.06395, 0.241682, 0, 0.653221, 0)
+visible = false
 texture = ExtResource("2_ft8w5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

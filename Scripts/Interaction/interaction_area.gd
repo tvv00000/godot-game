@@ -97,7 +97,7 @@ func _input(event: InputEvent) -> void:
 			
 			emit_signal("movementDisabled")
 			
-			print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
+			#print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
 			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
 
