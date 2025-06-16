@@ -9,11 +9,12 @@ extends Control
 
 var selected_quest: Quest = null
 var quest_manager
+var all_active_quests: Array
 
 func _ready():
 	panel.visible = false
 	clear_quest_details()
-	
+	Global.quest_ui = self
 	# Quest Manager/UI connection
 	quest_manager = get_parent()
 	quest_manager.quest_updated.connect(_on_quest_updated)
@@ -40,6 +41,12 @@ func update_quest_list():
 		Global.player.update_quest_tracker(null)
 	else: 
 		for quest in active_quests:
+			##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+			#make global array of qsuests and use it in player is_item_needed()
+			all_active_quests.append(quest.quest_id)
+			print(all_active_quests)
+			##prints first thing 2 times, why???
 			var button = Button.new()
 			button.add_theme_font_size_override("font_size", 20)
 			button.text = quest.quest_name

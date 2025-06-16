@@ -136,15 +136,19 @@ func _input(event):
 
 # Check if quest item is needed
 func is_item_needed(item_id: String):
+	##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+	#make all quest global? ja for loop {quest_ui.gd comment olemas} uksquest KUS VAJA!)!)!)!))!)!)!
 	if selected_quest != null:
-		for objective in selected_quest.objectives:
-			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
-				var total_amount = 0
-				for slot in inventory.slots:
-					if slot.item != null and slot.item.id == item_id:
-						total_amount += slot.amount
-				if total_amount < objective.required_quantity:
-					return true
+		for uksquest in Global.quest_ui.all_active_quests:
+			for objective in selected_quest.objectives:
+				if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
+					var total_amount = 0
+					for slot in inventory.slots:
+						if slot.item != null and slot.item.id == item_id:
+							total_amount += slot.amount
+					if total_amount < objective.required_quantity:
+						return true
 	return false
 
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
