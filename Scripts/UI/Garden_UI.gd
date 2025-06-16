@@ -110,6 +110,7 @@ func _on_interaction_area_show_garden_ui(state: int, plantName: String, dirtLeve
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/Plantname".set_text(plantName)
 	setUiState(state)
 	if state >= 1:
+		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/Plantname".set_text(plantName)
 		$"PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer/DirtLabel".set_text("Mulda On: {dirt}".format({"dirt": dirtLevel}))
 		$"PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer/GravelLabel".set_text("Kruusa On: {gravel}".format({"gravel": (100 - dirtLevel)}))
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/MoistureLabel".set_text(str(moistureLevel))

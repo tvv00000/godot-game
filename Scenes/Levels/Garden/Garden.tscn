@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=19 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
@@ -9,11 +9,10 @@
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="7_owpas"]
 [ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="10_r3nv0"]
-[ext_resource type="PackedScene" uid="uid://d3utvcgp2iffb" path="res://Scenes/Props/Garden/Planter_Large.tscn" id="10_typy8"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="11_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="13_jcvc3"]
-[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/item_muld.tres" id="14_8nmii"]
+[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_muld.tres" id="14_8nmii"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)
@@ -79,16 +78,31 @@ mesh = SubResource("PlaneMesh_owpas")
 script = ExtResource("1_typy8")
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8974, 0.0179982, -3.26045)
+
+[node name="Planter_Med2" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.822725, 0.0179982, -3.26045)
 
 [node name="Planter_Med3" parent="Planters" instance=ExtResource("4_ylav4")]
-transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 4.37832, -2.38419e-07, -3.13547)
+transform = Transform3D(0.99085, -0.013769, 0.134262, 0.0132492, 0.999901, 0.00476467, -0.134315, -0.00294219, 0.990934, 1.01864, -2.38419e-07, -3.13547)
 
 [node name="Planter_Med4" parent="Planters" instance=ExtResource("4_ylav4")]
-transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.00476467, 0.174257, -0.00700109, 0.984675, -3.32035, -2.38419e-07, 0.603617)
+transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.00476467, 0.174257, -0.00700109, 0.984675, 2.90916, -2.38419e-07, -3.19509)
 
-[node name="Planter_Large" parent="Planters" instance=ExtResource("10_typy8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
+[node name="Planter_Med5" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.984611, -0.0122158, -0.174333, 0.0132492, 0.999901, 0.00476467, 0.174257, -0.00700109, 0.984675, 4.99078, -2.38419e-07, -2.94013)
+
+[node name="Planter_Med6" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.993013, -0.0137164, 0.117207, 0.0132492, 0.999901, 0.00476467, -0.117262, -0.00317847, 0.993096, 6.52489, -4.26326e-13, -1.68738)
+
+[node name="Planter_Med7" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.999691, -0.0131458, -0.0210986, 0.0132492, 0.999901, 0.00476467, 0.0210333, -0.00504272, 0.999766, 3.45439, -2.38419e-07, -0.387658)
+
+[node name="Planter_Med8" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.861772, -0.0090019, -0.507216, 0.0132492, 0.999901, 0.00476467, 0.507123, -0.0108262, 0.861806, 1.11543, -4.26326e-13, -0.376033)
+
+[node name="Planter_Med9" parent="Planters" instance=ExtResource("4_ylav4")]
+transform = Transform3D(0.998759, -0.0134624, 0.0479434, 0.0132492, 0.999901, 0.00476467, -0.0480033, -0.00412354, 0.998839, -3.81677, -4.26326e-13, 0.200604)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -109,6 +123,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
 transform = Transform3D(1, 0, 0, 0, 0.126753, 0.991934, 0, -0.991934, 0.126753, 0, 0, 0)
 
 [node name="QuestItem2" parent="." instance=ExtResource("13_jcvc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05802, 0.488052, -1.60163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.80469, 0.488052, -0.892833)
 item_quantity = 99
 inv_item = ExtResource("14_8nmii")

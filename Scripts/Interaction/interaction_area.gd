@@ -81,17 +81,15 @@ func _input(event: InputEvent) -> void:
 			var plantHealth: int = selectedInteractable.plantHealth
 			
 			if planterState == 0:
+				#kontrollib invist kas sul ikka mulda on
 				for slot in Global.inventory.slots:
-					if slot.item and slot.item.name == "Mullahunnik" and slot.amount > 0:
+					if slot.item and slot.item.name == "item_muld" and slot.amount > 0:
 						var index = Global.inventory.slots.find(slot)
 						if index != -1:
 							slot.item.use(selectedInteractable)
-							Global.inventory.use_item(index)
+							Global.inventory.use_item(index, 10)
 						Global.inventory.update.emit()
-						selectedInteractable.dirtRatio = 100
-						selectedInteractable.planterState = 1
-						selectedInteractable.planterStater(1)
-						InteractionLabel.set_text("Muld lisatud!")
+						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 						print("Palun täida mind!") #mida?
 				return
 			
@@ -106,6 +104,12 @@ func _input(event: InputEvent) -> void:
 				plantName = selectedInteractable.Plant.name
 				emit_signal("show_GardenUI", planterState, plantName, dirtLevel)
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
+			
+			#see ei toimi
+			if planterState == 3:
+				#Global.inventory.insert("seemned", 5)
+				selectedInteractable.planterStater(1)
+				
 		
 		elif selectedInteractable.is_in_group("Item"):
 			if $"..".is_item_needed(selectedInteractable.item_id):
