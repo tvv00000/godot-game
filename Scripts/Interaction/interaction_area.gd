@@ -89,10 +89,7 @@ func _input(event: InputEvent) -> void:
 							slot.item.use(selectedInteractable)
 							Global.inventory.use_item(index, 10)
 <<<<<<< HEAD
-<<<<<<< HEAD
 							Global.inventory.use_item(index, 1)
-=======
->>>>>>> parent of 6039d2f (Savegame algus)
 =======
 >>>>>>> parent of 6039d2f (Savegame algus)
 						Global.inventory.update.emit()
