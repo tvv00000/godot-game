@@ -78,6 +78,7 @@ mesh = SubResource("PlaneMesh_owpas")
 script = ExtResource("1_typy8")
 
 [node name="Planter_Med" parent="Planters" instance=ExtResource("4_ylav4")]
+<<<<<<< Updated upstream
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8974, 0.0179982, -3.26045)
 
 [node name="Planter_Med2" parent="Planters" instance=ExtResource("4_ylav4")]
@@ -103,7 +104,7 @@ transform = Transform3D(0.861772, -0.0090019, -0.507216, 0.0132492, 0.999901, 0.
 
 [node name="Planter_Med9" parent="Planters" instance=ExtResource("4_ylav4")]
 transform = Transform3D(0.998759, -0.0134624, 0.0479434, 0.0132492, 0.999901, 0.00476467, -0.0480033, -0.00412354, 0.998839, -3.81677, -4.26326e-13, 0.200604)
-
+=======
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.860645, 0.0179982, -3.26045)
 planter_id = "planter_med2"
 
@@ -118,6 +119,7 @@ planter_id = "planter_med1"
 [node name="Planter_Large" parent="Planters" instance=ExtResource("10_typy8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25584, -0.00226597, 0.0350252)
 planter_id = "planter_large1"
+>>>>>>> Stashed changes
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
