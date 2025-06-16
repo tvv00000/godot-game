@@ -179,7 +179,7 @@ func handle_quest_completion(quest: Quest):
 			add_money(reward.reward_amount)
 	update_quest_tracker(quest)
 	quest_manager.update_quest(quest.quest_id, "completed")
-
+	
 # Update tracker UI
 func update_quest_tracker(quest: Quest):
 	# if we have an active quest, populate tracker

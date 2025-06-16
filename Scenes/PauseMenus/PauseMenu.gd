@@ -4,7 +4,7 @@ extends Control
 @onready var Settings = $"../SettingsMenu"
 @onready var SettingsSettings = $"../SettingsSettings"
 @onready var MapMenu = $"../WorldMapUi"
-
+@onready var SaveButton = $PanelContainer/HBoxContainer/SaveButton
 
 func resume():
 	get_tree().paused = false
@@ -48,3 +48,11 @@ func _process(delta: float) -> void:
 func _ready() -> void:
 	hide()
 	resume()
+	SaveButton.pressed.connect(_on_save_button_pressed)
+
+func _on_save_button_pressed() -> void:
+	SaveGame.save_game()
+
+
+func _on_load_button_pressed() -> void:
+	SaveGame.load_game()
