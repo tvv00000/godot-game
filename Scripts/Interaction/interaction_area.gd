@@ -87,11 +87,7 @@ func _input(event: InputEvent) -> void:
 						var index = Global.inventory.slots.find(slot)
 						if index != -1:
 							slot.item.use(selectedInteractable)
-<<<<<<< Updated upstream
 							Global.inventory.use_item(index, 10)
-=======
-							Global.inventory.use_item(index, 1)
->>>>>>> Stashed changes
 						Global.inventory.update.emit()
 						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 						print("Palun täida mind!") #mida?

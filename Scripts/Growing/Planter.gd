@@ -18,7 +18,6 @@ var plantHealth: int = 50
 @export var dirtRatio: int
 @export var moisture: int
 @export var fertilizer: int
-@export var planter_id: String
 
 func planterStater(setState):
 	#Kui planter on tühi
@@ -180,31 +179,4 @@ func onInteract():
 func _on_timer_timeout() -> void:
 	interactLabel = "Täida mullaga!"
 
-func get_save_data() -> Dictionary:
-	return {
-		"planter_id": planter_id,
-		"plant": Plant.resource_path if Plant else "",
-		"plantGrowth": plantGrowth,
-		"plantHealth": plantHealth,
-		"planterState": planterState,
-		"dirtRatio": dirtRatio,
-		"moisture": moisture,
-		"fertilizer": fertilizer
-	}
-
-func load_data(data: Dictionary):
-	if data["plant"] != "":
-		Plant = load(data["plant"])
-	else:
-		Plant = null
-	print("Loading planter: ", planter_id, " with data: ", data)
-	plantGrowth = data["plantGrowth"]
-	plantHealth = data["plantHealth"]
-	planterState = data["planterState"]
-	dirtRatio = data["dirtRatio"]
-	moisture = data["moisture"]
-	fertilizer = data["fertilizer"]
-
-	planterStater(planterState)
-	updateDirt(moisture)
-	updatePlantSprite()
+	

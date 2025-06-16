@@ -60,8 +60,8 @@ func offer_quest(quest_id: String):
 				if objective.target_type == "collection":
 					var amount_found = 0
 					for slot in Global.inventory.slots:
-						if slot.item and slot.item.id == objective.target_id:
-							amount_found += slot.amount
+						if slot.item != null and slot.item.id == objective.target_id: #kas vaja != null
+							amount_found += slot.amount #miks mitte =
 					if amount_found > 0:
 						quest.complete_objective(objective.id, amount_found)
 						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
