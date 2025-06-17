@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=33 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -29,6 +29,10 @@ size = Vector3(100, 1, 100)
 albedo_color = Color(0.360784, 0.407843, 0.309804, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_u1gwc"]
+
+[sub_resource type="PackedScene" id="PackedScene_mwp10"]
+resource_local_to_scene = true
+resource_name = "test"
 
 [sub_resource type="Resource" id="Resource_44lv7"]
 script = ExtResource("15_o75f4")
@@ -207,6 +211,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -3.38505)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74866, 0.0615926, -4.12163)
 
 [node name="Shop_UI" parent="." instance=ExtResource("10_b1g8u")]
+store_item = SubResource("PackedScene_mwp10")
 
 [node name="Shop" parent="." instance=ExtResource("11_jwrl0")]
 transform = Transform3D(0.589464, 0, -0.807794, 0, 1, 0, 0.807794, 0, 0.589464, -0.941433, 0.0719835, -7.44502)
