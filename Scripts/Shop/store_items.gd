@@ -24,5 +24,6 @@ func setup(data: Dictionary, p_id: int) -> void:
 		button.text = data.get('custom_button_text')
 
 func _on_button_pressed() -> void:
-	emit_signal('item_buy_pressed', id)
-	
+	if Global.player.check_money() >= int(button.text):
+		Global.player.add_money(-int(button.text))
+		emit_signal('item_buy_pressed', id)

@@ -10,17 +10,12 @@ var store_data: Array = [
 		'icon_path': 'res://icon.svg',
 		'heading_1': 'yo mama',
 		'heading_2': 'mingi asi, vist, mdeagi tegelt.',
-		'custom_button_text': '10 coins'
-	},{
+		'custom_button_text': '10'
+	},	{
 		'icon_path': 'res://icon.svg',
-		'heading_1': 'yo papa',
-		'heading_2': 'dad?',
-		'custom_button_text': '15 coins'
-	},{
-		'icon_path': 'res://icon.svg',
-		'heading_1': 'Oskar',
-		'heading_2': 'Sigma',
-		'custom_button_text': '999999999999999 coins'
+		'heading_1': 'Sigma',
+		'heading_2': 'ausalt ka',
+		'custom_button_text': '1'
 	}
 ]
 

@@ -214,9 +214,8 @@ func add_money(amount:int) -> void:
 	print("Player now has %d money" % coin_amount)
 	money_collected.emit(amount, coin_amount)
 
-func check_money() -> void:
-	#return coin_amount
-	pass
+func check_money() -> int:
+	return coin_amount
 
 func _on_world_map_ui_map_closed() -> void:
 	print("Map movement enabled")
