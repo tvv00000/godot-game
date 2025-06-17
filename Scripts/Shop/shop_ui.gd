@@ -25,7 +25,7 @@ var store_data: Array = [
 ]
 
 func _ready() -> void:
-	#hide()
+	hide()
 	store_setup()
 
 func store_setup() -> void:
@@ -40,21 +40,17 @@ func on_item_buy_pressed(id: int) -> void:
 	print(store_data[id].get('heading_1')+' ostis')
 
 
-#var can_move:bool = true
-###delete later?
-#signal shop_ui_open
-#signal shop_ui_closed
-#
-#func open():
-	#show()
-	#can_move = false
-	#emit_signal("shop_ui_open")
-#
-#func close():
-	#hide()
-	#can_move = true
-	#emit_signal("shop_ui_closed")
-#
-#func _unhandled_input(event):
-	#if event.is_action_pressed("ui_cancel"):
-		#close()
+signal shop_ui_open
+signal shop_ui_closed
+
+func open():
+	show()
+	emit_signal("shop_ui_open")
+
+func close():
+	hide()
+	emit_signal("shop_ui_closed")
+
+func _unhandled_input(event):
+	if event.is_action_pressed("ui_cancel"):
+		close()
