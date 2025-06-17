@@ -42,12 +42,9 @@ func update_quest_list():
 	else: 
 		all_active_quests.clear()
 		for quest in active_quests:
-			##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-			##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 			#make global array of qsuests and use it in player is_item_needed()
 			all_active_quests.append(quest)
 			print(quest.quest_name)
-			##prints first thing 2 times, why???
 			var button = Button.new()
 			button.add_theme_font_size_override("font_size", 20)
 			button.text = quest.quest_name

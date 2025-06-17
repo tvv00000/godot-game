@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dbu2tphaxtr72"]
+[gd_scene load_steps=32 format=3 uid="uid://dbu2tphaxtr72"]
 
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="1_bgt8y"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_f1cbr"]
@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="12_rcol5"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="13_8n04a"]
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="13_rcol5"]
-[ext_resource type="Script" path="res://Resources/Dialog/Dialog.gd" id="15_o75f4"]
+[ext_resource type="Script" uid="uid://lird66nix5lm" path="res://Resources/Dialog/Dialog.gd" id="15_o75f4"]
 [ext_resource type="Script" uid="uid://c7a1j36unkq1q" path="res://Resources/Quest/Objectives.gd" id="16_uimbc"]
 [ext_resource type="Script" uid="uid://bien6lff38nx1" path="res://Resources/Quest/Rewards.gd" id="17_2y5rb"]
 [ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="17_o75f4"]
@@ -47,6 +47,12 @@ collected_quantity = 0
 is_completed = false
 metadata/_custom_type_script = "uid://c7a1j36unkq1q"
 
+[sub_resource type="Resource" id="Resource_mwp10"]
+script = ExtResource("17_2y5rb")
+reward_type = "coins"
+reward_amount = 15
+metadata/_custom_type_script = "uid://bien6lff38nx1"
+
 [sub_resource type="Resource" id="Resource_2y5rb"]
 script = ExtResource("18_62qf0")
 quest_id = "npc_quest_02"
@@ -55,7 +61,7 @@ quest_description = "korja nuud"
 state = "not_started"
 unlock_id = "npc_default"
 objectives = Array[ExtResource("16_uimbc")]([SubResource("Resource_uimbc")])
-rewards = Array[ExtResource("17_2y5rb")]([])
+rewards = Array[ExtResource("17_2y5rb")]([SubResource("Resource_mwp10")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
 [sub_resource type="Resource" id="Resource_k4vt1"]
@@ -174,6 +180,12 @@ inv_item = ExtResource("8_jwrl0")
 [node name="QuestItem" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.981732, 5.6156, -8.51315)
 inv_item = ExtResource("7_7hlls")
+
+[node name="QuestItem5" parent="." instance=ExtResource("6_nqdq4")]
+transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, 3.65507, 0.976104, -2.77708)
+item_id = "item_muld"
+item_quantity = 15
+inv_item = ExtResource("8_jwrl0")
 
 [node name="QuestItem2" parent="." instance=ExtResource("6_nqdq4")]
 transform = Transform3D(0.999893, 0, 0.0146602, 0, 1, 0, -0.0146602, 0, 0.999893, 4.80038, 0.488052, -1.60163)

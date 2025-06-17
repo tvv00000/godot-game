@@ -24,6 +24,7 @@ func _ready():
 	# Get quest manager
 	quest_manager = Global.player.quest_manager
 	print("NPC Ready. Quests loaded: ", quests.size())
+	
 
 func start_dialog():
 	var npc_dialogs = dialog_resource.get_npc_dialog(npc_id)
@@ -62,13 +63,18 @@ func offer_quest(quest_id: String):
 					for slot in Global.inventory.slots:
 						if slot.item != null and slot.item.id == objective.target_id: #kas vaja != null
 							amount_found += slot.amount #miks mitte =
-					if amount_found > 0:
+					var how_much_more = abs(objective.collected_quantity - objective.required_quantity)
+					if amount_found >= how_much_more:
+						quest.complete_objective(objective.id, amount_found)
+						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
+						print("All done with quest ", objective.target_id)
+						#call rewards/completion
+						if quest.is_completed():
+							Global.player.call("handle_quest_completion", quest)
+					elif amount_found < how_much_more:
 						quest.complete_objective(objective.id, amount_found)
 						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
 						print("Progress added for objective:", objective.target_id)
-
-						
-					
 			quest_manager.add_quest(quest)
 			return
 	

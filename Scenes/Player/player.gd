@@ -103,16 +103,12 @@ func _physics_process(delta: float) -> void:
 		move_and_slide()
 
 
-func collect(item, item_quantity, inv_item):
-	print('korjas ')
-	print(item)
-	print(item_quantity)
-	if is_item_needed(item):
-		check_quest_objectives(item, "collection", item_quantity)
-		
+func collect(item, inv_item):
+	print('korjas ', item)
+	if is_item_needed(item, inv_item):
+		print("Item is needed for quest")
 	else: 
-		print("Item not needed for any active quest.")
-		inventory.insert(inv_item, item_quantity)
+		print("Item not needed for any active quest")
 
 func _on_signal_movement_enabled() -> void:
 	print("movementenabled")
@@ -135,25 +131,27 @@ func _input(event):
 			quest_manager.show_hide_log()
 
 # Check if quest item is needed
-func is_item_needed(item_id: String):
-	##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-	##!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+func is_item_needed(item_id: String, inv_item):
 	#make all quest global? ja for loop {quest_ui.gd comment olemas} uksquest KUS VAJA!)!)!)!))!)!)!
-	if selected_quest != null:
-		for uksquest in Global.quest_ui.all_active_quests:
-			for objective in uksquest.objectives:
-				if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
-					var total_amount = 0
-					for slot in inventory.slots:
-						if slot.item != null and slot.item.id == item_id:
-							total_amount += slot.amount
-					if total_amount < objective.required_quantity:
-						return true
+	for uksquest in Global.quest_ui.all_active_quests:
+		for objective in uksquest.objectives:
+			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
+				var how_much_more = abs(objective.collected_quantity - objective.required_quantity)
+				if how_much_more > 0:
+					print("Completing objective for quest: ", objective.id)
+					selected_quest = uksquest
+					selected_quest.complete_objective(objective.id, 1) #quests.gd
+				how_much_more = abs(objective.collected_quantity - objective.required_quantity)
+				if how_much_more == 0:
+					handle_quest_completion(selected_quest)
+				return true
+	inventory.insert(inv_item, 1)
 	return false
 
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
 	if selected_quest == null:
 		return
+		#take first quest
 		
 	# Update objectives
 	var objective_updated = false
