@@ -4,17 +4,12 @@ extends Control
 @export var store_item: PackedScene
 
 var store_item_id: int = 0
-
 var store_data: Array = [
 	{
+		'item_tres': "res://Scenes/Inventory/items/item_muld.tres",  # Path to the .tres file
 		'icon_path': 'res://icon.svg',
 		'heading_1': 'yo mama',
 		'heading_2': 'mingi asi, vist, mdeagi tegelt.',
-		'custom_button_text': '10'
-	},	{
-		'icon_path': 'res://icon.svg',
-		'heading_1': 'Sigma',
-		'heading_2': 'ausalt ka',
 		'custom_button_text': '1'
 	}
 ]
@@ -32,8 +27,24 @@ func store_setup() -> void:
 		store_item_id += 1
 
 func on_item_buy_pressed(id: int) -> void:
-	print(store_data[id].get('heading_1')+' ostis')
+	print(store_data[id].get('heading_1') + ' ostis')
 
+	# Get the path to the .tres file from store_data
+	var item_tres_path = store_data[id].get('item_tres')
+
+	# Load the InvItem resource using the path
+	var item_tres = load(item_tres_path)  # Load the InvItem resource from the path
+
+	# Check if the loaded resource is a valid InvItem
+	if item_tres is InvItem:
+		# Create an instance of the InvItem by duplicating the resource
+		var inv_item = item_tres.duplicate()
+
+		# Add the item to the player's inventory
+		Global.player.inventory.insert(item_tres, 1)
+		print("Item added to inventory: ", inv_item.name)
+	else:
+		print("Failed to load the item resource: ", item_tres_path)
 
 signal shop_ui_open
 signal shop_ui_closed
