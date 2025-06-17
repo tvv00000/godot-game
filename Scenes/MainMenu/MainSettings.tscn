@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://dq1pxwgn4gj0a" path="res://Scenes/MainMenu/Main_Settings.gd" id="1_aula3"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_arypb"]
-[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="3_mided"]
-[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="4_vyjpu"]
+[ext_resource type="StyleBox" path="res://Art/money_ui.tres" id="3_mided"]
+[ext_resource type="StyleBox" path="res://Art/money_ui_pressed.tres" id="4_vyjpu"]
 
 [node name="MainMenu2" type="Control"]
 layout_mode = 3

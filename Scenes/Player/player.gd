@@ -118,13 +118,6 @@ func _on_movement_disabled() -> void:
 	print("movementdisabled")
 	can_move = false
 
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-
-
-
 func _input(event):
 	# Open/close quest log
 		if event.is_action_pressed("TEMPQUEST"):
@@ -132,7 +125,6 @@ func _input(event):
 
 # Check if quest item is needed
 func is_item_needed(item_id: String, inv_item):
-	#make all quest global? ja for loop {quest_ui.gd comment olemas} uksquest KUS VAJA!)!)!)!))!)!)!
 	for uksquest in Global.quest_ui.all_active_quests:
 		for objective in uksquest.objectives:
 			if objective.target_id == item_id and objective.target_type == "collection" and not objective.is_completed:
@@ -151,8 +143,6 @@ func is_item_needed(item_id: String, inv_item):
 func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
 	if selected_quest == null:
 		return
-		#take first quest
-		
 	# Update objectives
 	var objective_updated = false
 	for objective in selected_quest.objectives:
@@ -224,11 +214,8 @@ func add_money(amount:int) -> void:
 	print("Player now has %d money" % coin_amount)
 	money_collected.emit(amount, coin_amount)
 
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP### TEMP
-
+func check_money() -> int:
+	return coin_amount
 
 func _on_world_map_ui_map_closed() -> void:
 	print("Map movement enabled")

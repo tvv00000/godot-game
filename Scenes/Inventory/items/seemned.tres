@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_5ah72")
+id = "seed"
 name = "Seemned"
 texture = ExtResource("2_hrptw")
 description = "Keegi ei tea, mis siit kasvada võiks. Istuta ja saa teada."
