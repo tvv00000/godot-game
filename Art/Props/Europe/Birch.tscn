@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5qfmk87p851u"]
+
+[ext_resource type="ArrayMesh" uid="uid://rw481dh2278b" path="res://Art/Props/Europe/Tree_Eur.obj" id="1_jofim"]
+[ext_resource type="Material" uid="uid://d2q27m18oigpi" path="res://Art/Props/Europe/M_Leaves_Eur.tres" id="2_lbpu4"]
+[ext_resource type="Material" uid="uid://dx1cul246bd5l" path="res://Art/Props/Europe/M_Bark_Birch.tres" id="3_xr3c7"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0h135"]
+radius = 0.524596
+height = 6.58171
+
+[node name="Tree_Birch" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0.012413, -0.784173, 0.00132608)
+mesh = ExtResource("1_jofim")
+surface_material_override/0 = ExtResource("2_lbpu4")
+surface_material_override/1 = ExtResource("3_xr3c7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999493, 0.0318294, 0, -0.0318294, 0.999493, 0, 0, 0, 1, 0.137596, 1.51468, -0.020094)
+shape = SubResource("CapsuleShape3D_0h135")

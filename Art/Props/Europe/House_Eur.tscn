@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn233puqbda6h"]
+
+[ext_resource type="ArrayMesh" uid="uid://yl3xlrosto3g" path="res://Art/Props/Europe/House_Eur.obj" id="1_3s8mn"]
+[ext_resource type="Texture2D" uid="uid://c75d3dk7gm5ic" path="res://Art/Props/Europe/T_House_Eur.png" id="2_3yol4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2pmes"]
+albedo_texture = ExtResource("2_3yol4")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3s8mn"]
+size = Vector3(19.0255, 10.0302, 11.0253)
+
+[node name="Prop Template" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0.012413, 0.394922, 0.00132608)
+mesh = ExtResource("1_3s8mn")
+surface_material_override/0 = SubResource("StandardMaterial3D_2pmes")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999493, 0.0318294, 0, -0.0318294, 0.999493, 0, 0, 0, 1, 0.260264, 4.2909, -1.20814)
+shape = SubResource("BoxShape3D_3s8mn")

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://cdmjooj7gnopx"]
+
+[ext_resource type="ArrayMesh" uid="uid://cx5s7nob38ltu" path="res://Art/Props/Europe/Fence_Post.obj" id="1_tbj1j"]
+[ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="2_vwhx5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0h135"]
+radius = 0.177438
+
+[node name="FencePost" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22511, 0)
+mesh = ExtResource("1_tbj1j")
+surface_material_override/0 = ExtResource("2_vwhx5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0284246, 0.615936, 0.0823364)
+shape = SubResource("CapsuleShape3D_0h135")

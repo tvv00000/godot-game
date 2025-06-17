@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dn1547di2c5da"]
+
+[ext_resource type="ArrayMesh" uid="uid://cx5s7nob38ltu" path="res://Art/Props/Europe/Fence_Post.obj" id="1_2sjoq"]
+[ext_resource type="Material" uid="uid://bu5ryhqfdfc4l" path="res://Art/Props/Garden/Materials/M_Planter_Wood.tres" id="2_m0rfk"]
+[ext_resource type="ArrayMesh" uid="uid://b0vidl5v5kfxw" path="res://Art/Props/Europe/Fence_Board.obj" id="3_8w8nq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2sjoq"]
+size = Vector3(3.49707, 2.23187, 0.38147)
+
+[node name="Fence" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22511, 0)
+mesh = ExtResource("1_2sjoq")
+surface_material_override/0 = ExtResource("2_m0rfk")
+
+[node name="Mesh2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1336, 0.3124, 0.14789)
+mesh = ExtResource("3_8w8nq")
+surface_material_override/0 = ExtResource("2_m0rfk")
+
+[node name="Mesh3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, -8.9407e-08, 0, 8.9407e-08, -1, 1.1336, 1.16113, 0.14789)
+mesh = ExtResource("3_8w8nq")
+surface_material_override/0 = ExtResource("2_m0rfk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.24854, 0.615936, 0.0823364)
+shape = SubResource("BoxShape3D_2sjoq")

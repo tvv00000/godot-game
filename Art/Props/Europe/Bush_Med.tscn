@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://diwlbjataf1kh"]
+
+[ext_resource type="ArrayMesh" uid="uid://mxxy5ss577pp" path="res://Art/Props/Europe/Bush.obj" id="1_ankvd"]
+[ext_resource type="Material" uid="uid://ci24jibnynnap" path="res://Art/Props/Europe/M_Leaves_Med.tres" id="2_r4y4x"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_a2woe"]
+radius = 2.79398
+
+[node name="Bush Med" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-3, -4.52987e-07, 0, 4.52987e-07, -3, 0, 0, 0, 3, 0.012413, 2.14356, 0.00132608)
+mesh = ExtResource("1_ankvd")
+surface_material_override/0 = ExtResource("2_r4y4x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.999493, 0.0318294, 0, -0.0318294, 0.999493, 0, 0, 0, 1, 0.137596, 2.74285, -0.020094)
+shape = SubResource("SphereShape3D_a2woe")

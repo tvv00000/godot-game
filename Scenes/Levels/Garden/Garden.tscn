@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="11_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="13_jcvc3"]
-[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_muld.tres" id="14_8nmii"]
+[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/item_muld.tres" id="14_8nmii"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)

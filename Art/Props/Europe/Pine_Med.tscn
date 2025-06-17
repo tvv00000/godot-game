@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpyp2p1u41dch"]
+
+[ext_resource type="ArrayMesh" uid="uid://cq4gwv2myyl5l" path="res://Art/Props/Europe/Tree_Pine.obj" id="1_6ct3i"]
+[ext_resource type="Material" uid="uid://i1371fo5sor8" path="res://Art/Props/Europe/M_Bark_Med.tres" id="2_vecxd"]
+[ext_resource type="Material" uid="uid://ci24jibnynnap" path="res://Art/Props/Europe/M_Leaves_Med.tres" id="3_nwhu1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_do3oo"]
+height = 6.40855
+
+[node name="Tree_Pine_Med" type="StaticBody3D"]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("1_6ct3i")
+surface_material_override/0 = ExtResource("2_vecxd")
+surface_material_override/1 = ExtResource("3_nwhu1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.25197, 0)
+shape = SubResource("CapsuleShape3D_do3oo")
