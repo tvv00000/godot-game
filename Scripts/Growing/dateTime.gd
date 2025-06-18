@@ -6,22 +6,57 @@ extends Node
 @export var secondsPerCycle: int = 10
 var currentTime: int
 var Planters: Array
+var day: int
+var season: int
+var  daysElapsed: int
 
 func updateTime():
 	#see võtab eemaloldud aja ja uuendab kuupäeva
-	currentTime = Time.get_ticks_msec()
-	print("Time to grow!")
+	if Global.totalDays > daysElapsed:
+		print("You were gone for {missing} days, growing plants for same amount".format({"missing": Global.totalDays - daysElapsed}))
+		while Global.totalDays > daysElapsed:
+			growPlants()
+	else: 
+		currentTime = Time.get_ticks_msec()
+		daysElapsed += 1
+		Global.totalDays += 1
+		print("Time to grow!")
 	#signal to plant to grow
+		growPlants()
+
+func growPlants():
 	Planters = get_children()
 	for Planter in Planters:
 			Planter.growPlant()
+
+
+
+
+func setDate():
+	day += 1
+	if day == 6:
+		season += 1
+		day = 0
+		
+		if season == 3:
+			season = 0
+	
+	Global.day = day
+	Global.season = season
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currentTime = Time.get_ticks_msec()
+	updateTime()
 
 	#peaks võtma ja uuendama aia päeva sõltuvalt sellele kas sa oled ära olnud või mängust emal olnud
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Time.get_ticks_msec() - currentTime > secondsPerCycle * 1000:
-		updateTime()
+	if Global.isGardenLevel:
+		if Time.get_ticks_msec() - currentTime > secondsPerCycle * 1000:
+			updateTime()
+			setDate()
+	else:
+		if Time.get_ticks_msec() - currentTime > secondsPerCycle * 6000:
+			updateTime()
+			setDate()
