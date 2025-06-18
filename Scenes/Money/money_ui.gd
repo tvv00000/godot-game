@@ -7,7 +7,7 @@ func _ready():
 	else:
 		print("Player node not found!")
 
-func _on_money_collected(amount_added, new_total):
+func _on_money_collected(_amount_added, new_total):
 	var label = get_node("Panel2/MoneyLabel2")
 	if label:
 		label.text = "%d" % new_total

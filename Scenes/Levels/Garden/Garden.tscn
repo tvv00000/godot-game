@@ -1,5 +1,6 @@
-[gd_scene load_steps=20 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=21 format=3 uid="uid://b7h1287x5o0v6"]
 
+[ext_resource type="Script" path="res://Scenes/Levels/Garden/garden.gd" id="1_8nmii"]
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_typy8"]
@@ -30,6 +31,7 @@ size = Vector3(0.234497, 11.4411, 13.23)
 [sub_resource type="PlaneMesh" id="PlaneMesh_owpas"]
 
 [node name="root" type="Node"]
+script = ExtResource("1_8nmii")
 
 [node name="GrowthTimer" type="Node" parent="."]
 
