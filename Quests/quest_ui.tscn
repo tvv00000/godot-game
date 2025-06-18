@@ -12,6 +12,7 @@ bg_color = Color(1, 0.737415, 0.449514, 1)
 bg_color = Color(1, 0.737415, 0.449514, 1)
 
 [node name="QuestUI" type="Control"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,6 +23,7 @@ script = ExtResource("1_5mrhn")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 2
+visible = false
 
 [node name="Panel" type="Panel" parent="CanvasLayer"]
 anchors_preset = 15
