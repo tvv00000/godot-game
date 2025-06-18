@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=43 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://c5qfmk87p851u" path="res://Art/Props/Europe/Birch.tscn" id="27_eqoyq"]
 [ext_resource type="PackedScene" uid="uid://dxlhokvrgr0co" path="res://Art/Props/Europe/EurTree.tscn" id="28_tr5y0"]
 [ext_resource type="PackedScene" uid="uid://dpyp2p1u41dch" path="res://Art/Props/Europe/Pine_Med.tscn" id="29_c4ohp"]
+[ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="29_u0aux"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
 
@@ -647,6 +648,9 @@ transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.79
 
 [node name="NPC_doc" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01966, 0, 59.9738)
+spriteTexture = ExtResource("29_u0aux")
+npc_id = "npc_doctor"
+npc_name = "Doktor Viktor"
 
 [node name="NPC_botanic" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0068, 0, 51.5119)
