@@ -1,7 +1,7 @@
 extends Control
 
 func _ready():
-	var player = get_node("/root/Root/Player")
+	var player = $"../.."
 	if player:
 		player.connect("money_collected", Callable(self, "_on_money_collected"))
 	else:

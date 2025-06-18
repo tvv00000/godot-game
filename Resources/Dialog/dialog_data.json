@@ -103,44 +103,82 @@
 			}
 		]
 	},
-	"npc_2": {
+	"npc_botanic": {
 		"trees": [
 			{
-				"branch_id": "npc_2_1",
+				"branch_id": "npc_botanic_1",
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Greetings, traveler! How can I assist you?",
+						"text": "Oh, Eksmati, tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast",
 						"options": {
-							"Ask About Forest": "in_progress",
-							"Receive Quests": "give_quests",
-							"Say Goodbye": "exit"
+							"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "plant_info",
+							"Kas ma saan teda kuidagi aidata?": "give_quests",
+							"Hüvasti": "exit"
+						}
+					},{
+						"state": "plant_info",
+						"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+						"options": {
+							"Ürditaimeke? Mulle meeldib see! Tänan sind, valguse ja kivide valitseja!": "start",
 						}
 					},
 					{
 						"state": "in_progress",
-						"text": "The forest is home to many mystical creatures.",
+						"text": "",
 						"options": {
-							"Say Goodbye": "end",
-							"Go Back": "start"
+							"": "end",
+							"": "start"
 						}
 					},
 					{
 						"state": "give_quests",
-						"text": "Okay. I've updated your quest log with things I need done.",
+						"text": "Ja ikka saad, too mulle 3 tüümiani.",
 						"options": {
-							"Say Goodbye": "exit",
-							"Go Back": "start"
+							"Lähen otsima!": "end"
 						}
 					},
 					{
 						"state": "end",
-						"text": "Farewell, traveler!",
+						"text": "",
 						"options": {}
 					},
 					{
 						"state": "exit",
-						"text": "Come back soon!",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+				"branch_id": "npc_botanic_2",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Oh, Eksmati, juba tagasi?",
+						"options": {
+							"Kas võid uuesti tüümianist rääkida?": "plant_info",
+							"Hüvasti": "exit"
+						}
+					},{
+						"state": "plant_info",
+						"text": "Ikka! tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast",
+						"options": {
+							"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "plant_info2",
+						}
+					},{
+						"state": "plant_info2",
+						"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+						"options": {
+							"Ürditaimeke? Selge, aitäh!": "start",
+							"Selge, hüvasti": "exit"
+						}
+					},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
 						"options": {}
 					}
 				]
@@ -150,19 +188,11 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "I wonder why Bobby is always smelling me...",
+						"text": "npc_default",
 						"options": {
-							"Receive Quests": "give_quests",
 							"Say Goodbye": "exit"
 						}
-					},
-					{
-						"state": "give_quests",
-						"text": "Okay. I've updated your quest log with things I need done.",
-						"options": {
-							"Go Back": "start"
-						}
-					},
+					}
 				]
 			}
 		]
