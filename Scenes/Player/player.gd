@@ -45,8 +45,11 @@ func _ready() -> void:
 	print("Scene name:", get_tree().current_scene.name)
 	if get_tree().current_scene.name == "root":
 			GardenBgMusic.play()
-	else:
+			EuropeBgMusic.stop()
+		
+	elif get_tree().current_scene.name == "Level_Europe":
 		GardenBgMusic.stop()
+		EuropeBgMusic.play()
 	
 	#signals
 	quest_manager.quest_updated.connect(_on_quest_updated)
