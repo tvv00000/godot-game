@@ -6,6 +6,7 @@ extends Area3D
 @export var item_id: String = ""
 @export var item_quantity: int = 1
 @export var item_mesh: Mesh
+@export var item_texture: Texture
 @export var inv_item: InvItem
 var player = null
 

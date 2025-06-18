@@ -5,7 +5,7 @@ extends CharacterBody3D
 const SPEED: float = 5.0
 const JUMP_VELOCITY:float = 4.5
 var can_move:bool = true
-const SPRINT_MULTIPLIER: float = 1.5
+const SPRINT_MULTIPLIER: float = 2.0
 
 @export var inventory: Inventory
 var ui_ref: Control
