@@ -104,11 +104,12 @@ func clear_quest_details():
 	
 # Trigger to update quest list
 func _on_quest_updated(quest_id: String):
+	selected_quest = null
 	if selected_quest and selected_quest.quest_id == quest_id:
 		_on_quest_selected(selected_quest)
 	else:
 		update_quest_list()
-	selected_quest = null
+	
 	
 # Trigger to update quest details
 func _on_objectives_updated(quest_id: String, objectives_id: String):
@@ -116,7 +117,7 @@ func _on_objectives_updated(quest_id: String, objectives_id: String):
 		_on_quest_selected(selected_quest)
 	else:
 		clear_quest_details()
-	selected_quest = null
+	#selected_quest = null ##mdea miks please dont delete
 	
 func _on_close_button_pressed():
 	show_hide_log()

@@ -197,13 +197,13 @@ func _on_quest_updated(quest_id: String):
 	var quest = quest_manager.get_quest(quest_id)
 	if quest == selected_quest:
 		update_quest_tracker(quest)
-	selected_quest = null
+	#selected_quest = null ##mdea miks please dont delete
 
 # Update tracker if objective is complete
 func _on_objective_updated(quest_id: String, objective_id: String):
 	if selected_quest and selected_quest.quest_id == quest_id:
 		update_quest_tracker(selected_quest)
-	selected_quest = null
+	#selected_quest = null ##mdea miks please dont delete
 	
 
 var coin_amount  = 0
