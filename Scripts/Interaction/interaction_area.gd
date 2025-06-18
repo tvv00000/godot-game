@@ -13,10 +13,12 @@ var interactablesInRange := []
 var selectedInteractable: StaticBody3D = null
 signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
+var seeds: Resource
 
 
 func _ready():
 	InteractionLabel.hide()
+	seeds  = load("res://Scenes/Inventory/items/seemned.tres")
 
 #See sorteerib lähedal olevad interactabled ja valib listist lähima objekti, kui array on suurem kui 1.
 func updateInteractables():
@@ -70,7 +72,7 @@ func _input(event: InputEvent) -> void:
 			print("nothing to interact with")
 
 		elif selectedInteractable.is_in_group("Planter"):
-			print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
+			#print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
 			#see saadab teate et võta ui ette.
 			var planterState: int = selectedInteractable.planterState
 			var plantName: String = "null"
@@ -90,24 +92,23 @@ func _input(event: InputEvent) -> void:
 							Global.inventory.use_item(index, 10)
 						Global.inventory.update.emit()
 						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
-						print("Palun täida mind!") #mida?
-				return
-			
-			emit_signal("movementDisabled")
+						#print("Palun täida mind!") #mida?
+						
+						emit_signal("movementDisabled")
 			
 			#print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
-			emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+			#emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
 
 			
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
-				emit_signal("show_GardenUI", planterState, plantName, dirtLevel)
+				emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
 			
 			#see ei toimi
 			if planterState == 3:
-				Global.inventory.insert("seemned", 5)
+				Global.inventory.insert(seeds, 5)
 				selectedInteractable.planterStater(1)
 				
 		

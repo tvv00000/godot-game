@@ -118,6 +118,7 @@ func _on_interaction_area_show_garden_ui(state: int, plantName: String, dirtLeve
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/MoistureLabel".set_text(str(moistureLevel))
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(fertilizerLevel))
 		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/GrowthLabel".set_text(str(plantGrowth))
+		$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/HealthLabel".set_text(str(plantHealth))
 
 
 func _on_wateringButton_pressed() -> void:
@@ -128,3 +129,7 @@ func _on_wateringButton_pressed() -> void:
 func _on_fertilize_button_pressed() -> void:
 	emit_signal("plantCare", 1)
 	$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(100))
+	
+func _process(delta: float) -> void:
+	$DateTime/timeContainer/dayLabel.set_text("Päev: {day}".format({"day":Global.day+1}))
+	$DateTime/timeContainer/seasonLabel.set_text("Hooaeg: {season}".format({"season":Global.season+1}))
