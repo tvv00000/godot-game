@@ -23,7 +23,7 @@ func _ready():
 	$Pivot/Sprite.set_texture(spriteTexture)
 	# Get quest manager
 	quest_manager = Global.player.quest_manager
-	print("NPC Ready. Quests loaded: ", quests.size())
+	print("NPC ",npc_name, ". Quests loaded: ", quests.size())
 	
 
 func start_dialog():
@@ -75,7 +75,7 @@ func offer_quest(quest_id: String):
 						quest.complete_objective(objective.id, amount_found)
 						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
 						print("Progress added for objective:", objective.target_id)
-			quest_manager.add_quest(quest)
+				quest_manager.add_quest(quest)
 			return
 	
 	print("Quest not found or started already")
