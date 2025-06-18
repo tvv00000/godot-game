@@ -44,6 +44,7 @@ func  get_current_dialog():
 # Update dialog branch
 func set_dialog_tree(branch_index):
 	current_branch_index = branch_index
+	print(current_branch_index)
 	current_state = "start"
 
 # Update dialog state
@@ -75,7 +76,7 @@ func offer_quest(quest_id: String):
 						quest.complete_objective(objective.id, amount_found)
 						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
 						print("Progress added for objective:", objective.target_id)
-				quest_manager.add_quest(quest)
+			quest_manager.add_quest(quest)
 			return
 	
 	print("Quest not found or started already")

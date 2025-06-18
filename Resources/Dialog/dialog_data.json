@@ -146,7 +146,7 @@
 						"text": "Oh, Eksmati, juba tagasi?",
 						"options": {
 							"Kas võid uuesti tüümianist rääkida?": "plant_info",
-							"Kas oleks veel midagi mida teha?": "give_quest",
+							"Kas oleks veel midagi mida teha?": "give_quests",
 							"Hüvasti": "exit"
 						}
 					},{
@@ -163,7 +163,7 @@
 							"Selge, hüvasti": "exit"
 						}
 					},{
-						"state": "give_quest",
+						"state": "give_quests",
 						"text": "Nüüd kui sa sellest räägid, mine otsi taimetark lembit üles. Kui sa ta leiad siis küsi talt tüümiani kohta",
 						"options": {
 							"Lahen otsin ta üles": "end"
