@@ -110,9 +110,9 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Oh, Eksmati, tüümian ehk aed-liivatee on tõeline päikeselaps! Ta tahab päikest nagu nartsiss kevadel – palju valgust, kuiva ja kivist pinnast",
+						"text": "Oo, Eksmati",
 						"options": {
-							"Et siis porilompides ta ei taha hullata, nagu mõni järvetaim?": "plant_info",
+							"Kas sa võid mulle tüümia": "plant_info",
 							"Kas ma saan teda kuidagi aidata?": "give_quests",
 							"Hüvasti": "exit"
 						}
@@ -209,6 +209,79 @@
 						"options": {
 							"Mul on veel küsimusi": "start",
 							"Selge, aitäh": "exit"
+						}
+					},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+			"branch_id": "npc_default",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "npc_default",
+						"options": {
+							"Say Goodbye": "exit"
+						}
+					}
+				]
+			}
+		]
+	},
+	"npc_sage": {
+		"trees": [
+			{
+				"branch_id": "npc_sage_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Oh, Eksmati",
+						"options": {
+							"Kas sa võid tüümianist rääkida?": "plant_info",
+							"Hüvasti": "exit"
+						}
+					},{
+						"state": "plant_info",
+						"text": "Tüümian ehk liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
+						"options": {
+							"Ohho": "plant_info2",
+						}
+					},{
+						"state": "plant_info2",
+						"text": "Ja see pole veel kõik – liivatee toob rahulikku und, aitab säästa, puhastab hinge ja meelt",
+						"options": {
+							"See kõlab hästi!  Kas teda võiks nartsissiga kõrvutada?": "plant_info3"
+						}
+					},{
+						"state": "plant_info3",
+						"text": "Nartsiss vaatab rohkem peeglisse – ta sümboliseerib ilu ja eneseleidmist. Aga liivatee… tema tuleb alati südame kaudu.",
+						"options": {
+							"Selge": "end"
+						}
+					},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+				"branch_id": "npc_sage_2",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Kuidas läheb",
+						"options": {
+							"Hüvasti": "exit"
 						}
 					},{
 						"state": "end",
