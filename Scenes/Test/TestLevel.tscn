@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dgu4nfixubcsa" path="res://Scenes/NPC/NPC.tscn" id="4_wlpxy"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="6_nqdq4"]
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="7_7hlls"]
-[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/item_muld.tres" id="8_jwrl0"]
+[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_muld.tres" id="8_jwrl0"]
 [ext_resource type="Texture2D" uid="uid://c7i1bv34w0jtf" path="res://Art/Sprites/Items/mullahunnik.png" id="8_uimbc"]
 [ext_resource type="Resource" uid="uid://4b2tpghe2ji7" path="res://Scenes/Inventory/items/seemned.tres" id="9_jwrl0"]
 [ext_resource type="PackedScene" uid="uid://cmt6ht35g86cq" path="res://Scripts/Shop/shop_ui.tscn" id="10_b1g8u"]

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://6muo7bscocct"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://l4vc6ev1q1ra"]
 
 [ext_resource type="Script" uid="uid://ddecgowpiffet" path="res://Scenes/Inventory/inv_item.gd" id="1_6wq7w"]
 [ext_resource type="Texture2D" uid="uid://dct8ofm88u184" path="res://Art/Sprites/Items/tyymian.png" id="2_rm8b3"]
@@ -8,5 +8,5 @@ script = ExtResource("1_6wq7w")
 id = "item_ThymusVulgaris"
 name = "Tüümian"
 texture = ExtResource("2_rm8b3")
-description = "Leidsid maast Tüümiani"
+description = "Leidsid maast Tüümiani."
 metadata/_custom_type_script = "uid://ddecgowpiffet"
