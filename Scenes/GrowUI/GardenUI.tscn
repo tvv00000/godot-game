@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://clkmaoboqfu50" path="res://Scripts/UI/Garden_UI.gd" id="1_8dd0n"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="1_wwyio"]
 [ext_resource type="ArrayMesh" uid="uid://f5dcn2nq6al4" path="res://Art/Props/Garden/Planter_Med.obj" id="2_8dd0n"]
-[ext_resource type="StyleBox" path="res://Art/money_ui.tres" id="4_sprp4"]
-[ext_resource type="StyleBox" path="res://Art/money_ui_pressed.tres" id="5_dv7ao"]
+[ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="4_sprp4"]
+[ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="5_dv7ao"]
 
 [sub_resource type="FontVariation" id="FontVariation_n4go3"]
 
@@ -28,16 +28,24 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="seasonLabel" type="Label" parent="DateTime"]
+[node name="timeContainer" type="VBoxContainer" parent="DateTime"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -138.0
-offset_top = 43.0
-offset_right = -55.0
-offset_bottom = 114.0
+offset_left = -159.0
+offset_bottom = 146.0
 grow_horizontal = 0
+
+[node name="dayLabel" type="Label" parent="DateTime/timeContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_n4go3")
+theme_override_font_sizes/font_size = 24
+text = "Hooaeg
+Kuupäev"
+
+[node name="seasonLabel" type="Label" parent="DateTime/timeContainer"]
+layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_n4go3")
 theme_override_font_sizes/font_size = 24
 text = "Hooaeg

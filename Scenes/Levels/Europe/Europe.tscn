@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://bbsn3lrgeomw2"]
+[gd_scene load_steps=51 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]

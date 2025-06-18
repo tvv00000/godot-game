@@ -2,11 +2,13 @@ extends Control
 
 signal map_open
 signal map_closed
+var Planters: Node
 
 func _ready():
 	hide()
 	set_process_unhandled_input(true)
-
+	Planters = $"../../Planters"
+	
 func showMap():
 	show()
 	emit_signal("map_open")
@@ -22,6 +24,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _on_europe_btn_pressed():
+	save_scene()
 	emit_signal("map_closed")
 	get_tree().paused = false
 	print("Europe button pressed")
@@ -36,5 +39,25 @@ func _on_aed_btn_pressed() -> void:
 	print("Garden button pressed")
 	Global.last_teleport_scene = "res://Scenes/Levels/Europe/Garden.tscn"
 	get_tree().change_scene_to_file("res://Scenes/Levels/Garden/Garden.tscn")
+	load_scene()
 	hide()
 	Global.isGardenLevel = true
+	
+func save_scene(): 
+	var data = SceneData.new()
+	for planter in Planters:
+		var planterScene = PackedScene.new()
+		planterScene.pack(planter)
+		data.planterArray.append(planterScene)
+	ResourceSaver.save(data, "user://gardenData.tres")
+	print("Saved garden state!")
+
+func load_scene():
+	var data = ResourceLoader.load("user://gardenData.tres")
+	for planter in Planters:
+		planter.queue_free()
+	
+	for planter in data.planterArray:
+		var loaded_planter = planter.instantiate()
+		Planters.add_child(loaded_planter)
+	

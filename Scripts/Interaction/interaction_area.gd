@@ -107,7 +107,7 @@ func _input(event: InputEvent) -> void:
 			
 			#see ei toimi
 			if planterState == 3:
-				#Global.inventory.insert("seemned", 5)
+				Global.inventory.insert("seemned", 5)
 				selectedInteractable.planterStater(1)
 				
 		
