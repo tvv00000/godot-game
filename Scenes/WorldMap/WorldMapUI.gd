@@ -2,12 +2,11 @@ extends Control
 
 signal map_open
 signal map_closed
-var Planters: Node
+@onready var Planters: Array[Node] = get_tree().get_nodes_in_group("Planter")
 
 func _ready():
 	hide()
 	set_process_unhandled_input(true)
-	Planters = $"../../Planters"
 	
 func showMap():
 	show()
@@ -59,5 +58,6 @@ func load_scene():
 	
 	for planter in data.planterArray:
 		var loaded_planter = planter.instantiate()
-		Planters.add_child(loaded_planter)
+		#get_tree().get_root().get_node("../../Planters").add_child(loaded_planter)
+
 	

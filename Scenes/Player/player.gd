@@ -42,7 +42,11 @@ func _ready() -> void:
 	MapMenu.map_closed.connect(_on_world_map_ui_map_closed)
 	
 	animation.play("Idle")
-	
+	print("Scene name:", get_tree().current_scene.name)
+	if get_tree().current_scene.name == "root":
+			GardenBgMusic.play()
+	else:
+		GardenBgMusic.stop()
 	
 	#signals
 	quest_manager.quest_updated.connect(_on_quest_updated)

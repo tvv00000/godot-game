@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c4e440ofcpxlg"]
+
+[ext_resource type="AudioStream" uid="uid://pb0uqgayrf2k" path="res://Audio/Garden_theme (3).wav" id="1_jpwqp"]
+
+[node name="GardenBgMusic" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_jpwqp")
+bus = &"Music"

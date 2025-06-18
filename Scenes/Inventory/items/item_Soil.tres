@@ -8,5 +8,5 @@ script = ExtResource("1_3hngu")
 id = "item_Soil"
 name = "item_Soil"
 texture = ExtResource("2_3hngu")
-description = "Leidsid maast mulda"
+description = "Leidsid maast hunniku mulda."
 metadata/_custom_type_script = "uid://ddecgowpiffet"
