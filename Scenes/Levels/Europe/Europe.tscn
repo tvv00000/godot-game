@@ -1,4 +1,4 @@
-[gd_scene load_steps=54 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=55 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -38,6 +38,7 @@
 [ext_resource type="PackedScene" uid="uid://dpyp2p1u41dch" path="res://Art/Props/Europe/Pine_Med.tscn" id="29_c4ohp"]
 [ext_resource type="Script" uid="uid://dwnriolo4jg3x" path="res://Resources/Quest/Quests.gd" id="30_joc6n"]
 [ext_resource type="Script" uid="uid://c7a1j36unkq1q" path="res://Resources/Quest/Objectives.gd" id="31_qhvlk"]
+[ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="32_2r2rj"]
 [ext_resource type="Script" uid="uid://bien6lff38nx1" path="res://Resources/Quest/Rewards.gd" id="32_dd588"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
@@ -730,12 +731,15 @@ inv_item = ExtResource("29_0e3rd")
 
 [node name="NPC_doc" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01966, 0, 59.9738)
+spriteTexture = ExtResource("32_2r2rj")
+npc_id = "npc_doc"
+npc_name = "Doktor Viktor"
 
 [node name="NPC_botanic" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0068, 0, 51.5119)
 spriteTexture = ExtResource("21_v6112")
 npc_id = "npc_botanic"
-npc_name = "Botaanik Bella"
+npc_name = "Botaanik Brita"
 quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3"), SubResource("Resource_4uyrq")])
 
 [node name="NPC_sage" parent="npc" instance=ExtResource("19_offuu")]
@@ -761,7 +765,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5318, 8.20368, 16.6224)
 spriteTexture = ExtResource("25_b5g1t")
 npc_id = "npc_thyme"
 npc_name = "Tüümian Türi"
-interactLabel = "Võta tagasi jumalate jõud"
+interactLabel = "Räägi Tüümianiga"
 
 [connection signal="body_entered" from="Terrain/WaterPlane/WaterKill" to="Player" method="_on_water_kill_body_entered"]
 [connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
