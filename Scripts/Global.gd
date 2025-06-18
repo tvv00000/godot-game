@@ -16,3 +16,8 @@ var last_teleport_scene: String = ""
 var quest_ui
 
 var last_loss_reason: String = ""
+
+var day:int
+var season: int
+var totalDays: int
+var isGardenLevel: bool = true
