@@ -42,7 +42,7 @@ func _on_mapmenu_btn_pressed() -> void:
 	resume()
 	MapMenu.emit_signal("map_open")
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	testTab()
 
 func _ready() -> void:

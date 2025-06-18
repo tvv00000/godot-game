@@ -2,9 +2,11 @@ extends Control
 
 signal map_open
 signal map_closed
-@onready var Planters: Array[Node] = get_tree().get_nodes_in_group("Planter")
+var Planters: Array[Node]
 
 func _ready():
+	if Global.isGardenLevel:
+		Planters = get_tree().get_current_scene().get_node("Planters").get_children()
 	hide()
 	set_process_unhandled_input(true)
 	
@@ -23,7 +25,8 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _on_europe_btn_pressed():
-	save_scene()
+	if Global.isGardenLevel:
+		save_scene()
 	emit_signal("map_closed")
 	get_tree().paused = false
 	print("Europe button pressed")
@@ -33,12 +36,12 @@ func _on_europe_btn_pressed():
 	Global.isGardenLevel = false
 
 func _on_aed_btn_pressed() -> void:
+	Global.firstPlay = false
 	emit_signal("map_closed")
 	get_tree().paused = false
 	print("Garden button pressed")
 	Global.last_teleport_scene = "res://Scenes/Levels/Europe/Garden.tscn"
 	get_tree().change_scene_to_file("res://Scenes/Levels/Garden/Garden.tscn")
-	load_scene()
 	hide()
 	Global.isGardenLevel = true
 	
@@ -58,6 +61,6 @@ func load_scene():
 	
 	for planter in data.planterArray:
 		var loaded_planter = planter.instantiate()
-		#get_tree().get_root().get_node("../../Planters").add_child(loaded_planter)
+		get_tree().get_current_scene().get_node("Planters").add_child(loaded_planter)
 
 	

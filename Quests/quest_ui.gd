@@ -112,7 +112,7 @@ func _on_quest_updated(quest_id: String):
 	
 	
 # Trigger to update quest details
-func _on_objectives_updated(quest_id: String, objectives_id: String):
+func _on_objectives_updated(quest_id: String, _objectives_id: String):
 	if selected_quest and selected_quest.quest_id == quest_id:
 		_on_quest_selected(selected_quest)
 	else:

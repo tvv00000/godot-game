@@ -16,7 +16,7 @@ func _ready():
 		if mesh_instance_3d and item_mesh:
 			mesh_instance_3d.mesh = item_mesh
 
-func _process(delta):
+func _process(_delta):
 	# Show mesh in the engine (editor mode)
 	if Engine.is_editor_hint():
 		if mesh_instance_3d and item_mesh:
