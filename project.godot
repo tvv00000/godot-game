@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://Scripts/Global.gd"
 CollectionManager="*res://Scripts/Plants/CollectionManager.gd"
 GardenBgMusic="*res://Audio/garden_bg_music.tscn"
+EuropeBgMusic="*res://Audio/europe_bg_music.tscn"
 
 [display]
 

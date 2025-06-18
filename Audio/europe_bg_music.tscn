@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cu16ynx1yw7c2"]
+
+[ext_resource type="AudioStream" uid="uid://b7b5jkmahubew" path="res://Audio/Europe_theme.wav" id="1_asea7"]
+
+[node name="Europe_bg_music" type="AudioStreamPlayer"]
+process_mode = 3
+stream = ExtResource("1_asea7")
+bus = &"Music"
