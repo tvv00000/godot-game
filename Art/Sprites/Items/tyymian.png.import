@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8oikjbvqmwbw"
-path="res://.godot/imported/tüümian.png-773b9282cfb2a2247f806ee11715c06c.ctex"
+uid="uid://dct8ofm88u184"
+path="res://.godot/imported/tyymian.png-94af84b5502ac2487961b81617ece2c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Sprites/Items/tüümian.png"
-dest_files=["res://.godot/imported/tüümian.png-773b9282cfb2a2247f806ee11715c06c.ctex"]
+source_file="res://Art/Sprites/Items/tyymian.png"
+dest_files=["res://.godot/imported/tyymian.png-94af84b5502ac2487961b81617ece2c8.ctex"]
 
 [params]
 
