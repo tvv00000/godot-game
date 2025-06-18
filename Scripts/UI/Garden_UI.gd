@@ -129,5 +129,5 @@ func _on_fertilize_button_pressed() -> void:
 	$"CareUI/DirtUI BG/HBoxContainer/VBoxContainer/FertLabel".set_text(str(100))
 	
 func _process(delta: float) -> void:
-	$DateTime/dayLabel.set_text("Päev: {day}".format({"day":Global.day+1}))
+	#$DateTime/dayLabel.set_text("Päev: {day}".format({"day":Global.day+1}))
 	$DateTime/seasonLabel.set_text("Hooaeg: {season}".format({"season":Global.season+1}))

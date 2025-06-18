@@ -146,6 +146,7 @@
 						"text": "Oh, Eksmati, juba tagasi?",
 						"options": {
 							"Kas võid uuesti tüümianist rääkida?": "plant_info",
+							"Kas oleks veel midagi mida teha?": "give_quest",
 							"Hüvasti": "exit"
 						}
 					},{
@@ -160,6 +161,13 @@
 						"options": {
 							"Ürditaimeke? Selge, aitäh!": "start",
 							"Selge, hüvasti": "exit"
+						}
+					},{
+						"state": "give_quest",
+						"text": "Nüüd kui sa sellest räägid, mine otsi taimetark lembit üles. Kui sa ta leiad siis küsi talt tüümiani kohta",
+						"options": {
+							"Lahen otsin ta üles": "end",
+							"Ei saa praegu": "exit"
 						}
 					},{
 						"state": "end",
@@ -176,9 +184,10 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Oh, Eksmati, juba tagasi?",
+						"text": "Tsau Eksmati, kuidas läheb",
 						"options": {
 							"Kas võid uuesti tüümianist rääkida?": "plant_info",
+							"Kus taimetark Lembit oli?": "npc_info",
 							"Hüvasti": "exit"
 						}
 					},{
@@ -191,8 +200,15 @@
 						"state": "plant_info2",
 						"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
 						"options": {
-							"Ürditaimeke? Selge, aitäh!": "start",
+							"Mul on veel küsimusi.": "start",
 							"Selge, hüvasti": "exit"
+						}
+					},{
+						"state": "npc_info",
+						"text": "Ta peaks kuskil üleval olema",
+						"options": {
+							"Mul on veel küsimusi": "start",
+							"Selge, aitäh": "exit"
 						}
 					},{
 						"state": "end",
