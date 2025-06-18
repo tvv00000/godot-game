@@ -15,7 +15,7 @@
 },
 {
 	"state": "thyme00",
-	"text": "Hahahaha ei saa! Aga ma annan kui sa vastad õigesti minu küsimusele! Aga ma teen seda diili ainult nendega kes teavad mu ladinakeelset nime!",
+	"text": "Hahahaha ei saa! Aga ma võin kokkuleppele jõuda ainult nendega kes teavad mu ladinakeelset nime!",
 	"options": {
 		"Ooo lugupeetud Thymus Vulgaris, kas austate mind oma küsimuste kadalipuga": "thyme02",
 		"Oo kõgresooline Thymian Valtari, Ma olen teie vääriline!": "thyme99",
@@ -24,7 +24,7 @@
 },
 {
 	"state": "thyme02",
-	"text": "Okei okei, siin esimene küsimus: Mille ravim ma olen",
+	"text": "Okei okei, sa oled targem kui paistad. Siin on esimene küsimus: Mille ravim ma olen",
 	"options": {
 		"Teie kõikevägev jõud ravib nohu ja köha": "thyme03",
 		"Te ravite madalat enesekindlust": "thyme99",
@@ -62,7 +62,7 @@
 	"state": "thyme06",
 	"text": "Vau... tegidki ära... Nojah, siin on siis seemned, mine pista mulda need vms te hundid nendega teete.",
 	"options": {
-		"Tänks lohh": "end"
+		"Aitäh maailmakuulus maitsetaim Tüümian!": "end"
 		}
 },
 {

@@ -48,7 +48,7 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/hover = ExtResource("4_kpx3y")
 theme_override_styles/pressed = ExtResource("5_ua038")
 theme_override_styles/normal = ExtResource("4_kpx3y")
-text = "Alusta Mängu"
+text = "Alusta mängu"
 
 [node name="Settings" type="Button" parent="VBoxContainer"]
 layout_mode = 2
