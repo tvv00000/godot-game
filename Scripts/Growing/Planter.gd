@@ -88,7 +88,7 @@ func growPlant():
 					pass
 					
 			#valmis taim.
-			if plantGrowth > 100:
+			if plantGrowth >= 100:
 				planterStater(3)
 				plantGrowth = 100
 				print("Plant fully grown!")

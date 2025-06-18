@@ -11,26 +11,26 @@ var season: int
 var  daysElapsed: int
 
 func updateTime():
+	
+	currentTime = Time.get_ticks_msec()
 	#see võtab eemaloldud aja ja uuendab kuupäeva
-	if Global.totalDays > daysElapsed:
-		print("You were gone for {missing} days, growing plants for same amount".format({"missing": Global.totalDays - daysElapsed}))
-		while Global.totalDays > daysElapsed:
+	if Global.isGardenLevel:
+		if Global.totalDays > daysElapsed:
+			print("You were gone for {missing} days, growing plants for same amount".format({"missing": Global.totalDays - daysElapsed}))
+			while Global.totalDays > daysElapsed:
+				growPlants()
+				daysElapsed += 1
+				
+		else: 
+			print("Time to grow!")
+		#signal to plant to grow
 			growPlants()
-	else: 
-		currentTime = Time.get_ticks_msec()
-		daysElapsed += 1
-		Global.totalDays += 1
-		print("Time to grow!")
-	#signal to plant to grow
-		growPlants()
+			daysElapsed += 1
 
 func growPlants():
 	Planters = get_children()
 	for Planter in Planters:
 			Planter.growPlant()
-
-
-
 
 func setDate():
 	day += 1
@@ -43,6 +43,7 @@ func setDate():
 	
 	Global.day = day
 	Global.season = season
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	currentTime = Time.get_ticks_msec()
@@ -57,6 +58,6 @@ func _process(delta: float) -> void:
 			updateTime()
 			setDate()
 	else:
-		if Time.get_ticks_msec() - currentTime > secondsPerCycle * 6000:
+		if Time.get_ticks_msec() - currentTime > secondsPerCycle * 2000:
 			updateTime()
 			setDate()
