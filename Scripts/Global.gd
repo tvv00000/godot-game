@@ -21,3 +21,4 @@ var day:int
 var season: int
 var totalDays: int
 var isGardenLevel: bool = true
+var firstPlay: bool = true
