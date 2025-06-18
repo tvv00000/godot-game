@@ -181,7 +181,7 @@ transform = Transform3D(1, 0, 0, 0, 0.766628, 0.642092, 0, -0.642092, 0.766628, 
 [node name="QuestTracker" type="ColorRect" parent="HUD"]
 offset_right = 300.0
 offset_bottom = 200.0
-color = Color(0, 0, 0, 1)
+color = Color(1, 0.737415, 0.449514, 1)
 
 [node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
 layout_mode = 1
@@ -194,6 +194,7 @@ theme_override_constants/separation = 10
 
 [node name="Title" type="Label" parent="HUD/QuestTracker/Details"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.220235, 0.0783128, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "title"
 horizontal_alignment = 1
@@ -210,7 +211,6 @@ size_flags_vertical = 3
 script = ExtResource("6_825xp")
 
 [node name="PickupLabel" type="Label" parent="HUD/Popup"]
-visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 horizontal_alignment = 1
