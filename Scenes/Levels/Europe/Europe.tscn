@@ -34,7 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="28_0e3rd"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="28_dd588"]
 [ext_resource type="PackedScene" uid="uid://dxlhokvrgr0co" path="res://Art/Props/Europe/EurTree.tscn" id="28_tr5y0"]
-[ext_resource type="Resource" uid="uid://6muo7bscocct" path="res://Scenes/Inventory/items/item_ThymusVulgaris.tres" id="29_0e3rd"]
+[ext_resource type="Resource" uid="uid://l4vc6ev1q1ra" path="res://Scenes/Inventory/items/item_ThymusVulgaris.tres" id="29_0e3rd"]
 [ext_resource type="PackedScene" uid="uid://dpyp2p1u41dch" path="res://Art/Props/Europe/Pine_Med.tscn" id="29_c4ohp"]
 [ext_resource type="Script" uid="uid://dwnriolo4jg3x" path="res://Resources/Quest/Quests.gd" id="30_joc6n"]
 [ext_resource type="Script" uid="uid://c7a1j36unkq1q" path="res://Resources/Quest/Objectives.gd" id="31_qhvlk"]
@@ -104,7 +104,7 @@ metadata/_custom_type_script = "uid://c7a1j36unkq1q"
 [sub_resource type="Resource" id="Resource_4uqav"]
 script = ExtResource("32_dd588")
 reward_type = "coins"
-reward_amount = 3
+reward_amount = 99
 metadata/_custom_type_script = "uid://bien6lff38nx1"
 
 [sub_resource type="Resource" id="Resource_4uyrq"]
@@ -113,7 +113,7 @@ quest_id = "npc_botanic_02"
 quest_name = "Leia taimetark Lembit"
 quest_description = "Botaanik Bella teab kus ta olla võib"
 state = "not_started"
-unlock_id = "npc_botanic_1"
+unlock_id = "npc_botanic_2"
 objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_dpdib")])
 rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_4uqav")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"

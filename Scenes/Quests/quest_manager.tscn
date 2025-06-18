@@ -7,4 +7,3 @@
 script = ExtResource("1_mml76")
 
 [node name="QuestUI" parent="." instance=ExtResource("2_v8fxy")]
-visible = true

@@ -166,8 +166,7 @@
 						"state": "give_quest",
 						"text": "Nüüd kui sa sellest räägid, mine otsi taimetark lembit üles. Kui sa ta leiad siis küsi talt tüümiani kohta",
 						"options": {
-							"Lahen otsin ta üles": "end",
-							"Ei saa praegu": "exit"
+							"Lahen otsin ta üles": "end"
 						}
 					},{
 						"state": "end",
