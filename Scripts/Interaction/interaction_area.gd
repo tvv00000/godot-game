@@ -83,7 +83,7 @@ func _input(event: InputEvent) -> void:
 			if planterState == 0:
 				#kontrollib invist kas sul ikka mulda on
 				for slot in Global.inventory.slots:
-					if slot.item and slot.item.name == "item_muld" and slot.amount > 0:
+					if slot.item and slot.item.name == "item_Soil" and slot.amount > 0:
 						var index = Global.inventory.slots.find(slot)
 						if index != -1:
 							slot.item.use(selectedInteractable)
