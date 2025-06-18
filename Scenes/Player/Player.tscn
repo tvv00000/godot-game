@@ -209,8 +209,8 @@ vertical_alignment = 1
 mouse_filter = 2
 
 [node name="QuestTracker" type="Panel" parent="HUD"]
-offset_right = 456.0
-offset_bottom = 319.0
+offset_right = 364.0
+offset_bottom = 158.0
 theme = SubResource("Theme_jbjyn")
 theme_override_styles/panel = ExtResource("30_lw74r")
 
