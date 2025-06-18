@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://bbsn3lrgeomw2"]
+[gd_scene load_steps=51 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -87,6 +87,35 @@ state = "not_started"
 unlock_id = "npc_botanic_1"
 objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_0e3rd")])
 rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_2r2rj")])
+metadata/_custom_type_script = "uid://dwnriolo4jg3x"
+
+[sub_resource type="Resource" id="Resource_dpdib"]
+script = ExtResource("31_qhvlk")
+id = "npc_botanic_02"
+description = "Leia taimetark Lembit"
+target_id = "npc_sage"
+target_type = "talk_to"
+objective_dialog = "Botaanik Bella ütles et otsiks sind üles"
+required_quantity = 0
+collected_quantity = 0
+is_completed = false
+metadata/_custom_type_script = "uid://c7a1j36unkq1q"
+
+[sub_resource type="Resource" id="Resource_4uqav"]
+script = ExtResource("32_dd588")
+reward_type = "coins"
+reward_amount = 3
+metadata/_custom_type_script = "uid://bien6lff38nx1"
+
+[sub_resource type="Resource" id="Resource_4uyrq"]
+script = ExtResource("30_joc6n")
+quest_id = "npc_botanic_02"
+quest_name = "Leia taimetark Lembit"
+quest_description = "Botaanik Bella teab kus ta olla võib"
+state = "not_started"
+unlock_id = "npc_botanic_1"
+objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_dpdib")])
+rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_4uqav")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
 [node name="Level_Europe" type="Node"]
@@ -707,7 +736,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0068, 0, 51.5119)
 spriteTexture = ExtResource("21_v6112")
 npc_id = "npc_botanic"
 npc_name = "Botaanik Bella"
-quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3")])
+quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3"), SubResource("Resource_4uyrq")])
 
 [node name="NPC_sage" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8477, 2.16537, 41.2008)

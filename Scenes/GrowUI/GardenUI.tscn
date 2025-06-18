@@ -28,16 +28,24 @@ offset_left = -40.0
 offset_bottom = 40.0
 grow_horizontal = 0
 
-[node name="seasonLabel" type="Label" parent="DateTime"]
+[node name="timeContainer" type="VBoxContainer" parent="DateTime"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -138.0
-offset_top = 43.0
-offset_right = -55.0
-offset_bottom = 114.0
+offset_left = -159.0
+offset_bottom = 146.0
 grow_horizontal = 0
+
+[node name="dayLabel" type="Label" parent="DateTime/timeContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_n4go3")
+theme_override_font_sizes/font_size = 24
+text = "Hooaeg
+Kuupäev"
+
+[node name="seasonLabel" type="Label" parent="DateTime/timeContainer"]
+layout_mode = 2
 theme_override_fonts/font = SubResource("FontVariation_n4go3")
 theme_override_font_sizes/font_size = 24
 text = "Hooaeg
