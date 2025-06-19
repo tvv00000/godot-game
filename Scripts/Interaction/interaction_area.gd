@@ -128,7 +128,7 @@ func _input(event: InputEvent) -> void:
 		
 		elif selectedInteractable.is_in_group("NPC"):
 			selectedInteractable.start_dialog()
-			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to")
+			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:
