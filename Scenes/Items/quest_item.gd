@@ -15,6 +15,7 @@ func _ready():
 	if not Engine.is_editor_hint():
 		if mesh_instance_3d and item_mesh:
 			mesh_instance_3d.mesh = item_mesh
+	$Sprite3D.set_texture(item_texture)
 
 func _process(_delta):
 	# Show mesh in the engine (editor mode)
