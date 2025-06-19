@@ -116,7 +116,7 @@ func consumeResources(state: String):
 				fertilizer = 0
 		"empty":
 			pass
-	updateDirt(moisture)
+
 
 #dammib planti kui sellel pole vett.
 func damagePlant():
@@ -134,15 +134,7 @@ func uprootPlant():
 
 func waterPlant():
 	moisture = 100
-
-#TODO: pane see funkama.
-func updateDirt(moistness):
-	var material = $DirtMesh.get_active_material(0)
-	var dirtDry: Color = Color(1, 1, 1) 
-	var dirtWet: Color = Color(0.11, 0.06, 0.02)
-	var wetness: float = moistness / 100
-	material.albedo_color = lerp(dirtWet, dirtDry, wetness)
-
+	
 func updatePlantSprite():
 	var Sprite = $PlantSprite
 	if planterState < 2:
@@ -167,7 +159,6 @@ func updatePlantSprite():
 
 func _ready():
 	planterStater(planterState)
-	updateDirt(moisture)
 	updatePlantSprite()
 
 func onInteract():

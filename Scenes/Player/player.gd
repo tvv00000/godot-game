@@ -11,7 +11,7 @@ const SPRINT_MULTIPLIER: float = 2.0
 var ui_ref: Control
 
 @onready var animation: AnimatedSprite3D = $Pivot/AnimatedSprite3D
-@onready var sfx_jump = $sfx_jump 
+@onready var sfx_jump
 @onready var sfx_death = $sfx_death
 
 #popup item pickupil
@@ -65,13 +65,10 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			animation.play("Jump")
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
 			animation.play("Jump")
-			sfx_jump.play()
 			
 
 		# Get the input direction and handle the movement/deceleration.

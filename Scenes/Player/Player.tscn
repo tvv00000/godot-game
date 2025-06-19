@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=42 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" uid="uid://cal6s3oowieoc" path="res://Scenes/Player/popup.gd" id="6_825xp"]
 [ext_resource type="Texture2D" uid="uid://bpw3v40ydempn" path="res://Art/Player/Animations/frame0020.png" id="6_p7cr0"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="7_ji083"]
-[ext_resource type="AudioStream" uid="uid://d15nrn2dfkmya" path="res://Audio/jump.wav" id="7_t26db"]
 [ext_resource type="Texture2D" uid="uid://bfdkf0hgyhsof" path="res://Art/Player/Animations/frame0021.png" id="7_vrod0"]
 [ext_resource type="Texture2D" uid="uid://bhvxu2dmx4kgs" path="res://Art/Player/Animations/frame0022.png" id="8_fcbn2"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="8_fk5o5"]
@@ -34,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://uylxon7iwe58" path="res://Art/Player/Animations/frame0037.png" id="23_ykffh"]
 [ext_resource type="Texture2D" uid="uid://bygpnjnqftosg" path="res://Art/Player/Animations/frame0038.png" id="24_5xs4v"]
 [ext_resource type="Texture2D" uid="uid://cxfskbgkhfono" path="res://Art/Player/Animations/frame0039.png" id="25_4emfg"]
-[ext_resource type="StyleBox" uid="uid://nnxtlli62306" path="res://UI_box.tres" id="31_lw74r"]
+[ext_resource type="StyleBox" path="res://UI_box.tres" id="31_lw74r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ntbx5"]
 animations = [{
@@ -264,9 +263,6 @@ shape = SubResource("CylinderShape3D_h54ih")
 [node name="InteractLabel" type="Label3D" parent="InteractionArea"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.70177, 0)
 text = "testetestetst"
-
-[node name="sfx_jump" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_t26db")
 
 [node name="Inv_UI" parent="." instance=ExtResource("8_fk5o5")]
 
