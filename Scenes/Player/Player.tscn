@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cdhj0kbdvxwrf"]
+[gd_scene load_steps=43 format=3 uid="uid://cdhj0kbdvxwrf"]
 
 [ext_resource type="Script" uid="uid://ddam1l12wt0ec" path="res://Scenes/Player/player.gd" id="1_ft8w5"]
 [ext_resource type="Texture2D" uid="uid://da5nm57w2e1kr" path="res://Art/Player/Player_test.png" id="2_ft8w5"]
@@ -34,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://uylxon7iwe58" path="res://Art/Player/Animations/frame0037.png" id="23_ykffh"]
 [ext_resource type="Texture2D" uid="uid://bygpnjnqftosg" path="res://Art/Player/Animations/frame0038.png" id="24_5xs4v"]
 [ext_resource type="Texture2D" uid="uid://cxfskbgkhfono" path="res://Art/Player/Animations/frame0039.png" id="25_4emfg"]
+[ext_resource type="StyleBox" uid="uid://nnxtlli62306" path="res://UI_box.tres" id="31_lw74r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ntbx5"]
 animations = [{
@@ -147,6 +148,8 @@ corner_radius_bottom_left = 10
 
 [sub_resource type="LabelSettings" id="LabelSettings_epg6k"]
 
+[sub_resource type="Theme" id="Theme_tf3ct"]
+
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_h54ih"]
 height = 0.815552
 radius = 0.522461
@@ -218,16 +221,20 @@ vertical_alignment = 1
 mouse_filter = 2
 
 [node name="QuestTracker" type="Panel" parent="HUD"]
-offset_right = 427.0
-offset_bottom = 319.0
+offset_right = 399.0
+offset_bottom = 136.0
+theme = SubResource("Theme_tf3ct")
+theme_override_styles/panel = ExtResource("31_lw74r")
 
 [node name="Details" type="VBoxContainer" parent="HUD/QuestTracker"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 23.0
-offset_bottom = 5.0
+offset_left = 21.0
+offset_top = 5.0
+offset_right = -20.0
+offset_bottom = -9.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 10
