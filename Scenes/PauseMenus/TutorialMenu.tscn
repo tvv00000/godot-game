@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dqa7mh6vyopnj"]
 
-[ext_resource type="Script" uid="uid://duq0hmxkjdvsy" path="res://Scenes/PauseMenus/TutorialMenu.gd" id="1_1musf"]
+[ext_resource type="Script" path="res://Scenes/PauseMenus/TutorialMenu.gd" id="1_1musf"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="1_tuc7u"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_1musf"]
 [ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_p0fdn"]

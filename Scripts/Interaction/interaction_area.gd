@@ -82,64 +82,65 @@ func _input(event: InputEvent) -> void:
 			if !tutorial_state["GardenTut"]:
 				show_tutorial("GardenTut")
 				tutorial_state["GardenTut"] = true
-				
-			#print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
-			#see saadab teate et võta ui ette.
-			var planterState: int = selectedInteractable.planterState
-			var plantName: String = "null"
-			var dirtLevel: int = selectedInteractable.dirtRatio
-			var moistureLevel: int = selectedInteractable.moisture
-			var fertilizerLevel: int = selectedInteractable.fertilizer
-			var plantGrowth: int = selectedInteractable.plantGrowth
-			var plantHealth: int = selectedInteractable.plantHealth
 			
-			if planterState == 0:
-				#kontrollib invist kas sul ikka mulda on
-				var soilFound: bool = false
-				for slot in Global.inventory.slots:
-					if slot.item and slot.item.name == "item_Soil" and slot.amount > 0:
-						var index = Global.inventory.slots.find(slot)
-						if index != -1:
-							slot.item.use(selectedInteractable)
-							Global.inventory.use_item(index, 10)
-							soilFound = true
+			else:
+				#print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
+				#see saadab teate et võta ui ette.
+				var planterState: int = selectedInteractable.planterState
+				var plantName: String = "null"
+				var dirtLevel: int = selectedInteractable.dirtRatio
+				var moistureLevel: int = selectedInteractable.moisture
+				var fertilizerLevel: int = selectedInteractable.fertilizer
+				var plantGrowth: int = selectedInteractable.plantGrowth
+				var plantHealth: int = selectedInteractable.plantHealth
+				
+				if planterState == 0:
+					#kontrollib invist kas sul ikka mulda on
+					var soilFound: bool = false
+					for slot in Global.inventory.slots:
+						if slot.item and slot.item.name == "item_Soil" and slot.amount > 0:
+							var index = Global.inventory.slots.find(slot)
+							if index != -1:
+								slot.item.use(selectedInteractable)
+								Global.inventory.use_item(index, 10)
+								soilFound = true
+								
+							Global.inventory.update.emit()
+							emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
+							Global.isInteracting = true
+							#print("Palun täida mind!") #mida?
 							
-						Global.inventory.update.emit()
-						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
-						Global.isInteracting = true
-						#print("Palun täida mind!") #mida?
-						
-						emit_signal("movementDisabled")
-				if !soilFound:
-					displayLabel("Kasti täitmiseks on vaja leida mulda")
-			
-			#print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
-			#emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
-			
-			if planterState == 1:
-				var seedsFound: bool = false
-				for slot in Global.inventory.slots:
-					if slot.item and slot.item.name == "seemned" and slot.amount > 0:
-						var index = Global.inventory.slots.find(slot)
-						if index != -1:
-							slot.item.use(selectedInteractable)
-							Global.inventory.use_item(index, 1)
-							seedsFound = true
-				if !seedsFound:
-					displayLabel("Istutamiseks on vaja seemneid")
+							emit_signal("movementDisabled")
+					if !soilFound:
+						displayLabel("Kasti täitmiseks on vaja leida mulda")
 				
+				#print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
+				#emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+				
+				if planterState == 1:
+					var seedsFound: bool = false
+					for slot in Global.inventory.slots:
+						if slot.item and slot.item.name == "seemned" and slot.amount > 0:
+							var index = Global.inventory.slots.find(slot)
+							if index != -1:
+								slot.item.use(selectedInteractable)
+								Global.inventory.use_item(index, 1)
+								seedsFound = true
+					if !seedsFound:
+						displayLabel("Istutamiseks on vaja seemneid")
+					
 
-			
-			if planterState == 2:
-				plantName = selectedInteractable.Plant.name
-				emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
-				Global.isInteracting = true
-				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
-			
-			#see ei toimi
-			if planterState == 3:
-				Global.inventory.insert(seeds, 5)
-				selectedInteractable.planterStater(1)
+				
+				if planterState == 2:
+					plantName = selectedInteractable.Plant.name
+					emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+					Global.isInteracting = true
+					print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
+				
+				#see ei toimi
+				if planterState == 3:
+					Global.inventory.insert(seeds, 5)
+					selectedInteractable.planterStater(1)
 
 
 		elif selectedInteractable.is_in_group("Item"):
@@ -155,23 +156,26 @@ func _input(event: InputEvent) -> void:
 			if !tutorial_state["ShopTut"]:
 				show_tutorial("ShopTut")
 				tutorial_state["ShopTut"] = true
-			$"../HUD/Shop_UI".open()
+			else:
+				$"../HUD/Shop_UI".open()
 		
 		elif selectedInteractable.is_in_group("Map"):
 			if !tutorial_state["MapTut"]:
 				show_tutorial("MapTut")
 				tutorial_state["MapTut"] = true
-			Global.isInteracting = true
-			$"../HUD/WorldMapUi".showMap()
-			#print("Koli dilani arvutisse")
+			else:
+				Global.isInteracting = true
+				$"../HUD/WorldMapUi".showMap()
+				#print("Koli dilani arvutisse")
 		
 		elif selectedInteractable.is_in_group("NPC"):
 			if !tutorial_state["NpcTut"]:
 				show_tutorial("NpcTut")
 				tutorial_state["NpcTut"] = true
-			Global.isInteracting = true
-			selectedInteractable.start_dialog()
-			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
+			else:
+				Global.isInteracting = true
+				selectedInteractable.start_dialog()
+				$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:
@@ -202,13 +206,13 @@ func show_tutorial(ui_type: String) -> void:
 	var message := ""
 	match ui_type:
 		"ShopTut":
-			message = "See on kohalik pood. Siin saad sa nupule vajutades asju osta!"
+			message = "See on kohalik pood. Poes saab osta asju, mida võib vaja minna!"
 		"MapTut":
-			message = "See on maakaart. Vajutades soovitud maailmavaole saad sinna reisida. Paremal nurgas oleva nupuga saad naaseda ülikooliaeda!"
+			message = "Vajutades ruroopale saad sinna reisida. Paremal nurgas oleva nupuga saad naaseda ülikooliaeda!"
 		"GardenTut":
-			message = "See on Planter'i ui. Hoia teda."
+			message = "Taimekastides saad kasvatada taimi. Taimekast on esialgu vaja täita mullaga ja siis on vaja leida seeme, mida istutada"
 		"NpcTut":
-			message = "See on karakteri dialoogisüsteem. Alt valikutest saad valida millest temaga rääkida soovid!"
+			message = "Siin saab suhelda tegelastega! Kasutades eri valikuid saad koguda infot või vastu võtta ülesandeid!"
 	tutorial_menu.show_tutorial(message)
 
 func refreshInteractables():
