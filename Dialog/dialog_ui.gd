@@ -37,7 +37,7 @@ func _on_option_selected(option):
 # hide dialog box
 func hide_dialog():
 	panel.visible = false
-	#Global.player.can_move = true
+	Global.isInteracting = false
 
 # close dialog
 func _on_close_button_pressed():
