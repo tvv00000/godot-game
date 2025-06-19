@@ -17,6 +17,7 @@ signal movementEnabled()
 func _ready() -> void:
 	setUiState(3)
 
+
 #see funk laseb sul klikkida ühel või teisel nupul ja sellega määrata ära palju mulda või kruusa soovid
 #potti. Kui pott saab täis läheb automaatselt state 2 peale. 
 func setDirtratio(pressed):
@@ -75,7 +76,7 @@ func setUiState(inputState):
 		$PlantUI.hide()
 		$CareUI.hide()
 		$DateTime.show()
-		emit_signal("movementEnabled")
+		Global.isInteracting = false
 
 
 #Mulla paneku nupud. Kutsuvad esile lihtsalt setDirtRatio funki. 
