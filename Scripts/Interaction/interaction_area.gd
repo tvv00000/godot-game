@@ -113,12 +113,13 @@ func _input(event: InputEvent) -> void:
 				if planterState == 1:
 					var seedsFound: bool = false
 					for slot in Global.inventory.slots:
-						if slot.item and slot.item.name == "seemned" and slot.amount > 0:
+						if slot.item and slot.item.name == "Seemned" and slot.amount > 0:
 							var index = Global.inventory.slots.find(slot)
 							if index != -1:
 								slot.item.use(selectedInteractable)
 								Global.inventory.use_item(index, 1)
 								seedsFound = true
+								emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 					if !seedsFound:
 						displayLabel("Istutamiseks on vaja seemneid")
 					
