@@ -207,7 +207,7 @@
 						"text": "Sa võid Lembitu leida läänest. Ta on tõenäoliselt oma maja juures ning hoolitseb oma taimede eest.",
 						"options": {
 							"Mul on veel küsimusi.": "start",
-							"Selge, aitäh!": "exit"
+							"Selge, aitäh!": "exit"	
 						}
 					},{
 						"state": "end",

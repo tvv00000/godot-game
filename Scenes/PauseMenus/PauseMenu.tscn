@@ -96,13 +96,13 @@ pitch_scale = 0.8
 bus = &"Sfx"
 
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_mouse_entered"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
 [connection signal="mouse_entered" from="PanelContainer/HBoxContainer/MapmenuBtn" to="." method="_on_mapmenu_btn_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MapmenuBtn" to="." method="_on_mapmenu_btn_pressed"]
