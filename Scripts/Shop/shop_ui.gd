@@ -70,6 +70,12 @@ func close():
 	emit_signal("shop_ui_closed")
 	Global.isInteracting = false
 
+
+
 func _unhandled_input(event):
 	if event.is_action_pressed("ui_cancel"):
 		close()
+
+
+func _on_button_pressed() -> void:
+	close()

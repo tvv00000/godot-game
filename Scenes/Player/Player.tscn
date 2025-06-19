@@ -161,7 +161,7 @@ inventory = ExtResource("2_t26db")
 [node name="Pivot" type="Node3D" parent="."]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Pivot"]
-transform = Transform3D(0.315179, 0, 0, 0, 0.298646, 0, 0, 0, 0.810937, 0.00307664, 0.730652, -0.136578)
+transform = Transform3D(0.315179, 0, 0, 0, 0.298646, 0, 0, 0, 0.810937, 0.000804512, 0.730652, -0.135845)
 sprite_frames = SubResource("SpriteFrames_ntbx5")
 animation = &"Jump"
 
