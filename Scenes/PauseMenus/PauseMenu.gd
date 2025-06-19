@@ -4,7 +4,8 @@ extends Control
 @onready var Settings = $"../SettingsMenu"
 @onready var SettingsSettings = $"../SettingsSettings"
 @onready var MapMenu = $"../WorldMapUi"
-
+@onready var hoverSfx = $HoverSfx
+@onready var clickSfx = $ClickSfx
 
 func resume():
 	get_tree().paused = false
@@ -26,14 +27,17 @@ func testTab():
 
 func _on_resume_pressed() -> void:
 	resume()
+	clickSfx.play()
 
 func _on_plant_index_pressed() -> void:
 	hide()
 	plant_index_menu.show()
+	clickSfx.play()
 
 func _on_options_menu_pressed() -> void:
 	hide()
 	Settings.show()
+	clickSfx.play()
 
 func _on_mapmenu_btn_pressed() -> void:
 	hide()
@@ -41,6 +45,7 @@ func _on_mapmenu_btn_pressed() -> void:
 	MapMenu.showMap()
 	resume()
 	MapMenu.emit_signal("map_open")
+	clickSfx.play()
 
 func _process(_delta: float) -> void:
 	testTab()
@@ -48,3 +53,17 @@ func _process(_delta: float) -> void:
 func _ready() -> void:
 	hide()
 	resume()
+
+
+func _on_resume_btn_mouse_entered() -> void:
+	hoverSfx.play()
+
+
+func _on_plant_index_btn_mouse_entered() -> void:
+	hoverSfx.play()
+
+func _on_options_menu_btn_mouse_entered() -> void:
+	hoverSfx.play()
+
+func _on_mapmenu_btn_mouse_entered() -> void:
+	hoverSfx.play()

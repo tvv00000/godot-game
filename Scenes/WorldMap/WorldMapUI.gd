@@ -3,6 +3,8 @@ extends Control
 signal map_open
 signal map_closed
 var Planters: Array[Node]
+@onready var hoverSfx = $HoverSfx
+@onready var clickSfx = $ClickSfx
 
 func _ready():
 	hide()
@@ -23,6 +25,7 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_viewport().set_input_as_handled()
 
 func _on_europe_btn_pressed():
+	clickSfx.play()
 	if Global.isGardenLevel:
 		save_scene()
 	emit_signal("map_closed")
@@ -34,6 +37,7 @@ func _on_europe_btn_pressed():
 	Global.isGardenLevel = false
 
 func _on_aed_btn_pressed() -> void:
+	clickSfx.play()
 	Global.firstPlay = false
 	emit_signal("map_closed")
 	get_tree().paused = false
@@ -64,3 +68,11 @@ func load_scene():
 		get_tree().get_current_scene().get_node("Planters").add_child(loaded_planter)
 
 	
+
+
+func _on_europe_btn_mouse_entered() -> void:
+	hoverSfx.play()
+
+
+func _on_aed_btn_mouse_entered() -> void:
+	hoverSfx.play()

@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="17_v6112"]
 [ext_resource type="PackedScene" uid="uid://diwlbjataf1kh" path="res://Art/Props/Europe/Bush_Med.tscn" id="18_tr5y0"]
 [ext_resource type="PackedScene" uid="uid://l584mxf4v1fs" path="res://Art/Props/Europe/Bush_Eur.tscn" id="19_c4ohp"]
-[ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
+[ext_resource type="PackedScene" uid="uid://dgu4nfixubcsa" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
 [ext_resource type="PackedScene" uid="uid://dn1547di2c5da" path="res://Art/Props/Europe/Fence.tscn" id="20_eq2xf"]
 [ext_resource type="PackedScene" uid="uid://cdmjooj7gnopx" path="res://Art/Props/Europe/Fence_Post.tscn" id="21_u0aux"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="21_v6112"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://cnxqjtf4epe2" path="res://Art/NPC/ThymeNpc.png" id="25_b5g1t"]
 [ext_resource type="PackedScene" uid="uid://bn233puqbda6h" path="res://Art/Props/Europe/House_Eur.tscn" id="26_ukijo"]
 [ext_resource type="PackedScene" uid="uid://c5qfmk87p851u" path="res://Art/Props/Europe/Birch.tscn" id="27_eqoyq"]
-[ext_resource type="PackedScene" path="res://Scenes/Items/money_item.tscn" id="28_0e3rd"]
+[ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="28_0e3rd"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="28_dd588"]
 [ext_resource type="PackedScene" uid="uid://dxlhokvrgr0co" path="res://Art/Props/Europe/EurTree.tscn" id="28_tr5y0"]
 [ext_resource type="Resource" uid="uid://l4vc6ev1q1ra" path="res://Scenes/Inventory/items/item_ThymusVulgaris.tres" id="29_0e3rd"]
@@ -741,7 +741,6 @@ transform = Transform3D(1.01117, 0, 0, 0, 1.01117, 0, 0, 0, 1.01117, 2.69352, -0
 transform = Transform3D(-0.0175027, -0.0806105, 0.0759678, 0.109125, -0.0257393, -0.00217025, 0.0189967, 0.0735864, 0.0824601, -26.562, 3.76331, -8.58954)
 
 [node name="TerrainMesh" type="MeshInstance3D" parent="Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("1_g63vo")
 skeleton = NodePath("../..")
 
