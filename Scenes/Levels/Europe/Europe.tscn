@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=62 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -43,6 +43,10 @@
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="32_2r2rj"]
 [ext_resource type="Texture2D" uid="uid://dc757da67fukc" path="res://Art/Sprites/Items/aug.png" id="32_4uyrq"]
 [ext_resource type="Script" uid="uid://bien6lff38nx1" path="res://Resources/Quest/Rewards.gd" id="32_dd588"]
+[ext_resource type="Texture2D" uid="uid://bbcgrvcdb0htb" path="res://Art/Sprites/Items/piparmynt.png" id="32_j4kis"]
+[ext_resource type="Resource" uid="uid://dol6uaoqnatw4" path="res://Scenes/Inventory/items/item_Peppermint.tres" id="33_vmr7e"]
+[ext_resource type="Resource" uid="uid://dxjx135ib6epm" path="res://Scenes/Inventory/items/item_Saxifraga.tres" id="34_vmr7e"]
+[ext_resource type="Texture2D" uid="uid://ckdvfjmrbo87g" path="res://Art/Sprites/Items/kivirik.png" id="34_wdckj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
 
@@ -76,18 +80,6 @@ collected_quantity = 0
 is_completed = false
 metadata/_custom_type_script = "uid://c7a1j36unkq1q"
 
-[sub_resource type="Resource" id="Resource_j4kis"]
-script = ExtResource("31_qhvlk")
-id = "npc_botanc_collect_01b"
-description = "otsi aug"
-target_id = "item_aug"
-target_type = "collection"
-objective_dialog = ""
-required_quantity = 1
-collected_quantity = 0
-is_completed = false
-metadata/_custom_type_script = "uid://c7a1j36unkq1q"
-
 [sub_resource type="Resource" id="Resource_2r2rj"]
 script = ExtResource("32_dd588")
 reward_type = "coins"
@@ -101,7 +93,7 @@ quest_name = "Leia 3 tüümiani"
 quest_description = "Leia maailmast 3 tüümiani ja anna need botaanikule"
 state = "not_started"
 unlock_id = "npc_botanic_1"
-objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_0e3rd"), SubResource("Resource_j4kis")])
+objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_0e3rd")])
 rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_2r2rj")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
@@ -320,9 +312,6 @@ transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 
 [node name="Prop Template44" parent="Terrain/Props" instance=ExtResource("10_va0j1")]
 transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -53.868, 2.84112, -21.0849)
 
-[node name="Prop Template18" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
-transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -43.7809, 0.452783, -19.4443)
-
 [node name="Prop Template19" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
 transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, -40.3739, 0.452783, -19.7712)
 
@@ -352,6 +341,201 @@ transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819
 
 [node name="Prop Template26" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -39.3729, 0.506301, -19.5216)
+
+[node name="Prop Template81" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.8227, 0, 0.468548, 0, 2.73343, 0, -0.756341, 0, -1.74865, -9.35461, 7.51763, -25.7959)
+
+[node name="Prop Template82" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.8227, 0, 0.468548, 0, 2.73343, 0, -0.756341, 0, -1.74865, -15.3008, 7.51763, -27.3891)
+
+[node name="Prop Template88" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468548, 0, -2.8227, 0, 2.73343, 0, 1.74865, 0, -0.756341, -18.5707, 7.54496, -28.2337)
+
+[node name="Prop Template89" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468548, 0, -2.8227, 0, 2.73343, 0, 1.74865, 0, -0.756341, -13.3317, 7.66392, -26.8953)
+
+[node name="Prop Template90" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468548, 0, -2.8227, 0, 2.73343, 0, 1.74865, 0, -0.756341, -6.43458, 7.66392, -25.0472)
+
+[node name="Prop Template111" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.817542, 0, 1.73804, 0, 2.73343, 0, -2.80559, 0, -0.506462, -4.437, 8.29227, -16.5096)
+
+[node name="Prop Template112" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.817542, 0, 1.73804, 0, 2.73343, 0, -2.80559, 0, -0.506462, -6.15925, 8.29227, -22.4198)
+
+[node name="Prop Template113" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.73804, 0, -0.817542, 0, 2.73343, 0, 0.506462, 0, -2.80559, -7.13334, 8.3196, -25.6534)
+
+[node name="Prop Template114" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.73804, 0, -0.817542, 0, 2.73343, 0, 0.506462, 0, -2.80559, -5.56012, 8.43855, -20.4801)
+
+[node name="Prop Template115" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.73804, 0, -0.817542, 0, 2.73343, 0, 0.506462, 0, -2.80559, -3.56247, 8.43855, -13.6248)
+
+[node name="Prop Template116" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.745284, 0.0895761, 1.74946, 0.962153, 2.57666, 0.0994338, -2.65679, 0.908006, -0.454751, -1.02348, 4.60985, -4.7225)
+
+[node name="Prop Template117" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.745284, 0.0895761, 1.74946, 0.962153, 2.57666, 0.0994338, -2.65679, 0.908006, -0.454751, -2.59351, 6.63669, -10.3192)
+
+[node name="Prop Template118" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74946, 0.0895762, -0.745285, -0.099434, 2.57666, 0.962153, 0.454751, 0.908006, -2.65679, -3.4834, 7.77264, -13.3726)
+
+[node name="Prop Template119" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74946, 0.0895762, -0.745285, -0.099434, 2.57666, 0.962153, 0.454751, 0.908006, -2.65679, -2.03957, 6.10806, -8.43336)
+
+[node name="Prop Template120" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74946, 0.0895762, -0.745285, -0.099434, 2.57666, 0.962153, 0.454751, 0.908006, -2.65679, -0.218477, 3.75708, -1.94161)
+
+[node name="Prop Template121" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.699241, 0.295131, 1.74684, 0.222867, 2.7138, -0.166875, -2.82862, 0.140863, -0.444971, 2.12169, 2.56974, 7.46426)
+
+[node name="Prop Template122" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-0.699241, 0.295131, 1.74684, 0.222867, 2.7138, -0.166875, -2.82862, 0.140863, -0.444971, 0.64865, 3.03923, 1.50561)
+
+[node name="Prop Template123" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74684, 0.295131, -0.699242, 0.166875, 2.7138, 0.222868, 0.444971, 0.140864, -2.82862, -0.185937, 3.32672, -1.75424)
+
+[node name="Prop Template124" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74684, 0.295131, -0.699242, 0.166875, 2.7138, 0.222868, 0.444971, 0.140864, -2.82862, 1.18156, 3.02666, 3.46989)
+
+[node name="Prop Template125" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.74684, 0.295131, -0.699242, 0.166875, 2.7138, 0.222868, 0.444971, 0.140864, -2.82862, 2.89015, 2.48209, 10.3815)
+
+[node name="Prop Template126" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-1.0649, 0.460618, 1.65802, -0.0158816, 2.68721, -0.33137, -2.72129, -0.195934, -0.646888, 6.46568, 2.49472, 19.4401)
+
+[node name="Prop Template127" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-1.0649, 0.460618, 1.65802, -0.0158816, 2.68721, -0.33137, -2.72129, -0.195934, -0.646888, 4.22235, 2.46128, 13.7076)
+
+[node name="Prop Template128" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.65802, 0.460618, -1.0649, 0.33137, 2.68721, -0.0158812, 0.646887, -0.195934, -2.72129, 2.96835, 2.47538, 10.5718)
+
+[node name="Prop Template129" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.65802, 0.460618, -1.0649, 0.33137, 2.68721, -0.0158812, 0.646887, -0.195934, -2.72129, 5.01651, 2.61016, 15.5756)
+
+[node name="Prop Template130" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.65802, 0.460618, -1.0649, 0.33137, 2.68721, -0.0158812, 0.646887, -0.195934, -2.72129, 7.61857, 2.64896, 22.225)
+
+[node name="Prop Template131" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.2458, -0.132712, 1.15498, 0.0521629, 2.72894, 0.0986145, -1.86905, -0.0833018, 1.39054, 0.989695, 3.30343, 28.364)
+
+[node name="Prop Template132" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.2458, -0.132712, 1.15498, 0.0521629, 2.72894, 0.0986145, -1.86905, -0.0833018, 1.39054, 5.72058, 3.41331, 24.4267)
+
+[node name="Prop Template133" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.15497, -0.132712, 2.2458, -0.0986141, 2.72894, 0.0521629, -1.39054, -0.0833018, -1.86905, 8.29501, 3.49921, 22.2425)
+
+[node name="Prop Template134" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.15497, -0.132712, 2.2458, -0.0986141, 2.72894, 0.0521629, -1.39054, -0.0833018, -1.86905, 4.17432, 3.5249, 25.7455)
+
+[node name="Prop Template135" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.15497, -0.132712, 2.2458, -0.0986141, 2.72894, 0.0521629, -1.39054, -0.0833018, -1.86905, -1.31317, 3.39744, 30.3125)
+
+[node name="Prop Template136" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.24109, -0.0291745, 1.16165, -0.298695, 2.69262, 0.250812, -1.85148, -0.469708, 1.36563, -8.28727, 4.28674, 37.4322)
+
+[node name="Prop Template137" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.24109, -0.0291745, 1.16165, -0.298695, 2.69262, 0.250812, -1.85148, -0.469708, 1.36563, -3.56631, 3.65752, 33.5319)
+
+[node name="Prop Template138" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.16165, -0.0291749, 2.24109, -0.250811, 2.69262, -0.298695, -1.36563, -0.469708, -1.85148, -0.996396, 3.33503, 31.3645)
+
+[node name="Prop Template139" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.16165, -0.0291749, 2.24109, -0.250811, 2.69262, -0.298695, -1.36563, -0.469708, -1.85148, -5.10363, 4.0136, 34.8173)
+
+[node name="Prop Template140" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-1.16165, -0.0291749, 2.24109, -0.250811, 2.69262, -0.298695, -1.36563, -0.469708, -1.85148, -10.5796, 4.74345, 39.3414)
+
+[node name="Prop Template141" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.54944, -0.707846, 0.750411, 0.726163, 2.63863, 0.144943, -1.22991, 0.0906276, 1.64108, -18.4543, 1.20247, 43.1405)
+
+[node name="Prop Template142" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.54944, -0.707846, 0.750411, 0.726163, 2.63863, 0.144943, -1.22991, 0.0906276, 1.64108, -13.0838, 2.73218, 40.5496)
+
+[node name="Prop Template143" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -10.1574, 3.59526, 39.1015)
+
+[node name="Prop Template144" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -14.879, 2.3716, 41.4382)
+
+[node name="Prop Template145" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -21.1085, 0.597247, 44.4435)
+
+[node name="Prop Template146" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.54944, -0.707845, 0.750411, 0.726163, 2.63863, 0.144943, -1.22991, 0.0906277, 1.64108, -29.2629, -2.07403, 48.7389)
+
+[node name="Prop Template147" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(2.54944, -0.707845, 0.750411, 0.726163, 2.63863, 0.144943, -1.22991, 0.0906277, 1.64108, -23.8924, -0.544316, 46.148)
+
+[node name="Prop Template148" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -20.966, 0.318767, 44.6999)
+
+[node name="Prop Template149" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -25.6876, -0.904895, 47.0367)
+
+[node name="Prop Template150" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.750411, -0.707847, 2.54944, -0.144942, 2.63863, 0.726163, -1.64108, 0.0906276, -1.22991, -31.917, -2.67925, 50.0419)
+
+[node name="Prop Template91" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.7363, -0.648264, 0.468548, -0.717499, 2.64976, 4.47035e-08, -0.733189, -0.173702, -1.74865, -21.582, 5.28197, -29.0722)
+
+[node name="Prop Template92" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.7363, -0.648264, 0.468548, -0.717499, 2.64976, 4.47035e-08, -0.733189, -0.173702, -1.74865, -27.3462, 3.77051, -30.6167)
+
+[node name="Prop Template93" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.648264, -2.7363, -2.98023e-08, 2.64976, -0.717499, 1.74865, -0.173702, -0.733189, -30.5227, 2.96785, -31.4362)
+
+[node name="Prop Template94" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.648264, -2.7363, -2.98023e-08, 2.64976, -0.717499, 1.74865, -0.173702, -0.733189, -25.4719, 4.41069, -30.1482)
+
+[node name="Prop Template95" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.648264, -2.7363, -2.98023e-08, 2.64976, -0.717499, 1.74865, -0.173702, -0.733189, -18.7858, 6.16387, -28.3567)
+
+[node name="Prop Template96" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.81875, -0.139655, 0.468548, -0.15457, 2.72961, 0, -0.755282, -0.0374204, -1.74865, -33.7841, 2.5159, -32.3418)
+
+[node name="Prop Template97" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.81875, -0.139655, 0.468548, -0.15457, 2.72961, 0, -0.755282, -0.0374204, -1.74865, -39.722, 2.19029, -33.9328)
+
+[node name="Prop Template98" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.139655, -2.81875, 1.49012e-08, 2.72961, -0.15457, 1.74865, -0.0374204, -0.755282, -42.9887, 2.03896, -34.7764)
+
+[node name="Prop Template99" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.139655, -2.81875, 1.49012e-08, 2.72961, -0.15457, 1.74865, -0.0374204, -0.755282, -37.7632, 2.44374, -33.4416)
+
+[node name="Prop Template100" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(-0.468549, -0.139655, -2.81875, 1.49012e-08, 2.72961, -0.15457, 1.74865, -0.0374204, -0.755282, -30.8757, 2.82142, -31.5961)
+
+[node name="Prop Template101" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.91214, -0.144282, -0.116446, -0.15457, 2.72961, 1.62855e-09, 0.187707, 0.00929993, -1.80658, -46.3118, 1.74985, -34.6188)
+
+[node name="Prop Template102" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.91214, -0.144282, -0.116446, -0.15457, 2.72961, 1.62855e-09, 0.187707, 0.00929993, -1.80658, -52.4464, 1.42423, -34.2233)
+
+[node name="Prop Template103" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.116446, -0.144282, -2.91214, 1.33895e-08, 2.72961, -0.15457, 1.80658, 0.0093, 0.187707, -55.8112, 1.2729, -33.9758)
+
+[node name="Prop Template104" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.116446, -0.144282, -2.91214, 1.33895e-08, 2.72961, -0.15457, 1.80658, 0.0093, 0.187707, -50.4334, 1.67768, -34.3857)
+
+[node name="Prop Template105" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.116446, -0.144282, -2.91214, 1.33895e-08, 2.72961, -0.15457, 1.80658, 0.0093, 0.187707, -43.3178, 2.05537, -34.8444)
+
+[node name="Prop Template106" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.55852, -0.126762, -0.870665, -0.15457, 2.72961, 6.13798e-09, 1.40348, 0.0695352, -1.58721, -58.1506, 0.431223, -32.7575)
+
+[node name="Prop Template107" parent="Terrain/Props" instance=ExtResource("11_6uhru")]
+transform = Transform3D(-2.55852, -0.126762, -0.870665, -0.15457, 2.72961, 6.13798e-09, 1.40348, 0.0695352, -1.58721, -63.5403, 0.105611, -29.8009)
+
+[node name="Prop Template108" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.870665, -0.126762, -2.55852, 3.43248e-09, 2.72961, -0.15457, 1.58721, 0.0695353, 1.40348, -66.4835, -0.0457234, -28.1515)
+
+[node name="Prop Template109" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.870665, -0.126762, -2.55852, 3.43248e-09, 2.72961, -0.15457, 1.58721, 0.0695353, 1.40348, -61.7856, 0.359055, -30.8006)
+
+[node name="Prop Template110" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
+transform = Transform3D(0.870665, -0.126762, -2.55852, 3.43248e-09, 2.72961, -0.15457, 1.58721, 0.0695353, 1.40348, -55.5339, 0.736742, -34.2299)
 
 [node name="Prop Template29" parent="Terrain/Props" instance=ExtResource("12_g17w6")]
 transform = Transform3D(-0.258819, 0, -0.965926, 0, 1, 0, 0.965926, 0, -0.258819, -44.064, 0.462781, -18.6166)
@@ -521,10 +705,13 @@ transform = Transform3D(-1.0793, 0.0459191, -0.0128628, -0.136693, -0.283924, -0
 transform = Transform3D(-1.07531, -0.0527872, -0.0131199, 0.148423, -0.187192, -0.270633, 0.12127, -0.238965, 0.214898, -7.7764, 8.67266, -19.3937)
 
 [node name="Prop Template61" parent="Terrain/Props" instance=ExtResource("13_b5g1t")]
-transform = Transform3D(-0.293133, -0.00736848, -0.198463, -0.164364, -0.189603, 0.249808, -0.111473, 0.29894, 0.153549, -33.4391, 0.99856, -16.5787)
+transform = Transform3D(-0.293133, -0.00736848, -0.198463, -0.164364, -0.189603, 0.249808, -0.111473, 0.29894, 0.153549, -33.4391, 0.631424, -16.5787)
 
 [node name="Prop Template40" parent="Terrain/Props" instance=ExtResource("26_ukijo")]
 transform = Transform3D(0.178825, 0, 0.240876, 0, 0.3, 0, -0.240876, 0, 0.178825, 2.44797, 2.29388, 14.4809)
+
+[node name="Prop Template151" parent="Terrain/Props" instance=ExtResource("26_ukijo")]
+transform = Transform3D(-0.222944, -0.0119028, 0.200384, 0.0209635, 0.296454, 0.0409329, -0.19964, 0.0444219, -0.219477, -39.6998, 1.74204, -30.4809)
 
 [node name="Tree_Birch" parent="Terrain/Props" instance=ExtResource("27_eqoyq")]
 transform = Transform3D(-0.0776457, 0, -0.289778, 0, 0.3, 0, 0.289778, 0, -0.0776457, -15.1796, 3.34393, -0.109665)
@@ -634,11 +821,83 @@ transform = Transform3D(0.00648158, 0, 0.29993, 0, 0.3, 0, -0.29993, 0, 0.006481
 [node name="Tree_Pine_Med15" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
 transform = Transform3D(-0.276137, 0, 0.117253, 0, 0.3, 0, -0.117253, 0, -0.276137, -9.74223, 8.10156, -18.6668)
 
+[node name="Tree_Pine_Med23" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(0.11108, -0.0530067, 0.27359, 0.00654705, 0.294938, 0.0544846, -0.278601, -0.0142031, 0.110362, -7.88603, 8.10156, -15.1769)
+
+[node name="Tree_Pine_Med21" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.293559, 0.0495747, 0.0369527, 0.0484674, 0.295822, -0.011833, -0.0383935, -0.00560899, -0.29748, -10.8139, 7.69307, -15.9357)
+
+[node name="Tree_Pine_Med24" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.274278, 0.0403519, -0.114643, 0.0484674, 0.295822, -0.011833, 0.111455, -0.0293401, -0.276978, -14.3661, 7.11379, -14.6112)
+
+[node name="Tree_Pine_Med25" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.140873, 0.0124975, -0.264572, 0.0484674, 0.295822, -0.011833, 0.260395, -0.0483004, -0.14093, -15.2651, 7.11379, -17.3765)
+
+[node name="Tree_Pine_Med27" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.0319405, -0.0112779, -0.298081, 0.0313452, 0.297999, -0.0146335, 0.296643, -0.0327028, -0.0305489, -17.7825, 6.85917, -17.5741)
+
+[node name="Tree_Pine_Med30" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.0323309, -0.016983, -0.297768, 0.00953064, 0.299302, -0.0181052, 0.2981, -0.0114109, -0.0317159, -19.5604, 6.18313, -16.6469)
+
+[node name="Tree_Pine_Med31" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.0323309, -0.016983, -0.297768, 0.00953064, 0.299302, -0.0181052, 0.2981, -0.0114109, -0.0317159, -20.1336, 5.92476, -14.5077)
+
+[node name="Tree_Pine_Med33" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(0.261459, -0.0203476, 0.145688, 0.0313452, 0.297999, -0.0146335, -0.143723, 0.0279756, 0.261841, -24.5982, 4.71689, -23.7416)
+
+[node name="Tree_Pine_Med34" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(0.262877, 0.000373422, 0.144552, 0.00953064, 0.299302, -0.0181052, -0.144238, 0.0204571, 0.262253, -22.8198, 6.03136, -22.8153)
+
+[node name="Tree_Pine_Med35" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(0.262877, 0.000373421, 0.144552, 0.00953064, 0.299302, -0.0181052, -0.144238, 0.0204571, 0.262253, -20.738, 5.5521, -23.5707)
+
+[node name="Tree_Pine_Med28" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.284713, 0.025477, -0.0910436, 0.0313452, 0.297999, -0.0146335, 0.0891935, -0.0234005, -0.285476, -16.5214, 6.85917, -15.0517)
+
+[node name="Tree_Pine_Med36" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.297375, -0.0154768, -0.0364468, -0.0115579, 0.298037, -0.0322554, 0.0378722, -0.030569, -0.296025, -24.8033, 3.58364, -26.5345)
+
+[node name="Tree_Pine_Med37" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.295618, -0.0374588, -0.0347357, -0.0333378, 0.29602, -0.0355045, 0.038708, -0.0311259, -0.295859, -26.0004, 3.40892, -28.0142)
+
+[node name="Tree_Pine_Med38" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.295618, -0.0374589, -0.0347357, -0.0333378, 0.29602, -0.0355045, 0.0387079, -0.0311259, -0.295859, -28.1511, 2.26544, -28.0547)
+
+[node name="Tree_Pine_Med39" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.155454, -0.0160401, 0.256078, -0.00206075, 0.299482, 0.0175076, -0.256572, 0.00731304, -0.155296, -26.9425, 2.86995, -24.7137)
+
+[node name="Tree_Pine_Med26" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.272543, 0.0492653, 0.115295, 0.0484674, 0.295822, -0.011833, -0.115633, 0.00787683, -0.276707, -14.5851, 7.11379, -24.3545)
+
+[node name="Tree_Pine_Med22" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.219807, 0.0255681, -0.202561, 0.0141373, 0.29883, 0.0223786, 0.203679, 0.00685097, -0.220154, -16.1328, 7.25171, -24.2615)
+
+[node name="Tree_Pine_Med29" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.131561, -0.0100617, -0.269426, -0.0642543, 0.292323, 0.0204587, 0.261845, 0.0666779, -0.130349, -18.402, 7.38235, -23.8748)
+
 [node name="Tree_Pine_Med16" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
 transform = Transform3D(-0.150652, 0, 0.259429, 0, 0.3, 0, -0.259429, 0, -0.150652, -22.1162, 5.4907, -25.8615)
 
+[node name="Tree_Pine_Med32" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(0.00690592, 0.022551, 0.29907, -0.0848772, 0.287068, -0.019686, -0.287659, -0.0841616, 0.0129884, -24.4182, 4.52636, -24.521)
+
 [node name="Tree_Pine_Med17" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
-transform = Transform3D(-0.29344, 0, -0.0623939, 0, 0.3, 0, 0.0623939, 0, -0.29344, -22.3794, 4.63029, -18.2627)
+transform = Transform3D(-0.29344, 0, -0.0623939, 0, 0.3, 0, 0.0623939, 0, -0.29344, -21.8764, 4.63029, -16.0681)
+
+[node name="Tree_Pine_Med40" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.231907, 0.0166223, -0.189585, 0.036087, 0.297272, -0.0180787, 0.18686, -0.0367806, -0.231798, -21.5785, 5.12264, -13.3183)
+
+[node name="Tree_Pine_Med41" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.233323, -0.00244438, -0.188558, 0.0142977, 0.298882, -0.0215666, 0.188031, -0.0257598, -0.232337, -23.4956, 4.7107, -13.9042)
+
+[node name="Tree_Pine_Med42" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.233323, -0.00244438, -0.188558, 0.0142977, 0.298882, -0.0215666, 0.188031, -0.0257598, -0.232337, -25.4132, 4.1117, -12.7895)
+
+[node name="Tree_Pine_Med43" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.251848, 0.00152854, 0.163004, -0.00181666, 0.299942, -0.00561946, -0.163001, -0.00570458, -0.25179, -25.5522, 4.34529, -15.1001)
+
+[node name="Tree_Pine_Med20" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
+transform = Transform3D(-0.230801, -0.00924065, -0.19143, -0.0290922, 0.297868, 0.0206969, 0.189432, 0.0344866, -0.230057, -25.6005, 4.49187, -17.0562)
 
 [node name="Tree_Pine_Med11" parent="Terrain/Props" instance=ExtResource("29_c4ohp")]
 transform = Transform3D(-0.146952, 0, 0.261544, 0, 0.3, 0, -0.261544, 0, -0.146952, -48.5337, 0.123256, -19.4036)
@@ -783,95 +1042,139 @@ transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.79
 [node name="MoneyItem2" parent="." instance=ExtResource("28_0e3rd")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0.00990777, 0.941164, -0.337805, -0.0275924, 0.33795, 0.94076, -10.9708, 1.0377, 49.7265)
 
-[node name="QuestItem5" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -12.6195, 0.976104, 48.112)
+[node name="QuestItems" type="Node" parent="."]
+
+[node name="QuestItem13" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -18.0904, 8.59275, 17.0687)
 item_id = "item_ThymusVulgaris"
 item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
-[node name="QuestItem10" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -14.0557, 2.30104, 48.112)
+[node name="QuestItem16" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.9301, 8.59275, 15.8454)
+item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
+inv_item = ExtResource("29_0e3rd")
+
+[node name="QuestItem17" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -13.9518, 8.00683, 18.6433)
+item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
+inv_item = ExtResource("29_0e3rd")
+
+[node name="QuestItem19" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -14.6862, 1.18793, 50.6503)
+item_id = "item_Peppermint"
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
+
+[node name="QuestItem22" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -14.6862, 1.18793, 45.3576)
+item_id = "item_Peppermint"
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
+
+[node name="QuestItem23" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.7643, 1.76871, 42.175)
+item_id = "item_Peppermint"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem24" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.7643, 1.51222, 50.3825)
+item_id = "item_Peppermint"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem25" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.2488, 1.46476, 52.4115)
+item_id = "item_Peppermint"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem26" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.2532, 1.46476, 51.0449)
+item_id = "item_Peppermint"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem20" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -19.666, 2.44443, 51.0717)
+item_id = "item_Peppermint"
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
+
+[node name="QuestItem21" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.6778, 1.33945, 53.7425)
+item_id = "item_Peppermint"
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
+
+[node name="QuestItem15" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.0263, 8.59275, 14.172)
+item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
+inv_item = ExtResource("29_0e3rd")
+
+[node name="QuestItem14" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -18.4454, 8.59275, 19.3007)
+item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
+inv_item = ExtResource("29_0e3rd")
+
+[node name="QuestItem10" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.925488, 0, 0.378778, 0, 1, 0, -0.378778, 0, 0.925488, 3.81602, -0.224378, 34.8791)
 item_id = "item_aug"
 item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
 
-[node name="QuestItem11" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -15.4298, 1.77187, 49.8871)
+[node name="QuestItem11" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(-0.97432, 0, -0.225172, 0, 1, 0, 0.225172, 0, -0.97432, 9.52944, 0.189973, 24.8521)
 item_id = "item_aug"
 item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
 
-[node name="QuestItem12" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -15.5482, 1.77187, 51.2575)
+[node name="QuestItem12" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(-0.97432, 0, -0.225172, 0, 1, 0, 0.225172, 0, -0.97432, 5.98103, 0.287498, 32.4396)
 item_id = "item_aug"
 item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
-
-[node name="QuestItem9" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -12.6195, 0.976104, 46.3399)
-item_id = "item_ThymusVulgaris"
-item_texture = ExtResource("30_4uqav")
-inv_item = ExtResource("29_0e3rd")
-
-[node name="QuestItem6" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -11.303, 0.976104, 48.112)
-item_id = "item_ThymusVulgaris"
-item_texture = ExtResource("30_4uqav")
-inv_item = ExtResource("29_0e3rd")
-
-[node name="QuestItem8" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -11.303, 0.976104, 46.085)
-item_id = "item_ThymusVulgaris"
-item_texture = ExtResource("30_4uqav")
-inv_item = ExtResource("29_0e3rd")
-
-[node name="QuestItem13" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -9.61353, 0.976104, 46.085)
-item_id = "item_ThymusVulgaris"
-item_texture = ExtResource("30_4uqav")
-inv_item = ExtResource("29_0e3rd")
-
-[node name="QuestItem7" parent="." instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -9.75146, 0.976104, 48.112)
-item_id = "item_ThymusVulgaris"
-item_texture = ExtResource("30_4uqav")
-inv_item = ExtResource("29_0e3rd")
 
 [node name="npc" type="Node" parent="."]
 
 [node name="NPC_doc" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.01966, 0, 59.9738)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.85792, 0, 54.2313)
 spriteTexture = ExtResource("32_2r2rj")
 npc_id = "npc_doc"
 npc_name = "Doktor Viktor"
 
 [node name="NPC_botanic" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.0068, 0, 51.5119)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87605, 0, 48.1622)
 spriteTexture = ExtResource("21_v6112")
 npc_id = "npc_botanic"
 npc_name = "Botaanik Brita"
 quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3"), SubResource("Resource_4uyrq")])
 
 [node name="NPC_sage" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8477, 2.16537, 41.2008)
+transform = Transform3D(1, 0, 0, 0, 0.983888, -0.178785, 0, 0.178785, 0.983888, -16.2062, 1.26527, 49.471)
 spriteTexture = ExtResource("23_6hq1d")
 npc_id = "npc_sage"
 npc_name = "Taimetark Lembit"
 
 [node name="NPC_folk" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46301, -0.0318586, 48.3467)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46301, -0.0318586, 54.3964)
 spriteTexture = ExtResource("22_b5g1t")
 npc_id = "npc_folk"
 npc_name = "Nonna Bella donna"
 
 [node name="NPC_local" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.39151, 2.05057, 7.21376)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9372, 2.05057, -3.28628)
 spriteTexture = ExtResource("24_1cv6a")
 npc_id = "npc_local"
 npc_name = "Naabrimutt Mari"
 
 [node name="NPC_thyme" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5318, 8.20368, 16.6224)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.92192, 0.0572095, 54.2257)
 spriteTexture = ExtResource("25_b5g1t")
 npc_id = "npc_thyme"
 npc_name = "Tüümian Türi"
