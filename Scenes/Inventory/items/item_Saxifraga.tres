@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dxjx135ib6epm"]
+
+[ext_resource type="Script" uid="uid://ddecgowpiffet" path="res://Scenes/Inventory/inv_item.gd" id="1_2sqgt"]
+[ext_resource type="Texture2D" uid="uid://ckdvfjmrbo87g" path="res://Art/Sprites/Items/kivirik.png" id="2_2sqgt"]
+
+[resource]
+script = ExtResource("1_2sqgt")
+id = "item_Saxifraga"
+name = "Kivirik"
+texture = ExtResource("2_2sqgt")
+description = "Kivirik (Saxifraga L.) on kivirikuliste sugukonda kuuluv taimeperekond."
+metadata/_custom_type_script = "uid://ddecgowpiffet"

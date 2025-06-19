@@ -8,5 +8,5 @@ script = ExtResource("1_6wq7w")
 id = "item_ThymusVulgaris"
 name = "Tüümian"
 texture = ExtResource("2_rm8b3")
-description = "Leidsid maast Tüümiani."
+description = "Aed-liivatee ehk tüümian (Thymus vulgaris) on huulõieliste sugukonda kuuluv mitmeaastane igihaljas poolpõõsas."
 metadata/_custom_type_script = "uid://ddecgowpiffet"

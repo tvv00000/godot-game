@@ -68,6 +68,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DirtUI BG" type="Panel" parent="DirtUI"]
+layout_mode = 0
 offset_left = -511.0
 offset_top = -248.0
 offset_right = 610.0
@@ -175,6 +176,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DirtUI BG" type="Panel" parent="PlantUI"]
+layout_mode = 0
 offset_left = -511.0
 offset_top = -248.0
 offset_right = 610.0
