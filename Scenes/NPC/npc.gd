@@ -61,21 +61,25 @@ func offer_quest(quest_id: String):
 			for objective in quest.objectives:
 				if objective.target_type == "collection":
 					var amount_found = 0
+					var found_in_slot = -1
 					for slot in Global.inventory.slots:
+						found_in_slot += 1
 						if slot.item != null and slot.item.id == objective.target_id: #kas vaja != null
 							amount_found += slot.amount #miks mitte =
+							break
 					var how_much_more = abs(objective.collected_quantity - objective.required_quantity)
 					if amount_found >= how_much_more:
+						print("leidis INV ",amount_found, objective.target_id, "slot nr ",found_in_slot)
 						quest.complete_objective(objective.id, amount_found)	
-						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
-						print("All done with quest ", objective.target_id)
+						Global.inventory.use_item(found_in_slot, objective.required_quantity)
+						print("DONE QUEST OBJ ", objective.id)
 						#call rewards/completion
 						if quest.is_completed():
 							Global.player.call("handle_quest_completion", quest)
 					elif amount_found < how_much_more:
 						quest.complete_objective(objective.id, amount_found)
-						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
-						print("Progress added for objective:", objective.target_id)
+						Global.inventory.use_item(found_in_slot, objective.required_quantity)
+						print("added to quest ", objective.id)
 			quest_manager.add_quest(quest)
 			return
 	print("Quest not found or started already")

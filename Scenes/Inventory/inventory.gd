@@ -28,6 +28,7 @@ func use_item(slotNr: int, amount: int):
 	if slot.item:
 		slot.item.use()
 		slot.amount -= 1 * amount #miks *1
+		print("used item in inv",slot.amount)
 		if slot.amount <= 0:
 			slot.item = null
 			slot.amount = 0

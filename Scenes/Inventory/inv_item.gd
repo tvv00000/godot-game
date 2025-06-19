@@ -23,7 +23,7 @@ func use(target = null):
 				var current_quest = Global.player.selected_quest
 				if current_quest:
 					Global.player.update_quest_tracker(current_quest)
-					print("Quest tracker updated for ", current_quest.name)
+					print("2222222222222222222222222222222222", current_quest.name)
 				else:
 					print("No selected quest")
 	print("Item used: ", name)
