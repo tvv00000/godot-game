@@ -1,4 +1,4 @@
-[gd_scene load_steps=57 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=59 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -21,7 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="17_v6112"]
 [ext_resource type="PackedScene" uid="uid://diwlbjataf1kh" path="res://Art/Props/Europe/Bush_Med.tscn" id="18_tr5y0"]
 [ext_resource type="PackedScene" uid="uid://l584mxf4v1fs" path="res://Art/Props/Europe/Bush_Eur.tscn" id="19_c4ohp"]
-[ext_resource type="PackedScene" uid="uid://lll3kao4nos7" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
+[ext_resource type="PackedScene" uid="uid://dgu4nfixubcsa" path="res://Scenes/NPC/NPC.tscn" id="19_offuu"]
 [ext_resource type="PackedScene" uid="uid://dn1547di2c5da" path="res://Art/Props/Europe/Fence.tscn" id="20_eq2xf"]
 [ext_resource type="PackedScene" uid="uid://cdmjooj7gnopx" path="res://Art/Props/Europe/Fence_Post.tscn" id="21_u0aux"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="21_v6112"]
@@ -31,15 +31,17 @@
 [ext_resource type="Texture2D" uid="uid://cnxqjtf4epe2" path="res://Art/NPC/ThymeNpc.png" id="25_b5g1t"]
 [ext_resource type="PackedScene" uid="uid://bn233puqbda6h" path="res://Art/Props/Europe/House_Eur.tscn" id="26_ukijo"]
 [ext_resource type="PackedScene" uid="uid://c5qfmk87p851u" path="res://Art/Props/Europe/Birch.tscn" id="27_eqoyq"]
-[ext_resource type="PackedScene" path="res://Scenes/Items/money_item.tscn" id="28_0e3rd"]
+[ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="28_0e3rd"]
 [ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="28_dd588"]
 [ext_resource type="PackedScene" uid="uid://dxlhokvrgr0co" path="res://Art/Props/Europe/EurTree.tscn" id="28_tr5y0"]
 [ext_resource type="Resource" uid="uid://l4vc6ev1q1ra" path="res://Scenes/Inventory/items/item_ThymusVulgaris.tres" id="29_0e3rd"]
 [ext_resource type="PackedScene" uid="uid://dpyp2p1u41dch" path="res://Art/Props/Europe/Pine_Med.tscn" id="29_c4ohp"]
+[ext_resource type="Texture2D" uid="uid://dct8ofm88u184" path="res://Art/Sprites/Items/tyymian.png" id="30_4uqav"]
 [ext_resource type="Script" uid="uid://dwnriolo4jg3x" path="res://Resources/Quest/Quests.gd" id="30_joc6n"]
 [ext_resource type="Script" uid="uid://c7a1j36unkq1q" path="res://Resources/Quest/Objectives.gd" id="31_qhvlk"]
 [ext_resource type="Resource" uid="uid://eqtrnqgratvl" path="res://Scenes/Inventory/items/aug.tres" id="31_vkdh3"]
 [ext_resource type="Texture2D" uid="uid://dfmmax0bodrcy" path="res://Art/NPC/Doctor.png" id="32_2r2rj"]
+[ext_resource type="Texture2D" uid="uid://dc757da67fukc" path="res://Art/Sprites/Items/aug.png" id="32_4uyrq"]
 [ext_resource type="Script" uid="uid://bien6lff38nx1" path="res://Resources/Quest/Rewards.gd" id="32_dd588"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
@@ -741,7 +743,6 @@ transform = Transform3D(1.01117, 0, 0, 0, 1.01117, 0, 0, 0, 1.01117, 2.69352, -0
 transform = Transform3D(-0.0175027, -0.0806105, 0.0759678, 0.109125, -0.0257393, -0.00217025, 0.0189967, 0.0735864, 0.0824601, -26.562, 3.76331, -8.58954)
 
 [node name="TerrainMesh" type="MeshInstance3D" parent="Terrain"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("1_g63vo")
 skeleton = NodePath("../..")
 
@@ -785,43 +786,55 @@ transform = Transform3D(0.999571, 0, 0.0293173, 0.00990777, 0.941164, -0.337805,
 [node name="QuestItem5" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -12.6195, 0.976104, 48.112)
 item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="QuestItem10" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -14.0557, 2.30104, 48.112)
 item_id = "item_aug"
-item_quantity = 2
+item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
 
 [node name="QuestItem11" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -15.4298, 1.77187, 49.8871)
 item_id = "item_aug"
+item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
 
 [node name="QuestItem12" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -15.5482, 1.77187, 51.2575)
 item_id = "item_aug"
+item_texture = ExtResource("32_4uyrq")
 inv_item = ExtResource("31_vkdh3")
 
 [node name="QuestItem9" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -12.6195, 0.976104, 46.3399)
 item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="QuestItem6" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -11.303, 0.976104, 48.112)
 item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="QuestItem8" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -11.303, 0.976104, 46.085)
 item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
+inv_item = ExtResource("29_0e3rd")
+
+[node name="QuestItem13" parent="." instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -9.61353, 0.976104, 46.085)
+item_id = "item_ThymusVulgaris"
+item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="QuestItem7" parent="." instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, 0, 1, 0, -0.0293173, 0, 0.999571, -9.75146, 0.976104, 48.112)
 item_id = "item_ThymusVulgaris"
-item_quantity = 5
+item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="npc" type="Node" parent="."]
