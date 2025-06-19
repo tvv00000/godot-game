@@ -1,9 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvcec85e7c8t8"]
+[gd_scene load_steps=7 format=3 uid="uid://bvcec85e7c8t8"]
 
 [ext_resource type="Script" uid="uid://b7xyyptbo4f3w" path="res://Scenes/PauseMenus/settings_Settings.gd" id="1_u570a"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_24k1n"]
-[ext_resource type="Script" uid="uid://deyl0anwoyyxx" path="res://Scenes/PauseMenus/volume_slider.gd" id="2_q54er"]
 [ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_4o7so"]
+[ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="5_cx4ol"]
+[ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="6_0pvlw"]
+
+[sub_resource type="GDScript" id="GDScript_4o7so"]
+script/source = "extends HSlider
+
+@export
+var bus_name: String
+
+var bus_index: int
+
+func _ready() -> void:
+	bus_index = AudioServer.get_bus_index(bus_name)
+	value_changed.connect(_on_volume_slider_value_changed)
+	value = db_to_linear(
+		AudioServer.get_bus_volume_db(bus_index)
+	)
+
+func _on_volume_slider_value_changed(value: float) -> void:
+	AudioServer.set_bus_volume_db(
+		bus_index,
+		linear_to_db(value)
+	)
+"
 
 [node name="SettingsSettings" type="Control"]
 process_mode = 3
@@ -46,12 +69,12 @@ theme_override_colors/font_outline_color = Color(1, 0.72549, 0.4, 1)
 theme_override_constants/outline_size = 10
 text = "Master volume"
 
-[node name="VolumeSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
+[node name="MasterSlider" type="HSlider" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 1
 max_value = 1.0
 step = 0.001
-script = ExtResource("2_q54er")
+script = SubResource("GDScript_4o7so")
 bus_name = "Master"
 
 [node name="MusicVolume" type="Label" parent="PanelContainer/VBoxContainer"]
@@ -66,7 +89,7 @@ layout_mode = 2
 max_value = 1.0
 step = 0.001
 value = 1.0
-script = ExtResource("2_q54er")
+script = SubResource("GDScript_4o7so")
 bus_name = "Music"
 
 [node name="Sfx" type="Label" parent="PanelContainer/VBoxContainer"]
@@ -80,7 +103,7 @@ text = "Sound effects"
 layout_mode = 2
 max_value = 1.0
 step = 0.001
-script = ExtResource("2_q54er")
+script = SubResource("GDScript_4o7so")
 bus_name = "Sfx"
 
 [node name="Resolutions" type="OptionButton" parent="PanelContainer/VBoxContainer"]
@@ -117,9 +140,20 @@ popup/item_1/id = 1
 popup/item_2/text = "Bordelesss Fullscreen"
 popup/item_2/id = 3
 
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_cx4ol")
+pitch_scale = 0.45
+bus = &"Sfx"
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_0pvlw")
+pitch_scale = 0.8
+bus = &"Sfx"
+
+[connection signal="mouse_entered" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_changed"]
-[connection signal="value_changed" from="PanelContainer/VBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
+[connection signal="changed" from="PanelContainer/VBoxContainer/MasterSlider" to="." method="_on_volume_slider_changed"]
+[connection signal="value_changed" from="PanelContainer/VBoxContainer/MasterSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="changed" from="PanelContainer/VBoxContainer/MusicSlider" to="." method="_on_volume_slider_changed"]
 [connection signal="value_changed" from="PanelContainer/VBoxContainer/MusicSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="changed" from="PanelContainer/VBoxContainer/SfxSlider" to="." method="_on_volume_slider_changed"]
