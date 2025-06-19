@@ -166,9 +166,14 @@ func _input(event: InputEvent) -> void:
 				show_tutorial("NpcTut")
 				Global.tutorial_state["NpcTut"] = true
 			else:
+				var currr
 				Global.isInteracting = true
 				selectedInteractable.start_dialog()
-				$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
+				for quest in Global.quest_ui.all_active_quests:
+					for objective in quest.objectives:
+						if objective.target_id == selectedInteractable.npc_id and objective.target_type == "talk_to" and not objective.is_completed:
+							currr = quest
+				$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", currr)
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:

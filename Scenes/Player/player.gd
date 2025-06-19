@@ -147,6 +147,7 @@ func is_item_needed(item_id: String, inv_item):
 	inventory.insert(inv_item, 1)
 	return false
 
+
 func check_quest_objectives(target_id: String, target_type: String, selected_quest,quantity: int = 1,):
 	if selected_quest == null:
 		print("error mis ei tohiks olla kunagi")
@@ -154,8 +155,6 @@ func check_quest_objectives(target_id: String, target_type: String, selected_que
 	# Update objectives
 	var objective_updated = false
 	for objective in selected_quest.objectives:
-		print(target_type)
-		print(not objective.is_completed)
 		if objective.target_id == target_id and objective.target_type == target_type and objective.is_completed:
 			print("Completing objective for quest: ", selected_quest.quest_name)
 			selected_quest.complete_objective(objective.id, quantity)

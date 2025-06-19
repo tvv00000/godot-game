@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjk8vdn7f7mxj"]
+[gd_scene load_steps=5 format=3 uid="uid://bjk8vdn7f7mxj"]
 
 [ext_resource type="Script" uid="uid://cq8aabufu7kvv" path="res://Dialog/dialog_ui.gd" id="1_i5ysq"]
-[ext_resource type="StyleBox" uid="uid://nnxtlli62306" path="res://UI_box.tres" id="2_2pxcp"]
+[ext_resource type="StyleBox" path="res://UI_box.tres" id="2_2pxcp"]
+[ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="3_hpssw"]
+[ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="4_jwogu"]
 
 [node name="DialogUI" type="Control"]
 layout_mode = 3
@@ -73,5 +75,15 @@ offset_right = -10.0
 offset_bottom = 47.0
 grow_horizontal = 0
 text = "X"
+
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_hpssw")
+pitch_scale = 0.45
+bus = &"Sfx"
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jwogu")
+pitch_scale = 0.8
+bus = &"Sfx"
 
 [connection signal="pressed" from="CanvasLayer/Panel/CloseButton" to="." method="_on_close_button_pressed"]

@@ -8,8 +8,8 @@ var store_data: Array = [
 	{
 		'item_tres': "res://Scenes/Inventory/items/item_muld.tres",  # Path to the .tres file
 		'icon_path': 'res://icon.svg',
-		'heading_1': 'yo mama',
-		'heading_2': 'mingi asi, vist, mdeagi tegelt.',
+		'heading_1': 'Mullahunnik',
+		'heading_2': 'Hunnik kvaliteetset mulda.',
 		'custom_button_text': '1'
 	}
 ]
