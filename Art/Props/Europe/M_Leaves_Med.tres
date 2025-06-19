@@ -2,3 +2,4 @@
 
 [resource]
 albedo_color = Color(0.551243, 0.732132, 0.467173, 1)
+distance_fade_mode = 3
