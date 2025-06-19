@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjk8vdn7f7mxj"]
 
 [ext_resource type="Script" uid="uid://cq8aabufu7kvv" path="res://Dialog/dialog_ui.gd" id="1_i5ysq"]
-[ext_resource type="StyleBox" path="res://UI_box.tres" id="2_2pxcp"]
+[ext_resource type="StyleBox" uid="uid://nnxtlli62306" path="res://UI_box.tres" id="2_2pxcp"]
 [ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="3_hpssw"]
 [ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="4_jwogu"]
 

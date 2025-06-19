@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://70jt2qs1jvy1"]
+
+[ext_resource type="ArrayMesh" uid="uid://bt5ykmoauub7d" path="res://Art/Props/Europe/Med_House_Window_Shutter.obj" id="1_6rbir"]
+[ext_resource type="Material" uid="uid://cddq83k0hhbgb" path="res://Art/Props/Europe/M_Med_House.tres" id="2_h12wx"]
+
+[node name="Prop Template" type="StaticBody3D"]
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("1_6rbir")
+surface_material_override/0 = ExtResource("2_h12wx")

@@ -151,6 +151,7 @@ func is_item_needed(item_id: String, inv_item):
 func check_quest_objectives(target_id: String, target_type: String, selected_quest,quantity: int = 1,):
 	if selected_quest == null:
 		print("error mis ei tohiks olla kunagi")
+		Global.isInteracting = false
 		return
 	# Update objectives
 	var objective_updated = false

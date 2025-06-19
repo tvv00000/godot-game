@@ -37,3 +37,12 @@ text = "0"
 label_settings = SubResource("LabelSettings_alw3q")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 16.0
+offset_right = 51.0
+offset_bottom = 65.0
+text = "Raha:
+"
