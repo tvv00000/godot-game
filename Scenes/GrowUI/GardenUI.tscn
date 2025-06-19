@@ -109,7 +109,7 @@ theme_override_constants/separation = 32
 layout_mode = 2
 theme_override_colors/font_color = Color(0.220235, 0.0783128, 0, 1)
 theme_override_font_sizes/font_size = 18
-text = "Täida pott endale meeldiva koguse
+text = "Täida kast endale meeldiva koguse
  mulla ja kruusaga."
 
 [node name="ClosePlantButton" type="Button" parent="DirtUI/ScreenContainer"]
@@ -250,8 +250,12 @@ layout_mode = 2
 
 [node name="DirtCompoTitleLabel" type="Label" parent="PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer"]
 layout_mode = 2
+<<<<<<< Updated upstream
 theme_override_colors/font_color = Color(0.220235, 0.0783128, 0, 1)
 text = "Potis On:"
+=======
+text = "Istutuskastis On:"
+>>>>>>> Stashed changes
 
 [node name="DirtLabel" type="Label" parent="PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer"]
 layout_mode = 2

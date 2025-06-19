@@ -65,12 +65,11 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-			animation.play("Jump")
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
 			animation.play("Jump")
+			velocity.y = JUMP_VELOCITY
 			sfx_jump.play()
 			
 

@@ -16,7 +16,8 @@ collision_layer = 3
 script = ExtResource("1_d3eja")
 
 [node name="PlantSprite" type="Sprite3D" parent="."]
-transform = Transform3D(0.35118, 0, 0, 0, 0.35118, 0, 0, 0, 1, 0, 0.798662, 0)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 1.14, 0, 0.825983, 0)
+billboard = 1
 texture = ExtResource("2_qdmk5")
 hframes = 5
 frame = 1
