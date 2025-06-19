@@ -37,7 +37,7 @@ func setDirtratio(pressed):
 		#resetib ui
 		dirtRatio = 0
 		fillLevel = 0
-		setUiState(1)
+		setUiState(3)
 
 #0 = muld, 1 = istuta, 2 = hoolda. Sama mis garden gamemode. 3  = ainult hud
 func setUiState(inputState):
@@ -85,8 +85,6 @@ func _on_dirt_button_pressed() -> void:
 		
 func _on_gravel_button_pressed() -> void:
 		setDirtratio("gravel")
-
-
 
 #Signaal mis tuleb interactionArealt mis ütleb, mis akent avada.
 

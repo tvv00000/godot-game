@@ -82,22 +82,39 @@ func _input(event: InputEvent) -> void:
 			
 			if planterState == 0:
 				#kontrollib invist kas sul ikka mulda on
+				var soilFound: bool = false
 				for slot in Global.inventory.slots:
 					if slot.item and slot.item.name == "item_Soil" and slot.amount > 0:
 						var index = Global.inventory.slots.find(slot)
 						if index != -1:
 							slot.item.use(selectedInteractable)
 							Global.inventory.use_item(index, 10)
+							soilFound = true
+							
 						Global.inventory.update.emit()
 						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 						Global.isInteracting = true
 						#print("Palun täida mind!") #mida?
 						
 						emit_signal("movementDisabled")
+				if !soilFound:
+					displayLabel("Kasti täitmiseks on vaja leida mulda")
 			
 			#print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState)
 			#emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
 			
+			if planterState == 1:
+				var seedsFound: bool = false
+				for slot in Global.inventory.slots:
+					if slot.item and slot.item.name == "seemned" and slot.amount > 0:
+						var index = Global.inventory.slots.find(slot)
+						if index != -1:
+							slot.item.use(selectedInteractable)
+							Global.inventory.use_item(index, 1)
+							seedsFound = true
+				if !seedsFound:
+					displayLabel("Istutamiseks on vaja seemneid")
+				
 
 			
 			if planterState == 2:
@@ -161,3 +178,9 @@ func _on_garden_ui_plant_care(careType: int) -> void:
 
 func refreshInteractables():
 	updateInteractables()
+
+func displayLabel(text: String):
+	$InteractLabel.set_text(text)
+	$InteractLabel.show()
+	await get_tree().create_timer(1.0).timeout
+	$InteractLabel.hide()
