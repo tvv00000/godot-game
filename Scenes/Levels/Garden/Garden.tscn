@@ -1,17 +1,21 @@
-[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=20 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="Script" uid="uid://dp38e1m3i8po6" path="res://Scenes/Levels/Garden/garden.gd" id="1_8nmii"]
-[ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_typy8"]
 [ext_resource type="PackedScene" uid="uid://cdhj0kbdvxwrf" path="res://Scenes/Player/Player.tscn" id="2_o1jqx"]
+[ext_resource type="ArrayMesh" uid="uid://cm4t74pl33eqo" path="res://Art/Levels/Garden/Kooliaed.obj" id="4_prf8y"]
 [ext_resource type="PackedScene" uid="uid://c5atrhgnpgr2o" path="res://Scenes/Props/Garden/Planter_Med.tscn" id="4_ylav4"]
+[ext_resource type="Texture2D" uid="uid://cxm7fotehw35x" path="res://Art/Levels/Garden/T_Kooliaed.png" id="5_jcvc3"]
 [ext_resource type="PackedScene" uid="uid://cwrf1vwdkr505" path="res://Scenes/PauseMenus/PauseMenu.tscn" id="5_ylav4"]
 [ext_resource type="PackedScene" uid="uid://ds5m8hyxes0mu" path="res://Scenes/PauseMenus/PlantIndexMenu.tscn" id="6_hxll0"]
 [ext_resource type="PackedScene" uid="uid://bgl5onmll7k6n" path="res://Scenes/PauseMenus/Settings.tscn" id="7_owpas"]
 [ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="10_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="11_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8nmii"]
+albedo_texture = ExtResource("5_jcvc3")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)
@@ -41,7 +45,10 @@ transform = Transform3D(0.986452, 0, 0.164049, 0, 1, 0, -0.164049, 0, 0.986452, 
 [node name="Garden" type="StaticBody3D" parent="."]
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 0, 0)
 
-[node name="Garden" parent="Garden" instance=ExtResource("1_a0w83")]
+[node name="GardenNew" type="MeshInstance3D" parent="Garden"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("4_prf8y")
+surface_material_override/1 = SubResource("StandardMaterial3D_8nmii")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Garden"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.802124, -0.502368, 4.3385)
@@ -60,7 +67,7 @@ transform = Transform3D(0.963261, 0, -0.268567, 0, 1, 0, 0.268567, 0, 0.963261, 
 shape = SubResource("BoxShape3D_hxll0")
 
 [node name="CollisionShape3D5" type="CollisionShape3D" parent="Garden"]
-transform = Transform3D(0.960415, 0, 0.278572, 0, 1, 0, -0.278572, 0, 0.960415, -3.59467, 5.79044, 0.992833)
+transform = Transform3D(0.985235, 0, 0.171207, 0, 1, 0, -0.171207, 0, 0.985235, -2.78742, 5.79044, 1.01922)
 shape = SubResource("BoxShape3D_h3sb3")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Garden"]
@@ -121,4 +128,6 @@ transform = Transform3D(0.998759, -0.0134624, 0.0479434, 0.0132492, 0.999901, 0.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.126753, 0.991934, 0, -0.991934, 0.126753, 0, 0, 0)
+transform = Transform3D(0.749095, 0.54665, 0.374206, -0.493176, 0.0830306, 0.865958, 0.442306, -0.833234, 0.331792, 2.34182, 1.90926, 0.691934)
+light_color = Color(0.877273, 0.895321, 0.845739, 1)
+light_energy = 1.61
