@@ -109,7 +109,7 @@ theme_override_constants/separation = 32
 [node name="Label" type="Label" parent="DirtUI/ScreenContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Täida pott endale meeldiva koguse
+text = "Täida kast endale meeldiva koguse
  mulla ja kruusaga."
 
 [node name="ClosePlantButton" type="Button" parent="DirtUI/ScreenContainer"]
@@ -153,6 +153,7 @@ layout_mode = 2
 text = "Lisa Kruusa!"
 
 [node name="PlantUI" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -228,7 +229,7 @@ layout_mode = 2
 
 [node name="DirtCompoTitleLabel" type="Label" parent="PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer"]
 layout_mode = 2
-text = "Potis On:"
+text = "Kastis On:"
 
 [node name="DirtLabel" type="Label" parent="PlantUI/DirtUI BG/HBoxContainer/PotStatusContainer"]
 layout_mode = 2
@@ -245,6 +246,7 @@ layout_mode = 2
 text = "Sule Aken"
 
 [node name="CareUI" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
