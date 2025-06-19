@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://dsf27r1dcfhlq"]
+[gd_scene load_steps=3 format=3 uid="uid://dsf27r1dcfhlq"]
 
 [ext_resource type="Script" uid="uid://d01jbq4n81sc4" path="res://Scenes/Items/quest_item.gd" id="1_w3m42"]
-[ext_resource type="Texture2D" uid="uid://c7i1bv34w0jtf" path="res://Art/Sprites/Items/mullahunnik.png" id="2_w3m42"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vnes7"]
 height = 1.28075
@@ -17,6 +16,5 @@ shape = SubResource("CapsuleShape3D_vnes7")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.066828, 0)
 billboard = 1
 texture_filter = 0
-texture = ExtResource("2_w3m42")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
