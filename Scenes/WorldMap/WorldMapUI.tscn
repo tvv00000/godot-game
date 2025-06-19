@@ -1,13 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c0wla77krivlg"]
+[gd_scene load_steps=11 format=3 uid="uid://c0wla77krivlg"]
 
 [ext_resource type="Texture2D" uid="uid://xr72pw18jaen" path="res://Art/Sprites/UI/WorldMap.png" id="1_ebj4p"]
 [ext_resource type="Script" uid="uid://mgxd6okhjmv4" path="res://Scenes/WorldMap/WorldMapUI.gd" id="1_fgwen"]
 [ext_resource type="Texture2D" uid="uid://b8wefqx1r5u52" path="res://Art/background.png" id="2_tspx0"]
 [ext_resource type="StyleBox" uid="uid://dn6asodpeh5x0" path="res://Art/money_ui_transparent.tres" id="5_540ah"]
-[ext_resource type="AudioStream" uid="uid://cfpy4025s5mg2" path="res://Audio/oink.wav" id="5_hfq1r"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="5_llb5y"]
 [ext_resource type="StyleBox" uid="uid://cvbd0cogefapn" path="res://europePNG.tres" id="7_llb5y"]
 [ext_resource type="Texture2D" uid="uid://dwirsg3oo182k" path="res://Art/eu-c-03.png" id="8_8jkml"]
+[ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="8_nh6aj"]
+[ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="9_rxa1u"]
 
 [sub_resource type="Theme" id="Theme_tspx0"]
 
@@ -68,9 +69,6 @@ theme_override_styles/normal = ExtResource("7_llb5y")
 icon = ExtResource("8_8jkml")
 expand_icon = true
 
-[node name="oink_sfx" type="AudioStreamPlayer" parent="TextureRect/EuropeBTN"]
-stream = ExtResource("5_hfq1r")
-
 [node name="EuropeBTNTEST" type="Button" parent="TextureRect"]
 layout_mode = 0
 offset_left = 2026.67
@@ -104,5 +102,17 @@ theme_override_styles/normal = ExtResource("5_llb5y")
 text = "TAGASI AEDA
 "
 
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_nh6aj")
+pitch_scale = 0.45
+bus = &"Sfx"
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_rxa1u")
+pitch_scale = 0.8
+bus = &"Sfx"
+
+[connection signal="mouse_entered" from="TextureRect/EuropeBTN" to="." method="_on_europe_btn_mouse_entered"]
 [connection signal="pressed" from="TextureRect/EuropeBTN" to="." method="_on_europe_btn_pressed"]
+[connection signal="mouse_entered" from="TextureRect/AedBTN" to="." method="_on_aed_btn_mouse_entered"]
 [connection signal="pressed" from="TextureRect/AedBTN" to="." method="_on_aed_btn_pressed"]
