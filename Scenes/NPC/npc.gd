@@ -89,10 +89,9 @@ func get_quest_dialog() -> Dictionary:
 	#var active_quests = quest_manager.get_active_quests()
 	for quest in Global.quest_ui.all_active_quests:
 		for objective in quest.objectives:
-			print("test")
+			print(objective.target_type, " quest")
 			if objective.target_id == npc_id and objective.target_type == "talk_to" and not objective.is_completed:
 				print("test2")
-				#objective.
-				return {"text": objective.objective_dialog, "options": {"Oi tere": "exit"}}
+				return {"text": objective.objective_dialog, "options": {}}
 			
 	return {"text": "", "options": {}}
