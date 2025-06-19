@@ -160,7 +160,6 @@ theme_override_styles/normal = ExtResource("4_sprp4")
 text = "Lisa Kruusa!"
 
 [node name="PlantUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -260,7 +259,6 @@ theme_override_styles/normal = ExtResource("4_sprp4")
 text = "Sule Aken"
 
 [node name="CareUI" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
