@@ -33,7 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://uylxon7iwe58" path="res://Art/Player/Animations/frame0037.png" id="23_ykffh"]
 [ext_resource type="Texture2D" uid="uid://bygpnjnqftosg" path="res://Art/Player/Animations/frame0038.png" id="24_5xs4v"]
 [ext_resource type="Texture2D" uid="uid://cxfskbgkhfono" path="res://Art/Player/Animations/frame0039.png" id="25_4emfg"]
-[ext_resource type="StyleBox" uid="uid://nnxtlli62306" path="res://UI_box.tres" id="31_lw74r"]
+[ext_resource type="StyleBox" path="res://UI_box.tres" id="31_lw74r"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ntbx5"]
 animations = [{

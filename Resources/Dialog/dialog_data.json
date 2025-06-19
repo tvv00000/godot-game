@@ -110,21 +110,21 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Oo, Eksmati",
+						"text": "Ohoh, tervist Eksmati!",
 						"options": {
-							"Kas sa võid mulle tüümia": "plant_info",
-							"Kas ma saan teda kuidagi aidata?": "give_quests",
-							"Hüvasti": "exit"
+							"Kas sa võiksid mulle tüümiani kasvutingimustest rääkida?": "plant_info",
+							"Kas ma saaksin sind kuidagi aidata?": "give_quests",
+							"Hüvasti!": "exit"
 						}
 					},{
 						"state": "plant_info",
-						"text": "Täpselt! Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
+						"text": "Ta pigem naudib väikest kannatust – põud pole talle probleem. Vahemeremaades, kust ta pärineb, seal meeldib talle kivide vahel ronida. Ta on väike vapper ürditaimeke.",
 						"options": {
-							"Ürditaimeke? Mulle meeldib see! Tänan sind, valguse ja kivide valitseja!": "start",
+							"Ürditaimeke? See mulle meeldib! Tänan sind, valguse ja kivide valitseja!": "start",
 						}
 					},{
 						"state": "give_quests",
-						"text": "Ja ikka saad, too mulle 3 tüümiani.",
+						"text": "Jah, ikka saad, leia ning too mulle 3 tüümianitaime.",
 						"options": {
 							"Lähen otsima!": "end"
 						}
@@ -145,9 +145,9 @@
 						"state": "start",
 						"text": "Oh, Eksmati, juba tagasi?",
 						"options": {
-							"Kas võid uuesti tüümianist rääkida?": "plant_info",
-							"Kas oleks veel midagi mida teha?": "give_quests",
-							"Hüvasti": "exit"
+							"Kas võiksid mulle veel natuke tüümianist rääkida?": "plant_info",
+							"Kas oleks mul veel midagi mida teha?": "give_quests",
+							"Hüvasti!": "exit"
 						}
 					},{
 						"state": "plant_info",
@@ -164,9 +164,9 @@
 						}
 					},{
 						"state": "give_quests",
-						"text": "Nüüd kui sa sellest räägid, mine otsi taimetark lembit üles. Kui sa ta leiad siis küsi talt tüümiani kohta",
+						"text": "Nüüd kui sa seda mainid, mine otsi taimetark Lembit üles ning küsi temalt tüümiani kohta.",
 						"options": {
-							"Lahen otsin ta üles": "end"
+							"Lähen otsin ta kohe üles!": "end"
 						}
 					},{
 						"state": "end",
@@ -175,7 +175,7 @@
 					},{
 						"state": "exit",
 						"text": "",
-						"options": {}
+						"options": {} 
 					}
 				]
 			},{
@@ -183,11 +183,11 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Tsau Eksmati, kuidas läheb",
+						"text": "Tere Eksmati, kuidas läheb?",
 						"options": {
-							"Kas võid uuesti tüümianist rääkida?": "plant_info",
-							"Kus taimetark Lembit oli?": "npc_info",
-							"Hüvasti": "exit"
+							"Kas võid mulle uuesti tüümianist rääkida?": "plant_info",
+							"Kus täpsemalt taimetark Lembit asus?": "npc_info",
+							"Hüvasti!": "exit"
 						}
 					},{
 						"state": "plant_info",
@@ -204,10 +204,10 @@
 						}
 					},{
 						"state": "npc_info",
-						"text": "Ta peaks kuskil üleval olema",
+						"text": "Sa võid Lembitu leida läänest. Ta on tõenäoliselt oma maja juures ning hoolitseb oma taimede eest.",
 						"options": {
-							"Mul on veel küsimusi": "start",
-							"Selge, aitäh": "exit"
+							"Mul on veel küsimusi.": "start",
+							"Selge, aitäh!": "exit"
 						}
 					},{
 						"state": "end",
@@ -240,16 +240,16 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Oh, Eksmati",
+						"text": "Oh, Eksmati.",
 						"options": {
-							"Kas sa võid tüümianist rääkida?": "plant_info",
-							"Hüvasti": "exit"
+							"Kas sa võid mulle tüümianist natuke rääkida?": "plant_info",
+							"Hüvasti!": "exit"
 						}
 					},{
 						"state": "plant_info",
-						"text": "Tüümian ehk liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
+						"text": "Ikka! Tüümian ehk liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
 						"options": {
-							"Ohho": "plant_info2",
+							"Ohho, see on küll põnev!": "plant_info2",
 						}
 					},{
 						"state": "plant_info2",
@@ -261,7 +261,7 @@
 						"state": "plant_info3",
 						"text": "Nartsiss vaatab rohkem peeglisse – ta sümboliseerib ilu ja eneseleidmist. Aga liivatee… tema tuleb alati südame kaudu.",
 						"options": {
-							"Selge": "end"
+							"Selge!": "end"
 						}
 					},{
 						"state": "end",
@@ -278,9 +278,9 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Kuidas läheb",
+						"text": "Kuidas läheb?",
 						"options": {
-							"Hüvasti": "exit"
+							"Hüvasti!": "exit"
 						}
 					},{
 						"state": "end",
