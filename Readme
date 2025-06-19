@@ -1,25 +1,2 @@
-Teretulemast bestrühm elu projekti.
+Rühm 1 suvepraktika projekt: Taime Hunt - Taimede avastusmäng koos TLÜ maskott Eksmatiga
 
-Failide organisatsioon: 
-Nimetused:
-SuurAlgustäht.faililaend  
-eg:
-PlayerMovement.gd
-PeaMenüü.scn
-
-Täpsustav või alaosa või child peaobjektist  ehk eraldaks alakriipsuga eg:
-PlayerMovement_Swimming.gd
-PlantGrowth_Fig.gd
-
-Eesimene osa suurem valdkond, taha täpsustus:
-
-Puu_Arbuusi.fbx
-Puu_Kastan.fbx
-PlayerInventory.gd
-PlayerMovement_Koolihoov.gd
-
-Paigutada failid kõik sobivatesse kaustadesse ja mõistliku täpsusega eg:
-Scripts/Player/PlayerAnimations.gd
-
-Art/Environment/Plants/Europe/Birch.fbx
-Art/Environment/Plants/Europe/Textures/Birch_Albedo.jpeg
