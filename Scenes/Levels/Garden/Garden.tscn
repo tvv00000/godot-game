@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://b7h1287x5o0v6"]
 
-[ext_resource type="Script" uid="uid://dp38e1m3i8po6" path="res://Scenes/Levels/Garden/garden.gd" id="1_8nmii"]
+[ext_resource type="Script" path="res://Scenes/Levels/Garden/garden.gd" id="1_8nmii"]
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_owpas"]
 [ext_resource type="Script" uid="uid://bsy1fm7ry7hb0" path="res://Scripts/Growing/dateTime.gd" id="1_typy8"]

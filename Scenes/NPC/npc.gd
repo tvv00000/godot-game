@@ -66,7 +66,7 @@ func offer_quest(quest_id: String):
 							amount_found += slot.amount #miks mitte =
 					var how_much_more = abs(objective.collected_quantity - objective.required_quantity)
 					if amount_found >= how_much_more:
-						quest.complete_objective(objective.id, amount_found)
+						quest.complete_objective(objective.id, amount_found)	
 						Global.inventory.use_item(int(objective.target_id), objective.required_quantity)
 						print("All done with quest ", objective.target_id)
 						#call rewards/completion
@@ -78,16 +78,17 @@ func offer_quest(quest_id: String):
 						print("Progress added for objective:", objective.target_id)
 			quest_manager.add_quest(quest)
 			return
-	
 	print("Quest not found or started already")
 
-# Returns quest dialog
+# Returns quest dialog siin on bug!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 func get_quest_dialog() -> Dictionary:
-	var active_quests = quest_manager.get_active_quests()
-	for quest in active_quests:
+	#var active_quests = quest_manager.get_active_quests()
+	for quest in Global.quest_ui.all_active_quests:
 		for objective in quest.objectives:
+			print("test")
 			if objective.target_id == npc_id and objective.target_type == "talk_to" and not objective.is_completed:
-				if current_state == "start":
-					return {"text": objective.objective_dialog, "options": {}}
+				print("test2")
+				#objective.
+				return {"text": objective.objective_dialog, "options": {"Oi tere": "exit"}}
 			
 	return {"text": "", "options": {}}
