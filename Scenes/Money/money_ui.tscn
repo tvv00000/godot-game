@@ -25,6 +25,15 @@ offset_right = 1275.0
 offset_bottom = 268.0
 theme_override_styles/panel = ExtResource("2_alw3q")
 
+[node name="Label" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = -23.0
+offset_right = 79.0
+offset_bottom = 26.0
+text = "Raha:
+"
+
 [node name="MoneyLabel" type="Label" parent="Panel"]
 layout_mode = 0
 offset_left = 16.87
@@ -37,12 +46,3 @@ text = "0"
 label_settings = SubResource("LabelSettings_alw3q")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="Label" type="Label" parent="Panel"]
-layout_mode = 0
-offset_left = 7.0
-offset_top = 16.0
-offset_right = 51.0
-offset_bottom = 65.0
-text = "Raha:
-"
