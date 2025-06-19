@@ -1,25 +1,43 @@
-Teretulemast bestrühm elu projekti.
+Rühm 1 suvepraktika projekt: Taime Hunt - Taimede avastusmäng koos TLÜ maskott Eksmatiga
+Autorid: Dylan Michael Jones, Taavet-Valter Varkki, Juhan Klaassen, Oskar Padu, Fredi Tarenõmm
 
-Failide organisatsioon: 
-Nimetused:
-SuurAlgustäht.faililaend  
-eg:
-PlayerMovement.gd
-PeaMenüü.scn
+Projekt on loodud Tallinna Ülikooli Elu projekti raames. Projekt on loodud koostöös Elu Ülikooliaia 4. rühmaga, kes seadsid eesmärgi, lõid tegelaesed ning nende kujunduse ja dialoogi ning seadsid paika ka üldkirjelduse.
 
-Täpsustav või alaosa või child peaobjektist  ehk eraldaks alakriipsuga eg:
-PlayerMovement_Swimming.gd
-PlantGrowth_Fig.gd
+Projekti eesmärk on suurendada teadlikust ülikooliaiast, taimedest ja taimekasvatamisest läbi mängu. Teadlikust ülikooliaiast suurendab projekt läbi selle, et kasutajale antakse ligipääs virtuaalsele ülikooliaiale, kus oma taimi kasvatada. Taimede ja taimeteadmiste teadlikust tõstavad mängu sees olevad tegelased, kes jagavad oma tarkusi ja teadmisi edasi mängijatele. Projekt on õppemäng seetõttu, et luua taimede kohta info õppimist ja selle kordamist kasutaja jaoks märkamatuks ning lõbusaks. 
 
-Eesimene osa suurem valdkond, taha täpsustus:
+Kasutatud Tehnoloogiad:
+Mängumootor: Godot 4.4
+Programmid 2d graafika loomiseks: Photopea, Photoshop, Aseprite
+Programmid heli loomiseks: Audacity, Bandlab
+Programmid 3d graafika loomiseks: Blender, SubstancePainter 2
+Versioonihaldus tarkvara: GitHub Desktop
 
-Puu_Arbuusi.fbx
-Puu_Kastan.fbx
-PlayerInventory.gd
-PlayerMovement_Koolihoov.gd
+Paigaldusjuhised:
+Mängimine:
+  Navigeerida lehele: 
+  https://haddedam.itch.io/taime-hunt
+  Allpool kirjeldused on juhised selle kasutamiseks.
 
-Paigutada failid kõik sobivatesse kaustadesse ja mõistliku täpsusega eg:
-Scripts/Player/PlayerAnimations.gd
+Muutmine:
+0. Installida endale Godot mängumootor versioon 4.4.1 kas lingilt https://godotengine.org/ või läbi oma paketihalduri
+1. Vajuta githubis siinse repo peal ülevalt paremalt "Code" -> "download .zip"
+2. Allalaadimise lõpus pakkida .zip fail lahti kuskile kausta. Tekib kaust "godot-game-main"
+4. Avada Godot ning klikkida ülevalt vasakult "Import"
+5. Navigeerida kausta, kuhu .zip faili lahti pakkisite ning valida kaust "godot-game-main".
+6. Vajutada nuppu "Select this folder"
+7. Vajutada nuppu "Import"
+8. Nüüd peaks projektide nimekirjas olema "Elu Mäng". Paremalt saate valida kas mängida seda: "Run" või muuta seda: "Edit"
 
-Art/Environment/Plants/Europe/Birch.fbx
-Art/Environment/Plants/Europe/Textures/Birch_Albedo.jpeg
+Mängujuhised:
+Mängja eesmärk on kasvatada taimi ülikooli aias. Selle jaoks on sul vaja mulda, taimeteadmisi ja seemneid. Mulda leiab avastades Euroopat.Seemneid saab kui lahendada ära Tüümiani antud mõistatus ning taimetarkust jagavad tegelased, kes on maailmas laiali!
+
+Soovitatav on alguses minna Euroopasse ja asuda suhtlema tegelastega!
+
+Liikumine: Nooleklahvid, tühik, shift
+
+Interaktsioon: enter
+
+Menüü: escape või tab
+
+
+
