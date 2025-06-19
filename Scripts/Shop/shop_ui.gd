@@ -6,10 +6,22 @@ extends Control
 var store_item_id: int = 0
 var store_data: Array = [
 	{
-		'item_tres': "res://Scenes/Inventory/items/item_muld.tres",  # Path to the .tres file
-		'icon_path': 'res://icon.svg',
-		'heading_1': 'Mullahunnik',
-		'heading_2': 'Hunnik kvaliteetset mulda.',
+		'item_tres': "res://Scenes/Inventory/items/aug.tres",
+		'icon_path': "res://Art/Sprites/Items/aug.png",
+		'heading_1': 'Aug',
+		'heading_2': 'Kala',
+		'custom_button_text': '2'
+	},{
+		'item_tres': "res://Scenes/Inventory/items/item_Soil.tres",
+		'icon_path': "res://Art/Sprites/Items/mullahunnik.png",
+		'heading_1': 'Muld',
+		'heading_2': 'Seda läheb vaja',
+		'custom_button_text': '1'
+	},{
+		'item_tres': "res://Scenes/Inventory/items/seemned.tres",
+		'icon_path': "res://Art/Sprites/Items/seemned.png",
+		'heading_1': 'Seemned',
+		'heading_2': 'Seda läheb vaja',
 		'custom_button_text': '1'
 	}
 ]
@@ -38,7 +50,7 @@ func on_item_buy_pressed(id: int) -> void:
 	# Check if the loaded resource is a valid InvItem
 	if item_tres is InvItem:
 		# Create an instance of the InvItem by duplicating the resource
-		var inv_item = item_tres.duplicate()
+		var inv_item = item_tres
 
 		# Add the item to the player's inventory
 		Global.player.inventory.insert(item_tres, 1)

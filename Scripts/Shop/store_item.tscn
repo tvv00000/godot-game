@@ -22,6 +22,7 @@ theme_override_constants/margin_bottom = 5
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer/MarginContainer"]
 layout_mode = 2
 texture = ExtResource("2_hd8y4")
+expand_mode = 3
 
 [node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer"]
 layout_mode = 2

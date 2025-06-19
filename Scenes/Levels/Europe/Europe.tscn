@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=3 uid="uid://b5k4qyk6gnmtp"]
+[gd_scene load_steps=68 format=3 uid="uid://b5k4qyk6gnmtp"]
 
 [ext_resource type="ArrayMesh" uid="uid://xt22cvcocpoo" path="res://Art/Levels/Europe/Europe_Terrain.obj" id="1_g63vo"]
 [ext_resource type="PackedScene" uid="uid://bqwd1uvdyvkj7" path="res://Scenes/Levels/dynamic_sky.tscn" id="1_kjhx0"]
@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dn1547di2c5da" path="res://Art/Props/Europe/Fence.tscn" id="20_eq2xf"]
 [ext_resource type="PackedScene" uid="uid://cdmjooj7gnopx" path="res://Art/Props/Europe/Fence_Post.tscn" id="21_u0aux"]
 [ext_resource type="Texture2D" uid="uid://bk6l3hmnflavl" path="res://Art/NPC/Gardener.png" id="21_v6112"]
+[ext_resource type="PackedScene" uid="uid://dqrjvuqbu125q" path="res://Scenes/Test/shop.tscn" id="22_44mr3"]
 [ext_resource type="Texture2D" uid="uid://b781eeksql184" path="res://Art/NPC/Folklorist.png" id="22_b5g1t"]
 [ext_resource type="Texture2D" uid="uid://cevel10x1an01" path="res://Art/NPC/Sage.png" id="23_6hq1d"]
 [ext_resource type="Texture2D" uid="uid://cq1kmtul5hf6v" path="res://Art/NPC/Local.png" id="24_1cv6a"]
@@ -46,8 +47,8 @@
 [ext_resource type="Texture2D" uid="uid://c7i1bv34w0jtf" path="res://Art/Sprites/Items/mullahunnik.png" id="32_dhi08"]
 [ext_resource type="Texture2D" uid="uid://bbcgrvcdb0htb" path="res://Art/Sprites/Items/piparmynt.png" id="32_j4kis"]
 [ext_resource type="Resource" uid="uid://sovmjwvhqv8d" path="res://Scenes/Inventory/items/item_Soil.tres" id="33_pobeo"]
-[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_Peppermint.tres" id="33_vmr7e"]
-[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_Saxifraga.tres" id="34_vmr7e"]
+[ext_resource type="Resource" uid="uid://dol6uaoqnatw4" path="res://Scenes/Inventory/items/item_Peppermint.tres" id="33_vmr7e"]
+[ext_resource type="Resource" uid="uid://dxjx135ib6epm" path="res://Scenes/Inventory/items/item_Saxifraga.tres" id="34_vmr7e"]
 [ext_resource type="Texture2D" uid="uid://ckdvfjmrbo87g" path="res://Art/Sprites/Items/kivirik.png" id="34_wdckj"]
 [ext_resource type="Script" uid="uid://ddecgowpiffet" path="res://Scenes/Inventory/inv_item.gd" id="38_iuflw"]
 
@@ -107,33 +108,45 @@ objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_0e3rd")])
 rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_2r2rj")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
-[sub_resource type="Resource" id="Resource_dpdib"]
+[sub_resource type="Resource" id="Resource_qun2q"]
 script = ExtResource("31_qhvlk")
-id = "npc_botanic_02"
-description = "Leia taimetark Lembit"
-target_id = "npc_sage"
-target_type = "talk_to"
-objective_dialog = "Tere, mina olen taimetark Lembit"
-required_quantity = 0
+id = "npc_sage_1a"
+description = "Otsi 3 piparmünti"
+target_id = "item_Peppermint"
+target_type = "collection"
+objective_dialog = ""
+required_quantity = 3
 collected_quantity = 0
 is_completed = false
 metadata/_custom_type_script = "uid://c7a1j36unkq1q"
 
-[sub_resource type="Resource" id="Resource_4uqav"]
+[sub_resource type="Resource" id="Resource_x3tsk"]
+script = ExtResource("31_qhvlk")
+id = "npc_sage_1b"
+description = "Otsi 3 piparmünti"
+target_id = "item_Saxifraga"
+target_type = "collection"
+objective_dialog = ""
+required_quantity = 2
+collected_quantity = 0
+is_completed = false
+metadata/_custom_type_script = "uid://c7a1j36unkq1q"
+
+[sub_resource type="Resource" id="Resource_yvj3w"]
 script = ExtResource("32_dd588")
 reward_type = "coins"
-reward_amount = 99
+reward_amount = 10
 metadata/_custom_type_script = "uid://bien6lff38nx1"
 
-[sub_resource type="Resource" id="Resource_4uyrq"]
+[sub_resource type="Resource" id="Resource_inj35"]
 script = ExtResource("30_joc6n")
-quest_id = "npc_botanic_02"
-quest_name = "Leia taimetark Lembit"
-quest_description = "Botaanik Brita teab, kus ta olla võiks."
+quest_id = "npc_sage"
+quest_name = "Euroopa lilled"
+quest_description = "Otsi euroopa lilli"
 state = "not_started"
-unlock_id = "npc_botanic_2"
-objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_dpdib")])
-rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_4uqav")])
+unlock_id = "npc_sage_1"
+objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_qun2q"), SubResource("Resource_x3tsk")])
+rewards = Array[ExtResource("32_dd588")]([SubResource("Resource_yvj3w")])
 metadata/_custom_type_script = "uid://dwnriolo4jg3x"
 
 [node name="Level_Europe" type="Node"]
@@ -1011,6 +1024,9 @@ transform = Transform3D(1.01117, 0, 0, 0, 1.01117, 0, 0, 0, 1.01117, 2.69352, -0
 [node name="Bush Eur7" parent="Terrain/Props" instance=ExtResource("19_c4ohp")]
 transform = Transform3D(-0.0175027, -0.0806105, 0.0759678, 0.109125, -0.0257393, -0.00217025, 0.0189967, 0.0735864, 0.0824601, -26.562, 3.76331, -8.58954)
 
+[node name="Shop" parent="Terrain/Props" instance=ExtResource("22_44mr3")]
+transform = Transform3D(-0.988328, 0.000125979, 0.152339, 0.000503836, 0.999997, 0.0024417, -0.152338, 0.00248996, -0.988324, -42.9435, 0.342844, -21.6823)
+
 [node name="TerrainMesh" type="MeshInstance3D" parent="Terrain"]
 mesh = ExtResource("1_g63vo")
 skeleton = NodePath("../..")
@@ -1050,7 +1066,8 @@ transform = Transform3D(0.780572, 0.619123, 0.0859973, -0.431284, 0.433872, 0.79
 [node name="WorldMapUi" parent="CanvasLayer" instance=ExtResource("17_6uhru")]
 
 [node name="MoneyItem2" parent="." instance=ExtResource("28_0e3rd")]
-transform = Transform3D(0.999571, 0, 0.0293173, 0.00990777, 0.941164, -0.337805, -0.0275924, 0.33795, 0.94076, -10.9708, 1.0377, 49.7265)
+transform = Transform3D(0.999571, 0, 0.0293173, 0.00990777, 0.941164, -0.337805, -0.0275924, 0.33795, 0.94076, -8.06754, 0.457746, 46.7335)
+money_amount = 100
 
 [node name="QuestItems" type="Node" parent="."]
 
@@ -1072,30 +1089,6 @@ item_id = "item_Soil"
 item_texture = ExtResource("32_dhi08")
 inv_item = ExtResource("33_pobeo")
 
-[node name="QuestItem28" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.6904, 0.415168, 59.8864)
-item_id = "item_Soil"
-item_texture = ExtResource("32_dhi08")
-inv_item = ExtResource("33_pobeo")
-
-[node name="QuestItem29" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.0928, 0.591298, 59.2778)
-item_id = "item_Soil"
-item_texture = ExtResource("32_dhi08")
-inv_item = ExtResource("33_pobeo")
-
-[node name="QuestItem30" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.3728, 0.514749, 60.5777)
-item_id = "item_Soil"
-item_texture = ExtResource("32_dhi08")
-inv_item = ExtResource("33_pobeo")
-
-[node name="QuestItem31" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -17.6079, 0.729539, 60.1227)
-item_id = "item_Soil"
-item_texture = ExtResource("32_dhi08")
-inv_item = ExtResource("33_pobeo")
-
 [node name="QuestItem16" parent="QuestItems" instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.9301, 8.59275, 15.8454)
 item_id = "item_ThymusVulgaris"
@@ -1109,7 +1102,7 @@ item_texture = ExtResource("30_4uqav")
 inv_item = ExtResource("29_0e3rd")
 
 [node name="QuestItem19" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -14.6862, 1.18793, 50.6503)
+transform = Transform3D(0.999569, -0.00250882, 0.0292626, -0.0167584, 0.76951, 0.638415, -0.0241195, -0.63863, 0.769137, -14.3312, 1.18793, 44.6838)
 item_id = "item_Peppermint"
 item_texture = ExtResource("32_j4kis")
 inv_item = ExtResource("33_vmr7e")
@@ -1121,40 +1114,64 @@ item_texture = ExtResource("32_j4kis")
 inv_item = ExtResource("33_vmr7e")
 
 [node name="QuestItem23" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.7643, 1.76871, 42.175)
+transform = Transform3D(0.370274, -0.588332, 0.718863, -0.0167584, 0.76951, 0.638416, -0.928772, -0.248435, 0.27507, -17.8613, 2.40413, 40.705)
 item_id = "item_Peppermint"
-item_texture = ExtResource("34_wdckj")
-inv_item = ExtResource("34_vmr7e")
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
 
 [node name="QuestItem24" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.7643, 1.51222, 50.3825)
+transform = Transform3D(0.371723, -0.587918, 0.718453, -0.0187411, 0.768998, 0.638977, -0.928155, -0.250987, 0.274836, -17.381, 2.40413, 41.296)
 item_id = "item_Peppermint"
-item_texture = ExtResource("34_wdckj")
-inv_item = ExtResource("34_vmr7e")
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
 
 [node name="QuestItem25" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -15.2488, 1.46476, 52.4115)
+transform = Transform3D(0.991827, 0.0935683, -0.086747, -0.0167583, 0.76951, 0.638415, 0.126488, -0.631743, 0.764789, -17.749, 2.74182, 34.1207)
 item_id = "item_Peppermint"
-item_texture = ExtResource("34_wdckj")
-inv_item = ExtResource("34_vmr7e")
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
+
+[node name="QuestItem34" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.991592, 0.0961421, -0.0866224, -0.0187411, 0.768998, 0.638977, 0.128045, -0.63198, 0.764334, -18.2013, 2.74182, 34.7334)
+item_id = "item_Peppermint"
+item_texture = ExtResource("32_j4kis")
+inv_item = ExtResource("33_vmr7e")
 
 [node name="QuestItem26" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.2532, 1.46476, 51.0449)
-item_id = "item_Peppermint"
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.0124, 1.53616, 51.9412)
+item_id = "item_Saxifraga"
 item_texture = ExtResource("34_wdckj")
 inv_item = ExtResource("34_vmr7e")
 
-[node name="QuestItem20" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -19.666, 2.44443, 51.0717)
-item_id = "item_Peppermint"
-item_texture = ExtResource("32_j4kis")
-inv_item = ExtResource("33_vmr7e")
+[node name="QuestItem28" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.7845, 1.53616, 51.9412)
+item_id = "item_Saxifraga"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
 
-[node name="QuestItem21" parent="QuestItems" instance=ExtResource("28_dd588")]
-transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.6778, 1.33945, 53.7425)
-item_id = "item_Peppermint"
-item_texture = ExtResource("32_j4kis")
-inv_item = ExtResource("33_vmr7e")
+[node name="QuestItem29" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.2267, 1.49102, 52.7207)
+item_id = "item_Saxifraga"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem30" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.504348, -0.544549, 0.670149, -0.0187411, 0.768998, 0.638977, -0.863298, -0.334825, 0.377637, -18.8914, 2.20993, 51.7849)
+item_id = "item_Saxifraga"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem31" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.504348, -0.544549, 0.670149, -0.0187411, 0.768998, 0.638977, -0.863298, -0.334825, 0.377637, -19.2958, 2.20993, 52.4426)
+item_id = "item_Saxifraga"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
+
+[node name="QuestItem33" parent="QuestItems" instance=ExtResource("28_dd588")]
+transform = Transform3D(0.504348, -0.544549, 0.670149, -0.0187411, 0.768998, 0.638977, -0.863298, -0.334825, 0.377637, -18.3396, 2.1648, 52.3757)
+item_id = "item_Saxifraga"
+item_texture = ExtResource("34_wdckj")
+inv_item = ExtResource("34_vmr7e")
 
 [node name="QuestItem32" parent="QuestItems" instance=ExtResource("28_dd588")]
 transform = Transform3D(0.999571, 0, 0.0293173, -0.0187411, 0.768998, 0.638977, -0.0225449, -0.639251, 0.768668, -16.6778, 1.33945, 56.0978)
@@ -1204,13 +1221,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87366, 0.00334954, 48.1589
 spriteTexture = ExtResource("21_v6112")
 npc_id = "npc_botanic"
 npc_name = "Botaanik Brita"
-quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3"), SubResource("Resource_4uyrq")])
+quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_vkdh3")])
 
 [node name="NPC_sage" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 0.983888, -0.178785, 0, 0.178785, 0.983888, -16.2062, 1.26527, 49.471)
 spriteTexture = ExtResource("23_6hq1d")
 npc_id = "npc_sage"
 npc_name = "Taimetark Lembit"
+quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_inj35")])
 
 [node name="NPC_folk" parent="npc" instance=ExtResource("19_offuu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46301, -0.0318586, 54.3964)
