@@ -16,6 +16,7 @@ var last_teleport_scene: String = ""
 var quest_ui
 
 var last_loss_reason: String = ""
+var tutorial_text: String = ""
 
 var day:int
 var season: int
