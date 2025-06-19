@@ -46,8 +46,8 @@
 [ext_resource type="Texture2D" uid="uid://c7i1bv34w0jtf" path="res://Art/Sprites/Items/mullahunnik.png" id="32_dhi08"]
 [ext_resource type="Texture2D" uid="uid://bbcgrvcdb0htb" path="res://Art/Sprites/Items/piparmynt.png" id="32_j4kis"]
 [ext_resource type="Resource" uid="uid://sovmjwvhqv8d" path="res://Scenes/Inventory/items/item_Soil.tres" id="33_pobeo"]
-[ext_resource type="Resource" uid="uid://dol6uaoqnatw4" path="res://Scenes/Inventory/items/item_Peppermint.tres" id="33_vmr7e"]
-[ext_resource type="Resource" uid="uid://dxjx135ib6epm" path="res://Scenes/Inventory/items/item_Saxifraga.tres" id="34_vmr7e"]
+[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_Peppermint.tres" id="33_vmr7e"]
+[ext_resource type="Resource" path="res://Scenes/Inventory/items/item_Saxifraga.tres" id="34_vmr7e"]
 [ext_resource type="Texture2D" uid="uid://ckdvfjmrbo87g" path="res://Art/Sprites/Items/kivirik.png" id="34_wdckj"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_kctoa"]
@@ -91,8 +91,8 @@ metadata/_custom_type_script = "uid://bien6lff38nx1"
 [sub_resource type="Resource" id="Resource_vkdh3"]
 script = ExtResource("30_joc6n")
 quest_id = "npc_botanic_01"
-quest_name = "Leia 3 tüümiani"
-quest_description = "Leia maailmast 3 tüümiani ja anna need botaanikule"
+quest_name = "Leia 3 tüümianitaime"
+quest_description = "Leia põhjast, kivide juurest 3 tüümiani ja too need botaanikule."
 state = "not_started"
 unlock_id = "npc_botanic_1"
 objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_0e3rd")])
@@ -121,7 +121,7 @@ metadata/_custom_type_script = "uid://bien6lff38nx1"
 script = ExtResource("30_joc6n")
 quest_id = "npc_botanic_02"
 quest_name = "Leia taimetark Lembit"
-quest_description = "Botaanik Bella teab kus ta olla võib"
+quest_description = "Botaanik Brita teab, kus ta olla võiks."
 state = "not_started"
 unlock_id = "npc_botanic_2"
 objectives = Array[ExtResource("31_qhvlk")]([SubResource("Resource_dpdib")])

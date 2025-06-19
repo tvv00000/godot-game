@@ -6,6 +6,8 @@ extends Control
 @onready var dialog_speaker = $CanvasLayer/Panel/DialogBox/DialogSpeaker
 @onready var dialog_text = $CanvasLayer/Panel/DialogBox/DialogText
 @onready var dialog_options = $CanvasLayer/Panel/DialogBox/DialogOptions
+@onready var hoverSfx = $HoverSfx
+@onready var clickSfx = $ClickSfx
 
 func _ready():
 	hide_dialog()
@@ -32,6 +34,7 @@ func show_dialog(speaker, text, options):
 
 # Handle response selection	
 func _on_option_selected(option):
+	hoverSfx.play()
 	get_parent().handle_dialog_choice(option)
 	
 # hide dialog box
@@ -41,4 +44,5 @@ func hide_dialog():
 
 # close dialog
 func _on_close_button_pressed():
+	clickSfx.play()
 	hide_dialog()

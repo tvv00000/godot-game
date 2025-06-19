@@ -124,7 +124,7 @@
 						}
 					},{
 						"state": "give_quests",
-						"text": "Jah, ikka saad, leia ning too mulle 3 tüümianitaime.",
+						"text": "Jah, ikka saad! Mine leia kolm tüümianitaime ning too need mulle.",
 						"options": {
 							"Lähen otsima!": "end"
 						}
@@ -204,7 +204,7 @@
 						}
 					},{
 						"state": "npc_info",
-						"text": "Sa võid Lembitu leida läänest. Ta on tõenäoliselt oma maja juures ning hoolitseb oma taimede eest.",
+						"text": "Sa võid Lembitu leida lääne poole kõndides. Ta on tõenäoliselt oma maja juures ning hoolitseb oma taimede eest.",
 						"options": {
 							"Mul on veel küsimusi.": "start",
 							"Selge, aitäh!": "exit"	
@@ -278,9 +278,28 @@
 				"dialogs": [
 					{
 						"state": "start",
-						"text": "Kuidas läheb?",
+						"text": "Kuidas käpp käib?",
 						"options": {
+							"Kas saaksid mulle veel tüümianist rääkida?": "plant_info",
 							"Hüvasti!": "exit"
+						}
+						},{
+						"state": "plant_info",
+						"text": "Ikka! Tüümian ehk liivatee on kui ürdiaia kuninganna – ta kannab endas kiindumust, vaprust, elegantsi ja isegi sensuaalsust.",
+						"options": {
+							"Ohho, see on küll põnev!": "plant_info2",
+						}
+					},{
+						"state": "plant_info2",
+						"text": "Ja see pole veel kõik – liivatee toob rahulikku und, aitab säästa, puhastab hinge ja meelt",
+						"options": {
+							"See kõlab hästi!  Kas teda võiks nartsissiga kõrvutada?": "plant_info3"
+						}
+					},{
+						"state": "plant_info3",
+						"text": "Nartsiss vaatab rohkem peeglisse – ta sümboliseerib ilu ja eneseleidmist. Aga liivatee… tema tuleb alati südame kaudu.",
+						"options": {
+							"Selge!": "start"
 						}
 					},{
 						"state": "end",
