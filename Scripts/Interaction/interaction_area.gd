@@ -3,6 +3,9 @@ extends Area3D
 @onready var InteractionLabel: Label3D = $InteractLabel
 #See on mängija küljes olev jubin, mis uurib kas ümber on näpitavaid asju, sorteerib neid järjekorda ja lubab interactida.
 
+@onready var tutorial_menu = $"../HUD/TutorialMenu"
+@onready var tutorial_text = $"../HUD/TutorialMenu/TextureRect/VBoxContainer/TutorialText"
+
 #SETUP: 1. veendu et interactable object oleks staticbody3d
 		#2. lisa talle "var interactLabel: String = "tekst mida kuvatakse kui tahad interaktida"
 
@@ -13,6 +16,12 @@ signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
 var seeds: Resource
 
+var tutorial_state := {
+	"ShopTut": false,
+	"MapTut": false,
+	"GardenTut": false,
+	"NpcTut": false
+}
 
 func _ready():
 	InteractionLabel.hide()
@@ -70,6 +79,10 @@ func _input(event: InputEvent) -> void:
 			print("nothing to interact with")
 
 		elif selectedInteractable.is_in_group("Planter"):
+			if !tutorial_state["GardenTut"]:
+				show_tutorial("GardenTut")
+				tutorial_state["GardenTut"] = true
+				
 			#print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
 			#see saadab teate et võta ui ette.
 			var planterState: int = selectedInteractable.planterState
@@ -139,14 +152,23 @@ func _input(event: InputEvent) -> void:
 		elif selectedInteractable.is_in_group("Shop"):
 			Global.isInteracting = true
 			print("Shopping!")
+			if !tutorial_state["ShopTut"]:
+				show_tutorial("ShopTut")
+				tutorial_state["ShopTut"] = true
 			$"../HUD/Shop_UI".open()
 		
 		elif selectedInteractable.is_in_group("Map"):
+			if !tutorial_state["MapTut"]:
+				show_tutorial("MapTut")
+				tutorial_state["MapTut"] = true
 			Global.isInteracting = true
 			$"../HUD/WorldMapUi".showMap()
 			#print("Koli dilani arvutisse")
 		
 		elif selectedInteractable.is_in_group("NPC"):
+			if !tutorial_state["NpcTut"]:
+				show_tutorial("NpcTut")
+				tutorial_state["NpcTut"] = true
 			Global.isInteracting = true
 			selectedInteractable.start_dialog()
 			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
@@ -176,6 +198,19 @@ func _on_garden_ui_plant_care(careType: int) -> void:
 		1:
 			selectedInteractable.fertilizer = 100
 
+func show_tutorial(ui_type: String) -> void:
+	var message := ""
+	match ui_type:
+		"ShopTut":
+			message = "See on kohalik pood. Siin saad sa nupule vajutades asju osta!"
+		"MapTut":
+			message = "See on maakaart. Vajutades soovitud maailmavaole saad sinna reisida. Paremal nurgas oleva nupuga saad naaseda ülikooliaeda!"
+		"GardenTut":
+			message = "See on Planter'i ui. Hoia teda."
+		"NpcTut":
+			message = "See on karakteri dialoogisüsteem. Alt valikutest saad valida millest temaga rääkida soovid!"
+	tutorial_menu.show_tutorial(message)
+
 func refreshInteractables():
 	updateInteractables()
 
@@ -184,3 +219,4 @@ func displayLabel(text: String):
 	$InteractLabel.show()
 	await get_tree().create_timer(1.0).timeout
 	$InteractLabel.hide()
+	
