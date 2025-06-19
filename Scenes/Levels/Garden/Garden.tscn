@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://b7h1287x5o0v6"]
+[gd_scene load_steps=18 format=3 uid="uid://b7h1287x5o0v6"]
 
 [ext_resource type="Script" uid="uid://dp38e1m3i8po6" path="res://Scenes/Levels/Garden/garden.gd" id="1_8nmii"]
 [ext_resource type="PackedScene" uid="uid://dakikj7v2t8cf" path="res://Art/Levels/Garden/Garden.fbx" id="1_a0w83"]
@@ -12,10 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://bvcec85e7c8t8" path="res://Scenes/PauseMenus/SettingsSettings.tscn" id="10_r3nv0"]
 [ext_resource type="PackedScene" uid="uid://c0wla77krivlg" path="res://Scenes/WorldMap/WorldMapUI.tscn" id="11_3s34t"]
 [ext_resource type="PackedScene" uid="uid://c7k883d00h3lv" path="res://Scenes/Levels/Garden/WorldMap.tscn" id="11_r3nv0"]
-[ext_resource type="PackedScene" uid="uid://dkjfdlcla0i07" path="res://Scenes/Items/money_item.tscn" id="12_jcvc3"]
-[ext_resource type="PackedScene" uid="uid://dsf27r1dcfhlq" path="res://Scenes/Items/quest_item.tscn" id="13_jcvc3"]
-[ext_resource type="Resource" uid="uid://sovmjwvhqv8d" path="res://Scenes/Inventory/items/item_Soil.tres" id="13_prf8y"]
-[ext_resource type="Texture2D" uid="uid://c7i1bv34w0jtf" path="res://Art/Sprites/Items/mullahunnik.png" id="15_1iv46"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vg67c"]
 size = Vector3(38.7771, 1, 48.1638)
@@ -126,14 +122,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.82741, 1.08731, -3.62305)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.126753, 0.991934, 0, -0.991934, 0.126753, 0, 0, 0)
-
-[node name="MoneyItem2" parent="." instance=ExtResource("12_jcvc3")]
-transform = Transform3D(0.999571, -1.50601e-09, 0.0293173, 0.00730677, 0.968444, -0.249124, -0.0283922, 0.249231, 0.968028, -4.47093, 1.12566, -1.01578)
-
-[node name="QuestItem2" parent="." instance=ExtResource("13_jcvc3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.51042, 0.488052, -0.892833)
-item_quantity = 60
-item_texture = ExtResource("15_1iv46")
-inv_item = ExtResource("13_prf8y")
-
-[connection signal="body_entered" from="MoneyItem2" to="MoneyItem2" method="_on_body_entered"]
