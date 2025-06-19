@@ -20,6 +20,13 @@ var quest_ui
 var last_loss_reason: String = ""
 var tutorial_text: String = ""
 
+var tutorial_state := {
+	"ShopTut": false,
+	"MapTut": false,
+	"GardenTut": false,
+	"NpcTut": false
+}
+
 var day:int
 var season: int
 var totalDays: int

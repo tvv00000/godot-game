@@ -16,13 +16,6 @@ signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
 var seeds: Resource
 
-var tutorial_state := {
-	"ShopTut": false,
-	"MapTut": false,
-	"GardenTut": false,
-	"NpcTut": false
-}
-
 func _ready():
 	InteractionLabel.hide()
 	seeds  = load("res://Scenes/Inventory/items/seemned.tres")
@@ -79,9 +72,9 @@ func _input(event: InputEvent) -> void:
 			print("nothing to interact with")
 
 		elif selectedInteractable.is_in_group("Planter"):
-			if !tutorial_state["GardenTut"]:
+			if !Global.tutorial_state["GardenTut"]:
 				show_tutorial("GardenTut")
-				tutorial_state["GardenTut"] = true
+				Global.tutorial_state["GardenTut"] = true
 			
 			else:
 				#print("Planterstate: ", selectedInteractable.planterState, " dirtLevel: ", selectedInteractable.dirtRatio, "Taim on: ", selectedInteractable.Plant)	
@@ -153,25 +146,25 @@ func _input(event: InputEvent) -> void:
 		elif selectedInteractable.is_in_group("Shop"):
 			Global.isInteracting = true
 			print("Shopping!")
-			if !tutorial_state["ShopTut"]:
+			if !Global.tutorial_state["ShopTut"]:
 				show_tutorial("ShopTut")
-				tutorial_state["ShopTut"] = true
+				Global.tutorial_state["ShopTut"] = true
 			else:
 				$"../HUD/Shop_UI".open()
 		
 		elif selectedInteractable.is_in_group("Map"):
-			if !tutorial_state["MapTut"]:
+			if !Global.tutorial_state["MapTut"]:
 				show_tutorial("MapTut")
-				tutorial_state["MapTut"] = true
+				Global.tutorial_state["MapTut"] = true
 			else:
 				Global.isInteracting = true
 				$"../HUD/WorldMapUi".showMap()
 				#print("Koli dilani arvutisse")
 		
 		elif selectedInteractable.is_in_group("NPC"):
-			if !tutorial_state["NpcTut"]:
+			if !Global.tutorial_state["NpcTut"]:
 				show_tutorial("NpcTut")
-				tutorial_state["NpcTut"] = true
+				Global.tutorial_state["NpcTut"] = true
 			else:
 				Global.isInteracting = true
 				selectedInteractable.start_dialog()
