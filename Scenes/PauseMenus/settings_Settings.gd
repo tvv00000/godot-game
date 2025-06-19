@@ -3,12 +3,15 @@ extends Control
 # FULLSCREEN SIZE BUGGED?
 
 @onready var settings_menu = $"../SettingsMenu"
+@onready var hoverSfx = $HoverSfx
+@onready var clickSfx = $ClickSfx
 
 func _ready() -> void:
 	hide()
 
 
 func _on_resume_pressed() -> void:
+	clickSfx.play()
 	hide()
 	settings_menu.show()
 
@@ -38,3 +41,7 @@ func _on_resolution_mode_item_selected(index: int) -> void:
 		2:#Bordelesss Full
 			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 			DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+
+
+func _on_resume_mouse_entered() -> void:
+	hoverSfx.play()

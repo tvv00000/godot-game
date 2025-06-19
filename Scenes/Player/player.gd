@@ -61,16 +61,16 @@ func _ready() -> void:
 		print("Alls good in the world :3")
 
 func _physics_process(delta: float) -> void:
-	if can_move:
+	if !Global.isInteracting:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity() * delta
-
 		# Handle jump.
-		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
-			velocity.y = JUMP_VELOCITY
-			animation.play("Jump")
-			
+		if is_on_floor():
+			if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
+				velocity.y = JUMP_VELOCITY
+				animation.play("Jump")
+
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
@@ -140,18 +140,23 @@ func is_item_needed(item_id: String, inv_item):
 					selected_quest.complete_objective(objective.id, 1) #quests.gd
 				how_much_more = abs(objective.collected_quantity - objective.required_quantity)
 				if how_much_more == 0:
-					handle_quest_completion(selected_quest)
+					print("koik true")
+					check_quest_objectives(objective.target_id, objective.target_type, uksquest)
+					#handle_quest_completion(selected_quest)
 				return true
 	inventory.insert(inv_item, 1)
 	return false
 
-func check_quest_objectives(target_id: String, target_type: String, quantity: int = 1):
+func check_quest_objectives(target_id: String, target_type: String, selected_quest,quantity: int = 1,):
 	if selected_quest == null:
+		print("error mis ei tohiks olla kunagi")
 		return
 	# Update objectives
 	var objective_updated = false
 	for objective in selected_quest.objectives:
-		if objective.target_id == target_id and objective.target_type == target_type and not objective.is_completed:
+		print(target_type)
+		print(not objective.is_completed)
+		if objective.target_id == target_id and objective.target_type == target_type and objective.is_completed:
 			print("Completing objective for quest: ", selected_quest.quest_name)
 			selected_quest.complete_objective(objective.id, quantity)
 			objective_updated = true

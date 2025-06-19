@@ -9,8 +9,6 @@ extends Area3D
 #SETUP: 1. veendu et interactable object oleks staticbody3d
 		#2. lisa talle "var interactLabel: String = "tekst mida kuvatakse kui tahad interaktida"
 
-#TODO: kontrolli üle mitme intractable sortimine
-#TODO: pane ka midagi mis awaitib kuni interaktsioon on lõppenud.
 
 var interactablesInRange := []
 var selectedInteractable: StaticBody3D = null
@@ -105,6 +103,7 @@ func _input(event: InputEvent) -> void:
 							Global.inventory.use_item(index, 10)
 						Global.inventory.update.emit()
 						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
+						Global.isInteracting = true
 						#print("Palun täida mind!") #mida?
 						
 						emit_signal("movementDisabled")
@@ -117,21 +116,24 @@ func _input(event: InputEvent) -> void:
 			if planterState == 2:
 				plantName = selectedInteractable.Plant.name
 				emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth) 
+				Global.isInteracting = true
 				print("Saadetud signaal showGardenUI, state:", selectedInteractable.planterState, plantName)
 			
 			#see ei toimi
 			if planterState == 3:
 				Global.inventory.insert(seeds, 5)
 				selectedInteractable.planterStater(1)
-				
-		
+
+
 		elif selectedInteractable.is_in_group("Item"):
 			if $"..".is_item_needed(selectedInteractable.item_id):
 				$"..".check_quest_objectives(selectedInteractable.item_id, "collection", selectedInteractable.item_quantity)
 				selectedInteractable.queue_free()
 			else: 
 				print("Item not needed for any active quest.")
+
 		elif selectedInteractable.is_in_group("Shop"):
+			Global.isInteracting = true
 			print("Shopping!")
 			if !tutorial_state["ShopTut"]:
 				show_tutorial("ShopTut")
@@ -142,6 +144,7 @@ func _input(event: InputEvent) -> void:
 			if !tutorial_state["MapTut"]:
 				show_tutorial("MapTut")
 				tutorial_state["MapTut"] = true
+			Global.isInteracting = true
 			$"../HUD/WorldMapUi".showMap()
 			#print("Koli dilani arvutisse")
 		
@@ -149,8 +152,9 @@ func _input(event: InputEvent) -> void:
 			if !tutorial_state["NpcTut"]:
 				show_tutorial("NpcTut")
 				tutorial_state["NpcTut"] = true
+			Global.isInteracting = true
 			selectedInteractable.start_dialog()
-			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to")
+			$"..".check_quest_objectives(selectedInteractable.npc_id, "talk_to", null)
 
 #see saadab teate, et mulla ladumine on lõppenud. Paneb paika ka mulla taseme. 
 func _on_garden_ui_dirt_filled_signal(dirtLevel: int) -> void:

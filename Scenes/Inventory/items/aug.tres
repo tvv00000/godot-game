@@ -5,6 +5,7 @@
 
 [resource]
 script = ExtResource("1_csvg1")
+id = "item_aug"
 name = "aug"
 texture = ExtResource("2_qyhly")
 description = "Harilik aug. Oma käppadega Läänemerest püütud."

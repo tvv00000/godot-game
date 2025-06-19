@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://ds5m8hyxes0mu"]
+[gd_scene load_steps=7 format=3 uid="uid://ds5m8hyxes0mu"]
 
 [ext_resource type="Script" uid="uid://cfabrje4i2w5j" path="res://Scenes/PauseMenus/PlantIndexMenu.gd" id="1_dx2xw"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_gll41"]
 [ext_resource type="PackedScene" uid="uid://dek1gbdwr8oxl" path="res://Scripts/Plants/CollectionLogUI.tscn" id="2_i4arw"]
 [ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_bfbj3"]
+[ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="5_m6snd"]
+[ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="6_ub4dv"]
 
 [node name="PlantIndexMenu" type="Control"]
 process_mode = 3
@@ -63,6 +65,19 @@ layout_mode = 2
 size_flags_vertical = 4
 alignment = 1
 
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_m6snd")
+pitch_scale = 0.45
+bus = &"Sfx"
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_ub4dv")
+pitch_scale = 0.8
+bus = &"Sfx"
+
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/Resume" to="." method="_on_resume_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/Inventory" to="." method="_on_inventory_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/Inventory" to="." method="_on_inventory_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/OptionsMenu" to="." method="_on_options_menu_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenu" to="." method="_on_options_menu_pressed"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwrf1vwdkr505"]
+[gd_scene load_steps=7 format=3 uid="uid://cwrf1vwdkr505"]
 
 [ext_resource type="Script" uid="uid://2p4y2rjmtmsb" path="res://Scenes/PauseMenus/PauseMenu.gd" id="1_flhmi"]
 [ext_resource type="StyleBox" uid="uid://7vq53fl7s68b" path="res://Art/money_ui.tres" id="2_0vk47"]
 [ext_resource type="PackedScene" uid="uid://cy7ya584upkmg" path="res://Scenes/Inventory/inv_ui.tscn" id="2_d2kfc"]
 [ext_resource type="StyleBox" uid="uid://b6tap54l8tmfx" path="res://Art/money_ui_pressed.tres" id="3_5mynt"]
+[ext_resource type="AudioStream" uid="uid://ddrdebjft4yn1" path="res://Audio/click.wav" id="5_rxhjt"]
+[ext_resource type="AudioStream" uid="uid://6s50u8ug80v2" path="res://Audio/hover.wav" id="6_7dm4w"]
 
 [node name="PauseMenu" type="Control"]
 process_mode = 3
@@ -83,10 +85,24 @@ offset_top = 113.0
 offset_right = 110.0
 offset_bottom = 153.0
 
-[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
+[node name="ClickSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_rxhjt")
+pitch_scale = 0.45
+bus = &"Sfx"
+
+[node name="HoverSfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_7dm4w")
+pitch_scale = 0.8
+bus = &"Sfx"
+
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/ResumeBtn" to="." method="_on_resume_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_btn_pressed"]
-[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/PlantIndexBtn" to="." method="_on_plant_index_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_btn_pressed"]
+[connection signal="pressed" from="PanelContainer/HBoxContainer/OptionsMenuBtn" to="." method="_on_options_menu_pressed"]
+[connection signal="mouse_entered" from="PanelContainer/HBoxContainer/MapmenuBtn" to="." method="_on_mapmenu_btn_mouse_entered"]
 [connection signal="pressed" from="PanelContainer/HBoxContainer/MapmenuBtn" to="." method="_on_mapmenu_btn_pressed"]
