@@ -68,6 +68,7 @@ func _physics_process(delta: float) -> void:
 
 		# Handle jump.
 		if Input.is_action_just_pressed("Move_Jump") and is_on_floor():
+			velocity.y = JUMP_VELOCITY
 			animation.play("Jump")
 			
 
