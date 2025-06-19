@@ -5,8 +5,6 @@ signal map_closed
 var Planters: Array[Node]
 
 func _ready():
-	if Global.isGardenLevel:
-		Planters = get_tree().get_current_scene().get_node("Planters").get_children()
 	hide()
 	set_process_unhandled_input(true)
 	
@@ -46,6 +44,8 @@ func _on_aed_btn_pressed() -> void:
 	Global.isGardenLevel = true
 	
 func save_scene(): 
+	if Global.isGardenLevel:
+		Planters = get_tree().get_current_scene().get_node("Planters").get_children()
 	var data = SceneData.new()
 	for planter in Planters:
 		var planterScene = PackedScene.new()
