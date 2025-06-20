@@ -23,6 +23,12 @@ var store_data: Array = [
 		'heading_1': 'Seemned',
 		'heading_2': 'Seda läheb vaja',
 		'custom_button_text': '1'
+	},{
+		'item_tres': "res://Scenes/Inventory/items/item_ThymusVulgaris.tres",
+		'icon_path': "res://Art/Sprites/Items/tyymian.png",
+		'heading_1': 'Tüümian',
+		'heading_2': 'Keegi soovib seda',
+		'custom_button_text': '5'
 	}
 ]
 
