@@ -6,7 +6,7 @@
 [resource]
 script = ExtResource("2_0c81c")
 name = "Tulp"
-description = "Ilus lill"
+description = "Tulp (Tulipa) on liilialiste sugukonda kuuluv üheiduleheliste perekond."
 icon = ExtResource("1_fov28")
 is_discovered = true
 is_collected = false

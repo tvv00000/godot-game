@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=3 format=3 uid="uid://cb4ggt4yh4lhg"]
+
+[ext_resource type="Texture2D" uid="uid://cthyx6lqvscwc" path="res://Art/Sprites/Items/kukehari.png" id="1_kd4f2"]
+[ext_resource type="Script" uid="uid://bnhlakg80as7c" path="res://Scripts/Plants/PlantData.gd" id="2_7fbik"]
+
+[resource]
+script = ExtResource("2_7fbik")
+name = "Kukehari"
+description = "Kukehari (Sedum L.) on kivirikulaadsete seltsi paksuleheliste sugukonda kuuluv taimeperekond."
+icon = ExtResource("1_kd4f2")
+is_discovered = true
+is_collected = false
+growingTime = 1
+toughness = 10
+health = 100
+waterNeed = 40
+growSpeed = 1
+dirtNeed = 80
+sunNeed = 0
+fertNeed = 20
+metadata/_custom_type_script = "uid://bnhlakg80as7c"
