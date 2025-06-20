@@ -34,7 +34,7 @@ func _on_europe_btn_pressed():
 	Global.isInteracting = false
 	clickSfx.play()
 	if Global.isGardenLevel:
-		#save_scene()
+		save_scene()
 		emit_signal("map_closed")
 		get_tree().paused = false
 		print("Europe button pressed")
