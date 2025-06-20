@@ -67,6 +67,7 @@ func save_scene():
 		var planterScene = PackedScene.new()
 		planterScene.pack(planter)
 		data.planterArray.append(planterScene)
+		queue_free()
 	ResourceSaver.save(data, "user://gardenData.tres")
 	print("Saved garden state!")
 
