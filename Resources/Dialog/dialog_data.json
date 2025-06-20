@@ -261,5 +261,67 @@
 				]
 			}
 		]
+	},
+	"npc_thyme":{
+		"trees": [
+			{
+				"branch_id": "npc_thyme_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "TÜÜÜMIAAAAN.",
+						"options": {
+							"Kõik korras?": "give_quests",
+							"Hüvasti!": "exit"
+						}
+					},{
+						"state": "give_quests",
+						"text": "TOO MULLE 100 TÜÜÜÜMIIAAANNII",
+						"options": {
+							"Lähen otsin!": "end",
+						}
+					},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+				"branch_id": "npc_thyme_2",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "KUS NEEED OONNNN?",
+						"options": {
+							"Otsin veel": "exit",
+							"Hüvasti!": "exit"
+						}
+						},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+			"branch_id": "npc_default",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "npc_default",
+						"options": {
+							"Say Goodbye": "exit"
+						}
+					}
+				]
+			}
+		]
 	}
 }
