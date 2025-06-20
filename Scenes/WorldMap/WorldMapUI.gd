@@ -7,6 +7,8 @@ var Planters: Array[Node]
 @onready var clickSfx = $ClickSfx
 
 func _ready():
+	if get_tree().get_current_scene().get_node("Planters"):
+		Planters = get_tree().get_current_scene().get_node("Planters").get_children()
 	hide()
 	set_process_unhandled_input(true)
 	
@@ -32,7 +34,7 @@ func _on_europe_btn_pressed():
 	Global.isInteracting = false
 	clickSfx.play()
 	if Global.isGardenLevel:
-		save_scene()
+		#save_scene()
 		emit_signal("map_closed")
 		get_tree().paused = false
 		print("Europe button pressed")
@@ -55,27 +57,25 @@ func _on_aed_btn_pressed() -> void:
 		get_tree().paused = false
 		print("Garden button pressed")
 		Global.last_teleport_scene = "res://Scenes/Levels/Europe/Garden.tscn"
-		get_tree().change_scene_to_file("res://Scenes/Levels/Garden/Garden.tscn")
+		await get_tree().change_scene_to_file("res://Scenes/Levels/Garden/Garden.tscn")	
 		hide()
 		Global.isGardenLevel = true
 	
 func save_scene(): 
 	if Global.isGardenLevel:
-		Planters = get_tree().get_current_scene().get_node("Planters").get_children()
-	var data = SceneData.new()
-	for planter in Planters:
-		var planterScene = PackedScene.new()
-		planterScene.pack(planter)
-		data.planterArray.append(planterScene)
-		queue_free()
-	ResourceSaver.save(data, "user://gardenData.tres")
-	print("Saved garden state!")
+		var data = SceneData.new()
+		for planter in Planters:
+			var planterScene = PackedScene.new()
+			planterScene.pack(planter)
+			data.planterArray.append(planterScene)
+		ResourceSaver.save(data, "user://gardenData.tres")
+		print("Saved garden state!")
 
 func load_scene():
 	var data = ResourceLoader.load("user://gardenData.tres")
-	for planter in Planters:
-		planter.queue_free()
-	
+	get_tree().get_current_scene().get_node("Planters")
+	var replacementPlanters: Node = Node.new()
+	get_tree().get_current_scene().add_child(replacementPlanters)
 	for planter in data.planterArray:
 		var loaded_planter = planter.instantiate()
 		get_tree().get_current_scene().get_node("Planters").add_child(loaded_planter)

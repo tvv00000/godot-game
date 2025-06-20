@@ -46,7 +46,6 @@ transform = Transform3D(0.986452, 0, 0.164049, 0, 1, 0, -0.164049, 0, 0.986452, 
 transform = Transform3D(-0.258819, 0, 0.965926, 0, 1, 0, -0.965926, 0, -0.258819, 0, 0, 0)
 
 [node name="GardenNew" type="MeshInstance3D" parent="Garden"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = ExtResource("4_prf8y")
 surface_material_override/1 = SubResource("StandardMaterial3D_8nmii")
 

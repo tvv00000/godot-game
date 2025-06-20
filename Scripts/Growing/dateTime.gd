@@ -3,7 +3,7 @@ extends Node
 
 #var gardenTime: String = "1:1" #kasuta .split()i. hooaeg/nädal
 #kalendrisüsteem
-@export var secondsPerCycle: int = 10
+@export var secondsPerCycle: int = 5
 var currentTime: int
 var Planters: Array
 var day: int
