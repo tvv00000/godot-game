@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=3 format=3 uid="uid://dsovwl76hfkqq"]
+
+[ext_resource type="Texture2D" uid="uid://ckdvfjmrbo87g" path="res://Art/Sprites/Items/kivirik.png" id="1_6qhk5"]
+[ext_resource type="Script" uid="uid://bnhlakg80as7c" path="res://Scripts/Plants/PlantData.gd" id="2_pg3tj"]
+
+[resource]
+script = ExtResource("2_pg3tj")
+name = "Kivirik"
+description = "Kivirik (Saxifraga L.) on kivirikuliste sugukonda kuuluv taimeperekond."
+icon = ExtResource("1_6qhk5")
+is_discovered = true
+is_collected = false
+growingTime = 11
+toughness = 10
+health = 100
+waterNeed = 40
+growSpeed = 1
+dirtNeed = 80
+sunNeed = 0
+fertNeed = 20
+metadata/_custom_type_script = "uid://bnhlakg80as7c"

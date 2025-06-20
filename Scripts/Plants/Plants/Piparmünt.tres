@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="PlantData" load_steps=3 format=3 uid="uid://dt6wmo42ivgc1"]
+
+[ext_resource type="Texture2D" uid="uid://bbcgrvcdb0htb" path="res://Art/Sprites/Items/piparmynt.png" id="1_cpxlr"]
+[ext_resource type="Script" uid="uid://bnhlakg80as7c" path="res://Scripts/Plants/PlantData.gd" id="2_07tqs"]
+
+[resource]
+script = ExtResource("2_07tqs")
+name = "Piparmünt"
+description = "Piparmündi nimetuse esimene pool tuleneb sanskritikeelsest pika pipra (Piper longum)"
+icon = ExtResource("1_cpxlr")
+is_discovered = true
+is_collected = false
+growingTime = 5
+toughness = 10
+health = 100
+waterNeed = 40
+growSpeed = 1
+dirtNeed = 80
+sunNeed = 0
+fertNeed = 20
+metadata/_custom_type_script = "uid://bnhlakg80as7c"

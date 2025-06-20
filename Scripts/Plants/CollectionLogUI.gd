@@ -35,7 +35,7 @@ func _on_plant_selected(index):
 		detail_panel.show()
 		icon.texture = plant.icon
 		name_label.text = plant.name
-		desc_label.text = plant.description + '.Kasvuaeg on ' + str(plant.growingTime)
+		desc_label.text = plant.description
 	else:
 		detail_panel.show()
 		icon.texture = null
