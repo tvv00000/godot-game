@@ -323,5 +323,73 @@
 				]
 			}
 		]
+	},
+	"npc_folk":{
+		"trees": [
+			{
+				"branch_id": "npc_folk_1",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "Oi kui suured silmad sul on!",
+						"options": {
+							"Et ma sind paremini näeksin.": "tekst1",
+							"Hüvasti!": "exit"
+						}
+					},{
+						"state": "tekst1",
+						"text": "Oi kui suured kõrvad sul on!",
+						"options": {
+							"Et ma sind paremini kuuleksin.": "tekst2",
+						}
+					},{
+						"state": "tekst2",
+						"text": "Oi kui suured käed sul on!",
+						"options": {
+							"Et ma sind paremini kallistada saaksin.": "exit",
+						}
+					},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+				"branch_id": "npc_thyme_2",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "KUS NEEED OONNNN?",
+						"options": {
+							"Otsin veel": "exit",
+							"Hüvasti!": "exit"
+						}
+						},{
+						"state": "end",
+						"text": "",
+						"options": {}
+					},{
+						"state": "exit",
+						"text": "",
+						"options": {}
+					}
+				]
+			},{
+			"branch_id": "npc_default",
+				"dialogs": [
+					{
+						"state": "start",
+						"text": "npc_default",
+						"options": {
+							"Say Goodbye": "exit"
+						}
+					}
+				]
+			}
+		]
 	}
 }

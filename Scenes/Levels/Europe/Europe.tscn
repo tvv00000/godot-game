@@ -1400,7 +1400,7 @@ npc_name = "Taimetark Lembit"
 quests = Array[ExtResource("30_joc6n")]([SubResource("Resource_inj35")])
 
 [node name="NPC_folk" parent="npc" instance=ExtResource("19_offuu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.46301, -0.0318586, 54.3964)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5697, 0.654366, 47.4436)
 spriteTexture = ExtResource("22_b5g1t")
 npc_id = "npc_folk"
 npc_name = "Nonna Bella donna"
