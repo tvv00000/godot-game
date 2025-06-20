@@ -99,6 +99,7 @@ func _input(event: InputEvent) -> void:
 								soilFound = true
 								
 							Global.inventory.update.emit()
+							selectedInteractable.planterState = 1
 							emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 							Global.isInteracting = true
 							#print("Palun täida mind!") #mida?
@@ -119,7 +120,8 @@ func _input(event: InputEvent) -> void:
 								slot.item.use(selectedInteractable)
 								Global.inventory.use_item(index, 1)
 								seedsFound = true
-								emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
+					if seedsFound:
+						emit_signal("show_GardenUI", planterState, plantName, dirtLevel, moistureLevel, fertilizerLevel, plantGrowth, plantHealth)
 					if !seedsFound:
 						displayLabel("Istutamiseks on vaja seemneid")
 					
@@ -134,6 +136,7 @@ func _input(event: InputEvent) -> void:
 				#see ei toimi
 				if planterState == 3:
 					Global.inventory.insert(seeds, 5)
+					#Global.inventory.insert(item_ThymusVulgaris, 5)
 					selectedInteractable.planterStater(1)
 
 
