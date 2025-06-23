@@ -3,7 +3,7 @@ extends Control
 @onready var tutorialText = $TextureRect/VBoxContainer/TutorialText
 
 func _ready():
-	hide()
+	show()
 
 func show_tutorial(msg: String):
 	tutorialText.text = msg

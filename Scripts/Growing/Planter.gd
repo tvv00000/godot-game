@@ -24,6 +24,7 @@ func planterStater(setState):
 	planterState = setState
 	if planterState == 0:
 		$DirtMesh.hide()
+		$PlantSprite.hide()
 		Plant = null
 		interactLabel = "Täida mullaga"
 		

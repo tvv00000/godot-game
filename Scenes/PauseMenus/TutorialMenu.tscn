@@ -58,6 +58,13 @@ grow_vertical = 2
 [node name="TutorialText" type="Label" parent="TextureRect/VBoxContainer"]
 custom_minimum_size = Vector2(1, 371.945)
 layout_mode = 2
+text = "Teretulemast TLÜ Kooliaia Mängu! Mängu eesmärk on kasvatada kooliaias taimi!
+
+Liikumine toimub [nooleklahvidega].   Hüppamine toimub [tühikuga].  Joosta saab hoides all nuppu [Shift].
+
+Proovi alustuseks kooliaias ringi jalutada, joosta ja hüpata.  
+
+Sa saad erinevaid asju kasutada, kui su pea kohale ilmub tekst ja sa vajutad nuppu [Enter]"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

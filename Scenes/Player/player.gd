@@ -240,6 +240,6 @@ func _on_world_map_ui_map_open() -> void:
 func _on_water_kill_body_entered(body: CharacterBody3D) -> void:
 		if body.name == "Player":
 			
-			print("Eksmati uppus ära! Anlaki!")
+			print("Julge hundi rind ei ole märg!")
 			get_tree().change_scene_to_file("res://Scenes/GameOver/GameOver.tscn")
 			Global.last_loss_reason = "drowned"

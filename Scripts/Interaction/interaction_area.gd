@@ -15,10 +15,12 @@ var selectedInteractable: StaticBody3D = null
 signal show_GardenUI(state: int, plantName: String)
 signal movementDisabled()
 var seeds: Resource
+var thymus: Resource
 
 func _ready():
 	InteractionLabel.hide()
 	seeds  = load("res://Scenes/Inventory/items/seemned.tres")
+	thymus = load("res://Scenes/Inventory/items/item_ThmyusVulgaris.tres")
 
 #See sorteerib lähedal olevad interactabled ja valib listist lähima objekti, kui array on suurem kui 1.
 func updateInteractables():
@@ -136,8 +138,9 @@ func _input(event: InputEvent) -> void:
 				#see ei toimi
 				if planterState == 3:
 					Global.inventory.insert(seeds, 5)
+					Global.inventory.insert(thymus, 10)
 					#Global.inventory.insert(item_ThymusVulgaris, 5)
-					selectedInteractable.planterStater(1)
+					selectedInteractable.planterStater(0)
 
 
 		elif selectedInteractable.is_in_group("Item"):
@@ -208,13 +211,13 @@ func show_tutorial(ui_type: String) -> void:
 	var message := ""
 	match ui_type:
 		"ShopTut":
-			message = "See on kohalik pood. Poes saab osta asju, mida võib vaja minna!"
+			message = "See on kohalik pood. Poes saab osta asju, mida võib vaja minna! Ostmiseks on vaja raha ja ostmiseks vajuta nuppu '1'"
 		"MapTut":
-			message = "Vajutades ruroopale saad sinna reisida. Paremal nurgas oleva nupuga saad naaseda ülikooliaeda!"
+			message = "Vajutades Euroopale saad sinna reisida. Paremal nurgas oleva nupuga saad naaseda ülikooliaeda!  Kaart on ka saadaval siis, kui sa vajutad [Escape] või [Tab] ning valid sealt menüü 'Kaart'"
 		"GardenTut":
-			message = "Taimekastides saad kasvatada taimi. Taimekast on esialgu vaja täita mullaga ja siis on vaja leida seeme, mida istutada"
+			message = "Taimekastides saad kasvatada taimi. Taimekast on esialgu vaja täita mullaga ja siis on vaja leida seeme, mida istutada. Mulda saab vahetada raha vastu kas Euroopa poest või seda leiab ka maast! Seemneid leiab samuti poest!"
 		"NpcTut":
-			message = "Siin saab suhelda tegelastega! Kasutades eri valikuid saad koguda infot või vastu võtta ülesandeid!"
+			message = "Siin saab suhelda tegelastega! Kasutades eri valikuid saad koguda infot taimede kohta või vastu võtta ülesandeid, mida täita!"
 	tutorial_menu.show_tutorial(message)
 
 func refreshInteractables():
